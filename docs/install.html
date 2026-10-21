@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Install &amp; requirements · ThePredict docs</title>
+<meta name="description" content="What ThePredict needs, what the first start creates, where every file lives and how to move an older configuration.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>(function () { var t = null; try { t = localStorage.getItem("tp-docs-theme"); } catch (e) {} if (t === "light" || t === "dark") { document.documentElement.setAttribute("data-theme", t); } })();</script>
+<script src="/dock.js" defer data-akyrion-dock></script></head>
+<body class="has-toc" data-page="install">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="2" y="3" width="12" height="2"/><rect x="2" y="7" width="12" height="2"/><rect x="2" y="11" width="12" height="2"/></svg></button>
+  <a class="brand" href="index.html" aria-label="ThePredict docs home">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><rect width="16" height="16" class="b-bg"/><rect x="2" y="2" width="12" height="3" class="b-trim"/><rect x="3" y="7" width="10" height="2" class="b-eye"/><rect x="6" y="10" width="4" height="4" class="b-core"/></svg>
+    <span class="brand-name">ThePredict</span><span class="brand-tag">docs</span>
+  </a>
+  <span class="version" title="ThePredict 0.0.1, release candidate">v0.0.1&nbsp;RC</span>
+  <div class="search" role="search">
+    <label class="sr-only" for="search-input">Search the docs</label>
+    <input id="search-input" class="search-input" type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div class="search-results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
+  </div>
+  <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Switch theme" title="Switch light or dark theme"><svg class="i-sun" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="6" width="4" height="4"/><rect x="7" y="1" width="2" height="2"/><rect x="7" y="13" width="2" height="2"/><rect x="1" y="7" width="2" height="2"/><rect x="13" y="7" width="2" height="2"/><rect x="3" y="3" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/><rect x="3" y="11" width="2" height="2"/><rect x="11" y="11" width="2" height="2"/></svg><svg class="i-moon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="2" width="5" height="2"/><rect x="4" y="4" width="3" height="2"/><rect x="3" y="6" width="3" height="4"/><rect x="4" y="10" width="3" height="2"/><rect x="6" y="12" width="6" height="2"/><rect x="11" y="10" width="3" height="2"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="nav-group"><p class="nav-title">Getting started</p><ul><li><a href="index.html">Overview</a></li><li><a href="install.html" aria-current="page" class="is-current">Install</a></li><li><a href="quick-start.html">Quick start</a></li></ul></div><div class="nav-group"><p class="nav-title">Authoring</p><ul><li><a href="profiles.html">Profiles</a></li><li><a href="movement.html">Movement</a></li><li><a href="skills.html">Skills &amp; intents</a></li><li><a href="vocabulary.html">Vocabulary</a></li><li><a href="targets.html">Targets &amp; threat</a></li></ul></div><div class="nav-group"><p class="nav-title">Combat systems</p><ul><li><a href="combat-loop.html">Combat loop</a></li><li><a href="stances.html">Stances &amp; tells <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="difficulty.html">Difficulty <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="groups.html">Groups <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="zones.html">Zones &amp; terrain <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="patterns.html">Patterns <span class="nav-soon" title="Changing soon">●</span></a></li></ul></div><div class="nav-group"><p class="nav-title">Administration</p><ul><li><a href="jev.html">Jev connection</a></li><li><a href="commands.html">Commands</a></li><li><a href="storage.html">Storage &amp; records</a></li><li><a href="learning.html">Learning</a></li><li><a href="overlays.html">Overlays</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></div><div class="nav-group"><p class="nav-title">Reference</p><ul><li><a href="profile-reference.html">Profile reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="config-reference.html">config.yml reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li></ul></div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="main" class="main" tabindex="-1">
+    <article class="doc">
+      <p class="eyebrow">Getting started</p>
+      <h1>Install &amp; requirements</h1>
+      <p class="lead">What ThePredict needs, what the first start creates, where every file lives and how to move an older configuration.</p>
+      <h2 id="requirements"><a class="h-anchor" href="#requirements" aria-hidden="true" tabindex="-1">#</a>Requirements</h2>
+<div class="table-wrap"><table><thead><tr><th>Component</th><th>Version</th><th>Notes</th></tr></thead><tbody><tr><td>Java</td><td>25 or newer</td><td>Checked at startup.</td></tr><tr><td>Paper</td><td>26.2</td><td>Folia is not supported.</td></tr><tr><td>MythicMobs Premium</td><td>5.13.1 or newer</td><td>Required dependency (<code>depend: [MythicMobs]</code>).</td></tr><tr><td>A TypeSafe key</td><td>—</td><td>Optional. Only needed for Jev to decide; without it mobs fight with their profile's local planner, at no cost. See <a href="jev.html">Jev connection</a>.</td></tr></tbody></table></div>
+<p>The combination tested while building this release is Java 25, Paper 26.2 (build 129), MythicMobs Premium 5.13.1 and the Jev model <code>jev-1.13.0</code>. Any other combination is untested.</p>
+<p>A wrong version disables the plugin at startup with one of these lines:</p>
+<div class="code" data-lang="console"><div class="code-head"><span class="code-title"></span><span class="code-lang">Console</span></div><pre><code>Startup prerequisite failed: Java &lt;n&gt; is unsupported; ThePredict requires Java 25 or newer
+Startup prerequisite failed: Minecraft &lt;version&gt; is unsupported; this Paper build requires 26.2 or newer
+Startup prerequisite failed: MythicMobs &lt;version&gt; is unsupported; minimum version is 5.13.1</code></pre></div>
+<h2 id="install-steps"><a class="h-anchor" href="#install-steps" aria-hidden="true" tabindex="-1">#</a>Install</h2>
+<ol>
+<li>Put the ThePredict JAR (for example <code class="long">ThePredict-{{fact:plugin.version}}.jar</code>) in <code>plugins/</code>, next to MythicMobs Premium.</li>
+<li>Start the server. The first start creates only the files that are missing and <strong>never replaces one that exists</strong>:
+<ul>
+<li><code class="long">plugins/MythicMobs/AIConfig/config.yml</code>: the master file (schema 2, empty key, tested model).</li>
+<li><code class="long">plugins/MythicMobs/AIConfig/Profiles/README.txt</code> and <code class="long">Profiles/example.yml.example</code>: a profile template, ignored until you copy it to a <code>.yml</code> file.</li>
+<li><code class="long">plugins/ThePredict/examples/</code>: the example boss (a mob, its skills and its profile), inactive where it is. <code>examples/README.txt</code> explains how to try it.</li>
+</ul></li>
+<li>Read the console. A fresh install is not an error; each line says what to do next:</li>
+</ol>
+<div class="code" data-lang="console"><div class="code-head"><span class="code-title"></span><span class="code-lang">Console</span></div><pre><code>Jev not configured: set TYPESAFE_API_KEY or jev.apiKey. MythicMobs works normally. Next: set the key and restart the server, then run /thepredict status.
+No profiles: copy examples/ or create a .yml file in plugins/MythicMobs/AIConfig/Profiles/. Next: read plugins/MythicMobs/AIConfig/Profiles/README.txt.</code></pre></div>
+<p>With profiles but no mob set to <code>Predictor: true</code> yet, it says <code class="long">&lt;n&gt; profiles read, but no mob targeted by a profile has Predictor: true. Next: set Predictor: true on the MythicMobs mob and run /mm reload.</code></p>
+<ol start="4">
+<li>Optional: set the Jev key and restart (see <a href="jev.html#key">Jev connection</a>). With a key, ThePredict checks the service without spending tokens and reports, for example: <code class="long">Jev check: READY (credential valid; model unverified until first inference). Decisions are enabled.</code></li>
+<li>Continue with the <a href="quick-start.html">Quick start</a>.</li>
+</ol>
+<p>An administrator with <code>thepredict.admin</code> who joins gets one line when something needs attention, for example <code class="long">[ThePredict] some profiles have errors; Jev is UNCONFIGURED. Run /thepredict status for details.</code></p>
+<h2 id="files"><a class="h-anchor" href="#files" aria-hidden="true" tabindex="-1">#</a>Where things live</h2>
+<p>People edit files in the <strong>MythicMobs</strong> data folder; ThePredict keeps everything it generates in its own folder. Outside <code>AIConfig/</code>, ThePredict writes nothing inside <code>plugins/MythicMobs/</code>.</p>
+<div class="table-wrap"><table><thead><tr><th>What</th><th>Where</th></tr></thead><tbody><tr><td>Master configuration</td><td><code class="long">plugins/MythicMobs/AIConfig/config.yml</code></td></tr><tr><td>Profiles (<code>.yml</code> and <code>.yaml</code>)</td><td><code class="long">plugins/MythicMobs/AIConfig/Profiles/</code></td></tr><tr><td>Profile template</td><td><code>Profiles/README.txt</code> and <code class="long">Profiles/example.yml.example</code> (not loaded)</td></tr><tr><td>Example boss</td><td><code class="long">plugins/ThePredict/examples/</code></td></tr><tr><td>Records, backups, exports</td><td><code class="long">plugins/ThePredict/records/</code> (with <code>backups/</code>, <code>exports/</code> and a <code>.lock</code>)</td></tr><tr><td>Aggregates database</td><td><code class="long">plugins/ThePredict/aggregates.db</code>, beside <code>records/</code>, not inside</td></tr><tr><td>Duels, scenarios, migration proposals</td><td><code>plugins/ThePredict/duels/</code>, <code>scenarios/</code>, <code>migration/</code></td></tr><tr><td>Learning and overlays</td><td><code>plugins/ThePredict/learn/</code>, <code class="long">plugins/ThePredict/autoconfig/</code></td></tr></tbody></table></div>
+<h2 id="reloads"><a class="h-anchor" href="#reloads" aria-hidden="true" tabindex="-1">#</a>Reloads and restarts</h2>
+<div class="table-wrap"><table><thead><tr><th>You changed</th><th>Do this</th></tr></thead><tbody><tr><td><code>config.yml</code> or the key</td><td><strong>Restart the server.</strong> Both are read only at startup. <code>/thepredict check</code> re-checks the service with the key already loaded; it does not read a new one.</td></tr><tr><td>A profile</td><td><code>/mm reload</code>. It re-reads MythicMobs mobs and skills, then re-reads and re-binds every profile.</td></tr><tr><td>A mob or a skill</td><td><code>/mm reload</code>.</td></tr><tr><td>A datapack tag used in a selector</td><td><code>/minecraft:reload</code>, then <code>/mm reload</code>.</td></tr></tbody></table></div>
+<p>There is no <code>/thepredict reload</code>.</p>
+<div class="callout callout-warn" data-callout="warn"><p class="callout-title"><span class="callout-badge">Watch out</span> A broken config.yml keeps ThePredict off</p><p>An unknown key, a key from the old schema or a value out of range keeps ThePredict inactive, and the console names the problem: <code class="long">Invalid configuration: AIConfig/config.yml: &lt;path&gt;: &lt;reason&gt;. ThePredict stays inactive and /thepredict status still works.</code> MythicMobs keeps working, and storage is not opened (no <code>records/</code>, no <code>aggregates.db</code>). Fix the file and restart.</p></div>
+<h2 id="old-location"><a class="h-anchor" href="#old-location" aria-hidden="true" tabindex="-1">#</a>Moving from the old location</h2>
+<p>Older builds kept their files in <code class="long">plugins/ThePredict/config.yml</code> and <code>plugins/ThePredict/AI/</code>. ThePredict never moves or deletes them; what happens depends on where your files are:</p>
+<ul>
+<li><strong>Only the old location has content</strong> (the master file, or a <code>.yml</code> in <code>AI/</code>): ThePredict loads nothing from it, enables no requests and writes a proposal in <code class="long">plugins/ThePredict/migration/&lt;yyyyMMdd-HHmmss&gt;/</code> with <code class="long">AIConfig/config.yml.proposed</code>, one <code class="long">AIConfig/Profiles/&lt;file&gt;.proposed</code> per profile and a <code>report.md</code>. The console says <code class="long">Migration proposal: review &lt;report&gt; and the .proposed files next to it, then copy them into plugins/MythicMobs/AIConfig/ by hand. No file was changed and no query was enabled.</code> The same proposal is reused on every start while your files do not change.</li>
+<li><strong>Both locations have content</strong>: <code>AIConfig/</code> wins. The console, <code>/thepredict status</code> and the join notice say <code class="long">Old files in plugins/ThePredict/config.yml and plugins/ThePredict/AI/ are ignored because plugins/MythicMobs/AIConfig/ already has configuration. Nothing was moved or deleted.</code></li>
+<li><strong>Only the new location has content</strong>: no notice.</li>
+</ul>
+<p><code>README.txt</code> and <code>example.yml.example</code> do not count as content.</p>
+<h2 id="schema-1"><a class="h-anchor" href="#schema-1" aria-hidden="true" tabindex="-1">#</a>Migrating from schema 1</h2>
+<p>There is no migration command: ThePredict never changes your files. When it finds schema 1 files (a master file with a <code>provider</code> section or other old keys, or profiles with <code>Behaviors</code>, <code>Operations</code> or no <code>Tactics</code>), it does not load them and writes the same kind of proposal as above, already converted to schema 2 and to the new paths.</p>
+<p>How to apply a proposal:</p>
+<ol>
+<li>Stop the server and keep a copy of <code class="long">plugins/MythicMobs/AIConfig/</code> and of any old <code class="long">plugins/ThePredict/config.yml</code> and <code>AI/</code> files.</li>
+<li>Read every decision in <code>report.md</code> and fix what it lists under manual review.</li>
+<li>Copy each <code>.proposed</code> file into <code>plugins/MythicMobs/</code> and remove the <code>.proposed</code> extension (<code class="long">AIConfig/config.yml.proposed</code> becomes <code class="long">plugins/MythicMobs/AIConfig/config.yml</code>).</li>
+<li>Set <code>TYPESAFE_API_KEY</code> yourself. A key from the old provider is never copied, because it is not a TypeSafe key.</li>
+<li>Start the server and run <code>/thepredict status</code>. Keep the old files until <code>status</code> no longer asks for the proposal.</li>
+</ol>
+<p>What the converter does: the <code>provider</code> section becomes <code>jev</code> with the tested model and an empty key; limits with an equivalent move over when they fit the new ranges (for example <code class="long">decision.maxConcurrentRequests</code> becomes <code class="long">decision.maxInFlightRequests</code>, <code class="long">profileDefaults.decisionIntervalTicks</code> becomes <code class="long">minimumDecisionIntervalTicks</code>, <code class="long">profileDefaults.lowHealthRatio</code> becomes <code>criticalHealthRatio</code>); keys without an equivalent are listed with the reason; each old choice becomes a tactic <strong>without movement</strong>; each <code>Operation</code> becomes the matching shortcut context; <code>DirectChoice</code> becomes <code>DirectTactic</code>. After migrating, give your tactics a movement (see <a href="movement.html">Movement &amp; goals</a>).</p>
+<h2 id="disable"><a class="h-anchor" href="#disable" aria-hidden="true" tabindex="-1">#</a>Turning it off</h2>
+<ul>
+<li><strong>One mob:</strong> set <code>Predictor: false</code> in its MythicMobs file and run <code>/mm reload</code>. ThePredict closes the session, removes its goals and MythicMobs puts the mob's own <code>AIGoalSelectors</code> back. Removing the mob's profile from <code>Profiles/</code> and running <code>/mm reload</code> does the same.</li>
+<li><strong>The whole plugin:</strong> remove the JAR and restart. On shutdown ThePredict stops its task, cancels requests in flight, sets every <code>predictor*</code> condition to false, releases the goals of its sessions, stops a duel recording, flushes records and aggregates, and closes the Jev client last. It can take a couple of seconds longer while scenario recording or the records writer is flushing.</li>
+<li><strong>No key:</strong> nothing leaves the server, and bound mobs fight with their profile's local planner.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-prev" href="index.html"><span class="pager-dir">Previous</span><span class="pager-title">ThePredict docs</span></a><a class="pager-next" href="quick-start.html"><span class="pager-dir">Next</span><span class="pager-title">Quick start</span></a></nav>
+    <footer class="footer">
+      <p>ThePredict 0.0.1 · release candidate. These pages describe this build, checked against its source code; it has not been verified on a live server yet.</p>
+      <p>ThePredict is an independent MythicMobs addon. Jev is TypeSafe's decision model; naming it does not imply endorsement. Fonts: Pixelify Sans, Inter and JetBrains Mono, under the SIL Open Font License.</p>
+    </footer>
+  </main>
+  <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-l2"><a href="#requirements">Requirements</a></li><li class="toc-l2"><a href="#install-steps">Install</a></li><li class="toc-l2"><a href="#files">Where things live</a></li><li class="toc-l2"><a href="#reloads">Reloads and restarts</a></li><li class="toc-l2"><a href="#old-location">Moving from the old location</a></li><li class="toc-l2"><a href="#schema-1">Migrating from schema 1</a></li><li class="toc-l2"><a href="#disable">Turning it off</a></li></ul></nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

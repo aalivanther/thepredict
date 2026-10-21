@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Quick start · ThePredict docs</title>
+<meta name="description" content="Your first smart mob in three lines, then a tour of the example boss that ships with the plugin.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>(function () { var t = null; try { t = localStorage.getItem("tp-docs-theme"); } catch (e) {} if (t === "light" || t === "dark") { document.documentElement.setAttribute("data-theme", t); } })();</script>
+<script src="/dock.js" defer data-akyrion-dock></script></head>
+<body class="has-toc" data-page="quick-start">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="2" y="3" width="12" height="2"/><rect x="2" y="7" width="12" height="2"/><rect x="2" y="11" width="12" height="2"/></svg></button>
+  <a class="brand" href="index.html" aria-label="ThePredict docs home">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><rect width="16" height="16" class="b-bg"/><rect x="2" y="2" width="12" height="3" class="b-trim"/><rect x="3" y="7" width="10" height="2" class="b-eye"/><rect x="6" y="10" width="4" height="4" class="b-core"/></svg>
+    <span class="brand-name">ThePredict</span><span class="brand-tag">docs</span>
+  </a>
+  <span class="version" title="ThePredict 0.0.1, release candidate">v0.0.1&nbsp;RC</span>
+  <div class="search" role="search">
+    <label class="sr-only" for="search-input">Search the docs</label>
+    <input id="search-input" class="search-input" type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div class="search-results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
+  </div>
+  <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Switch theme" title="Switch light or dark theme"><svg class="i-sun" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="6" width="4" height="4"/><rect x="7" y="1" width="2" height="2"/><rect x="7" y="13" width="2" height="2"/><rect x="1" y="7" width="2" height="2"/><rect x="13" y="7" width="2" height="2"/><rect x="3" y="3" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/><rect x="3" y="11" width="2" height="2"/><rect x="11" y="11" width="2" height="2"/></svg><svg class="i-moon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="2" width="5" height="2"/><rect x="4" y="4" width="3" height="2"/><rect x="3" y="6" width="3" height="4"/><rect x="4" y="10" width="3" height="2"/><rect x="6" y="12" width="6" height="2"/><rect x="11" y="10" width="3" height="2"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="nav-group"><p class="nav-title">Getting started</p><ul><li><a href="index.html">Overview</a></li><li><a href="install.html">Install</a></li><li><a href="quick-start.html" aria-current="page" class="is-current">Quick start</a></li></ul></div><div class="nav-group"><p class="nav-title">Authoring</p><ul><li><a href="profiles.html">Profiles</a></li><li><a href="movement.html">Movement</a></li><li><a href="skills.html">Skills &amp; intents</a></li><li><a href="vocabulary.html">Vocabulary</a></li><li><a href="targets.html">Targets &amp; threat</a></li></ul></div><div class="nav-group"><p class="nav-title">Combat systems</p><ul><li><a href="combat-loop.html">Combat loop</a></li><li><a href="stances.html">Stances &amp; tells <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="difficulty.html">Difficulty <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="groups.html">Groups <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="zones.html">Zones &amp; terrain <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="patterns.html">Patterns <span class="nav-soon" title="Changing soon">●</span></a></li></ul></div><div class="nav-group"><p class="nav-title">Administration</p><ul><li><a href="jev.html">Jev connection</a></li><li><a href="commands.html">Commands</a></li><li><a href="storage.html">Storage &amp; records</a></li><li><a href="learning.html">Learning</a></li><li><a href="overlays.html">Overlays</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></div><div class="nav-group"><p class="nav-title">Reference</p><ul><li><a href="profile-reference.html">Profile reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="config-reference.html">config.yml reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li></ul></div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="main" class="main" tabindex="-1">
+    <article class="doc">
+      <p class="eyebrow">Getting started</p>
+      <h1>Quick start</h1>
+      <p class="lead">Your first smart mob in three lines, then a tour of the example boss that ships with the plugin.</p>
+      <h2 id="first-mob"><a class="h-anchor" href="#first-mob" aria-hidden="true" tabindex="-1">#</a>Your first smart mob</h2>
+<p>You add three things on your side: one key in the mob, one line in each skill, and a short profile. That is it: no timers, no <code>AIGoalSelectors</code>, no extra skills.</p>
+<p><strong>1. In the mob file</strong>, turn ThePredict on:</p>
+<div class="code" data-lang="yaml"><div class="code-head"><span class="code-title">plugins/<wbr>MythicMobs/<wbr>Mobs/<wbr>Brute.yml</span><span class="code-lang">YAML</span></div><pre><code><span class="t-key">Brute</span><span class="t-punc">:</span>
+  <span class="t-key">Type</span><span class="t-punc">:</span> <span class="t-val">ZOMBIE</span>
+  <span class="t-key">Display</span><span class="t-punc">:</span> <span class="t-str">'Brute'</span>
+  <span class="t-key">Health</span><span class="t-punc">:</span> <span class="t-num">80</span>
+  <span class="t-key">Predictor</span><span class="t-punc">:</span> <span class="t-bool">true</span>
+  <span class="t-key">Modules</span><span class="t-punc">:</span>
+    <span class="t-key">ThreatTable</span><span class="t-punc">:</span> <span class="t-bool">true</span></code></pre></div>
+<p><strong>2. In each skill</strong>, say what it is for with one <code>Intention</code> line, and keep its native <code>Cooldown</code>:</p>
+<div class="code" data-lang="yaml"><div class="code-head"><span class="code-title">plugins/<wbr>MythicMobs/<wbr>Skills/<wbr>Brute.yml</span><span class="code-lang">YAML</span></div><pre><code><span class="t-key">BruteSmash</span><span class="t-punc">:</span>
+  <span class="t-key">Intention</span><span class="t-punc">:</span> <span class="t-val">DAMAGE, MELEE, DAMAGE_MEDIUM</span>
+  <span class="t-key">Cooldown</span><span class="t-punc">:</span> <span class="t-num">2</span>
+  <span class="t-key">Skills</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">delay</span> <span class="t-num">4</span>
+  <span class="t-punc">-</span> <span class="t-fn">damage</span><span class="t-punc">{</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">7</span><span class="t-punc">}</span> <span class="t-tgt">@target</span></code></pre></div>
+<p><strong>3. A profile</strong> tells ThePredict which mob it drives and which tactics it may pick:</p>
+<div class="code" data-lang="yaml"><div class="code-head"><span class="code-title">plugins/<wbr>MythicMobs/<wbr>AIConfig/<wbr>Profiles/<wbr>brute.yml</span><span class="code-lang">YAML</span></div><pre><code><span class="t-key">schemaVersion</span><span class="t-punc">:</span> <span class="t-num">2</span>
+<span class="t-key">brute_ai</span><span class="t-punc">:</span>
+  <span class="t-key">MythicID</span><span class="t-punc">:</span> <span class="t-val">Brute</span>
+  <span class="t-key">Objective</span><span class="t-punc">:</span> <span class="t-val">Defeat the current target</span>
+  <span class="t-key">Choices</span><span class="t-punc">:</span>
+    <span class="t-key">smash</span><span class="t-punc">:</span> <span class="t-punc">{</span> <span class="t-key">MythicID</span><span class="t-punc">:</span> <span class="t-val">BruteSmash</span> <span class="t-punc">}</span>
+  <span class="t-key">Tactics</span><span class="t-punc">:</span>
+    <span class="t-key">press_and_smash</span><span class="t-punc">:</span> <span class="t-punc">{</span> <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">APPROACH</span><span class="t-punc">,</span> <span class="t-key">Choice</span><span class="t-punc">:</span> <span class="t-val">smash</span> <span class="t-punc">}</span>
+    <span class="t-key">hold</span><span class="t-punc">:</span> <span class="t-punc">{</span> <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">HOLD</span> <span class="t-punc">}</span></code></pre></div>
+<p>Then run <code>/mm reload</code> and <code>/thepredict status</code>. The <code>Catalog</code> section should report the profile as <code>LOADED</code> with one profile active and no errors. Spawn the mob, fight it in survival and run <code class="long">/thepredict inspect nearest</code>.</p>
+<div class="callout callout-tip" data-callout="tip"><p class="callout-title"><span class="callout-badge">Tip</span> Why these three pieces</p><ul>
+<li><code>Predictor: true</code> binds the mob. Without it the mob is a plain MythicMobs mob, even with a profile.</li>
+<li>The <code>Intention</code> line tells ThePredict what the skill does (hit, reach, risks) without numbers: reach, radius and wind-up are read from the skill itself. A skill without it still works, but only fires as its own tactic's choice. See <a href="skills.html">Skills &amp; intents</a>.</li>
+<li>Tactic IDs such as <code>press_and_smash</code> are the option names Jev reads, so make them describe the action in English.</li>
+</ul></div>
+<div class="callout callout-note" data-callout="note"><p class="callout-title"><span class="callout-badge">Note</span> Melee damage goes in a skill</p><p>While ThePredict controls a mob, its base melee goal does not hit. Put melee damage in a skill (like <code>BruteSmash</code>) or in a choice with <code>Kind: VANILLA_MELEE</code>. Each skill fires on its own <code>Cooldown</code>, so the cooldown and the damage decide how hard the mob hits.</p></div>
+<p>Without a Jev key the mob fights at level <code>LOCAL</code>: the profile picks the tactic by context and priority, at no cost. With a key and the service <code>READY</code>, Jev's answers put it at level <code>JEV</code>. See <a href="jev.html">Jev connection</a>.</p>
+<h2 id="example-boss"><a class="h-anchor" href="#example-boss" aria-hidden="true" tabindex="-1">#</a>The example boss</h2>
+<p>ThePredict ships a complete example, the <strong>ThePredict Guardian</strong>: a zombie with four skills (a melee strike, a ranged bolt, a self-heal and an area slam) and a profile with eight tactics. The first start writes it to <code class="long">plugins/ThePredict/examples/</code>, where it stays inactive.</p>
+<h3 id="try-it"><a class="h-anchor" href="#try-it" aria-hidden="true" tabindex="-1">#</a>Try it</h3>
+<ol>
+<li>Copy the three files: <code class="long">MythicMobs/Mobs/ThePredictGuardian.yml</code> into <code>plugins/MythicMobs/Mobs/</code>, <code class="long">MythicMobs/Skills/ThePredictGuardianSkills.yml</code> into <code>plugins/MythicMobs/Skills/</code>, and <code>AI/ThePredictGuardian.yml</code> into <code class="long">plugins/MythicMobs/AIConfig/Profiles/</code>.</li>
+<li>Run <code>/mm reload</code>, then <code>/thepredict status</code>. The mob still has <code>Predictor: false</code>, so the profile is read but not active. On a fresh install the <code>Catalog</code> section shows (the revision number varies):</li>
+</ol>
+<div class="code" data-lang="console"><div class="code-head"><span class="code-title"></span><span class="code-lang">Console</span></div><pre><code>Profiles: SETUP_PENDING (revision N, 1 profiles read, 0 active, 0 errors, 0 warnings): no mob targeted by a profile has Predictor: true; set it in MythicMobs and reload MythicMobs</code></pre></div>
+<ol start="3">
+<li>Spawn it with <code class="long">/mm m spawn ThePredictGuardian 1</code>. With <code>Predictor: false</code> it is a plain MythicMobs zombie: it chases you and hits with its own attack.</li>
+<li>Set <code>Predictor: true</code> in the copied mob file, run <code>/mm reload</code> and <code>/thepredict status</code>:</li>
+</ol>
+<div class="code" data-lang="console"><div class="code-head"><span class="code-title"></span><span class="code-lang">Console</span></div><pre><code>Profiles: LOADED (revision N, 1 profiles read, 1 active, 0 errors, 0 warnings)</code></pre></div>
+<ol start="5">
+<li>Fight it in survival and run <code class="long">/thepredict inspect nearest</code> (it looks for the closest bound mob within 16 blocks).</li>
+</ol>
+<h3 id="guardian-files"><a class="h-anchor" href="#guardian-files" aria-hidden="true" tabindex="-1">#</a>The files</h3>
+<div class="code" data-lang="yaml"><div class="code-head"><span class="code-title">plugins/<wbr>MythicMobs/<wbr>Mobs/<wbr>ThePredictGuardian.yml</span><span class="code-lang">YAML</span></div><pre><code><span class="t-com"># ThePredict 0.0.1 example boss. Predictor starts false: the mob fights as a plain MythicMobs zombie.</span>
+<span class="t-com"># ThePredict generates its movement goals when Predictor is true; do not add AIGoalSelectors here.</span>
+<span class="t-key">ThePredictGuardian</span><span class="t-punc">:</span>
+  <span class="t-key">Type</span><span class="t-punc">:</span> <span class="t-val">ZOMBIE</span>
+  <span class="t-key">Display</span><span class="t-punc">:</span> <span class="t-str">'ThePredict Guardian'</span>
+  <span class="t-key">Health</span><span class="t-punc">:</span> <span class="t-num">100</span>
+  <span class="t-key">Damage</span><span class="t-punc">:</span> <span class="t-num">3</span>
+  <span class="t-key">Predictor</span><span class="t-punc">:</span> <span class="t-bool">false</span>
+  <span class="t-key">Options</span><span class="t-punc">:</span>
+    <span class="t-key">FollowRange</span><span class="t-punc">:</span> <span class="t-num">32</span>
+    <span class="t-key">PreventOtherDrops</span><span class="t-punc">:</span> <span class="t-bool">true</span>
+  <span class="t-key">Modules</span><span class="t-punc">:</span>
+    <span class="t-key">ThreatTable</span><span class="t-punc">:</span> <span class="t-bool">true</span>
+  <span class="t-key">ThreatTable</span><span class="t-punc">:</span>
+    <span class="t-key">UseDamageTaken</span><span class="t-punc">:</span> <span class="t-bool">true</span>
+    <span class="t-key">DecayUnreachable</span><span class="t-punc">:</span> <span class="t-bool">false</span>
+  <span class="t-key">Skills</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">damage</span><span class="t-punc">{</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">2</span><span class="t-punc">}</span> <span class="t-tgt">@target</span> <span class="t-trg">~onAttack</span>
+  <span class="t-punc">-</span> <span class="t-fn">setstance</span><span class="t-punc">{</span><span class="t-attr">stance</span><span class="t-punc">=</span>pressing<span class="t-punc">}</span> <span class="t-tgt">@self</span> <span class="t-trg">~onSignal:</span><span class="t-sig">PREDICTOR_STANCE_PRESSING</span>
+  <span class="t-punc">-</span> <span class="t-fn">setstance</span><span class="t-punc">{</span><span class="t-attr">stance</span><span class="t-punc">=</span>guarded<span class="t-punc">}</span> <span class="t-tgt">@self</span> <span class="t-trg">~onSignal:</span><span class="t-sig">PREDICTOR_STANCE_GUARDED</span>
+  <span class="t-punc">-</span> <span class="t-fn">setstance</span><span class="t-punc">{</span><span class="t-attr">stance</span><span class="t-punc">=</span>evasive<span class="t-punc">}</span> <span class="t-tgt">@self</span> <span class="t-trg">~onSignal:</span><span class="t-sig">PREDICTOR_STANCE_EVASIVE</span></code></pre></div>
+<div class="code" data-lang="yaml"><div class="code-head"><span class="code-title">plugins/<wbr>MythicMobs/<wbr>Skills/<wbr>ThePredictGuardianSkills.yml</span><span class="code-lang">YAML</span></div><pre><code><span class="t-com"># Skills of the ThePredict Guardian. ThePredict casts them with its own trigger; the mob never casts them</span>
+<span class="t-com"># with a normal trigger. Each skill declares its Intention. PredictValues stay as history and are not read.</span>
+<span class="t-com"># Cooldown is the native one, in seconds. The slam hits players only (@PlayersInRadius).</span>
+<span class="t-key">ThePredictGuardianMelee</span><span class="t-punc">:</span>
+  <span class="t-key">Intention</span><span class="t-punc">:</span> <span class="t-val">DAMAGE, MELEE, DAMAGE_MEDIUM, WHEN_TARGET_IN_MELEE</span>
+  <span class="t-key">PredictValues</span><span class="t-punc">:</span> <span class="t-punc">[</span><span class="t-val">MELEE_ATTACK</span><span class="t-punc">,</span> <span class="t-val">SINGLE_TARGET</span><span class="t-punc">,</span> <span class="t-val">MEDIUM_DAMAGE</span><span class="t-punc">]</span>
+  <span class="t-key">Cooldown</span><span class="t-punc">:</span> <span class="t-num">2</span>
+  <span class="t-key">Skills</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">effect:particles</span><span class="t-punc">{</span><span class="t-attr">p</span><span class="t-punc">=</span>crit<span class="t-punc">;</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">12</span><span class="t-punc">;</span><span class="t-attr">hs</span><span class="t-punc">=</span><span class="t-num">0.4</span><span class="t-punc">;</span><span class="t-attr">vs</span><span class="t-punc">=</span><span class="t-num">0.4</span><span class="t-punc">;</span><span class="t-attr">y</span><span class="t-punc">=</span><span class="t-num">1</span><span class="t-punc">}</span> <span class="t-tgt">@self</span>
+  <span class="t-punc">-</span> <span class="t-fn">delay</span> <span class="t-num">5</span>
+  <span class="t-punc">-</span> <span class="t-fn">damage</span><span class="t-punc">{</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">6</span><span class="t-punc">}</span> <span class="t-tgt">@target</span>
+
+<span class="t-key">ThePredictGuardianRanged</span><span class="t-punc">:</span>
+  <span class="t-key">Intention</span><span class="t-punc">:</span> <span class="t-val">DAMAGE, HITSCAN, DAMAGE_LOW, WHEN_TARGET_FLEEING, WHEN_TARGET_AT_RANGE, RISK_NEEDS_LINE_OF_SIGHT</span>
+  <span class="t-key">PredictValues</span><span class="t-punc">:</span> <span class="t-punc">[</span><span class="t-val">RANGED_ATTACK</span><span class="t-punc">,</span> <span class="t-val">SINGLE_TARGET</span><span class="t-punc">,</span> <span class="t-val">LOW_DAMAGE</span><span class="t-punc">]</span>
+  <span class="t-key">Cooldown</span><span class="t-punc">:</span> <span class="t-num">3</span>
+  <span class="t-key">Conditions</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">targetwithin</span><span class="t-punc">{</span><span class="t-attr">d</span><span class="t-punc">=</span><span class="t-num">16</span><span class="t-punc">}</span> <span class="t-bool">true</span>
+  <span class="t-key">TargetConditions</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">lineofsight</span> <span class="t-bool">true</span>
+  <span class="t-key">Skills</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">effect:particles</span><span class="t-punc">{</span><span class="t-attr">p</span><span class="t-punc">=</span>flame<span class="t-punc">;</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">20</span><span class="t-punc">;</span><span class="t-attr">hs</span><span class="t-punc">=</span><span class="t-num">0.3</span><span class="t-punc">;</span><span class="t-attr">vs</span><span class="t-punc">=</span><span class="t-num">0.6</span><span class="t-punc">;</span><span class="t-attr">y</span><span class="t-punc">=</span><span class="t-num">1</span><span class="t-punc">}</span> <span class="t-tgt">@self</span>
+  <span class="t-punc">-</span> <span class="t-fn">delay</span> <span class="t-num">10</span>
+  <span class="t-punc">-</span> <span class="t-fn">effect:particles</span><span class="t-punc">{</span><span class="t-attr">p</span><span class="t-punc">=</span>flame<span class="t-punc">;</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">10</span><span class="t-punc">;</span><span class="t-attr">hs</span><span class="t-punc">=</span><span class="t-num">0.2</span><span class="t-punc">;</span><span class="t-attr">vs</span><span class="t-punc">=</span><span class="t-num">0.2</span><span class="t-punc">;</span><span class="t-attr">y</span><span class="t-punc">=</span><span class="t-num">1</span><span class="t-punc">}</span> <span class="t-tgt">@target</span>
+  <span class="t-punc">-</span> <span class="t-fn">damage</span><span class="t-punc">{</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">4</span><span class="t-punc">}</span> <span class="t-tgt">@target</span>
+
+<span class="t-key">ThePredictGuardianDefense</span><span class="t-punc">:</span>
+  <span class="t-key">Intention</span><span class="t-punc">:</span> <span class="t-val">SUSTAIN, SELF, WHEN_SELF_LOW_HEALTH</span>
+  <span class="t-key">PredictValues</span><span class="t-punc">:</span> <span class="t-punc">[</span><span class="t-val">DEFENSE</span><span class="t-punc">,</span> <span class="t-val">HEALS_CASTER</span><span class="t-punc">]</span>
+  <span class="t-key">Cooldown</span><span class="t-punc">:</span> <span class="t-num">5</span>
+  <span class="t-key">Conditions</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">healthpercent</span><span class="t-punc">{</span><span class="t-attr">p</span><span class="t-punc">=</span>&lt;<span class="t-num">90%</span><span class="t-punc">}</span> <span class="t-bool">true</span>
+  <span class="t-key">Skills</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">effect:particles</span><span class="t-punc">{</span><span class="t-attr">p</span><span class="t-punc">=</span>heart<span class="t-punc">;</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">6</span><span class="t-punc">;</span><span class="t-attr">hs</span><span class="t-punc">=</span><span class="t-num">0.5</span><span class="t-punc">;</span><span class="t-attr">vs</span><span class="t-punc">=</span><span class="t-num">0.5</span><span class="t-punc">;</span><span class="t-attr">y</span><span class="t-punc">=</span><span class="t-num">1.5</span><span class="t-punc">}</span> <span class="t-tgt">@self</span>
+  <span class="t-punc">-</span> <span class="t-fn">heal</span><span class="t-punc">{</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">8</span><span class="t-punc">}</span> <span class="t-tgt">@self</span>
+
+<span class="t-key">ThePredictGuardianSlam</span><span class="t-punc">:</span>
+  <span class="t-key">Intention</span><span class="t-punc">:</span> <span class="t-val">CONTROL, DAMAGE, AREA_AROUND_SELF, DAMAGE_MEDIUM, WHEN_ENEMIES_GROUPED, WHEN_TARGET_IN_MELEE, RISK_ROOTS_CASTER</span>
+  <span class="t-key">PredictValues</span><span class="t-punc">:</span> <span class="t-punc">[</span><span class="t-val">MELEE_ATTACK</span><span class="t-punc">,</span> <span class="t-val">AREA_TARGET</span><span class="t-punc">,</span> <span class="t-val">MEDIUM_DAMAGE</span><span class="t-punc">]</span>
+  <span class="t-key">Cooldown</span><span class="t-punc">:</span> <span class="t-num">8</span>
+  <span class="t-key">Skills</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-fn">effect:particles</span><span class="t-punc">{</span><span class="t-attr">p</span><span class="t-punc">=</span>cloud<span class="t-punc">;</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">30</span><span class="t-punc">;</span><span class="t-attr">hs</span><span class="t-punc">=</span><span class="t-num">1.5</span><span class="t-punc">;</span><span class="t-attr">vs</span><span class="t-punc">=</span><span class="t-num">0.1</span><span class="t-punc">;</span><span class="t-attr">y</span><span class="t-punc">=</span><span class="t-num">0.2</span><span class="t-punc">}</span> <span class="t-tgt">@self</span>
+  <span class="t-punc">-</span> <span class="t-fn">delay</span> <span class="t-num">15</span>
+  <span class="t-punc">-</span> <span class="t-fn">damage</span><span class="t-punc">{</span><span class="t-attr">a</span><span class="t-punc">=</span><span class="t-num">5</span><span class="t-punc">}</span> <span class="t-tgt">@PlayersInRadius</span><span class="t-punc">{</span><span class="t-attr">r</span><span class="t-punc">=</span><span class="t-num">3</span><span class="t-punc">}</span>
+  <span class="t-punc">-</span> <span class="t-fn">throw</span><span class="t-punc">{</span><span class="t-attr">velocity</span><span class="t-punc">=</span><span class="t-num">6</span><span class="t-punc">;</span><span class="t-attr">velocityY</span><span class="t-punc">=</span><span class="t-num">1</span><span class="t-punc">}</span> <span class="t-tgt">@PlayersInRadius</span><span class="t-punc">{</span><span class="t-attr">r</span><span class="t-punc">=</span><span class="t-num">3</span><span class="t-punc">}</span></code></pre></div>
+<div class="code" data-lang="yaml"><div class="code-head"><span class="code-title">plugins/<wbr>MythicMobs/<wbr>AIConfig/<wbr>Profiles/<wbr>ThePredictGuardian.yml</span><span class="code-lang">YAML</span></div><pre><code><span class="t-com"># ThePredict example profile (schema 2) for the ThePredictGuardian mob. Copy it to plugins/MythicMobs/AIConfig/Profiles/.</span>
+<span class="t-com"># Each choice takes its purpose from the Intention line of its skill.</span>
+<span class="t-key">schemaVersion</span><span class="t-punc">:</span> <span class="t-num">2</span>
+<span class="t-key">thepredict_guardian</span><span class="t-punc">:</span>
+  <span class="t-key">MythicID</span><span class="t-punc">:</span> <span class="t-val">ThePredictGuardian</span>
+  <span class="t-key">TypeOfMythicID</span><span class="t-punc">:</span> <span class="t-val">MOB</span>
+  <span class="t-key">Type</span><span class="t-punc">:</span> <span class="t-val">NORMAL</span>
+  <span class="t-key">Objective</span><span class="t-punc">:</span> <span class="t-val">Survive while defeating the current target</span>
+  <span class="t-key">Choices</span><span class="t-punc">:</span>
+    <span class="t-key">melee</span><span class="t-punc">:</span>
+      <span class="t-key">MythicID</span><span class="t-punc">:</span> <span class="t-val">ThePredictGuardianMelee</span>
+      <span class="t-key">TypeOfMythicID</span><span class="t-punc">:</span> <span class="t-val">SKILL</span>
+    <span class="t-key">ranged</span><span class="t-punc">:</span>
+      <span class="t-key">MythicID</span><span class="t-punc">:</span> <span class="t-val">ThePredictGuardianRanged</span>
+      <span class="t-key">TypeOfMythicID</span><span class="t-punc">:</span> <span class="t-val">SKILL</span>
+    <span class="t-key">defense</span><span class="t-punc">:</span>
+      <span class="t-key">MythicID</span><span class="t-punc">:</span> <span class="t-val">ThePredictGuardianDefense</span>
+      <span class="t-key">TypeOfMythicID</span><span class="t-punc">:</span> <span class="t-val">SKILL</span>
+      <span class="t-key">RequiresTarget</span><span class="t-punc">:</span> <span class="t-bool">false</span>
+    <span class="t-key">slam</span><span class="t-punc">:</span>
+      <span class="t-key">MythicID</span><span class="t-punc">:</span> <span class="t-val">ThePredictGuardianSlam</span>
+      <span class="t-key">TypeOfMythicID</span><span class="t-punc">:</span> <span class="t-val">SKILL</span>
+  <span class="t-key">Tactics</span><span class="t-punc">:</span>
+    <span class="t-key">approach</span><span class="t-punc">:</span>
+      <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">APPROACH</span>
+    <span class="t-key">press_and_strike</span><span class="t-punc">:</span>
+      <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">APPROACH</span>
+      <span class="t-key">Choice</span><span class="t-punc">:</span> <span class="t-val">melee</span>
+      <span class="t-key">Priority</span><span class="t-punc">:</span> <span class="t-num">70</span>
+    <span class="t-key">keep_distance</span><span class="t-punc">:</span>
+      <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">KEEP_DISTANCE</span>
+    <span class="t-key">keep_distance_and_shoot</span><span class="t-punc">:</span>
+      <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">KEEP_DISTANCE</span>
+      <span class="t-key">Choice</span><span class="t-punc">:</span> <span class="t-val">ranged</span>
+      <span class="t-key">Description</span><span class="t-punc">:</span> <span class="t-val">Stay outside melee reach and shoot while the target approaches</span>
+      <span class="t-key">Priority</span><span class="t-punc">:</span> <span class="t-num">60</span>
+    <span class="t-key">retreat_and_defend</span><span class="t-punc">:</span>
+      <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">RETREAT</span>
+      <span class="t-key">Choice</span><span class="t-punc">:</span> <span class="t-val">defense</span>
+      <span class="t-key">Priority</span><span class="t-punc">:</span> <span class="t-num">90</span>
+    <span class="t-key">flank_and_strike</span><span class="t-punc">:</span>
+      <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">FLANK</span>
+      <span class="t-key">Choice</span><span class="t-punc">:</span> <span class="t-val">melee</span>
+    <span class="t-key">close_in_and_slam</span><span class="t-punc">:</span>
+      <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">APPROACH</span>
+      <span class="t-key">Choice</span><span class="t-punc">:</span> <span class="t-val">slam</span>
+      <span class="t-key">Priority</span><span class="t-punc">:</span> <span class="t-num">65</span>
+    <span class="t-key">hold</span><span class="t-punc">:</span>
+      <span class="t-key">Movement</span><span class="t-punc">:</span> <span class="t-val">HOLD</span>
+      <span class="t-key">Priority</span><span class="t-punc">:</span> <span class="t-num">10</span>
+  <span class="t-key">Contexts</span><span class="t-punc">:</span>
+    <span class="t-key">low_health_phase</span><span class="t-punc">:</span>
+      <span class="t-key">Priority</span><span class="t-punc">:</span> <span class="t-num">90</span>
+      <span class="t-key">Tactics</span><span class="t-punc">:</span> <span class="t-punc">[</span><span class="t-val">retreat_and_defend</span><span class="t-punc">,</span> <span class="t-val">keep_distance_and_shoot</span><span class="t-punc">]</span>
+    <span class="t-key">idle</span><span class="t-punc">:</span>
+      <span class="t-key">Priority</span><span class="t-punc">:</span> <span class="t-num">10</span>
+      <span class="t-key">Tactics</span><span class="t-punc">:</span> <span class="t-punc">[</span><span class="t-val">hold</span><span class="t-punc">]</span>
+      <span class="t-key">DirectTactic</span><span class="t-punc">:</span> <span class="t-val">hold</span>
+  <span class="t-key">Stances</span><span class="t-punc">:</span>
+    <span class="t-key">Native</span><span class="t-punc">:</span> <span class="t-val">hybrid</span>
+    <span class="t-key">Describe</span><span class="t-punc">:</span> <span class="t-bool">false</span>
+    <span class="t-key">ByMovement</span><span class="t-punc">:</span>
+      <span class="t-key">APPROACH</span><span class="t-punc">:</span> <span class="t-val">PRESSING</span>
+      <span class="t-key">HOLD</span><span class="t-punc">:</span> <span class="t-val">GUARDED</span>
+      <span class="t-key">RETREAT</span><span class="t-punc">:</span> <span class="t-val">EVASIVE</span>
+  <span class="t-key">Telegraph</span><span class="t-punc">:</span>
+    <span class="t-key">AgainstPlayers</span><span class="t-punc">:</span> <span class="t-val">enforce</span>
+    <span class="t-key">AgainstEntities</span><span class="t-punc">:</span> <span class="t-bool">off</span>
+    <span class="t-key">Commitment</span><span class="t-punc">:</span> <span class="t-num">100</span>
+    <span class="t-key">EntropyCommitment</span><span class="t-punc">:</span> <span class="t-num">25</span>
+    <span class="t-key">ShortWindUp</span><span class="t-punc">:</span> <span class="t-val">lead</span>
+    <span class="t-key">DefaultRecoveryTicks</span><span class="t-punc">:</span> <span class="t-num">20</span>
+  <span class="t-key">Poise</span><span class="t-punc">:</span>
+    <span class="t-key">Max</span><span class="t-punc">:</span> <span class="t-num">0.15</span>
+    <span class="t-key">RegenDelayTicks</span><span class="t-punc">:</span> <span class="t-num">60</span>
+    <span class="t-key">RegenPerSecond</span><span class="t-punc">:</span> <span class="t-num">0.05</span>
+    <span class="t-key">WindUpMultiplier</span><span class="t-punc">:</span> <span class="t-num">1.5</span>
+    <span class="t-key">BlockedHitPoise</span><span class="t-punc">:</span> <span class="t-num">0.05</span>
+    <span class="t-key">StaggerTicks</span><span class="t-punc">:</span> <span class="t-num">30</span>
+    <span class="t-key">ImmunityTicks</span><span class="t-punc">:</span> <span class="t-num">100</span>
+  <span class="t-key">Movement</span><span class="t-punc">:</span>
+    <span class="t-key">Band</span><span class="t-punc">:</span> <span class="t-punc">{</span> <span class="t-key">Inner</span><span class="t-punc">:</span> <span class="t-num">5</span><span class="t-punc">,</span> <span class="t-key">Outer</span><span class="t-punc">:</span> <span class="t-num">9</span> <span class="t-punc">}</span>
+    <span class="t-key">Retreat</span><span class="t-punc">:</span> <span class="t-punc">{</span> <span class="t-key">Distance</span><span class="t-punc">:</span> <span class="t-num">10</span><span class="t-punc">,</span> <span class="t-key">Speed</span><span class="t-punc">:</span> <span class="t-num">1.2</span> <span class="t-punc">}</span>
+    <span class="t-key">Arena</span><span class="t-punc">:</span> <span class="t-punc">{</span> <span class="t-key">Radius</span><span class="t-punc">:</span> <span class="t-num">24</span> <span class="t-punc">}</span>
+  <span class="t-key">Threat</span><span class="t-punc">:</span>
+    <span class="t-key">AssistsOthers</span><span class="t-punc">:</span> <span class="t-num">1.5</span>
+    <span class="t-key">RangedHarass</span><span class="t-punc">:</span> <span class="t-num">1.0</span>
+    <span class="t-key">BlockedHits</span><span class="t-punc">:</span> <span class="t-num">0.25</span>
+  <span class="t-key">BaseAI</span><span class="t-punc">:</span>
+  <span class="t-punc">-</span> <span class="t-num">1</span> <span class="t-fn">meleeAttack</span>
+  <span class="t-punc">-</span> <span class="t-num">2</span> <span class="t-fn">randomStroll</span></code></pre></div>
+<p>A few things worth noticing:</p>
+<ul>
+<li>Each skill declares its <code>Intention</code>; the profile declares no purpose. ThePredict reads the reach, the radius and the wind-up from the skills themselves (<code>targetwithin</code>, the <code>r</code> of the targeter and the <code>delay</code> lines), describes every option to Jev with them, and waits until the target is in reach before casting.</li>
+<li>The ranged bolt needs line of sight and a target within 16 blocks; the heal does nothing at full health, so it only comes out when the mob is hurt.</li>
+<li>The slam hits every <strong>player</strong> within 3 blocks and throws them back. It targets <code>@PlayersInRadius</code>, so it never hurts other mobs: this boss is built to fight players.</li>
+<li><code>PredictValues</code> stay in the skills as history. ThePredict no longer reads them.</li>
+<li>The three <code>setstance</code> lines react to ThePredict's stance signals. ThePredict itself never changes the stance, plays a sound or spawns a particle; the particles you see come from the skills.</li>
+</ul>
+<h3 id="inspect"><a class="h-anchor" href="#inspect" aria-hidden="true" tabindex="-1">#</a>What to read in inspect</h3>
+<div class="table-wrap"><table><thead><tr><th>Line</th><th>What it tells you</th></tr></thead><tbody><tr><td><code>Goals</code></td><td>The goal set ThePredict generated from the profile: <code>float</code>, <code>fleeConditional</code>, <code>moveWithinConditional</code>, <code class="long">moveTowardsTargetConditional</code>, <code>goToSpawnLocation</code>, <code>meleeAttack</code>, <code>randomStroll</code>, <code>lookAtTarget</code> and the goals <code>thepredict:flank</code>, <code>thepredict:hold</code> and <code>thepredict:owner</code>.</td></tr><tr><td><code>Session</code></td><td>The control level: <code>LOCAL</code> without a key, <code>JEV</code> with one.</td></tr><tr><td><code>Intent</code></td><td>The tactic, its movement, the ticks left and whether its skill was tried.</td></tr><tr><td><code>Why</code></td><td>The last fallback reason and the last cast result: they explain a <code>LOCAL</code> or <code>BASE</code> level.</td></tr><tr><td><code>Threat</code></td><td>The MythicMobs threat table and the threat ThePredict added for assists, blocked hits and ranged harass.</td></tr></tbody></table></div>
+<h3 id="debug-intent"><a class="h-anchor" href="#debug-intent" aria-hidden="true" tabindex="-1">#</a>Force a tactic</h3>
+<p>To try one tactic without Jev, a player with <code>thepredict.debug</code> (or the console, with the mob's UUID) can pin it and release it:</p>
+<div class="code" data-lang="console"><div class="code-head"><span class="code-title"></span><span class="code-lang">Console</span></div><pre><code><span class="t-fn">/thepredict</span> debug intent nearest keep_distance
+<span class="t-fn">/thepredict</span> debug release nearest</code></pre></div>
+<p>A debug intent is local and never sends a request to Jev. <code>thepredict.debug</code> is not given to operators by default; see <a href="commands.html">Commands &amp; permissions</a>.</p>
+<h3 id="remove-example"><a class="h-anchor" href="#remove-example" aria-hidden="true" tabindex="-1">#</a>Remove the example</h3>
+<p>Delete the three copied files and run <code>/mm reload</code>.</p>
+<h2 id="next"><a class="h-anchor" href="#next" aria-hidden="true" tabindex="-1">#</a>Next steps</h2>
+<ul>
+<li><a href="profiles.html">Profiles, tactics &amp; contexts</a>: tactics, contexts and how Jev sees each option.</li>
+<li><a href="movement.html">Movement &amp; goals</a>: what each movement does and the goals it generates.</li>
+<li><a href="skills.html">Skills &amp; intents</a>: the full <code>Intention</code> vocabulary and how ThePredict casts.</li>
+<li><a href="vocabulary.html">MythicMobs vocabulary</a>: conditions, placeholders and signals for your own skills.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-prev" href="install.html"><span class="pager-dir">Previous</span><span class="pager-title">Install &amp; requirements</span></a><a class="pager-next" href="profiles.html"><span class="pager-dir">Next</span><span class="pager-title">Profiles, tactics &amp; contexts</span></a></nav>
+    <footer class="footer">
+      <p>ThePredict 0.0.1 · release candidate. These pages describe this build, checked against its source code; it has not been verified on a live server yet.</p>
+      <p>ThePredict is an independent MythicMobs addon. Jev is TypeSafe's decision model; naming it does not imply endorsement. Fonts: Pixelify Sans, Inter and JetBrains Mono, under the SIL Open Font License.</p>
+    </footer>
+  </main>
+  <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-l2"><a href="#first-mob">Your first smart mob</a></li><li class="toc-l2"><a href="#example-boss">The example boss</a></li><li class="toc-l3"><a href="#try-it">Try it</a></li><li class="toc-l3"><a href="#guardian-files">The files</a></li><li class="toc-l3"><a href="#inspect">What to read in inspect</a></li><li class="toc-l3"><a href="#debug-intent">Force a tactic</a></li><li class="toc-l3"><a href="#remove-example">Remove the example</a></li><li class="toc-l2"><a href="#next">Next steps</a></li></ul></nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

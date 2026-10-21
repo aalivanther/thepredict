@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Changelog · ThePredict docs</title>
+<meta name="description" content="What changed in ThePredict, newest first.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>(function () { var t = null; try { t = localStorage.getItem("tp-docs-theme"); } catch (e) {} if (t === "light" || t === "dark") { document.documentElement.setAttribute("data-theme", t); } })();</script>
+<script src="/dock.js" defer data-akyrion-dock></script></head>
+<body class="has-toc" data-page="changelog">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="2" y="3" width="12" height="2"/><rect x="2" y="7" width="12" height="2"/><rect x="2" y="11" width="12" height="2"/></svg></button>
+  <a class="brand" href="index.html" aria-label="ThePredict docs home">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><rect width="16" height="16" class="b-bg"/><rect x="2" y="2" width="12" height="3" class="b-trim"/><rect x="3" y="7" width="10" height="2" class="b-eye"/><rect x="6" y="10" width="4" height="4" class="b-core"/></svg>
+    <span class="brand-name">ThePredict</span><span class="brand-tag">docs</span>
+  </a>
+  <span class="version" title="ThePredict 0.0.1, release candidate">v0.0.1&nbsp;RC</span>
+  <div class="search" role="search">
+    <label class="sr-only" for="search-input">Search the docs</label>
+    <input id="search-input" class="search-input" type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div class="search-results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
+  </div>
+  <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Switch theme" title="Switch light or dark theme"><svg class="i-sun" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="6" width="4" height="4"/><rect x="7" y="1" width="2" height="2"/><rect x="7" y="13" width="2" height="2"/><rect x="1" y="7" width="2" height="2"/><rect x="13" y="7" width="2" height="2"/><rect x="3" y="3" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/><rect x="3" y="11" width="2" height="2"/><rect x="11" y="11" width="2" height="2"/></svg><svg class="i-moon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="2" width="5" height="2"/><rect x="4" y="4" width="3" height="2"/><rect x="3" y="6" width="3" height="4"/><rect x="4" y="10" width="3" height="2"/><rect x="6" y="12" width="6" height="2"/><rect x="11" y="10" width="3" height="2"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="nav-group"><p class="nav-title">Getting started</p><ul><li><a href="index.html">Overview</a></li><li><a href="install.html">Install</a></li><li><a href="quick-start.html">Quick start</a></li></ul></div><div class="nav-group"><p class="nav-title">Authoring</p><ul><li><a href="profiles.html">Profiles</a></li><li><a href="movement.html">Movement</a></li><li><a href="skills.html">Skills &amp; intents</a></li><li><a href="vocabulary.html">Vocabulary</a></li><li><a href="targets.html">Targets &amp; threat</a></li></ul></div><div class="nav-group"><p class="nav-title">Combat systems</p><ul><li><a href="combat-loop.html">Combat loop</a></li><li><a href="stances.html">Stances &amp; tells <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="difficulty.html">Difficulty <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="groups.html">Groups <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="zones.html">Zones &amp; terrain <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="patterns.html">Patterns <span class="nav-soon" title="Changing soon">●</span></a></li></ul></div><div class="nav-group"><p class="nav-title">Administration</p><ul><li><a href="jev.html">Jev connection</a></li><li><a href="commands.html">Commands</a></li><li><a href="storage.html">Storage &amp; records</a></li><li><a href="learning.html">Learning</a></li><li><a href="overlays.html">Overlays</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></div><div class="nav-group"><p class="nav-title">Reference</p><ul><li><a href="profile-reference.html">Profile reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="config-reference.html">config.yml reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html" aria-current="page" class="is-current">Changelog</a></li></ul></div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="main" class="main" tabindex="-1">
+    <article class="doc">
+      <p class="eyebrow">Reference</p>
+      <h1>Changelog</h1>
+      <p class="lead">What changed in ThePredict, newest first.</p>
+      <h2 id="unreleased"><a class="h-anchor" href="#unreleased" aria-hidden="true" tabindex="-1">#</a>Unreleased · release candidate rc1 (2026-10-12) and later local changes</h2>
+<p>No new version number or JAR yet: these changes sit on top of 0.0.1 and have not been verified on a live server.</p>
+<h3 id="unreleased-fixed"><a class="h-anchor" href="#unreleased-fixed" aria-hidden="true" tabindex="-1">#</a>Fixed (2026-10-17)</h3>
+<ul>
+<li><code class="long">PREDICTOR_PATTERN_&lt;PATTERN&gt;</code> is now sent: once each time a pattern becomes active, to each mob of the encounter whose target is that enemy and that has a handler, and only in the <code>bias</code> and <code>full</code> pattern modes. See <a href="patterns.html#vocabulary">Patterns</a>.</li>
+<li>A pattern's rest now ends after <code>patterns.restTicks</code>: the pattern comes back active if the habit still holds, which counts as a new activation and sends its signal again, or turns inactive otherwise. Before, a rested pattern stayed resting. The pattern statistics now count as activations only the moments a pattern becomes active.</li>
+<li><code>Group.Questions</code> now decides which questions go to Jev in <code>full</code>: <code>plan_and_leader</code> and <code>leader_only</code> ask only the leader, <code>plan_only</code> sends only the group plan question, and <code>members</code> is unchanged. The other members keep playing locally. For five members, a <code>plan_and_leader</code> request went from about 22 400 to about 7 000 characters. See <a href="groups.html#questions">Groups</a>.</li>
+<li>The <code>search_last_known</code> plan is offered when no member sees its target and one saw it at most <code>group.lkpForgetTicks</code> ago. Plan candidates are one per family, with the local plan first.</li>
+<li>An overlay's <code>Timing.TickLayer</code> above <code>decision.tickLayer.mode</code> is lowered to the global mode with a warning, like a profile's.</li>
+<li>The <code>ANSWER_*</code> primitive of an <code>Intention</code> line sets the answer of the skill's tell when the choice declares no <code>Telegraph.Answer</code>.</li>
+<li><code>patterns.maxExploitShare</code>, <code>patterns.maxReadsPerTick</code>, <code class="long">patterns.maxFactsPerRequest</code>, <code>group.maxSquads</code>, <code>group.lkpForgetTicks</code> and the profile key <code>Group.Roles</code> now take effect.</li>
+<li><code>Stances.Native</code>, <code>Difficulty.NativeLevel</code>, <code>Decision.Pruning</code> and <code>Decision.Diversity</code> accept a bare <code>off</code> or <code>on</code>.</li>
+<li><code>eval verdict import &lt;file&gt;</code> reads only inside the plugin folder and refuses any other path with <code class="long">path: must stay inside the plugin folder</code>.</li>
+<li>Keys this build accepts but does not read log <code class="long">has no effect in this build</code> at load when they hold a value other than the shipped one. None was removed.</li>
+<li>Without a session, <code>&lt;caster.predictor.level&gt;</code> and <code class="long">&lt;caster.predictor.confidence&gt;</code> show <code>none</code>, like the other placeholders (before: <code>base</code> and <code>0.00</code>).</li>
+<li>No shipped default changed.</li>
+</ul>
+<h3 id="unreleased-added"><a class="h-anchor" href="#unreleased-added" aria-hidden="true" tabindex="-1">#</a>Added</h3>
+<ul>
+<li><strong>Configuration in the MythicMobs folder.</strong> <code>config.yml</code> and the profiles now live in <code class="long">plugins/MythicMobs/AIConfig/</code> (<code>config.yml</code> and <code>Profiles/</code>). The first start creates the folder only when it is missing and never overwrites a file. Generated data stays in <code>plugins/ThePredict/</code>. See <a href="install.html">Install &amp; requirements</a>.</li>
+<li><strong>The <code>Intention</code> line.</strong> Each MythicMobs skill says what it is for in one line (<code class="long">Intention: DAMAGE, MELEE, DAMAGE_MEDIUM, WHEN_TARGET_IN_MELEE</code>). Vocabulary v2 has 43 primitives, including five <code>ANSWER_*</code> primitives for tells. Reach, radius, wind-up, cooldown and charges are still read from the native skill, not from the line. See <a href="skills.html">Skills &amp; intents</a>.</li>
+<li><strong>Skills fire on their own cooldown.</strong> With the new default <code class="long">decision.castMode: any_ready</code>, every skill with a valid <code>Intention</code> line fires on the first tick it is ready, at the pace of its native <code>Cooldown</code> and <code>Charges</code>. <code>intent_only</code> keeps the 0.0.1 behavior (only the tactic's skill). Profiles choose with <code>Timing.CastMode</code>.</li>
+<li><strong><code class="long">/thepredict intention suggest [profile]</code></strong> prints the canonical <code>Intention</code> line of every bound choice. It never writes MythicMobs files.</li>
+<li><strong>Per-tick layer.</strong> Between two decisions the mob reacts within ticks (evade at critical health, punish a drinking target, respect a raised shield, finish a low target) and, with <code>full</code>, runs short micro-movements. New: <code>decision.tickLayer.*</code>, the <code>reactive</code> cadence per profile (<code>standard</code> is the saving mode), <code>debug.seed</code> and <code class="long">/thepredict inspect &lt;mob&gt; tick</code>. See <a href="combat-loop.html">How a fight runs</a>.</li>
+<li><strong>Records and aggregates.</strong> Append-only JSONL records in <code class="long">plugins/ThePredict/records/</code> (14 days, 2 GB by default) and a SQLite <code>aggregates.db</code> beside them, through the driver Paper already ships. New: <code>records.*</code>, <code>storage.*</code>, <code>/thepredict records</code> and <code>thepredict.records</code>. See <a href="storage.html">Storage &amp; records</a>.</li>
+<li><strong>Difficulty by target fight length and Entropy.</strong> Presets <code>Fácil</code>, <code>Normal</code>, <code>Difícil</code>, <code>Caos</code> and <code>Vacío</code> per mob (<code>PredictorDifficulty</code>), the opt-in lethal mode <code>PredictorEntropy</code>, per-world overrides, the <code class="long">&lt;caster.predictor.pressure&gt;</code> placeholder and <code>/thepredict eval</code> with <code>thepredict.eval</code>. See <a href="difficulty.html">Difficulty</a>.</li>
+<li><strong>Stances, tells and poise.</strong> <code>Stances</code>, <code>Telegraph</code> and <code>Poise</code> profile sections, global <code>telegraph.*</code> and <code>stance.*</code> keys, feints, the <code>predictorstance</code> condition and the <code>stance</code>, <code>poise</code>, <code>answer</code> and <code>telegraph</code> placeholders. ThePredict adds no effects: tells are <code>PREDICTOR_TELL_*</code> and <code>PREDICTOR_STANCE_*</code> signals for your own skills. See <a href="stances.html">Stances, tells &amp; poise</a>.</li>
+<li><strong>Terrain zone.</strong> Real-time reading of the ground around a fight: <code>zone.*</code>, the <code>Zone</code> profile section, the <code>predictorzone</code> condition, the <code>zone</code> and <code>pushdanger</code> placeholders and <code>/thepredict zone</code>. An edge is a drop bigger than <code>zone.maxSafeDropBlocks</code> (3). See <a href="zones.html">Zones &amp; terrain</a>.</li>
+<li><strong>Group coordination.</strong> Attack tokens and impact spacing per player, roles, squads, leaders and group plans: <code>group.*</code>, the <code>Group</code> profile section, the <code>predictorrole</code>, <code>predictorplan</code> and <code>predictortoken</code> conditions, five placeholders and <code class="long">/thepredict inspect &lt;mob&gt; group</code>. See <a href="groups.html">Groups</a>.</li>
+<li><strong>Enemy patterns.</strong> Habits of each enemy read from its movement: <code>patterns.*</code> (default <code>observe</code>, which never changes a decision), the <code>Patterns</code> profile section, the <code>predictorpattern</code> condition and the <code>pattern</code> and <code>forecast</code> placeholders. See <a href="patterns.html">Patterns</a>.</li>
+<li><strong>Learning data.</strong> <code>learning.collect</code> (on by default) records outcome windows without changing any decision or request; <code>PredictorTraining</code> lets a mob explore against players; calibration options and <code>/thepredict learn</code> with <code>thepredict.learn</code>. See <a href="learning.html">Learning &amp; training</a>.</li>
+<li><strong>Profile overlays.</strong> <code>/thepredict autoconfig</code> with <code>thepredict.autoconfig</code> applies an administrator's key-value overlay to one profile without touching the author's file. Nothing is applied automatically. See <a href="overlays.html">Profile overlays</a>.</li>
+</ul>
+<h3 id="unreleased-changed"><a class="h-anchor" href="#unreleased-changed" aria-hidden="true" tabindex="-1">#</a>Changed</h3>
+<ul>
+<li>A skill without a valid <code>Intention</code> line (and without an administrator <code>Purpose</code>) is <strong>untyped</strong>: it fires only as the choice of its own tactic. <code>PredictValues</code> no longer produce a purpose; they are kept as history.</li>
+<li><code>Purpose</code> in a profile choice stays as an administrator override and wins over the skill's line.</li>
+<li>ThePredict no longer reads raw player input: a player's tendency comes from observed movement.</li>
+<li><code class="long">decision.tickLayer.mode: off</code> is an error; use <code>casts</code>.</li>
+<li>The shipped <code>config.yml</code> no longer has the obsolete <code class="long">decision.maxReadyChecksPerTick</code>. An older file that still has it starts with an INFO line and nothing changes.</li>
+<li><code>/thepredict learn status</code> shows <code>collect</code> and <code>scope</code> from the loaded <code>config.yml</code>.</li>
+<li>The <code>ThePredict-Zone</code> thread starts with the first zone build and stops after a second without work.</li>
+<li>Pattern summaries are written to the records.</li>
+<li>Performance improvements in hot paths.</li>
+</ul>
+<h3 id="unreleased-migration"><a class="h-anchor" href="#unreleased-migration" aria-hidden="true" tabindex="-1">#</a>Migration notes</h3>
+<ul>
+<li>If the old location (<code class="long">plugins/ThePredict/config.yml</code> or <code>plugins/ThePredict/AI/</code>) has content and <code>AIConfig/</code> has none, ThePredict loads nothing, enables no request and writes a proposal under <code class="long">plugins/ThePredict/migration/</code>. Copy the <code>.proposed</code> files into <code class="long">plugins/MythicMobs/AIConfig/</code> by hand. If both locations have content, <code>AIConfig/</code> wins and the old files are ignored. Nothing is ever moved or deleted.</li>
+<li>To move a profile from <code>Purpose</code> to <code>Intention</code>: run <code class="long">/thepredict intention suggest &lt;profile&gt;</code>, copy each line into its skill, <code>/mm reload</code>, check that <code>inspect</code> shows <code>origin=skill</code>, then remove <code>Purpose</code>.</li>
+</ul>
+<div class="callout callout-note" data-callout="note"><p class="callout-title"><span class="callout-badge">Note</span> Coming next</p><p>The difficulty presets, Entropy, tells, the push policy toward players and the group fairness rules listed above will be redefined in an upcoming release, which replaces target-time difficulty with intelligence levels. The pages that describe them carry a <em>changing soon</em> mark.</p></div>
+<h2 id="v0-0-1"><a class="h-anchor" href="#v0-0-1" aria-hidden="true" tabindex="-1">#</a>0.0.1 · 2026-09-29 · candidate</h2>
+<p>The first candidate: built and covered by automated tests, with the Jev client checked against the real TypeSafe account. Hosted acceptance on a Paper server is still pending.</p>
+<h3 id="v0-0-1-added"><a class="h-anchor" href="#v0-0-1-added" aria-hidden="true" tabindex="-1">#</a>Added</h3>
+<ul>
+<li><strong>Direct Jev client</strong> (TypeSafe System One): a free service check (<code>GET /v1/models</code>) and one request per encounter with contingencies, an English combat summary with player aliases, and a size guard.</li>
+<li><strong>Movement ownership.</strong> Movement goals generated from the profile and installed through the MythicMobs AI API, plus the Paper goals <code>thepredict:hold</code>, <code>thepredict:flank</code> and <code>thepredict:owner</code>.</li>
+<li><strong>Sessions and encounters</strong> per mob, a per-tick coordinator with request, token and work budgets, and growing pauses when the service fails.</li>
+<li><strong>Tactical execution</strong> with the four-level fallback chain (<code>JEV</code>, <code>ALTERNATIVE</code>, <code>LOCAL</code>, <code>BASE</code>), a re-check of reach and conditions before every skill, invulnerability frames, shields and flanking.</li>
+<li><strong>MythicMobs vocabulary:</strong> <code>predictorcontrol</code>, <code>predictormove</code>, <code>predictortactic</code>, the <code>predictordecide</code> mechanic, <code>&lt;caster.predictor.*&gt;</code> placeholders and <code>PREDICTOR_&lt;TACTIC&gt;</code> signals.</li>
+<li><strong>Enriched threat</strong> on top of the MythicMobs threat table: assists, blocked hits, ranged harassment and unreachable targets.</li>
+<li><strong>Commands</strong> <code>status</code>, <code>check</code>, <code>inspect</code> and <code>debug intent|release|goals</code>, with <code>thepredict.admin</code> and <code>thepredict.debug</code> (off by default).</li>
+<li><strong>Example boss</strong> <code>ThePredictGuardian</code> and a profile template, created on the first start without replacing anything.</li>
+<li><strong>Skill purposes</strong>: what each skill is for, its reach and its risks, the cooldown class read from the native <code>Cooldown</code>, and a warning for tactics whose movement can never cast their skill.</li>
+<li><strong>Better questions to Jev:</strong> identical tactics are merged (with a warning), at most 8 options per question with the current tactic always kept, three detail levels (<code>compact</code>, <code>standard</code>, <code>full</code>), optional fit checks, and outcome windows in <code>status</code> and <code>inspect</code>.</li>
+<li><strong>Entities as participants:</strong> the <code>participants</code> section and the profile's <code>Participants</code> with native selectors (<code>type:</code>, <code>tag:</code>, <code>category:</code>, <code>kind:</code>, <code>mythic:</code>, <code>faction:</code>, <code>team:</code>, <code>tagged:</code>, <code>predictor</code>). Sides follow MythicMobs factions and scoreboard teams. Jev only receives <code>entity_N</code> aliases and the species. Defaults stay players only.</li>
+<li><strong>Duel recorder</strong> <code class="long">/thepredict duel start|status|stop</code> (needs <code>thepredict.debug</code>, off by default).</li>
+<li>Optional <strong>scenario recording</strong> (<code>debug.recordScenarios</code>).</li>
+</ul>
+<h3 id="v0-0-1-changed"><a class="h-anchor" href="#v0-0-1-changed" aria-hidden="true" tabindex="-1">#</a>Changed</h3>
+<ul>
+<li><code>config.yml</code> and profiles use the strict <strong>schema 2</strong>: an unknown key is an error with the file and path.</li>
+<li>Defaults: <code class="long">decision.questionDetail: full</code> and <code class="long">decision.minimumConfidence: 0.45</code>, chosen from a labelled benchmark.</li>
+<li>A tactic's skill fires on its own <code>Cooldown</code>: every 2 ticks ThePredict checks whether it is ready again. <strong>Tune each skill's <code>Cooldown</code> to control spam.</strong> A vanilla hit keeps the vanilla rhythm of one hit every 20 ticks.</li>
+<li>The example skills and template use <code>healthpercent{p=&lt;30%}</code>: <code>health{h=…}</code> compares absolute health and fails with <code>%</code> in MythicMobs 5.13.1. If you copied the example before, change those lines.</li>
+<li>Requests are prepared on the server thread before any budget is reserved; a request with nothing left to ask is not sent. A request that cannot be prepared only affects its own encounter and never pauses the service.</li>
+<li>The budget reserves tokens by the real size of each prepared request.</li>
+</ul>
+<h3 id="v0-0-1-removed"><a class="h-anchor" href="#v0-0-1-removed" aria-hidden="true" tabindex="-1">#</a>Removed</h3>
+<ul>
+<li>The old provider based on OpenRouter and its <code>provider</code> section. The migrator only recognizes it to propose a migration; an old key is never copied.</li>
+</ul>
+<h3 id="v0-0-1-migration"><a class="h-anchor" href="#v0-0-1-migration" aria-hidden="true" tabindex="-1">#</a>Migration from schema 1</h3>
+<p>There is no migration command, and ThePredict never changes your files. When it finds schema 1 files it loads nothing from them and writes a proposal (<code>config.yml.proposed</code>, the proposed profiles and <code>report.md</code>). Limits with an equivalent are carried over (for example <code class="long">decision.maxConcurrentRequests</code> becomes <code class="long">decision.maxInFlightRequests</code>), each choice becomes a tactic without movement, each <code>Operation</code> becomes the matching shortcut context and <code>DirectChoice</code> becomes <code>DirectTactic</code>. Apply it by hand, set <code>TYPESAFE_API_KEY</code>, start, run <code>/thepredict status</code>, and then add movements to the converted tactics.</p>
+<h3 id="v0-0-1-limits"><a class="h-anchor" href="#v0-0-1-limits" aria-hidden="true" tabindex="-1">#</a>Known limits</h3>
+<ul>
+<li>In-game behavior and host capacity are pending verification on a live server.</li>
+<li>Ground mobs only; species with a <code>Brain</code> only accept <code>Movement: NONE</code>; skills already started (delays, projectiles) are not cancelled.</li>
+<li>A stuck local mob repeats its <code>PREDICTOR_&lt;TACTIC&gt;</code> signal.</li>
+<li>Context conditions that need skill data (trigger, skill target, metadata) are always false.</li>
+<li>While ThePredict controls a mob, its base melee goal does not hit: put melee damage in a skill.</li>
+<li>Folia is not supported.</li>
+</ul>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-prev" href="faq.html"><span class="pager-dir">Previous</span><span class="pager-title">FAQ</span></a></nav>
+    <footer class="footer">
+      <p>ThePredict 0.0.1 · release candidate. These pages describe this build, checked against its source code; it has not been verified on a live server yet.</p>
+      <p>ThePredict is an independent MythicMobs addon. Jev is TypeSafe's decision model; naming it does not imply endorsement. Fonts: Pixelify Sans, Inter and JetBrains Mono, under the SIL Open Font License.</p>
+    </footer>
+  </main>
+  <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-l2"><a href="#unreleased">Unreleased · release candidate rc1 (2026-10-12) and later local changes</a></li><li class="toc-l3"><a href="#unreleased-fixed">Fixed (2026-10-17)</a></li><li class="toc-l3"><a href="#unreleased-added">Added</a></li><li class="toc-l3"><a href="#unreleased-changed">Changed</a></li><li class="toc-l3"><a href="#unreleased-migration">Migration notes</a></li><li class="toc-l2"><a href="#v0-0-1">0.0.1 · 2026-09-29 · candidate</a></li><li class="toc-l3"><a href="#v0-0-1-added">Added</a></li><li class="toc-l3"><a href="#v0-0-1-changed">Changed</a></li><li class="toc-l3"><a href="#v0-0-1-removed">Removed</a></li><li class="toc-l3"><a href="#v0-0-1-migration">Migration from schema 1</a></li><li class="toc-l3"><a href="#v0-0-1-limits">Known limits</a></li></ul></nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

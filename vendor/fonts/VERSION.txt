@@ -1,0 +1,16 @@
+Fuentes vendorizadas desde la caché local de npm (sin descargar nada):
+  Inter (variable, opsz y wght, subconjunto latino): @fontsource-variable/inter 5.3.0, archivo files/inter-latin-opsz-normal.woff2
+    "integrity":"sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA=="
+    Licencia: SIL Open Font License 1.1 (Inter-OFL.txt)
+  JetBrains Mono (variable, wght, subconjunto latino): @fontsource-variable/jetbrains-mono 5.3.0, archivo files/jetbrains-mono-latin-wght-normal.woff2
+    "integrity":"sha512-F32xpS2NsGYoQi2ADSkKTgpJj7ozajsGgDJ8woTnqjmIB+dxDIqImjl4pXZVEExu8UFZ2ndhmX18EBS/hdz3Lw=="
+    Licencia: SIL Open Font License 1.1 (JetBrainsMono-OFL.txt)
+SHA-256:
+  2c295d99e26dcf357d4d01bcf270fd6924b600c9a13dd8c363ef114f4c6976fa  inter-latin-opsz-normal.woff2
+  18be452724bfdc236c074ca94a249a7f41a86752c7d04ab258ce9ed5651f6a7e  jetbrains-mono-latin-wght-normal.woff2
+
+
+Pixelify Sans (variable 400-700, latin) · Google Fonts v3 · SIL OFL 1.1
+  origen: https://fonts.gstatic.com/s/pixelifysans/v3/CHylV-3HFUT7aC4iv1TxGDR9Jn0Ei0tSaJ0.woff2 (2026-10-15)
+  sha256 pixelify-sans-latin-wght-normal.woff2: 0f2216c1b7bf13b775e7b825c15e1c8414f3899cbd4120f275cdc96001a053a0
+  licencia: PixelifySans-OFL.txt

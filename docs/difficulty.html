@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Difficulty · ThePredict docs</title>
+<meta name="description" content="How hard a ThePredict mob plays today: presets that set a target fight length, a pressure controller, reaction floors and the opt-in Entropy mode.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>(function () { var t = null; try { t = localStorage.getItem("tp-docs-theme"); } catch (e) {} if (t === "light" || t === "dark") { document.documentElement.setAttribute("data-theme", t); } })();</script>
+<script src="/dock.js" defer data-akyrion-dock></script></head>
+<body class="has-toc" data-page="difficulty">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="2" y="3" width="12" height="2"/><rect x="2" y="7" width="12" height="2"/><rect x="2" y="11" width="12" height="2"/></svg></button>
+  <a class="brand" href="index.html" aria-label="ThePredict docs home">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><rect width="16" height="16" class="b-bg"/><rect x="2" y="2" width="12" height="3" class="b-trim"/><rect x="3" y="7" width="10" height="2" class="b-eye"/><rect x="6" y="10" width="4" height="4" class="b-core"/></svg>
+    <span class="brand-name">ThePredict</span><span class="brand-tag">docs</span>
+  </a>
+  <span class="version" title="ThePredict 0.0.1, release candidate">v0.0.1&nbsp;RC</span>
+  <div class="search" role="search">
+    <label class="sr-only" for="search-input">Search the docs</label>
+    <input id="search-input" class="search-input" type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div class="search-results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
+  </div>
+  <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Switch theme" title="Switch light or dark theme"><svg class="i-sun" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="6" width="4" height="4"/><rect x="7" y="1" width="2" height="2"/><rect x="7" y="13" width="2" height="2"/><rect x="1" y="7" width="2" height="2"/><rect x="13" y="7" width="2" height="2"/><rect x="3" y="3" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/><rect x="3" y="11" width="2" height="2"/><rect x="11" y="11" width="2" height="2"/></svg><svg class="i-moon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="2" width="5" height="2"/><rect x="4" y="4" width="3" height="2"/><rect x="3" y="6" width="3" height="4"/><rect x="4" y="10" width="3" height="2"/><rect x="6" y="12" width="6" height="2"/><rect x="11" y="10" width="3" height="2"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="nav-group"><p class="nav-title">Getting started</p><ul><li><a href="index.html">Overview</a></li><li><a href="install.html">Install</a></li><li><a href="quick-start.html">Quick start</a></li></ul></div><div class="nav-group"><p class="nav-title">Authoring</p><ul><li><a href="profiles.html">Profiles</a></li><li><a href="movement.html">Movement</a></li><li><a href="skills.html">Skills &amp; intents</a></li><li><a href="vocabulary.html">Vocabulary</a></li><li><a href="targets.html">Targets &amp; threat</a></li></ul></div><div class="nav-group"><p class="nav-title">Combat systems</p><ul><li><a href="combat-loop.html">Combat loop</a></li><li><a href="stances.html">Stances &amp; tells <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="difficulty.html" aria-current="page" class="is-current">Difficulty <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="groups.html">Groups <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="zones.html">Zones &amp; terrain <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="patterns.html">Patterns <span class="nav-soon" title="Changing soon">●</span></a></li></ul></div><div class="nav-group"><p class="nav-title">Administration</p><ul><li><a href="jev.html">Jev connection</a></li><li><a href="commands.html">Commands</a></li><li><a href="storage.html">Storage &amp; records</a></li><li><a href="learning.html">Learning</a></li><li><a href="overlays.html">Overlays</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></div><div class="nav-group"><p class="nav-title">Reference</p><ul><li><a href="profile-reference.html">Profile reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="config-reference.html">config.yml reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li></ul></div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="main" class="main" tabindex="-1">
+    <article class="doc">
+      <p class="eyebrow">Combat systems</p>
+      <h1>Difficulty</h1><span class="badge badge-soon page-badge">parts changing soon</span>
+      <p class="lead">How hard a ThePredict mob plays today: presets that set a target fight length, a pressure controller, reaction floors and the opt-in Entropy mode.</p>
+      <div class="callout callout-soon" data-callout="soon"><p class="callout-title"><span class="callout-badge">Changing soon</span> This whole page will change</p><p>In an upcoming release, difficulty becomes a level of <strong>intelligence and aggression</strong> (Fácil, Normal, Difícil, Entropía, Absolute Void) instead of a target fight length, and the "fair player" rules around it will be redefined. This page documents how the current build works, so you can use it today.</p></div>
+<h2 id="presets"><a class="h-anchor" href="#presets" aria-hidden="true" tabindex="-1">#</a>Presets</h2>
+<p>Today a preset sets the <strong>target length of a whole fight against players</strong>, plus how quickly the mob may react to them. Against other entities the mob simply plays at full power.</p>
+<div class="table-wrap"><table><thead><tr><th>Mob file name</th><th>config.yml key</th><th>Target fight length</th><th>Reaction floor (ticks)</th><th>Entropy floor (ticks)</th><th>Entropy start</th></tr></thead><tbody><tr><td><code>Fácil</code></td><td><code>facil</code></td><td>45 min</td><td>5</td><td>4</td><td>7 s</td></tr><tr><td><code>Normal</code></td><td><code>normal</code></td><td>30 min</td><td>5</td><td>3</td><td>5 s</td></tr><tr><td><code>Difícil</code></td><td><code>dificil</code></td><td>15 min</td><td>3</td><td>0</td><td>3.5 s</td></tr><tr><td><code>Caos</code></td><td><code>caos</code></td><td>10 min</td><td>1</td><td>0</td><td>1.5 s</td></tr><tr><td><code>Vacío</code></td><td><code>vacio</code></td><td>5 min</td><td>0</td><td>0</td><td>0 s</td></tr></tbody></table></div>
+<p><strong>Choosing a preset:</strong></p>
+<ul>
+<li>Per mob, in the MythicMobs mob file (with <code>Predictor: true</code>): <a class="ref-link" href="profile-reference.html#mob.PredictorDifficulty"><code>PredictorDifficulty</code></a>, one of <code>Fácil</code>, <code>Normal</code>, <code>Difícil</code>, <code>Caos</code>, <code>Vacío</code> (case and accents ignored). Without it, <a class="ref-link" href="config-reference.html#difficulty.defaultPreset"><code>difficulty.defaultPreset</code></a> applies (<code>normal</code>). Another value is a catalog error: <code class="long">&lt;Mob&gt;.PredictorDifficulty: must be one of Fácil, Normal, Difícil, Caos, Vacío</code>, and the mob stays unbound.</li>
+<li>Per world, by the administrator: <code class="long">difficulty.worlds.&lt;world&gt;.preset</code> and <code>.entropy</code> in <code>config.yml</code> beat the mob file.</li>
+<li>Players never choose the difficulty.</li>
+</ul>
+<div class="code" data-lang="yaml"><div class="code-head"><span class="code-title">Mob file</span><span class="code-lang">YAML</span></div><pre><code><span class="t-key">MyBoss</span><span class="t-punc">:</span>
+  <span class="t-key">Type</span><span class="t-punc">:</span> <span class="t-val">WITHER_SKELETON</span>
+  <span class="t-key">Predictor</span><span class="t-punc">:</span> <span class="t-bool">true</span>
+  <span class="t-key">PredictorDifficulty</span><span class="t-punc">:</span> <span class="t-val">Difícil</span>
+  <span class="t-key">PredictorEntropy</span><span class="t-punc">:</span> <span class="t-bool">false</span></code></pre></div>
+<div class="code" data-lang="yaml"><div class="code-head"><span class="code-title">config.yml</span><span class="code-lang">YAML</span></div><pre><code><span class="t-key">difficulty</span><span class="t-punc">:</span>
+  <span class="t-key">worlds</span><span class="t-punc">:</span>
+    <span class="t-key">arena_nether</span><span class="t-punc">:</span>
+      <span class="t-key">preset</span><span class="t-punc">:</span> <span class="t-val">dificil</span>
+      <span class="t-key">entropy</span><span class="t-punc">:</span> <span class="t-bool">false</span></code></pre></div>
+<p>The numbers of each preset live under <code>difficulty.presets.&lt;name&gt;</code> (see the <a href="config-reference.html#difficulty-presets">config.yml reference</a>).</p>
+<h2 id="modes"><a class="h-anchor" href="#modes" aria-hidden="true" tabindex="-1">#</a>Modes</h2>
+<p><a class="ref-link" href="config-reference.html#difficulty.defaultMode"><code>difficulty.defaultMode</code></a> (or a profile's <a class="ref-link" href="profile-reference.html#Difficulty.Mode"><code>Difficulty.Mode</code></a>) decides how a mob picks its pressure:</p>
+<div class="table-wrap"><table><thead><tr><th>Mode</th><th>Behavior</th></tr></thead><tbody><tr><td><code>auto</code> (default)</td><td><code>player</code> against players, <code>bench</code> against everything else.</td></tr><tr><td><code>player</code></td><td>A controller aims the whole fight at the preset's target length.</td></tr><tr><td><code>bench</code></td><td>Full power, fixed rung, no controller.</td></tr></tbody></table></div>
+<h2 id="pressure"><a class="h-anchor" href="#pressure" aria-hidden="true" tabindex="-1">#</a>Pressure</h2>
+<p>The controller moves a <strong>pressure rung</strong> from 0 (gentlest) to 8 (full power). Each rung sets how quickly the mob may react, how eagerly it fires damage, and how much it may exploit enemy patterns:</p>
+<div class="table-wrap"><table><thead><tr><th>Rung</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th></tr></thead><tbody><tr><td>Reaction delay (ticks)</td><td>20</td><td>18</td><td>16</td><td>14</td><td>12</td><td>10</td><td>8</td><td>6</td><td>the preset's floor</td></tr><tr><td>Share of casts that may exploit a pattern</td><td>0</td><td>0</td><td>0</td><td>0.10</td><td>0.20</td><td>0.30</td><td>0.40</td><td>0.50</td><td>0.50</td></tr></tbody></table></div>
+<p>Against players the reaction delay never goes below the preset's <strong>reaction floor</strong> (<code>reactionFloorTicks</code>); against entities the floor is 0. A profile's <a class="ref-link" href="profile-reference.html#Timing.ReactionDelay"><code>Timing.ReactionDelay</code></a> can only raise it. Higher rungs also prefer damaging skills and give damaging casts less slack; in a group, lower rungs allow fewer melee attackers at once and wider gaps between impacts.</p>
+<p>How the rung moves:</p>
+<ul>
+<li><strong>In the fight</strong>, every <a class="ref-link" href="config-reference.html#difficulty.adjustIntervalTicks"><code>difficulty.adjustIntervalTicks</code></a>, the controller projects how long the fight will last from the damage dealt so far. Outside the <a class="ref-link" href="config-reference.html#difficulty.toleranceRatio"><code>difficulty.toleranceRatio</code></a> band around the target it moves the rung (a profile can turn this off with <a class="ref-link" href="profile-reference.html#Difficulty.InFight"><code>Difficulty.InFight</code></a>). Estimates count only after <a class="ref-link" href="config-reference.html#difficulty.minEvidenceTicks"><code>difficulty.minEvidenceTicks</code></a>; a fight closes after <a class="ref-link" href="config-reference.html#difficulty.disengageTicks"><code>difficulty.disengageTicks</code></a> without the mob dealing damage.</li>
+<li><strong>Between fights</strong>, the starting rung learns from how fights ended (<a class="ref-link" href="config-reference.html#difficulty.learningGain"><code>difficulty.learningGain</code></a>, <a class="ref-link" href="config-reference.html#difficulty.deadbandRatio"><code>difficulty.deadbandRatio</code></a>, <a class="ref-link" href="config-reference.html#difficulty.dampingReversals"><code>difficulty.dampingReversals</code></a>); a profile can turn this off with <a class="ref-link" href="profile-reference.html#Difficulty.Learn"><code>Difficulty.Learn</code></a> or fix the start with <a class="ref-link" href="profile-reference.html#Difficulty.StartRung"><code>Difficulty.StartRung</code></a>.</li>
+<li>A profile can bound the rung with <a class="ref-link" href="profile-reference.html#Difficulty.MinRung"><code>Difficulty.MinRung</code></a> and <a class="ref-link" href="profile-reference.html#Difficulty.MaxRung"><code>Difficulty.MaxRung</code></a>, and set its own target with <a class="ref-link" href="profile-reference.html#Difficulty.TargetSeconds"><code>Difficulty.TargetSeconds</code></a> (5 to 3600 seconds).</li>
+</ul>
+<p><code class="long">&lt;caster.predictor.pressure&gt;</code> shows the rung while the controller plays (<code>none</code> otherwise).</p>
+<div class="callout callout-note" data-callout="note"><p class="callout-title"><span class="callout-badge">Note</span> No effect in this build</p><p>The profile key <a class="ref-link" href="profile-reference.html#Difficulty.Tolerance"><code>Difficulty.Tolerance</code></a> is accepted, but the controller always uses <a class="ref-link" href="config-reference.html#difficulty.toleranceRatio"><code>difficulty.toleranceRatio</code></a>. <a class="ref-link" href="config-reference.html#difficulty.maxTrackedFights"><code>difficulty.maxTrackedFights</code></a> is accepted but not read. Unlike other keys without effect, these two log no warning.</p></div>
+<h2 id="entropy"><a class="h-anchor" href="#entropy" aria-hidden="true" tabindex="-1">#</a>Entropy</h2>
+<p><a class="ref-link" href="profile-reference.html#mob.PredictorEntropy"><code>PredictorEntropy</code></a><code>: true</code> (with <code>Predictor: true</code>) turns on an opt-in lethal mode, against players:</p>
+<ul>
+<li>The mob always plays at the highest rung, without the controller, and no stat is ever changed.</li>
+<li>Its reaction delay starts at the preset's reaction floor and shrinks in a straight line over the target time down to <code>entropyReactionFloorTicks</code>; its adaptation time (how long before it asks again or replans) starts at <code>entropyAdaptStartSeconds</code> and shrinks toward zero.</li>
+<li>Tell minimums do not apply, feints use <a class="ref-link" href="profile-reference.html#Telegraph.EntropyCommitment"><code>Telegraph.EntropyCommitment</code></a>, and the group's fairness limits only record.</li>
+<li>It never reads hidden player input.</li>
+</ul>
+<p>An administrator can force Entropy on or off per world with <code class="long">difficulty.worlds.&lt;world&gt;.entropy</code>. A value other than <code>true</code> or <code>false</code> in the mob file is a catalog error: <code class="long">&lt;Mob&gt;.PredictorEntropy: must be true or false</code>.</p>
+<h2 id="native-level"><a class="h-anchor" href="#native-level" aria-hidden="true" tabindex="-1">#</a>MythicMobs level</h2>
+<p>With <a class="ref-link" href="config-reference.html#difficulty.nativeLevelAllowed"><code>difficulty.nativeLevelAllowed</code></a> <code>true</code>, a profile with <a class="ref-link" href="profile-reference.html#Difficulty.NativeLevel"><code>Difficulty.NativeLevel</code></a> <code>spawn</code> lets five fights in a row at an extreme move the MythicMobs level of the <strong>next spawn</strong> by ±1, within the mob's level ±2. Never during a fight.</p>
+<h2 id="eval"><a class="h-anchor" href="#eval" aria-hidden="true" tabindex="-1">#</a>Checking difficulty in game</h2>
+<div class="table-wrap"><table><thead><tr><th>Command</th><th>What it does</th></tr></thead><tbody><tr><td><code>/thepredict eval status</code></td><td>The difficulty block of the nearest bound mob (for a player), or the default preset at full power.</td></tr><tr><td><code class="long">/thepredict eval difficulty &lt;nearest|uuid&gt;</code></td><td>The block of one mob: <code class="long">preset &lt;name&gt; entropy &lt;true|false&gt;</code>, then <code class="long">r &lt;reaction ticks&gt; c &lt;adaptation seconds&gt; pressure &lt;rung|bench&gt;</code>.</td></tr><tr><td><code class="long">/thepredict eval pressure &lt;nearest|uuid&gt; &lt;0-8|auto&gt;</code></td><td>Pins a mob's rung for testing; <code>auto</code> releases it. Not stored. Also needs <code>thepredict.debug</code>.</td></tr><tr><td><code class="long">/thepredict eval verdict list</code> / <code>verdict import &lt;file&gt;</code></td><td>Lists or imports evaluation verdicts, which unlock modes that wait for one (such as pattern <code>bias</code>).</td></tr><tr><td><code>/thepredict eval report</code></td><td>Not available on the server in this release.</td></tr></tbody></table></div>
+<p>All of them need <code>thepredict.eval</code> (operators by default). See <a href="commands.html">Commands &amp; permissions</a>.</p>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-prev" href="stances.html"><span class="pager-dir">Previous</span><span class="pager-title">Stances, tells &amp; poise</span></a><a class="pager-next" href="groups.html"><span class="pager-dir">Next</span><span class="pager-title">Groups</span></a></nav>
+    <footer class="footer">
+      <p>ThePredict 0.0.1 · release candidate. These pages describe this build, checked against its source code; it has not been verified on a live server yet.</p>
+      <p>ThePredict is an independent MythicMobs addon. Jev is TypeSafe's decision model; naming it does not imply endorsement. Fonts: Pixelify Sans, Inter and JetBrains Mono, under the SIL Open Font License.</p>
+    </footer>
+  </main>
+  <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-l2"><a href="#presets">Presets</a></li><li class="toc-l2"><a href="#modes">Modes</a></li><li class="toc-l2"><a href="#pressure">Pressure</a></li><li class="toc-l2"><a href="#entropy">Entropy</a></li><li class="toc-l2"><a href="#native-level">MythicMobs level</a></li><li class="toc-l2"><a href="#eval">Checking difficulty in game</a></li></ul></nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ · ThePredict docs</title>
+<meta name="description" content="Short answers to the questions server admins and mob authors ask first.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>(function () { var t = null; try { t = localStorage.getItem("tp-docs-theme"); } catch (e) {} if (t === "light" || t === "dark") { document.documentElement.setAttribute("data-theme", t); } })();</script>
+<script src="/dock.js" defer data-akyrion-dock></script></head>
+<body class="has-toc" data-page="faq">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="2" y="3" width="12" height="2"/><rect x="2" y="7" width="12" height="2"/><rect x="2" y="11" width="12" height="2"/></svg></button>
+  <a class="brand" href="index.html" aria-label="ThePredict docs home">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><rect width="16" height="16" class="b-bg"/><rect x="2" y="2" width="12" height="3" class="b-trim"/><rect x="3" y="7" width="10" height="2" class="b-eye"/><rect x="6" y="10" width="4" height="4" class="b-core"/></svg>
+    <span class="brand-name">ThePredict</span><span class="brand-tag">docs</span>
+  </a>
+  <span class="version" title="ThePredict 0.0.1, release candidate">v0.0.1&nbsp;RC</span>
+  <div class="search" role="search">
+    <label class="sr-only" for="search-input">Search the docs</label>
+    <input id="search-input" class="search-input" type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div class="search-results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
+  </div>
+  <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Switch theme" title="Switch light or dark theme"><svg class="i-sun" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="6" width="4" height="4"/><rect x="7" y="1" width="2" height="2"/><rect x="7" y="13" width="2" height="2"/><rect x="1" y="7" width="2" height="2"/><rect x="13" y="7" width="2" height="2"/><rect x="3" y="3" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/><rect x="3" y="11" width="2" height="2"/><rect x="11" y="11" width="2" height="2"/></svg><svg class="i-moon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="2" width="5" height="2"/><rect x="4" y="4" width="3" height="2"/><rect x="3" y="6" width="3" height="4"/><rect x="4" y="10" width="3" height="2"/><rect x="6" y="12" width="6" height="2"/><rect x="11" y="10" width="3" height="2"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="nav-group"><p class="nav-title">Getting started</p><ul><li><a href="index.html">Overview</a></li><li><a href="install.html">Install</a></li><li><a href="quick-start.html">Quick start</a></li></ul></div><div class="nav-group"><p class="nav-title">Authoring</p><ul><li><a href="profiles.html">Profiles</a></li><li><a href="movement.html">Movement</a></li><li><a href="skills.html">Skills &amp; intents</a></li><li><a href="vocabulary.html">Vocabulary</a></li><li><a href="targets.html">Targets &amp; threat</a></li></ul></div><div class="nav-group"><p class="nav-title">Combat systems</p><ul><li><a href="combat-loop.html">Combat loop</a></li><li><a href="stances.html">Stances &amp; tells <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="difficulty.html">Difficulty <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="groups.html">Groups <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="zones.html">Zones &amp; terrain <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="patterns.html">Patterns <span class="nav-soon" title="Changing soon">●</span></a></li></ul></div><div class="nav-group"><p class="nav-title">Administration</p><ul><li><a href="jev.html">Jev connection</a></li><li><a href="commands.html">Commands</a></li><li><a href="storage.html">Storage &amp; records</a></li><li><a href="learning.html">Learning</a></li><li><a href="overlays.html">Overlays</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></div><div class="nav-group"><p class="nav-title">Reference</p><ul><li><a href="profile-reference.html">Profile reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="config-reference.html">config.yml reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="faq.html" aria-current="page" class="is-current">FAQ</a></li><li><a href="changelog.html">Changelog</a></li></ul></div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="main" class="main" tabindex="-1">
+    <article class="doc">
+      <p class="eyebrow">Reference</p>
+      <h1>FAQ</h1>
+      <p class="lead">Short answers to the questions server admins and mob authors ask first.</p>
+      <p>ThePredict 0.0.1 is a release candidate: these pages describe this build, checked against its source code, but it has not been verified on a live server yet. If your server behaves differently, report it (see the last question).</p>
+<h2 id="key"><a class="h-anchor" href="#key" aria-hidden="true" tabindex="-1">#</a>Do I need a TypeSafe key?</h2>
+<p>No. Without a key ThePredict never contacts any service: bound mobs fight with the local planner of their profile, at no cost, and MythicMobs works as usual. With a key in the <code>TYPESAFE_API_KEY</code> environment variable, Jev picks among the tactics your profile offers. See <a href="jev.html">Jev connection</a>.</p>
+<h2 id="cost"><a class="h-anchor" href="#cost" aria-hidden="true" tabindex="-1">#</a>What does it cost?</h2>
+<p>Only Jev's input tokens are billed; the output is free. At the price published when this release was tested (0.042 USD per million input tokens, which TypeSafe may change), a lone mob in continuous combat measured about 1 884 tokens per request with the default <code>full</code> detail: about 0.28 USD per hour at one request per heartbeat, or 0.14 USD with <code>compact</code>. The default <code>reactive</code> cadence asks more often, up to about 0.95 USD per mob and hour in the worst case. <a class="ref-link" href="config-reference.html#decision.maxInputTokensPerMinute"><code>decision.maxInputTokensPerMinute</code></a> caps the total (the shipped cap is about 1.5 USD per hour at most); mobs over budget simply play locally. <code>/thepredict status</code> shows a live hourly estimate.</p>
+<h2 id="effects"><a class="h-anchor" href="#effects" aria-hidden="true" tabindex="-1">#</a>Does ThePredict change my skills or add effects?</h2>
+<p>No. It never edits MythicMobs files and never adds particles, sounds, glow or animations. It decides <strong>when</strong> and <strong>how</strong> your skills come out, and it publishes signals (<code>PREDICTOR_*</code>), conditions and placeholders your own skills can react to. Every visual or sound the player sees comes from your skills. Even <code class="long">/thepredict intention suggest</code> only prints lines for you to copy.</p>
+<h2 id="players"><a class="h-anchor" href="#players" aria-hidden="true" tabindex="-1">#</a>Can players see it?</h2>
+<p>Players only see the mob fight differently. ThePredict sends them no messages and they have no command. Whatever they see or hear on a decision comes from your skills, for example a line on <code class="long">~onSignal:PREDICTOR_RETREAT_AND_DEFEND</code>.</p>
+<h2 id="mobs"><a class="h-anchor" href="#mobs" aria-hidden="true" tabindex="-1">#</a>Which mobs work?</h2>
+<p>Any MythicMobs mob with <code>Predictor: true</code> and a profile whose <code>MythicID</code> names it. This release targets ground mobs. Species with a <code>Brain</code> (piglins, hoglins, wardens, villagers, breezes, frogs, goats and a few more) keep their own movement and only accept <code>Movement: NONE</code> tactics, so ThePredict still picks and casts their skills. Slimes, magma cubes, ghasts, phantoms and bats keep their MythicMobs AI entirely. See <a href="movement.html">Movement &amp; goals</a>.</p>
+<h2 id="flyers"><a class="h-anchor" href="#flyers" aria-hidden="true" tabindex="-1">#</a>What about flying or swimming mobs?</h2>
+<p>Not recommended yet. Flyers and swimmers that are regular creatures do get movement goals, but their movement has not been tested.</p>
+<h2 id="mob-vs-mob"><a class="h-anchor" href="#mob-vs-mob" aria-hidden="true" tabindex="-1">#</a>Can mobs fight other mobs?</h2>
+<p>Yes. Allow other living entities as participants (<a class="ref-link" href="config-reference.html#participants.entities.allow"><code>participants.entities.allow</code></a> or the profile's <a class="ref-link" href="profile-reference.html#Participants.Entities.Allow"><code>Participants.Entities.Allow</code></a>), give the mob a native target selector such as <code class="long">nearestOtherFactionMonsters</code>, and use MythicMobs factions or scoreboard teams to set the sides. <code>/thepredict duel</code> records such fights. See <a href="targets.html">Targets, participants &amp; threat</a>.</p>
+<h2 id="one-tactic"><a class="h-anchor" href="#one-tactic" aria-hidden="true" tabindex="-1">#</a>How do I make a skill fire only during one tactic?</h2>
+<p>With the default <code>CastMode: any_ready</code>, every skill with a valid <code>Intention</code> line fires as soon as it is ready. To tie a skill to its tactic, pick one:</p>
+<ul>
+<li>add <code class="long">- predictortactic{t=&lt;tactic&gt;} true</code> to the skill's <code>Conditions</code> (ThePredict checks them before casting and waits while they fail);</li>
+<li>leave the skill without an <code>Intention</code> line: an untyped skill only fires as the choice of its own tactic;</li>
+<li>set <a class="ref-link" href="profile-reference.html#Timing.CastMode"><code>Timing.CastMode</code></a> to <code>intent_only</code> for the whole profile.</li>
+</ul>
+<h2 id="melee"><a class="h-anchor" href="#melee" aria-hidden="true" tabindex="-1">#</a>Why does my boss hit less than the classic version?</h2>
+<p>While ThePredict controls a mob, its base melee goal does not hit; ThePredict adds no automatic vanilla hits. Put the melee damage in a skill of a tactic, or add a <code>Kind: VANILLA_MELEE</code> choice, which hits at most once every 20 ticks like vanilla. Tune that skill's <code>Cooldown</code> and damage when you compare with a classic boss.</p>
+<h2 id="disable"><a class="h-anchor" href="#disable" aria-hidden="true" tabindex="-1">#</a>How do I turn it off for one mob?</h2>
+<p>Set <code>Predictor: false</code> in the mob file (or remove its profile) and run <code>/mm reload</code>. ThePredict releases the mob and MythicMobs puts its own goals back. To remove ThePredict entirely, take the JAR out and restart. See <a href="install.html">Install &amp; requirements</a>.</p>
+<h2 id="restart"><a class="h-anchor" href="#restart" aria-hidden="true" tabindex="-1">#</a>Do I need to restart after a change?</h2>
+<p>For <code>config.yml</code> and the key, yes: they are read only at startup. Profiles, mobs and skills only need <code>/mm reload</code>.</p>
+<h2 id="english"><a class="h-anchor" href="#english" aria-hidden="true" tabindex="-1">#</a>Do I have to write in English?</h2>
+<p><code>Objective</code>, tactic IDs and <code>Description</code> reach Jev, which reads English best. The catalog warns, without blocking, when a text looks like another language. Choice and context IDs never leave the server.</p>
+<h2 id="input"><a class="h-anchor" href="#input" aria-hidden="true" tabindex="-1">#</a>Does it read players' keyboard input?</h2>
+<p>No. A player's tendency (strafing, backing off, chasing) is read from their observed movement, never from raw input. MythicMobs' own <code>input</code> condition is your choice in your skills; ThePredict does not read it. See <a href="patterns.html">Patterns</a>.</p>
+<h2 id="perception"><a class="h-anchor" href="#perception" aria-hidden="true" tabindex="-1">#</a>Does it see through walls?</h2>
+<p>No. A mob only considers participants within its <code>FollowRange</code> (capped by <a class="ref-link" href="config-reference.html#decision.searchRadiusBlocks"><code>decision.searchRadiusBlocks</code></a>), sees a player's shield, drawn bow, held item and effects only with a line of sight and only if the player is not invisible, and Jev receives distance bands and aliases (<code>player_1</code>), never coordinates, names or UUIDs. See <a href="targets.html">Targets, participants &amp; threat</a>.</p>
+<h2 id="fair"><a class="h-anchor" href="#fair" aria-hidden="true" tabindex="-1">#</a>Is it fair to players?</h2>
+<div class="callout callout-soon" data-callout="soon"><p class="callout-title"><span class="callout-badge">Changing soon</span></p><p>Today a fight against players runs under fairness rules: minimum tell lengths before heavy hits, attack tokens and spacing between hits when several mobs gang up, no lethal pushes, limits on exploiting a player's habits, and a difficulty controller that aims the fight at a target length. These rules are about to be redefined as intelligence levels.</p></div>
+<p>See <a href="difficulty.html">Difficulty</a>, <a href="stances.html">Stances, tells &amp; poise</a> and <a href="groups.html">Groups</a> for how each works in the current build.</p>
+<h2 id="folia"><a class="h-anchor" href="#folia" aria-hidden="true" tabindex="-1">#</a>Does it work with Folia?</h2>
+<p>No. ThePredict needs Paper 26.2, Java 25 and MythicMobs Premium 5.13.1 or newer.</p>
+<h2 id="bug"><a class="h-anchor" href="#bug" aria-hidden="true" tabindex="-1">#</a>How do I report a bug?</h2>
+<p>Send the output of <code>/thepredict status</code> and <code class="long">/thepredict inspect nearest</code>, the console lines around the problem (turn on <a class="ref-link" href="config-reference.html#decision.logDecisions"><code>decision.logDecisions</code></a> for the decision log), the profile, the mob and skill files, and your Java, Paper and MythicMobs versions. <strong>Never share your key</strong> or any file that holds it. ThePredict never prints the key, so its own output is safe to share. See <a href="troubleshooting.html">Troubleshooting &amp; status</a>.</p>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-prev" href="config-reference.html"><span class="pager-dir">Previous</span><span class="pager-title">config.yml reference</span></a><a class="pager-next" href="changelog.html"><span class="pager-dir">Next</span><span class="pager-title">Changelog</span></a></nav>
+    <footer class="footer">
+      <p>ThePredict 0.0.1 · release candidate. These pages describe this build, checked against its source code; it has not been verified on a live server yet.</p>
+      <p>ThePredict is an independent MythicMobs addon. Jev is TypeSafe's decision model; naming it does not imply endorsement. Fonts: Pixelify Sans, Inter and JetBrains Mono, under the SIL Open Font License.</p>
+    </footer>
+  </main>
+  <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-l2"><a href="#key">Do I need a TypeSafe key?</a></li><li class="toc-l2"><a href="#cost">What does it cost?</a></li><li class="toc-l2"><a href="#effects">Does ThePredict change my skills or add effects?</a></li><li class="toc-l2"><a href="#players">Can players see it?</a></li><li class="toc-l2"><a href="#mobs">Which mobs work?</a></li><li class="toc-l2"><a href="#flyers">What about flying or swimming mobs?</a></li><li class="toc-l2"><a href="#mob-vs-mob">Can mobs fight other mobs?</a></li><li class="toc-l2"><a href="#one-tactic">How do I make a skill fire only during one tactic?</a></li><li class="toc-l2"><a href="#melee">Why does my boss hit less than the classic version?</a></li><li class="toc-l2"><a href="#disable">How do I turn it off for one mob?</a></li><li class="toc-l2"><a href="#restart">Do I need to restart after a change?</a></li><li class="toc-l2"><a href="#english">Do I have to write in English?</a></li><li class="toc-l2"><a href="#input">Does it read players' keyboard input?</a></li><li class="toc-l2"><a href="#perception">Does it see through walls?</a></li><li class="toc-l2"><a href="#fair">Is it fair to players?</a></li><li class="toc-l2"><a href="#folia">Does it work with Folia?</a></li><li class="toc-l2"><a href="#bug">How do I report a bug?</a></li></ul></nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Storage &amp; records · ThePredict docs</title>
+<meta name="description" content="What ThePredict writes to your disk, where it goes, how long it stays and how to read it.">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#0b0a09" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f6f2ea" media="(prefers-color-scheme: light)">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+<script>(function () { var t = null; try { t = localStorage.getItem("tp-docs-theme"); } catch (e) {} if (t === "light" || t === "dark") { document.documentElement.setAttribute("data-theme", t); } })();</script>
+<script src="/dock.js" defer data-akyrion-dock></script></head>
+<body class="has-toc" data-page="storage">
+<a class="skip" href="#main">Skip to content</a>
+<header class="topbar">
+  <button type="button" class="icon-btn menu-btn" id="menu-btn" aria-label="Open navigation" aria-controls="sidebar" aria-expanded="false"><svg viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="2" y="3" width="12" height="2"/><rect x="2" y="7" width="12" height="2"/><rect x="2" y="11" width="12" height="2"/></svg></button>
+  <a class="brand" href="index.html" aria-label="ThePredict docs home">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><rect width="16" height="16" class="b-bg"/><rect x="2" y="2" width="12" height="3" class="b-trim"/><rect x="3" y="7" width="10" height="2" class="b-eye"/><rect x="6" y="10" width="4" height="4" class="b-core"/></svg>
+    <span class="brand-name">ThePredict</span><span class="brand-tag">docs</span>
+  </a>
+  <span class="version" title="ThePredict 0.0.1, release candidate">v0.0.1&nbsp;RC</span>
+  <div class="search" role="search">
+    <label class="sr-only" for="search-input">Search the docs</label>
+    <input id="search-input" class="search-input" type="search" placeholder="Search docs" autocomplete="off" spellcheck="false" aria-controls="search-results" aria-expanded="false" aria-autocomplete="list">
+    <kbd class="search-key" aria-hidden="true">/</kbd>
+    <div class="search-results" id="search-results" role="listbox" aria-label="Search results" hidden></div>
+  </div>
+  <button type="button" class="icon-btn theme-btn" id="theme-btn" aria-label="Switch theme" title="Switch light or dark theme"><svg class="i-sun" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="6" width="4" height="4"/><rect x="7" y="1" width="2" height="2"/><rect x="7" y="13" width="2" height="2"/><rect x="1" y="7" width="2" height="2"/><rect x="13" y="7" width="2" height="2"/><rect x="3" y="3" width="2" height="2"/><rect x="11" y="3" width="2" height="2"/><rect x="3" y="11" width="2" height="2"/><rect x="11" y="11" width="2" height="2"/></svg><svg class="i-moon" viewBox="0 0 16 16" aria-hidden="true" shape-rendering="crispEdges"><rect x="6" y="2" width="5" height="2"/><rect x="4" y="4" width="3" height="2"/><rect x="3" y="6" width="3" height="4"/><rect x="4" y="10" width="3" height="2"/><rect x="6" y="12" width="6" height="2"/><rect x="11" y="10" width="3" height="2"/></svg></button>
+</header>
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Documentation">
+    <div class="nav-group"><p class="nav-title">Getting started</p><ul><li><a href="index.html">Overview</a></li><li><a href="install.html">Install</a></li><li><a href="quick-start.html">Quick start</a></li></ul></div><div class="nav-group"><p class="nav-title">Authoring</p><ul><li><a href="profiles.html">Profiles</a></li><li><a href="movement.html">Movement</a></li><li><a href="skills.html">Skills &amp; intents</a></li><li><a href="vocabulary.html">Vocabulary</a></li><li><a href="targets.html">Targets &amp; threat</a></li></ul></div><div class="nav-group"><p class="nav-title">Combat systems</p><ul><li><a href="combat-loop.html">Combat loop</a></li><li><a href="stances.html">Stances &amp; tells <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="difficulty.html">Difficulty <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="groups.html">Groups <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="zones.html">Zones &amp; terrain <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="patterns.html">Patterns <span class="nav-soon" title="Changing soon">●</span></a></li></ul></div><div class="nav-group"><p class="nav-title">Administration</p><ul><li><a href="jev.html">Jev connection</a></li><li><a href="commands.html">Commands</a></li><li><a href="storage.html" aria-current="page" class="is-current">Storage &amp; records</a></li><li><a href="learning.html">Learning</a></li><li><a href="overlays.html">Overlays</a></li><li><a href="troubleshooting.html">Troubleshooting</a></li></ul></div><div class="nav-group"><p class="nav-title">Reference</p><ul><li><a href="profile-reference.html">Profile reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="config-reference.html">config.yml reference <span class="nav-soon" title="Changing soon">●</span></a></li><li><a href="faq.html">FAQ</a></li><li><a href="changelog.html">Changelog</a></li></ul></div>
+  </nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="main" class="main" tabindex="-1">
+    <article class="doc">
+      <p class="eyebrow">Administration</p>
+      <h1>Storage &amp; records</h1>
+      <p class="lead">What ThePredict writes to your disk, where it goes, how long it stays and how to read it.</p>
+      <p>Everything on this page stays on your machine. ThePredict writes it from background threads, so a slow disk never delays a fight, and nothing here is ever sent to Jev.</p>
+<h2 id="where"><a class="h-anchor" href="#where" aria-hidden="true" tabindex="-1">#</a>Where things live</h2>
+<div class="table-wrap"><table><thead><tr><th>What</th><th>Where</th></tr></thead><tbody><tr><td>Your configuration</td><td><code class="long">plugins/MythicMobs/AIConfig/config.yml</code> and <code>AIConfig/Profiles/</code> (see <a href="install.html">Install &amp; requirements</a>)</td></tr><tr><td>Fight records (JSONL)</td><td><code class="long">plugins/ThePredict/records/events/&lt;UTC day&gt;/events-&lt;run&gt;-&lt;n&gt;.jsonl</code>, gzipped to <code>.jsonl.gz</code> once closed</td></tr><tr><td>Request bodies, when kept</td><td><code>bodies-&lt;run&gt;-&lt;n&gt;.jsonl</code> in the same day folder</td></tr><tr><td>Backups, exports and the lock</td><td><code>records/backups/</code>, <code>records/exports/</code>, <code>records/.lock</code></td></tr><tr><td>Evaluation verdicts</td><td><code class="long">records/eval/verdicts/&lt;fingerprint&gt;-&lt;stage&gt;.json</code></td></tr><tr><td>Aggregates database</td><td><code class="long">plugins/ThePredict/aggregates.db</code>, <strong>beside</strong> <code>records/</code>, not inside it</td></tr><tr><td>Scenario recordings</td><td><code class="long">plugins/ThePredict/scenarios/</code></td></tr><tr><td>Duel recordings</td><td><code>plugins/ThePredict/duels/</code></td></tr><tr><td>Migration proposals</td><td><code class="long">plugins/ThePredict/migration/</code></td></tr><tr><td>Learning artifacts</td><td><code>plugins/ThePredict/learn/</code></td></tr><tr><td>Profile overlays</td><td><code class="long">plugins/ThePredict/autoconfig/</code></td></tr><tr><td>Example boss</td><td><code class="long">plugins/ThePredict/examples/</code></td></tr></tbody></table></div>
+<p>The records folder is <a class="ref-link" href="config-reference.html#records.directory"><code>records.directory</code></a> (relative to <code>plugins/ThePredict/</code>) and the database file is <a class="ref-link" href="config-reference.html#storage.file"><code>storage.file</code></a>. If <code>config.yml</code> is invalid, ThePredict stays inactive and opens neither: no <code>records/</code> and no <code>aggregates.db</code> are created.</p>
+<h2 id="records"><a class="h-anchor" href="#records" aria-hidden="true" tabindex="-1">#</a>Fight records</h2>
+<p>The records are append-only JSONL: one JSON object per line, without spaces, written by one background thread (<code>ThePredict-Storage</code>). Every line carries <code>v</code>, <code>type</code>, <code>run</code>, <code>t_ms</code>, <code>t_nanos</code>, <code>tick</code> and <code>tag</code>, then its own fields.</p>
+<div class="table-wrap"><table><thead><tr><th><a class="ref-link" href="config-reference.html#records.level"><code>records.level</code></a></th><th>What is written</th></tr></thead><tbody><tr><td><code>off</code></td><td>No records.</td></tr><tr><td><code>decisions</code> (default)</td><td>Decisions (<code>planned</code>, <code>result</code>, <code>acceptance</code>, <code>local</code>), outcome windows, tells and the other fight summaries.</td></tr><tr><td><code>full</code></td><td>Also casts, threat changes, reactions, micro-movements and stances.</td></tr></tbody></table></div>
+<p><a class="ref-link" href="config-reference.html#records.bodies"><code>records.bodies</code></a> decides what happens to the request bodies: <code>none</code>, <code>hash</code> (default, only a hash), <code>dedup</code> (each distinct body once) or <code>all</code>.</p>
+<ul>
+<li><strong>Rotation.</strong> A file rotates at <code>64</code> MiB or after <code>60</code> minutes. A closed file is gzipped, and the original is deleted only once the <code>.gz</code> closed correctly.</li>
+<li><strong>Retention.</strong> <code>14</code> days and <code>2048</code> MiB by default. The current day is never deleted; if today alone passes the size cap, events pause and the aggregates keep working.</li>
+<li><strong>Runs.</strong> Each start with records begins with a <code>run_start</code> line: plugin version, model, question detail, <code>config_sha256</code>, records level, body policy and answer cache. A clean stop writes <code>run_stop</code> with <code>clean: true</code>. After a crash the storage state shows the cause <code>DIRTY_SHUTDOWN</code>; run <code>/thepredict records verify</code>.</li>
+<li><strong>Tags.</strong> <code class="long">/thepredict records tag &lt;tag&gt;</code> writes a label into every following line, handy to mark a test session; <code>tag clear</code> stops.</li>
+</ul>
+<div class="callout callout-note" data-callout="note"><p class="callout-title"><span class="callout-badge">Note</span> Size</p><p>A planning estimate, not measured on a server: about 47 MB per hour before compression with five bosses fighting, at <code>decisions</code> level with hashed bodies. <code>full</code> writes much more.</p></div>
+<h2 id="aggregates"><a class="h-anchor" href="#aggregates" aria-hidden="true" tabindex="-1">#</a>Aggregates database</h2>
+<p><code>aggregates.db</code> is a SQLite database of running statistics (outcomes per profile, tactic and level, and the data the other features keep). With <a class="ref-link" href="config-reference.html#storage.aggregates"><code>storage.aggregates</code></a> <code>off</code>, only the JSONL is written.</p>
+<ul>
+<li><strong>Driver.</strong> ThePredict uses the <code>sqlite-jdbc</code> driver that Paper already ships and does not bundle its own. It needs SQLite 3.45 or newer. Without a usable driver, aggregates turn off (<code>DRIVER_MISSING</code>) and the JSONL records continue.</li>
+<li><strong>MySQL.</strong> <code>mysql</code> is reserved: writing it is a configuration error.</li>
+<li><strong>Backups.</strong> Every <code>24</code> hours a copy goes to <code>records/backups/</code>, keeping the newest <code>7</code>. <code>/thepredict records backup</code> makes one now.</li>
+<li><strong>Recovery.</strong> At startup the database is checked with SQLite's <code>quick_check</code>. A broken file is renamed, never deleted, and the newest backup that passes the check takes its place; without one, aggregates stay <code>FAILED</code>.</li>
+<li><strong>Flushes.</strong> Pending statistics are written every <code>100</code> ticks; <code>/thepredict records flush</code> forces one.</li>
+</ul>
+<div class="callout callout-danger" data-callout="danger"><p class="callout-title"><span class="callout-badge">Important</span> Keep it off network drives</p><p>SQLite's write-ahead log is not safe on NFS, CIFS/SMB or sshfs. When the records folder looks like one, the <code>Store</code> line of <code>/thepredict status</code> ends with <code>network</code>. Put <code>plugins/ThePredict/</code> on a local disk.</p></div>
+<h2 id="status"><a class="h-anchor" href="#status" aria-hidden="true" tabindex="-1">#</a>Status and commands</h2>
+<p>When storage is running, <code>/thepredict status</code> adds a <code>Storage</code> block:</p>
+<div class="code" data-lang="console"><div class="code-head"><span class="code-title"></span><span class="code-lang">Console</span></div><pre><code>State: READY records decisions dropped 0 inFlight 0 failed 0
+Store: sqlite 3.49.1 synchronous 1 journal wal</code></pre></div>
+<p><code>State</code> shows the aggregates state (<code>READY</code>, <code>STARTING</code>, <code>DISABLED</code>, <code>READ_ONLY</code>, <code>DEGRADED</code> or <code>FAILED</code>) and its cause, the records level, dropped events, batches in flight and failed batches. <code>Store</code> shows the SQLite version and the settings read back from the database (<code>synchronous 1</code> is <code>normal</code>, <code>2</code> is <code>full</code>), plus <code>paused</code> when events are paused for size, <code>network</code> for a network drive and <code>failure …</code> when the records failed. <code>/thepredict records stats</code> prints the same in one line with only <code>thepredict.admin</code>. The other <code>records</code> commands (export, prune, verify, backup, flush, cache, tag) need <code>thepredict.records</code>; see <a href="commands.html#records">Commands &amp; permissions</a>.</p>
+<h2 id="offline"><a class="h-anchor" href="#offline" aria-hidden="true" tabindex="-1">#</a>Reading the data offline</h2>
+<p>Stop the server first, then use any JSON or SQLite tool. For example:</p>
+<div class="code" data-lang="bash"><div class="code-head"><span class="code-title"></span><span class="code-lang">Shell</span></div><pre><code><span class="t-com"># every outcome window of the kept days (closed files are gzipped)</span>
+<span class="t-fn">gzip</span> <span class="t-attr">-dcf</span> plugins/ThePredict/records/events/*/events-*.jsonl* | jq <span class="t-attr">-c</span> <span class="t-str">'select(.type == "outcome")'</span>
+
+<span class="t-com"># the best and worst tactics per profile</span>
+<span class="t-fn">sqlite3</span> plugins/ThePredict/aggregates.db \
+  <span class="t-str">"SELECT profile, tactic, level, windows, effect_mean FROM outcome_stats ORDER BY profile, effect_mean DESC LIMIT 20"</span></code></pre></div>
+<p><code class="long">/thepredict records export outcomes</code> writes the same statistics as CSV into <code>records/exports/</code> while the server runs.</p>
+<h2 id="private"><a class="h-anchor" href="#private" aria-hidden="true" tabindex="-1">#</a>What stays private</h2>
+<ul>
+<li>Local files may contain the UUIDs of mobs and worlds, and the duel files contain the UUIDs of the duellists. They help debugging and never leave the machine.</li>
+<li>Jev only ever receives aliases: <code>player_1</code>, <code>entity_1</code> and so on, plus an entity's species. Never names, <code>Display</code> names, MythicMobs IDs, factions, UUIDs or coordinates.</li>
+<li>No file ever holds the key or an <code>Authorization</code> header. <code>config_sha256</code> is computed without <code>jev.apiKey</code>.</li>
+</ul>
+<h2 id="scenario-recording"><a class="h-anchor" href="#scenario-recording" aria-hidden="true" tabindex="-1">#</a>Scenario recording</h2>
+<p><a class="ref-link" href="config-reference.html#debug.recordScenarios"><code>debug.recordScenarios</code></a> saves every decision Jev answered as an anonymized scenario, for calibration work. Keep it off on a live server; it is read at startup like the rest of <code>config.yml</code>.</p>
+<ul>
+<li>One file per decision: <code class="long">plugins/ThePredict/scenarios/scenario-&lt;UTC start&gt;-&lt;nonce&gt;-&lt;nnnn&gt;.json</code>, with the exact body sent (aliases only), the questions, the answer, the tokens and empty labels. Never the key.</li>
+<li>At most 1 000 files per start. At the limit, one line: <code class="long">Scenario recording reached its limit of 1000 files; later decisions are not recorded</code>.</li>
+<li>Its own thread with a queue of 64. When the queue is full the decision is dropped, counted and reported once: <code class="long">Scenario recording dropped a decision: its queue of 64 is full</code>.</li>
+<li>About 4.5 KB per file in a one-against-one fight and 51 KB in the worst case (16 mobs against 16 players): up to about 51 MB per start.</li>
+<li>With recording on, closing the plugin can take about 2 seconds while the queue drains; whatever is left is dropped and counted.</li>
+</ul>
+<h2 id="duel-recorder"><a class="h-anchor" href="#duel-recorder" aria-hidden="true" tabindex="-1">#</a>Duel recorder</h2>
+<p><code>/thepredict duel</code> records everything two factions of mobs decide and do, in real time (see <a href="commands.html#duel">Commands &amp; permissions</a> for the command). It is off until you start it and costs nothing while idle.</p>
+<ul>
+<li><strong>What it follows.</strong> Up to 8 living duellists of the two factions inside the radius, sampled every 5 ticks. A round starts when each side has a duellist and ends when one side has none: a death gives the round to the other side; a removal (a timeout skill, <code>/mm mobs kill</code>) is a draw. A side is <code>tp</code> when its mobs have a bound profile and <code>classic</code> otherwise.</li>
+<li><strong>Where.</strong> <code class="long">plugins/ThePredict/duels/&lt;label&gt;-&lt;UTC yyyyMMdd-HHmmss&gt;/</code>.</li>
+<li><strong>Files.</strong> <code>decisions.jsonl</code> (<code>planned</code>, <code>body</code>, <code>result</code>, <code>acceptance</code> and <code>local</code> lines, joined by <code>encounter</code> and <code>sequence</code>; <code>local</code> uses sequence −1), <code>samples.csv</code>, <code>casts.csv</code>, <code>damage.csv</code>, <code>intents.csv</code>, <code>defense.csv</code>, <code>retreats.csv</code>, <code>threat.csv</code>, <code>outcomes.csv</code>, <code>rounds.csv</code> and <code>summary.md</code> (wins with a confidence interval, time to kill, damage, hits and misses per skill, retreats, guards, time per control level, effect per tactic, requests, tokens and cost).</li>
+<li><strong>Limits.</strong> 4 hours, 500 rounds, 128 MB per file and 512 MB per recording. At a limit the recording stops itself, writes <code>summary.md</code> with <code>stopped_by: &lt;limit&gt;</code>, tells the player who started it if they are online and logs <code class="long">Duel recording '&lt;label&gt;' stopped: &lt;limit&gt; reached</code>.</li>
+<li><strong>Writer.</strong> One thread, <code>ThePredict-DuelWriter</code>, alive only while recording, with a queue of 8 192 rows. A full queue drops rows and counts them (<code>rows dropped</code> in <code>duel status</code> and in <code>summary.md</code>). At shutdown the recording stops, waiting 2 seconds at most.</li>
+<li><strong>Cost.</strong> With a key, <code>duel status</code> shows the requests and input tokens the recording spent.</li>
+</ul>
+<p>To set up a fair, player-safe duel arena, see <a href="targets.html">Targets, participants &amp; threat</a>.</p>
+    </article>
+    <nav class="pager" aria-label="Previous and next page"><a class="pager-prev" href="commands.html"><span class="pager-dir">Previous</span><span class="pager-title">Commands &amp; permissions</span></a><a class="pager-next" href="learning.html"><span class="pager-dir">Next</span><span class="pager-title">Learning &amp; training</span></a></nav>
+    <footer class="footer">
+      <p>ThePredict 0.0.1 · release candidate. These pages describe this build, checked against its source code; it has not been verified on a live server yet.</p>
+      <p>ThePredict is an independent MythicMobs addon. Jev is TypeSafe's decision model; naming it does not imply endorsement. Fonts: Pixelify Sans, Inter and JetBrains Mono, under the SIL Open Font License.</p>
+    </footer>
+  </main>
+  <nav class="toc" aria-label="On this page"><p class="toc-title">On this page</p><ul><li class="toc-l2"><a href="#where">Where things live</a></li><li class="toc-l2"><a href="#records">Fight records</a></li><li class="toc-l2"><a href="#aggregates">Aggregates database</a></li><li class="toc-l2"><a href="#status">Status and commands</a></li><li class="toc-l2"><a href="#offline">Reading the data offline</a></li><li class="toc-l2"><a href="#private">What stays private</a></li><li class="toc-l2"><a href="#scenario-recording">Scenario recording</a></li><li class="toc-l2"><a href="#duel-recorder">Duel recorder</a></li></ul></nav>
+</div>
+<script src="assets/app.js"></script>
+</body>
+</html>

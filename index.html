@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>ThePredict</title>
+<script>try { document.documentElement.lang = localStorage.getItem("tp-lang") === "en" ? "en" : "es"; } catch (error) { document.documentElement.lang = "es"; }</script>
+<meta name="description" content="ThePredict: IA de combate táctica y predictiva para bosses de MythicMobs. Gap close, parry y castigo, punish, zoning y predicción tipo ajedrez. Gratis.">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0a0806">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' shape-rendering='crispEdges'%3E%3Crect width='16' height='16' fill='%231f2228'/%3E%3Crect x='2' y='2' width='12' height='3' fill='%237a5530'/%3E%3Crect x='3' y='7' width='10' height='2' fill='%235ff0ff'/%3E%3Crect x='6' y='10' width='4' height='4' fill='%23ff6a2a'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="styles.css">
+<script src="/dock.js" defer data-akyrion-dock></script></head>
+<body>
+<a class="skip" href="#specs"><span data-l="es">Saltar a las specs</span><span data-l="en" lang="en">Skip to the specs</span></a>
+
+<canvas id="stage" aria-hidden="true"></canvas>
+<div class="veil" id="veil" aria-hidden="true"></div>
+<div class="flash" id="flash" aria-hidden="true"></div>
+<div class="hud" id="hud" aria-hidden="true"></div>
+<div class="labels" id="labels" aria-hidden="true"></div>
+
+<header class="bar">
+  <a class="brand" href="#hero" aria-label="ThePredict">
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><rect width="16" height="16" class="b-bg"/><rect x="2" y="2" width="12" height="3" class="b-trim"/><rect x="3" y="7" width="10" height="2" class="b-eye"/><rect x="6" y="10" width="4" height="4" class="b-core"/></svg>
+    <span>ThePredict</span>
+  </a>
+  <nav class="bar-nav" aria-label="Secciones">
+    <a href="#split"><span data-l="es">Escenas</span><span data-l="en" lang="en">Scenes</span></a>
+    <a href="#setup"><span data-l="es">Setup</span><span data-l="en" lang="en">Setup</span></a>
+    <a href="#specs" class="bar-cta"><span data-l="es">Specs</span><span data-l="en" lang="en">Specs</span></a>
+  </nav>
+  <div class="bar-tools">
+    <button type="button" class="px-btn snd" id="sound" aria-pressed="false"><span class="snd-ico" aria-hidden="true"></span><span data-l="es">Sonido</span><span data-l="en" lang="en">Sound</span></button>
+    <div class="seg" role="group" aria-label="Idioma / Language">
+      <button type="button" class="seg-btn" id="lang-es" data-lang="es" aria-pressed="true">ES</button>
+      <button type="button" class="seg-btn" id="lang-en" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ===================================================== 0 · hero: the boss awakens -->
+  <section class="stage" id="hero" data-scene="crypt" data-key="hero" style="--len:230" aria-labelledby="hero-title">
+    <div class="pin">
+      <div class="copy copy-hero" data-show="0 0.55">
+        <p class="kicker"><span data-l="es">ThePredict · addon gratis para MythicMobs Premium</span><span data-l="en" lang="en">ThePredict · free add-on for MythicMobs Premium</span></p>
+        <h1 id="hero-title" class="px-title"><span data-l="es">Tu boss ya no spamea skills.<br><em>Las piensa.</em></span><span data-l="en" lang="en">Your boss stops spamming skills.<br><em>It thinks them.</em></span></h1>
+        <p class="line"><span data-l="es">IA de combate táctica y predictiva. Boss fights que leen tu build, tu timing y tu patrón.</span><span data-l="en" lang="en">Tactical, predictive combat AI. Boss fights that read your build, your timing and your pattern.</span></p>
+        <p class="cue"><span data-l="es">Scrollea para ver la pelea</span><span data-l="en" lang="en">Scroll to watch the fight</span></p>
+      </div>
+      <img class="poster" src="img/poster-hero.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===================================================== 1 · native vs ThePredict -->
+  <section class="stage" id="split" data-scene="crypt" data-key="split" style="--len:260" aria-labelledby="split-title">
+    <div class="pin">
+      <div class="card" data-show="0 0.2">
+        <h2 id="split-title" class="px-title"><span data-l="es">Mismas skills.<br>Otro cerebro.</span><span data-l="en" lang="en">Same skills.<br>Different brain.</span></h2>
+        <p class="px-sub"><span data-l="es">Izquierda: la IA nativa tira skills por timer. Derecha: ThePredict, cada skill en su momento.</span><span data-l="en" lang="en">Left: native AI fires skills on a timer. Right: ThePredict, every skill at the right moment.</span></p>
+      </div>
+      <p class="caption" data-show="0.2 1"><span data-l="es">Mismo boss, misma build, mismas skills. Solo cambia la mente.</span><span data-l="en" lang="en">Same boss, same build, same skills. Only the mind changes.</span></p>
+      <img class="poster" src="img/poster-split.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===================================================== 2 · gap close -->
+  <section class="stage" id="gap" data-scene="crypt" data-key="gap" style="--len:230" aria-labelledby="gap-title">
+    <div class="pin">
+      <div class="card" data-show="0 0.2">
+        <h2 id="gap-title" class="px-title"><span data-l="es">Gap close.</span><span data-l="en" lang="en">Gap close.</span></h2>
+        <p class="px-sub"><span data-l="es">Kiteas con el arco. Lee tu strafe y aterriza donde vas a estar.</span><span data-l="en" lang="en">You kite with the bow. It reads your strafe and lands where you're going to be.</span></p>
+      </div>
+      <p class="caption" data-show="0.2 1"><span data-l="es">No persigue tu posición: persigue tu siguiente posición.</span><span data-l="en" lang="en">It doesn't chase your position. It chases your next one.</span></p>
+      <img class="poster" src="img/poster-gap.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===================================================== 3 · parry and punish -->
+  <section class="stage" id="parry" data-scene="crypt" data-key="parry" style="--len:230" aria-labelledby="parry-title">
+    <div class="pin">
+      <div class="card" data-show="0 0.2">
+        <h2 id="parry-title" class="px-title"><span data-l="es">Parry y castigo.</span><span data-l="en" lang="en">Parry and punish.</span></h2>
+        <p class="px-sub"><span data-l="es">Cargas el golpe fuerte. Lee el windup, sube la guardia y te castiga en la ventana.</span><span data-l="en" lang="en">You charge a heavy. It reads the windup, guards and punishes you in the window.</span></p>
+      </div>
+      <p class="caption" data-show="0.2 1"><span data-l="es">Tu windup es su tell.</span><span data-l="en" lang="en">Your windup is its tell.</span></p>
+      <img class="poster" src="img/poster-parry.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===================================================== 4 · punish -->
+  <section class="stage" id="punish" data-scene="crypt" data-key="punish" style="--len:230" aria-labelledby="punish-title">
+    <div class="pin">
+      <div class="card" data-show="0 0.2">
+        <h2 id="punish-title" class="px-title"><span data-l="es">Punish.</span><span data-l="en" lang="en">Punish.</span></h2>
+        <p class="px-sub"><span data-l="es">Fallas el swing o te pones a curarte. Te come el recovery.</span><span data-l="en" lang="en">You whiff or start healing. It eats your recovery.</span></p>
+      </div>
+      <p class="caption" data-show="0.2 1"><span data-l="es">Cada error tiene su ventana. Y la conoce.</span><span data-l="en" lang="en">Every mistake has a window. It knows it.</span></p>
+      <img class="poster" src="img/poster-punish.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===================================================== 5 · disengage and zoning -->
+  <section class="stage" id="zoning" data-scene="crypt" data-key="zoning" style="--len:230" aria-labelledby="zoning-title">
+    <div class="pin">
+      <div class="card" data-show="0 0.2">
+        <h2 id="zoning-title" class="px-title"><span data-l="es">Disengage y zoning.</span><span data-l="en" lang="en">Disengage and zoning.</span></h2>
+        <p class="px-sub"><span data-l="es">Entras con escudo y full HP. Se abre, te presiona a distancia y vuelve a entrar cuando bajas el escudo.</span><span data-l="en" lang="en">You come in with shield and full HP. It backs off, pressures from range and re-engages when the shield drops.</span></p>
+      </div>
+      <p class="caption" data-show="0.2 1"><span data-l="es">No pelea donde tú quieres. Pelea donde le conviene.</span><span data-l="en" lang="en">It doesn't fight where you want. It fights where it suits it.</span></p>
+      <img class="poster" src="img/poster-zoning.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===================================================== 6 · chess-like prediction -->
+  <section class="stage" id="chess" data-scene="crypt" data-key="chess" style="--len:260" aria-labelledby="chess-title">
+    <div class="pin">
+      <div class="card" data-show="0 0.2">
+        <h2 id="chess-title" class="px-title"><span data-l="es">Predicción tipo ajedrez.</span><span data-l="en" lang="en">Chess-like prediction.</span></h2>
+        <p class="px-sub"><span data-l="es">Tu patrón de dodge es un libro abierto. Apunta dos jugadas por delante.</span><span data-l="en" lang="en">Your dodge pattern is an open book. It aims two moves ahead.</span></p>
+      </div>
+      <p class="caption" data-show="0.2 1"><span data-l="es">«La mente»: las jugadas que te lee, con la probabilidad real del predictor.</span><span data-l="en" lang="en">"The mind": the moves it reads from you, with the predictor's real probability.</span></p>
+      <img class="poster" src="img/poster-chess.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===================================================== 7 · setup in minutes -->
+  <section class="plain setup" id="setup" aria-labelledby="setup-title">
+    <div class="wrap setup-grid">
+      <div class="setup-copy">
+        <h2 id="setup-title" class="px-title"><span data-l="es">Setup en minutos.</span><span data-l="en" lang="en">Setup in minutes.</span></h2>
+        <p class="line"><span data-l="es">Lo que antes eran horas de skills con timers, ahora es una línea. Tú escribes las skills; ThePredict decide cuándo y cómo salen.</span><span data-l="en" lang="en">What used to be hours of timer skills is now one line. You write the skills; ThePredict decides when and how they fire.</span></p>
+        <ol class="steps">
+          <li><span class="step-n">1</span><span data-l="es">Suelta el JAR junto a MythicMobs Premium.</span><span data-l="en" lang="en">Drop the JAR next to MythicMobs Premium.</span></li>
+          <li><span class="step-n">2</span><span data-l="es">En tu boss: <code>Predictor: true</code> y la dificultad.</span><span data-l="en" lang="en">In your boss: <code>Predictor: true</code> and the difficulty.</span></li>
+          <li><span class="step-n">3</span><span data-l="es">En cada skill, una línea <code>Intention</code> que dice para qué sirve.</span><span data-l="en" lang="en">In each skill, one <code>Intention</code> line that says what it's for.</span></li>
+        </ol>
+        <p class="collapse-line"><span class="big" id="when-count">24</span><span class="arrow" aria-hidden="true">→</span><span class="big" id="when-after">0</span> <span data-l="es">líneas de timers y condiciones que deciden cuándo sale cada skill.</span><span data-l="en" lang="en">timer and condition lines deciding when each skill fires.</span></p>
+      </div>
+      <div class="book" id="editor" aria-label="Editor">
+        <div class="book-bar"><span class="book-tab is-on" id="editor-file">ThePredictGuardian.yml</span></div>
+        <pre class="book-body" id="editor-body"></pre>
+        <div class="book-foot"><span data-l="es">Líneas reales de los archivos del paquete de pruebas y de la guía del autor.</span><span data-l="en" lang="en">Real lines from the test pack files and the author's guide.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================================================== 8 · finale -->
+  <section class="stage" id="finale" data-scene="crypt" data-key="finale" style="--len:190" aria-labelledby="final-title">
+    <div class="pin">
+      <div class="copy copy-final" data-show="0.05 1">
+        <h2 id="final-title" class="px-title"><span data-l="es">El Augur te espera.</span><span data-l="en" lang="en">The Augur is waiting.</span></h2>
+        <p class="line"><span data-l="es">ThePredict. Gratis para MythicMobs Premium 5.13.1 · Paper 26.2.</span><span data-l="en" lang="en">ThePredict. Free for MythicMobs Premium 5.13.1 · Paper 26.2.</span></p>
+        <a class="px-btn px-cta" href="#specs"><span data-l="es">Consíguelo gratis</span><span data-l="en" lang="en">Get it free</span></a>
+      </div>
+      <img class="poster" src="img/poster-finale.jpg" alt="" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===================================================== 9 · specs -->
+  <section class="plain specs" id="specs" aria-labelledby="specs-title">
+    <div class="wrap">
+      <h2 id="specs-title" class="px-title specs-title"><span data-l="es">Specs</span><span data-l="en" lang="en">Specs</span></h2>
+      <div class="spec-grid">
+        <div class="spec">
+          <h3><span data-l="es">Compatibilidad</span><span data-l="en" lang="en">Compatibility</span></h3>
+          <p>Java 25 · Paper 26.2 · MythicMobs Premium 5.13.1</p>
+          <p class="muted"><span data-l="es">Otras combinaciones, sin probar. Folia, no.</span><span data-l="en" lang="en">Other combinations untested. No Folia.</span></p>
+        </div>
+        <div class="spec">
+          <h3><span data-l="es">Precio</span><span data-l="en" lang="en">Price</span></h3>
+          <p><span data-l="es">Gratis.</span><span data-l="en" lang="en">Free.</span></p>
+          <p class="muted"><span data-l="es">Jev es opcional: sin él decide el plan local, sin red y sin coste.</span><span data-l="en" lang="en">Jev is optional: without it the local plan decides, with no network and no cost.</span></p>
+        </div>
+        <div class="spec">
+          <h3><span data-l="es">Estado</span><span data-l="en" lang="en">Status</span></h3>
+          <p><span data-l="es">Candidata 0.0.1, probada en local con pruebas automáticas.</span><span data-l="en" lang="en">0.0.1 candidate, tested locally with automated tests.</span></p>
+          <p class="muted"><span data-l="es">Las pruebas en un servidor Paper real están pendientes.</span><span data-l="en" lang="en">Tests on a real Paper server are pending.</span></p>
+        </div>
+        <div class="spec">
+          <h3><span data-l="es">Qué pone cada uno</span><span data-l="en" lang="en">Who brings what</span></h3>
+          <p><span data-l="es"><strong>ThePredict</strong> es la mente: decide cuándo y cómo sale cada skill. <strong>Tú</strong> pones las skills, los efectos y los sonidos: solo emite señales <code>PREDICTOR_*</code>.</span><span data-l="en" lang="en"><strong>ThePredict</strong> is the mind: it decides when and how each skill fires. <strong>You</strong> bring the skills, effects and sounds: it only emits <code>PREDICTOR_*</code> signals.</span></p>
+        </div>
+      </div>
+
+      <h3 class="spec-sub"><span data-l="es">Capacidades y su estado</span><span data-l="en" lang="en">Capabilities and their status</span></h3>
+      <div class="chips-row chips-wrap">
+        <span data-badge="perception"></span><span data-badge="stances"></span><span data-badge="telegraph"></span><span data-badge="mob_parry"></span><span data-badge="kiting"></span><span data-badge="flank"></span><span data-badge="reactions"></span><span data-badge="micro"></span><span data-badge="forecast"></span><span data-badge="exploit"></span><span data-badge="lookahead" data-badge-note="M30"></span><span data-badge="jev"></span>
+      </div>
+      <div class="spec-folds">
+        <details class="fold">
+          <summary><span data-l="es">Todas las capacidades, con su evidencia</span><span data-l="en" lang="en">Every capability, with its evidence</span></summary>
+          <div class="legend" id="legend"></div>
+          <div class="table-wrap" id="caps-table"></div>
+        </details>
+        <details class="fold">
+          <summary><span data-l="es">Medido en el simulador</span><span data-l="en" lang="en">Measured in the simulator</span></summary>
+          <ul class="measures">
+            <li><p class="m-n" data-fig="aWins">199 de 200</p><p class="m-t"><span data-l="es">duelos ganados por ThePredict sin Jev al mismo mob clásico. Wilson 95 % <span data-fig="aWilson"></span>.</span><span data-l="en" lang="en">duels won by ThePredict without Jev against the same classic mob. Wilson 95% <span data-fig="aWilson"></span>.</span></p></li>
+            <li><p class="m-n" data-fig="diffAO">−1,7 s</p><p class="m-t"><span data-l="es">de media por duelo frente al clásico con la misma semilla. IC 95 % <span data-fig="diffAOCi"></span>.</span><span data-l="en" lang="en">per duel on average against the classic with the same seed. 95% CI <span data-fig="diffAOCi"></span>.</span></p></li>
+            <li><p class="m-n" data-fig="p50">179 ms</p><p class="m-t"><span data-l="es">de mediana en <span data-fig="benchCalls">1 200</span> llamadas a <code>jev-1.13.0</code>, p95 <span data-fig="p95"></span>.</span><span data-l="en" lang="en">median over <span data-fig="benchCalls">1,200</span> calls to <code>jev-1.13.0</code>, p95 <span data-fig="p95"></span>.</span></p></li>
+          </ul>
+          <p class="muted"><span data-l="es">Simulador local determinista, 200 semillas por brazo; latencias de Jev de llamadas grabadas. Todo se regenera con <code>tools/regenerate.sh</code>.</span><span data-l="en" lang="en">Deterministic local simulator, 200 seeds per arm; Jev latencies from recorded calls. Everything regenerates with <code>tools/regenerate.sh</code>.</span></p>
+        </details>
+        <details class="fold">
+          <summary><span data-l="es">Preguntas</span><span data-l="en" lang="en">Questions</span></summary>
+          <dl class="faq">
+            <dt data-l="es">¿Funciona con mis mobs?</dt><dt data-l="en" lang="en">Does it work with my mobs?</dt>
+            <dd data-l="es">Uno a uno: con <code>Predictor: false</code>, o sin esa línea, un mob sigue siendo un mob normal de MythicMobs.</dd><dd data-l="en" lang="en">One by one: with <code>Predictor: false</code>, or without that line, a mob stays a normal MythicMobs mob.</dd>
+            <dt data-l="es">¿Añade efectos o sonidos?</dt><dt data-l="en" lang="en">Does it add effects or sounds?</dt>
+            <dd data-l="es">No. Emite señales <code>PREDICTOR_*</code>; tú decides qué se ve y qué se oye.</dd><dd data-l="en" lang="en">No. It emits <code>PREDICTOR_*</code> signals; you decide what is seen and heard.</dd>
+            <dt data-l="es">¿Qué sale de mi servidor?</dt><dt data-l="en" lang="en">What leaves my server?</dt>
+            <dd data-l="es">Sin Jev, nada: decide el plan local, sin red. Con Jev viajan hechos del combate con alias como <code>player_1</code> y la especie; nunca nombres, <code>Display</code>, ID de MythicMobs, facción ni UUID.</dd><dd data-l="en" lang="en">Without Jev, nothing: the local plan decides, with no network. With Jev, fight facts travel with aliases such as <code>player_1</code> and the species; never names, <code>Display</code>, MythicMobs ID, faction or UUID.</dd>
+            <dt data-l="es">¿Es justo con los jugadores?</dt><dt data-l="en" lang="en">Is it fair to players?</dt>
+            <dd data-l="es">Decide con lo que el mob podría percibir, avisa antes de los golpes fuertes y no empuja hacia un peligro letal sin un aviso que se pueda responder.</dd><dd data-l="en" lang="en">It decides with what the mob could perceive, tells before heavy hits and never pushes toward a lethal hazard without a tell that can be answered.</dd>
+          </dl>
+        </details>
+      </div>
+      <p class="disclaimer"><span data-l="es">ThePredict es un addon independiente. Jev es el modelo de decisión de TypeSafe; nombrarlo no implica que TypeSafe respalde este proyecto.</span><span data-l="en" lang="en">ThePredict is an independent add-on. Jev is TypeSafe's decision model; naming it does not imply that TypeSafe endorses this project.</span></p>
+      <p class="fine footnote"><span data-l="es">*Las habilidades son ilustrativas; dependen del boss final.</span><span data-l="en" lang="en">*Abilities shown are illustrative and depend on the final boss.</span></p>
+      <p class="fine" id="footer-meta"></p>
+    </div>
+  </section>
+</main>
+
+<noscript><p class="noscript">Esta página necesita JavaScript para sus escenas 3D. / This page needs JavaScript for its 3D scenes.</p></noscript>
+
+<script src="vendor/three/three.iife.min.js"></script>
+<script src="vendor/three/three-addons.iife.js"></script>
+<script src="data/summary.js"></script>
+<script src="data/capabilities.js"></script>
+<script src="data/content.js"></script>
+<script src="data/bench.js"></script>
+<script src="js/core.js"></script>
+<script src="js/predictor.js"></script>
+<script src="js/pixel.js"></script>
+<script src="js/world.js"></script>
+<script src="js/actors.js"></script>
+<script src="js/fx.js"></script>
+<script src="js/hud.js"></script>
+<script src="js/engine.js"></script>
+<script src="js/scenes.js"></script>
+<script src="js/audio.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>
