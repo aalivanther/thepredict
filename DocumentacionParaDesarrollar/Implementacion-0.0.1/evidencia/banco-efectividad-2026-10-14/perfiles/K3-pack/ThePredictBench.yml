@@ -1,0 +1,115 @@
+schemaVersion: 2
+duel_red:
+  MythicID: DuelRed
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Defeat the rival duelist and survive
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:duel_blue']
+  Choices:
+    strike:
+      MythicID: BurstStrike
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 8
+        Damage: HIGH
+        BestWhen: [TARGET_IN_MELEE]
+    leap:
+      MythicID: BurstLeap
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [GAP_CLOSE, DAMAGE]
+        Delivery: HITSCAN
+        Reach: 8
+        WindUp: 10
+        Damage: MEDIUM
+        BestWhen: [TARGET_FLEEING, TARGET_AT_RANGE]
+    guard:
+      MythicID: BurstGuard
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [DEFENSE]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [TARGET_IN_MELEE]
+  Tactics:
+    press_and_strike: { Movement: APPROACH, Choice: strike, Priority: 70 }
+    leap_in: { Movement: APPROACH, Choice: leap, Priority: 55 }
+    guard_up: { Movement: HOLD, Choice: guard, Priority: 50 }
+    approach: { Movement: APPROACH, Priority: 10 }
+  Contexts:
+    healthy:
+      Priority: 80
+      Conditions: ['healthpercent{p=>50%} true']
+      Tactics: [press_and_strike, leap_in, guard_up, approach]
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    RangedReach: 14
+    Retreat: { Distance: 8, Speed: 1.2 }
+    Arena: { Radius: 18 }
+  Timing:
+    TickLayer: casts
+    Cadence: standard
+duel_blue:
+  MythicID: DuelBlue
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Defeat the rival duelist and survive
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:duel_red']
+  Choices:
+    strike:
+      MythicID: BurstStrike
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 8
+        Damage: HIGH
+        BestWhen: [TARGET_IN_MELEE]
+    leap:
+      MythicID: BurstLeap
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [GAP_CLOSE, DAMAGE]
+        Delivery: HITSCAN
+        Reach: 8
+        WindUp: 10
+        Damage: MEDIUM
+        BestWhen: [TARGET_FLEEING, TARGET_AT_RANGE]
+    guard:
+      MythicID: BurstGuard
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [DEFENSE]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [TARGET_IN_MELEE]
+  Tactics:
+    press_and_strike: { Movement: APPROACH, Choice: strike, Priority: 70 }
+    leap_in: { Movement: APPROACH, Choice: leap, Priority: 55 }
+    guard_up: { Movement: HOLD, Choice: guard, Priority: 50 }
+    approach: { Movement: APPROACH, Priority: 10 }
+  Contexts:
+    healthy:
+      Priority: 80
+      Conditions: ['healthpercent{p=>50%} true']
+      Tactics: [press_and_strike, leap_in, guard_up, approach]
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    RangedReach: 14
+    Retreat: { Distance: 8, Speed: 1.2 }
+    Arena: { Radius: 18 }
+  Timing:
+    TickLayer: casts
+    Cadence: standard

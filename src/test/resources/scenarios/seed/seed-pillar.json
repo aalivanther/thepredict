@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "requestChars": 1234,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Survive while defeating the current target",
+          "facts": [
+            "mob_1 is healthy"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is outside melee reach but within ranged reach",
+              "target keeps the same distance",
+              "target is healthy",
+              "target is moderately armored",
+              "target is the highest threat",
+              "target cannot be reached on foot"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": []
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "Which tactic best serves mob_1's objective now?",
+        "criteria": {
+          "press_and_strike": "close in; melee hit, medium damage; poor fit now: target unreachable on foot",
+          "close_in_and_slam": "close in; area hit around self stun or slow, medium damage, slow wind-up; poor fit now: target unreachable on foot",
+          "keep_distance_and_shoot": "hold mid range; instant ranged hit, low damage",
+          "approach": "close in; poor fit now: target unreachable on foot",
+          "hold": "hold position",
+          "keep_distance": "hold mid range"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "NOW",
+      "options": [
+        "press_and_strike",
+        "close_in_and_slam",
+        "keep_distance_and_shoot",
+        "approach",
+        "hold",
+        "keep_distance"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "acceptable": [
+        "keep_distance_and_shoot",
+        "keep_distance",
+        "hold"
+      ],
+      "forbidden": "approach"
+    }
+  },
+  "seed": "PILLAR",
+  "labelsProposedBy": "M13 seed bank; review before calibrating"
+}

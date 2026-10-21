@@ -1,0 +1,19 @@
+# Sesión 19 (M19): el mob del ejemplo con Predictor: true y Despawn: false.
+# Sustituye al de 03-guardian cuando se copia esta etapa. No lleva una segunda identidad.
+ThePredictGuardian:
+  Type: ZOMBIE
+  Display: 'ThePredict Guardian'
+  Health: 100
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: false
+  Modules:
+    ThreatTable: true
+  ThreatTable:
+    UseDamageTaken: true
+    DecayUnreachable: false
+  Skills:
+  - damage{a=2} @target ~onAttack

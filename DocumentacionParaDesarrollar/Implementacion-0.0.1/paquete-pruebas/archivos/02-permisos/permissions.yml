@@ -1,0 +1,5 @@
+thepredict.verifier:
+  description: Grants ThePredict debug tools to operators on the verification server
+  default: op
+  children:
+    thepredict.debug: true

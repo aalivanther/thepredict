@@ -1,0 +1,37 @@
+# Sesión 24. Ejemplo de zona, contexto nativo y empuje. No ejecutado en un servidor.
+# AIPathfindingMalus del mob queda (pendiente de servidor). El default global sigue en observe.
+schemaVersion: 2
+zone_guardian:
+  MythicID: ZoneGuardian
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while defeating the current target
+  Zone:
+    Mode: observe
+    Radius: 24
+    Facts: true
+    HazardPush: "off"
+  Choices:
+    melee:
+      MythicID: ZoneGuardianMelee
+      TypeOfMythicID: SKILL
+  Tactics:
+    approach:
+      Movement: APPROACH
+    press_and_strike:
+      Movement: APPROACH
+      Choice: melee
+      Priority: 70
+    hold:
+      Movement: HOLD
+      Priority: 10
+  Contexts:
+    wounded_native:
+      Conditions:
+      - healthpercent{p=<30%}
+      Priority: 95
+      Tactics: [hold]
+    idle:
+      Priority: 10
+      Tactics: [hold]
+      DirectTactic: hold

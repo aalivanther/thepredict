@@ -1,0 +1,16 @@
+# Sesión 26. No ejecutado. Los message son diagnóstico de chat, no un efecto de combate.
+JefePatrones:
+  Type: ZOMBIE
+  Display: 'Jefe Patrones'
+  Health: 200
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    Despawn: false
+    PreventOtherDrops: true
+  Modules:
+    ThreatTable: true
+  Skills:
+  - message{m="PREDICTOR_PATTERN_SHIELD_TURTLE"} @PlayersInRadius{r=16} ~onSignal:PREDICTOR_PATTERN_SHIELD_TURTLE
+  - message{m="PREDICTOR_PATTERN_SPAMS_CLICKS"} @PlayersInRadius{r=16} ~onSignal:PREDICTOR_PATTERN_SPAMS_CLICKS

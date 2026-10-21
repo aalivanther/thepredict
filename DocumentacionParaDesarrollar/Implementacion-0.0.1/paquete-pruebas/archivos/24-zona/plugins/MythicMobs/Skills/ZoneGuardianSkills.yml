@@ -1,0 +1,9 @@
+# Sesión 24. No ejecutado en un servidor. La skill de la choice melee del perfil zone_guardian.
+# ThePredict la lanza con su propio disparador; el mob no la lanza con un disparador normal.
+ZoneGuardianMelee:
+  Intention: DAMAGE, MELEE, DAMAGE_MEDIUM, WHEN_TARGET_IN_MELEE
+  Cooldown: 2
+  Conditions:
+  - targetwithin{d=4} true
+  Skills:
+  - damage{a=5} @target

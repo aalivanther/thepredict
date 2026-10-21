@@ -1,0 +1,26 @@
+# Test pack, M13 server script section 7.1: classic rules of arm A and the reach marker of both arms.
+ABClassicMelee:
+  Conditions:
+  - targetwithin{d=3} true
+  Skills:
+  - skill{s=ThePredictGuardianMelee} @target
+ABClassicRanged:
+  Conditions:
+  - targetwithin{d=5} false
+  Skills:
+  - skill{s=ThePredictGuardianRanged} @target
+ABClassicSlam:
+  Conditions:
+  - targetwithin{d=3} true
+  Skills:
+  - skill{s=ThePredictGuardianSlam} @self
+ABClassicDefense:
+  Conditions:
+  - healthpercent{p=<30%} true
+  Skills:
+  - skill{s=ThePredictGuardianDefense} @self
+ABReach:
+  Conditions:
+  - targetwithin{d=3} true
+  Skills:
+  - command{c="say AB in_reach"} @self

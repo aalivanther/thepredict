@@ -1,0 +1,91 @@
+# ThePredict 0.0.1, session 18 of the test pack (M18): the five duel skills, the same for the four duelists, and the
+# classic rules DuelRule* that fire them. ThePredict casts the skills with its own trigger; the classic duelists, and a
+# ThePredict duelist at level 4, cast them through the rules, which start with predictorcontrol false. Damage goes to
+# @target only, and the target of a duelist can only be the rival. Cooldown is the native one, in seconds.
+DuelStrike:
+  Cooldown: 1.5
+  Conditions:
+  - targetwithin{d=3} true
+  Skills:
+  - effect:particles{p=crit;a=12;hs=0.4;vs=0.4;y=1} @self
+  - delay 5
+  - damage{a=5} @target
+
+DuelBolt:
+  Cooldown: 3
+  Conditions:
+  - targetwithin{d=14} true
+  TargetConditions:
+  - lineofsight true
+  Skills:
+  - effect:particles{p=flame;a=20;hs=0.3;vs=0.6;y=1} @self
+  - delay 10
+  - effect:particles{p=flame;a=10;hs=0.2;vs=0.2;y=1} @target
+  - damage{a=3} @target
+
+DuelLeap:
+  Cooldown: 6
+  Conditions:
+  - targetwithin{d=8} true
+  Skills:
+  - leap{velocity=100} @target
+  - delay 10
+  - damage{a=2} @target
+
+DuelGuard:
+  Cooldown: 8
+  Skills:
+  - effect:particles{p=enchanted_hit;a=16;hs=0.5;vs=0.5;y=1} @self
+  - shield{amount=6;maxshield=6} @self
+
+DuelHeal:
+  Cooldown: 10
+  Conditions:
+  - healthpercent{p=<50%} true
+  Skills:
+  - effect:particles{p=heart;a=6;hs=0.5;vs=0.5;y=1.5} @self
+  - heal{a=6} @self
+
+DuelTimeout:
+  Skills:
+  - delay 1800
+  - command{c="say DUEL timeout"} @self
+  - remove @self
+
+DuelRuleStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  Skills:
+  - skill{s=DuelStrike} @target
+
+DuelRuleBolt:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=14} true
+  - targetwithin{d=4} false
+  Skills:
+  - skill{s=DuelBolt} @target
+
+DuelRuleLeap:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=8} true
+  - targetwithin{d=4} false
+  Skills:
+  - skill{s=DuelLeap} @target
+
+DuelRuleGuard:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  - healthpercent{p=<60%} true
+  Skills:
+  - skill{s=DuelGuard} @self
+
+DuelRuleHeal:
+  Conditions:
+  - predictorcontrol false
+  - healthpercent{p=<50%} true
+  Skills:
+  - skill{s=DuelHeal} @self

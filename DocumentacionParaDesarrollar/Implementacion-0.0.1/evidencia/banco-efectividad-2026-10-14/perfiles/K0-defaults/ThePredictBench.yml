@@ -1,0 +1,41 @@
+schemaVersion: 2
+duel_red:
+  MythicID: DuelRed
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Defeat the rival duelist and survive
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:duel_blue']
+  Choices:
+    punch:
+      Kind: VANILLA_MELEE
+  Tactics:
+    press_and_punch: { Movement: APPROACH, Choice: punch, Priority: 70 }
+    approach: { Movement: APPROACH, Priority: 10 }
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    RangedReach: 14
+    Retreat: { Distance: 8, Speed: 1.2 }
+    Arena: { Radius: 18 }
+duel_blue:
+  MythicID: DuelBlue
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Defeat the rival duelist and survive
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:duel_red']
+  Choices:
+    punch:
+      Kind: VANILLA_MELEE
+  Tactics:
+    press_and_punch: { Movement: APPROACH, Choice: punch, Priority: 70 }
+    approach: { Movement: APPROACH, Priority: 10 }
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    RangedReach: 14
+    Retreat: { Distance: 8, Speed: 1.2 }
+    Arena: { Radius: 18 }

@@ -1,0 +1,7 @@
+E1 sombra: no inferioridad y acuerdo
+fecha=2026-10-09
+decision=no ejecutado en servidor
+Lo local: la cota usa n, sum_delta y sum_delta_sq. El acuerdo no cubre una celda. Errata E29-1 aplicada.
+La valoración en sombra de la elección no ejecutada usa la tabla de valor de M28, no el estimador DR.
+El DR queda en informes.
+La sesión 29.2 no se ejecutó. No hay 500 decisiones cubiertas publicadas como pase.

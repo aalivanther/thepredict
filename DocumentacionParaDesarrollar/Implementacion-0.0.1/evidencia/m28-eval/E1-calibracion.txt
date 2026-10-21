@@ -1,0 +1,8 @@
+E1 calibración
+método: X2 ya en verde. No se rehizo el ajuste. Leave-one-scenario-out Platt del brazo D, objetivo aceptable, L2 0,01, 50 pasos.
+semilla y n: las del banco congelado evidencia/m16-rebanco-2026-09-30, pliegues por escenario. El banco no se regeneró.
+X1 pares 60, iguales 59.
+ECE10 0.06970681147994573
+Brier 0.1119781189233698
+criterio ECE10 ≤ 0,10: cumple
+default confidenceGate: raw

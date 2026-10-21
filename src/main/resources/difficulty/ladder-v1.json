@@ -1,0 +1,8 @@
+{
+  "version": 1,
+  "status": "uncalibrated ladder",
+  "calibrated": false,
+  "k_min": 0.06,
+  "k": 0.12,
+  "k_max": 0.18
+}

@@ -1,0 +1,112 @@
+# ThePredict 0.0.1 verification pack (M01 server script, section 1.4). Every mob has Despawn: false so it
+# survives chunk unloads and restarts; kill leftovers with /kill @e[type=!minecraft:player] between sessions.
+TPV_Zombie:
+  Type: ZOMBIE
+  Display: 'TPV Zombie'
+  Health: 200
+  Damage: 2
+  Predictor: true
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: false
+  Skills:
+  - skill{s=TPV_ShowIntent} @self ~onTimer:100
+  - skill{s=TPV_DecideMechanic} @self ~onTimer:20
+  - skill{s=TPV_CaseLower} @self ~onTimer:100
+  - skill{s=TPV_CaseMixed} @self ~onTimer:100
+  - skill{s=TPV_CaseUpper} @self ~onTimer:100
+  - skill{s=TPV_SignalUpper} @self ~onSignal:PREDICTOR_HOLD
+  - skill{s=TPV_SignalLower} @self ~onSignal:predictor_hold
+
+TPV_ZombiePlain:
+  Type: ZOMBIE
+  Display: 'TPV Zombie Plain'
+  Health: 200
+  Damage: 2
+  Predictor: false
+  Options:
+    Despawn: false
+  Skills:
+  - skill{s=TPV_ShowIntent} @self ~onTimer:100
+
+TPV_ZombieCustomAI:
+  Type: ZOMBIE
+  Display: 'TPV Zombie Custom AI'
+  Health: 200
+  Damage: 2
+  Predictor: true
+  Options:
+    Despawn: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 float
+  - 2 meleeAttack
+  - 3 randomStroll
+
+TPV_ZombieAsync:
+  Type: ZOMBIE
+  Display: 'TPV Zombie Async'
+  Health: 200
+  Damage: 2
+  Predictor: true
+  Options:
+    AsyncPathfinding: true
+    FollowRange: 32
+    Despawn: false
+
+TPV_NoPriority:
+  Type: ZOMBIE
+  Display: 'TPV No Priority'
+  Health: 200
+  Damage: 2
+  Predictor: false
+  Options:
+    Despawn: false
+  AIGoalSelectors:
+  - clear
+  - float
+  - meleeAttack
+  - randomStroll
+
+TPV_FleeTarget:
+  Type: ZOMBIE
+  Display: 'TPV Flee Target'
+  Health: 200
+  Predictor: false
+  Options:
+    Despawn: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 float
+  - 2 fleeConditional{distance=10;speed=1.2;targetconditions=[ - isTarget true ]}
+  - 3 randomStroll
+
+TPV_FleePlayer:
+  Type: ZOMBIE
+  Display: 'TPV Flee Player'
+  Health: 200
+  Predictor: false
+  Options:
+    Despawn: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 float
+  - 2 fleeConditional{distance=10;speed=1.2;targetconditions=[ - isplayer true ]}
+  - 3 randomStroll
+
+TPV_Skeleton:
+  Type: SKELETON
+  Display: 'TPV Skeleton'
+  Health: 200
+  Predictor: true
+  Options:
+    Despawn: false
+
+TPV_Piglin:
+  Type: PIGLIN
+  Display: 'TPV Piglin'
+  Health: 200
+  Predictor: true
+  Options:
+    Despawn: false

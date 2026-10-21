@@ -1,0 +1,20 @@
+{
+  "version": 5,
+  "status": "uncalibrated ladder",
+  "calibrated": false,
+  "k_min": 0.06,
+  "k": 0.12,
+  "k_max": 0.18,
+  "edge_danger": "every rung",
+  "hazard_push": "no rung",
+  "solo": {
+    "maxMeleeAttackers": [2, 2, 2, 2, 2, 2, 2, 2, 2],
+    "impactGapTicks": [6, 6, 6, 6, 6, 6, 6, 6, 6],
+    "exploitShare": [0.0, 0.0, 0.0, 0.10, 0.20, 0.30, 0.40, 0.50, 0.50]
+  },
+  "group": {
+    "maxMeleeAttackers": [1, 1, 1, 1, 1, 2, 2, 2, 2],
+    "impactGapTicks": [20, 16, 14, 12, 10, 10, 8, 6, 6],
+    "exploitShare": [0.0, 0.0, 0.0, 0.10, 0.20, 0.30, 0.40, 0.50, 0.50]
+  }
+}

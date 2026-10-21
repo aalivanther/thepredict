@@ -1,0 +1,67 @@
+# ThePredict bench v2: classic 'adversarial' of kit K1 (pack).
+# Mobs/Bench_K1_adversarial.yml; the skills of the kit stay in their own file.
+Bench_K1_adversarial:
+  Type: ZOMBIE
+  Display: 'Classic adversarial'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 4 meleeAttack{speed=1}
+  Skills:
+  - skill{s=Bench_K1_adversarial_RuleDuelHeal} @self ~onTimer:1
+  - skill{s=Bench_K1_adversarial_RuleDuelGuard} @self ~onTimer:1
+  - skill{s=Bench_K1_adversarial_RuleDuelStrike} @self ~onTimer:1
+  - skill{s=Bench_K1_adversarial_RuleDuelLeap} @self ~onTimer:1
+  - skill{s=Bench_K1_adversarial_RuleDuelBolt} @self ~onTimer:1
+# Skills/Bench_K1_adversarialRules.yml
+Bench_K1_adversarial_RuleDuelHeal:
+  Conditions:
+  - predictorcontrol false
+  - healthpercent{p=<50%} true
+  Skills:
+  - skill{s=DuelHeal} @self
+Bench_K1_adversarial_RuleDuelGuard:
+  Conditions:
+  - predictorcontrol false
+  Skills:
+  - skill{s=DuelGuard} @self
+Bench_K1_adversarial_RuleDuelStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_adversarial_WindowDuelStrike} false
+  Skills:
+  - skill{s=DuelStrike} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=10} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=5} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=5} @target
+Bench_K1_adversarial_RuleDuelLeap:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=8} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_adversarial_WindowDuelLeap} false
+  Skills:
+  - skill{s=DuelLeap} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=15} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=10} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=10} @target
+Bench_K1_adversarial_RuleDuelBolt:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=14} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_adversarial_WindowDuelBolt} false
+  Skills:
+  - skill{s=DuelBolt} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=15} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=10} @target
+  - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=10} @target

@@ -1,0 +1,391 @@
+# ThePredict 0.0.1 configuration, schema 2.
+# Every value below is the default. Units are in the key names: Millis, Ticks, Blocks, Micros.
+schemaVersion: 2
+jev:
+  # TypeSafe Jev endpoint. https is required; http is accepted only for localhost.
+  baseUrl: 'https://api.typesafe.ai'
+  # Versioned Jev model tested with this release.
+  model: 'jev-1.13.0'
+  # This environment variable wins over apiKey. Keep the key out of this file when you can.
+  apiKeyEnvironment: 'TYPESAFE_API_KEY'
+  apiKey: ''
+  # typesafe reads TYPESAFE_API_KEY. kev is local, ignores this key, and requires a loopback baseUrl.
+  provider: typesafe
+  timeoutMillis: 800
+  connectTimeoutMillis: 1500
+  maxResponseBytes: 262144
+  # Largest encoded combat state sent to Jev, 2000 to 45000 characters (the request guard allows 48000 with the
+  # longest question). Calibrated for English text.
+  maxStateChars: 12000
+decision:
+  # Global limits. A profile can never widen them.
+  maxRequestsPerMinute: 600
+  maxRequestsPerMinutePerWorld: 300
+  maxInFlightRequests: 8
+  maxInFlightRequestsPerWorld: 4
+  maxInputTokensPerMinute: 600000
+  encounterHeartbeatTicks: 20
+  contingenciesPerMob: 1
+  minimumConfidence: 0.45
+  tacticSwitchMargin: 0.15
+  maxInstallsPerTick: 10
+  maxEncounterEvaluationsPerTick: 2
+  maxProbesPerTick: 64
+  maxCompletionsPerTick: 16
+  maxSignalsPerTick: 64
+  maxTickWorkMicros: 2000
+  # maxDecisionAgeMillis is omitted: it defaults to jev.timeoutMillis + 200 (at most 5000).
+  lowConfidenceStreakForLocal: 3
+  searchRadiusBlocks: 48.0
+  logDecisions: false
+  # Questions to Jev (M16). maxOptionsPerQuestion caps the options of one question after identical tactics are merged
+  # (2 to 32). questionDetail is how much each option says: full (default since the M16.10 re-bench), standard or
+  # compact (cheapest); a profile may choose its own with Timing.QuestionDetail, and no detail widens the token limits
+  # above.
+  maxOptionsPerQuestion: 8
+  questionDetail: full
+  # Optional fit check per option, only sent with questionDetail full; fitChecksAllowed: false forbids it everywhere.
+  fitChecks: false
+  fitChecksAllowed: true
+  fitVeto: 0.2
+  fitRescue: 0.7
+  # Which skills fire as soon as they are ready: any_ready (default) or intent_only (only the choice of the tactic).
+  # A profile may set Timing.CastMode to intent_only to opt out. The thread of a cast is global: same_tick runs the
+  # skill's delay on the server thread; mythic_default keeps the 0.0.1 metadata.
+  castMode: any_ready
+  castThread: same_tick
+  # A skill with no Purpose and no valid Intention fires only as the choice of its tactic.
+  untypedCast: tactic_only
+  # Ticks ahead a skill still counts as available for the question. 0 keeps today's eligible set. The local planner
+  # never reads it. 0 to 100.
+  readyHorizonTicks: 0
+  # off keeps today's question order. safe drops options that cannot work and orders the rest by the local score.
+  pruning: "off"
+  # casts, reactions (default) or full. off is an error: removed; use casts.
+  tickLayer:
+    mode: reactions
+    maxSessionsPerTick: 96
+    maxMicros: 600
+    guardMspt: 0
+    microMinHoldTicks: 4
+    waypointRefreshTicks: 5
+    maxWaypointPathsPerTick: 8
+    maxWaypointPathMicrosPerTick: 400
+  # priority (default), utility or learned. learned acts only with an active artifact.
+  candidateScoring: priority
+  # raw (default) or calibrated. parity keeps the same accepts as raw 0.45.
+  confidenceGate: raw
+  minimumCalibratedConfidence: parity
+  candidateDiversity: false
+  # off (default), shadow or on. on reuses an exact answer only after the M21.7 gate, which this release does not cross.
+  answerCache: "off"
+  answerCacheTtlTicks: 100
+  answerCacheEntries: 2048
+  answerCacheRevalidateRatio: 0.1
+debug:
+  # Records decisions as anonymized scenarios for the test suite. Keep it off on a live server.
+  recordScenarios: false
+  # Base seed of StableRandom. 0 is the default installation.
+  seed: 0
+profileDefaults:
+  # Inherited by every profile unless the profile overrides the value.
+  observationIntervalTicks: 2
+  minimumDecisionIntervalTicks: 20
+  maximumIntentDurationTicks: 40
+  criticalHealthRatio: 0.3
+  woundedHealthRatio: 0.6
+  meleeReachBlocks: 2.5
+  bandInnerBlocks: 5.0
+  bandOuterBlocks: 9.0
+  rangedReachBlocks: 16.0
+  retreatDistanceBlocks: 10.0
+  retreatSpeed: 1.2
+  approachSpeed: 1.15
+participants:
+  # Players in these game modes can be perceived, targeted and fought.
+  playerGameModes: [SURVIVAL, ADVENTURE]
+  entities:
+    # Selectors of non-player living entities that can take part. Empty: none (0.0.1 behavior).
+    allow: []
+    # Selectors that never take part, even if a profile allows them.
+    deny: []
+    # Whether profiles may add entity selectors of their own.
+    profilesMayAllow: true
+    # Whether entities other than the mobs' targets are perceived (one nearby-entity query per member).
+    perceiveNonTargets: false
+    # Most non-target entities kept per member and capture when perceiveNonTargets is true (1 to 16).
+    maxCandidatesPerMember: 8
+records:
+  # off, decisions (default) or full. full also writes casts, threat, reactions and micro.
+  level: decisions
+  # none, hash (default), dedup or all.
+  bodies: hash
+  # Relative to the plugin folder. Rejects .. and an absolute path.
+  directory: records
+  queueCapacity: 16384
+  segmentMegabytes: 64
+  segmentMinutes: 60
+  compressClosedSegments: true
+  retentionDays: 14
+  maxTotalMegabytes: 2048
+  patternSummaryBinary: false
+difficulty:
+  # auto plays the controller against players and full power against entities. bench is full power. player always
+  # aims the whole fight at the target time.
+  defaultMode: auto
+  defaultPreset: normal
+  adjustIntervalTicks: 100
+  toleranceRatio: 0.20
+  deadbandRatio: 0.10
+  learningGain: 0.25
+  projectedTtkCapRatio: 4
+  dampingReversals: 4
+  estimatorHalfLifeTicks: 100
+  minEvidenceTicks: 60
+  disengageTicks: 200
+  maxTrackedFights: 4
+  nativeLevelAllowed: false
+  presets:
+    facil:
+      targetMinutes: 45
+      reactionFloorTicks: 5
+      entropyReactionFloorTicks: 4
+      entropyAdaptStartSeconds: 7
+    normal:
+      targetMinutes: 30
+      reactionFloorTicks: 5
+      entropyReactionFloorTicks: 3
+      entropyAdaptStartSeconds: 5
+    dificil:
+      targetMinutes: 15
+      reactionFloorTicks: 3
+      entropyReactionFloorTicks: 0
+      entropyAdaptStartSeconds: 3.5
+    caos:
+      targetMinutes: 10
+      reactionFloorTicks: 1
+      entropyReactionFloorTicks: 0
+      entropyAdaptStartSeconds: 1.5
+    vacio:
+      targetMinutes: 5
+      reactionFloorTicks: 0
+      entropyReactionFloorTicks: 0
+      entropyAdaptStartSeconds: 0
+storage:
+  # off or sqlite. mysql is reserved and rejected.
+  aggregates: sqlite
+  # File name beside the records folder, not inside it.
+  file: aggregates.db
+  synchronous: normal
+  busyTimeoutMillis: 2000
+  flushIntervalTicks: 100
+  maxPendingKeys: 4096
+  backupEveryHours: 24
+  backupsKept: 7
+telegraph:
+  againstPlayers: enforce
+  againstEntities: off
+  minTicks:
+    light: 0
+    medium: 8
+    heavy: 16
+    severe: 24
+  answerTicks:
+    block: 0
+    dodge: 0
+    backOff: 3
+    breakSight: 3
+    interrupt: 3
+  deliveryMarginTicks: 1
+  maxReleasesPerTick: 32
+  whiffRecoveryTicks: 10
+  whiffCooldownTicks: 40
+  resultWindowTicks: 10
+stance:
+  nativeMode: hybrid
+  minDwellTicks: 20
+  hysteresisCycles: 2
+zone:
+  mode: observe
+  defaultRadiusBlocks: 24
+  maxRadiusBlocks: 48
+  bandBlocks: 12
+  maxZones: 64
+  maxSnapshotsPerTick: 4
+  maxConcurrentBuilds: 2
+  maxDropScanBlocks: 64
+  maxMicrosPerTick: 250
+  maxColumnReadsPerTick: 16
+  minColumnRefreshTicks: 4
+  maxDirtyQueue: 256
+  dirtyRebuildThreshold: 64
+  verifyIntervalTicks: 200
+  idleDropTicks: 600
+  maxQueriesPerTick: 32
+  knockbackDepthBlocks: 2
+  strongPushDepthBlocks: 7
+  maxSafeDropBlocks: 3
+  factPeriodTicks: 10
+  factOnTicks: 10
+  factOffTicks: 40
+  maxFactsPerMob: 3
+  pushDeferTicks: 10
+  pushDeferMaxTicks: 60
+  pushAttributionTicks: 60
+  answerRetryTicks: 4
+  answerMaxWaitTicks: 40
+group:
+  mode: fair
+  maxSquads: 4
+  brokenTicks: 100
+  arbitrationPeriodTicks: 4
+  replanPeriodTicks: 20
+  maxReplansPerTick: 2
+  maxMicrosPerTick: 150
+  maxMeleeAttackersPerPlayer: 2
+  maxRangedAttackersPerPlayer: 2
+  minImpactGapTicks: 6
+  tokenIdleTimeoutTicks: 30
+  stealMarginMillis: 150
+  idleWarnTicks: 100
+  roleSwitchMarginMillis: 150
+  exitSectorDegrees: 90
+  lkpForgetTicks: 200
+  maxMediumTellsPerPlayer: 2
+  bigImpactSpacingTicks: 10
+  leaderReserveTicks: 10
+  projectileFlightMarginTicks: 2
+  maxPlanCandidates: 4
+  minPlanTicks: 40
+  planHorizonTicks: 100
+  assignmentThreatMargin: 5
+  factOnTicks: 10
+  factOffTicks: 40
+  maxFacts: 4
+patterns:
+  mode: observe
+  hearingBlocks: 16
+  sampleTicks: 2
+  maxWatchedPerEncounter: 4
+  maxReadsPerTick: 16
+  strafeBlocks: 0.15
+  airSwings: observe
+  mergeTicks: 6
+  idleTicks: 20
+  maxTokensPerSecond: 20
+  order2Contexts: 32
+  forgetting: 0.98
+  evidenceForgetting: 0.98
+  confidenceQuantile: 0.05
+  minTrials: 8
+  persistUpdates: 3
+  exitMargin: 0.05
+  changepointH: 4.0
+  forecastMinAccuracy: 0.4
+  histogramBinTicks: 2
+  maxMicrosPerTick: 60
+  maxExploitShare: 0.5
+  maxCounterDelayTicks: 20
+  exploitWindowTicks: 400
+  restAfterSuccesses: 3
+  restTicks: 300
+  maxExploitedPatterns: 2
+  factOnTicks: 40
+  factOffTicks: 80
+  maxFactsPerParticipant: 2
+  maxFactsPerRequest: 4
+memory:
+  mode: record
+  fightDecay: 0.9
+  halfLifeDays: 30
+  crossFightH: 4
+  styleBreakFactor: 0.25
+  seedMaxTrials: 6
+  minFightTrials: 4
+  rungPriorFights: 3
+  maxRungOffset: 3
+  minDamageShareRatio: 0.2
+  maxProfilesPerPlayer: 8
+  maxFactsPerRequest: 2
+  factMaxAgeDays: 60
+  cacheSubjects: 512
+  maxHintsPerTick: 16
+  loadTimeoutSeconds: 10
+  refreshSeconds: 60
+  maxPendingDigestsPerSubject: 8
+  maxPendingSubjects: 1024
+  maxSubjectsPerBatch: 64
+  retentionDays: 180
+  maxRows: 1000000
+  backend: sqlite
+learning:
+  allowUnverified: false
+  collect: true
+  scope: bench
+  baseScoring: priority
+  trainingSources: [sim, bench, player_full]
+  contextVersion: 2
+  maxContextKeysPerProfile: 512
+  maxOpenWindowsPerSession: 32
+  creditShare: 0.5
+  groupCreditShare: 0.5
+  creditDecayPerWindow: 0.8
+  minWindowsForValue: 20
+  halfLifeDays: 14
+  weeksKept: 8
+  maxEntries: 20000
+  minValueSpreadMillis: 20
+  buildChunkRows: 2000
+  exploreInDuels: false
+  exploration:
+    policy: epsilon
+    epsilon: 0.10
+    maxShare: 0.2
+  calibration:
+    minDecisions: 48
+    priorStrength: 20
+    driftReferenceWindows: 500
+  voiSkip: "off"
+  voi:
+    minWindows: 50
+    minAgreement: 0.90
+    maxExpectedGain: 0.02
+    maxConsecutiveSkips: 2
+  jevHint: "off"
+  groupPlans: "off"
+distill:
+  mode: "off"
+  scope: bench
+  collect: true
+  minCellOffers: 8
+  maxTreeDepth: 6
+  maxLeaves: 64
+  minLeafDecisions: 20
+  overrideZ: 2
+  minCellDecisions: 50
+  nonInferiorityMargin: 0.02
+  coverageRefreshMinutes: 10
+  coverageMaxAgeMinutes: 60
+  auditEvery: 10
+  assistMinDelegable: 500
+  autonomous:
+    jevForOod: true
+  regime:
+    openingSeconds: 10
+    dwellTicks: 40
+    maxSwitchesPerEncounter: 6
+    minGain: 0.02
+    minDecisions: 2000
+    extraDimensions: []
+  maxRegimesPerProfile: 4
+  maxArtifactBytes: 65536
+  weeksKept: 8
+  drift:
+    cusumH: 5
+autoconfig:
+  initialConfigs: 81
+  initialPairs: 20
+  eta: 3
+  maxPairs: 8000
+  maxMinutes: 90
+  autoApply: "off"

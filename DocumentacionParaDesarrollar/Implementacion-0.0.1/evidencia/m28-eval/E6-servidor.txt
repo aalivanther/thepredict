@@ -1,0 +1,4 @@
+E6 servidor
+pendiente de la sesión 28.2 del paquete de pruebas. No se arrancó servidor.
+DT-85, DT-86, DT-87 y DT-89 siguen abiertas. DT-88 solo con 28.3. DT-91 solo con 28.4.
+no es motivo de PARCIAL.

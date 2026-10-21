@@ -1,0 +1,106 @@
+{
+  "format": 2,
+  "id": "bank-cont-critical-02",
+  "family": "cont-critical",
+  "profile": "thepredict_guardian",
+  "sets": [
+    "core24"
+  ],
+  "requestChars": 1171,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Survive while defeating the current target",
+          "facts": [
+            "mob_1 is healthy"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is outside melee reach but within ranged reach",
+              "target keeps the same distance",
+              "target is healthy",
+              "target is moderately armored",
+              "target is the highest threat"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": []
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "If mob_1's health becomes critical soon, which tactic then?",
+        "criteria": {
+          "retreat_and_defend": "retreat; self heal",
+          "press_and_strike": "close in; melee hit, medium damage",
+          "close_in_and_slam": "close in; area hit around self stun or slow, medium damage, slow wind-up; poor fit now: too risky at critical health",
+          "keep_distance_and_shoot": "hold mid range; instant ranged hit, low damage",
+          "approach": "close in",
+          "keep_distance": "hold mid range",
+          "hold": "hold position"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "IF_OWN_HEALTH_CRITICAL",
+      "options": [
+        "retreat_and_defend",
+        "press_and_strike",
+        "close_in_and_slam",
+        "keep_distance_and_shoot",
+        "approach",
+        "keep_distance",
+        "hold"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "best": [
+        "retreat_and_defend"
+      ],
+      "acceptable": [
+        "retreat_and_defend",
+        "keep_distance_and_shoot",
+        "keep_distance"
+      ],
+      "forbidden": [
+        "press_and_strike",
+        "close_in_and_slam",
+        "approach",
+        "hold"
+      ],
+      "rationale": "If the mob's health becomes critical with a healthy target at range, heal or keep away.",
+      "status": "REVIEWED",
+      "reviewedBy": "usuario (revisión por chat 2026-09-30)",
+      "reviewedOn": "2026-09-30",
+      "uninformative": false
+    }
+  }
+}

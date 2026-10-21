@@ -1,0 +1,18 @@
+# ThePredict bench v2: classic 'vanilla' of kit K0 (vanilla).
+# Mobs/Bench_K0_vanilla.yml; the skills of the kit stay in their own file.
+Bench_K0_vanilla:
+  Type: ZOMBIE
+  Display: 'Classic vanilla'
+  Health: 60
+  Damage: 3
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 4 meleeAttack{speed=1}
+  Skills:
+# Skills/Bench_K0_vanillaRules.yml

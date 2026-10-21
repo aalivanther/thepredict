@@ -1,0 +1,10 @@
+E2 cobertura y fuera de distribución
+fecha=2026-10-09
+decision=no cumple
+banco=60 archivos en src/test/resources/scenarios/bank. BankContextMapperTest: verdict MAPPED, 60 filas. No se regeneró el banco.
+celdas cubiertas con filas de resultado locales=0
+prohibidas dentro de una celda cubierta=0
+trafico cubierto=0
+tasa por causa=OOD_CELL_UNSEEN en todo el banco. n de resultado=0. La regla sigue en n>=50 y cota normal >= -0.02. No se amplió el margen.
+curva=delegar el 10 por ciento: no alcanzada. Delegar el 25 por ciento: no alcanzada. Delegar el 50 por ciento: no alcanzada.
+El cero de tráfico es la medida local: no hay filas de resultado de sombra. No es una curva de servidor.

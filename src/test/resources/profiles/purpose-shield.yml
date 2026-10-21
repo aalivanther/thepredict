@@ -1,0 +1,42 @@
+# Test profile of M15.8, also used by M15.6 (shield) and by the bank of M16 (family "Escudo"). Two APPROACH tactics
+# of priority 60: press strikes with a normal MELEE skill without BestWhen, so it never ties on conditions with the
+# other; break_guard strikes with a skill that goes through shields and works best against a shielding target.
+schemaVersion: 2
+purpose_shield:
+  MythicID: PurposeShieldMob
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Break the guard of the current target
+  Choices:
+    strike:
+      MythicID: PurposeShieldStrike
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 5
+        Damage: MEDIUM
+    guard_break:
+      MythicID: PurposeShieldBreak
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 10
+        Damage: MEDIUM
+        BestWhen: [TARGET_SHIELDING]
+        IgnoresShield: true
+  Tactics:
+    press:
+      Movement: APPROACH
+      Choice: strike
+      Priority: 60
+    break_guard:
+      Movement: APPROACH
+      Choice: guard_break
+      Priority: 60
+    hold:
+      Movement: HOLD
+      Priority: 10

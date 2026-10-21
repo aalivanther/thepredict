@@ -1,0 +1,20 @@
+# Sesión 26. No ejecutado. patterns.mode global sigue en observe.
+schemaVersion: 2
+jefe_patrones:
+  MythicID: JefePatrones
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while reading the current target
+  Patterns:
+    Mode: observe
+    AgainstEntities: free
+    Facts: true
+  Choices:
+    melee:
+      MythicID: JefePatronesMelee
+      TypeOfMythicID: SKILL
+  Tactics:
+    press:
+      Movement: APPROACH
+      Choice: melee
+      Priority: 70

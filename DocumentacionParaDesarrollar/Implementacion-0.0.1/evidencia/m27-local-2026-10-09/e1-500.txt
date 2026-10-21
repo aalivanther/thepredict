@@ -1,0 +1,28 @@
+E1 seed 27 campaigns 500 plan campaigns 500 patterns 25 habits 0.65,0.8,0.9 changes none,dilute,invert trials 30,60 fights 8
+MEMORY_DETECTION_GAIN habit 0.8 trials 30 fights>=2 9.210714285714285 cumple
+MEMORY_STALE_ACTIVATION dilute 0.0018771929824561403 cumple invert 2.0833333333333333E-5 cumple
+false_activation memory 0.0076458333333333335 record 0.012114583333333333 cumple
+MEMORY_SEED_PARITY 1 cumple
+skipped_non_beta 9500
+mode record
+E2 FAIRNESS_VIOLATIONS 0 cumple impacts 4
+UNWARNED_HITS_PER_MINUTE seed 0.0 record 0.0 cumple
+none EXPLOIT_GAIN_TTK fights>=2 arms seed,record n=20 meanDelta=-0.20356817176792993 min=-0.49429632181477956 max=0.0 variance=0.06315789473684214 llr=4.354166666666669 GSPRT GAIN 0.50-0.55 ACCEPT_H1 cumple pairTicks=150:-1,146:-1,132:-1,-1:-1,-1:-1,-1:-1,-1:-1,133:-1,160:-1,144:-1,122:-1,179:-1,158:-1,-1:-1,-1:-1,-1:-1,-1:-1,122:-1,131:-1,143:-1
+classic EXPLOIT_GAIN_TTK fights>=2 arms seed,record n=20 meanDelta=-0.21827132022393486 min=-0.4307829160924541 max=0.0 variance=0.06315789473684214 llr=4.354166666666669 GSPRT GAIN 0.50-0.55 ACCEPT_H1 cumple pairTicks=133:-1,140:-1,146:-1,-1:-1,-1:-1,-1:-1,-1:-1,142:-1,135:-1,168:-1,130:-1,131:-1,142:-1,-1:-1,-1:-1,-1:-1,-1:-1,131:-1,137:-1,137:-1
+classic-tuned EXPLOIT_GAIN_TTK fights>=2 arms seed,record n=20 meanDelta=-0.2291061981322638 min=-0.49429632181477956 max=0.0 variance=0.06315789473684214 llr=4.354166666666669 GSPRT GAIN 0.50-0.55 ACCEPT_H1 cumple pairTicks=140:-1,140:-1,130:-1,-1:-1,-1:-1,-1:-1,-1:-1,158:-1,146:-1,150:-1,122:-1,122:-1,126:-1,-1:-1,-1:-1,-1:-1,-1:-1,150:-1,130:-1,130:-1
+local-best EXPLOIT_GAIN_TTK fights>=2 arms seed,record n=20 meanDelta=-0.23037211188688284 min=-0.4307829160924541 max=0.0 variance=0.06315789473684214 llr=4.354166666666669 GSPRT GAIN 0.50-0.55 ACCEPT_H1 cumple pairTicks=132:-1,154:-1,130:-1,-1:-1,-1:-1,-1:-1,-1:-1,166:-1,132:-1,132:-1,144:-1,130:-1,130:-1,-1:-1,-1:-1,-1:-1,-1:-1,130:-1,130:-1,130:-1
+MEMORY_DETECTION_GAIN no es E3
+E4 MEMORY_RECOVERY_FIGHTS invert 1.0 cumple dilute 1.0 cumple CROSS_FIGHT_EXPLOIT_STREAK 0 cumple seed_after_90 0.75 cumple vengeance cumple
+E5 START_RUNG_ERROR ratio 0.32142857142857145 cumple TTK_BAND_FIGHTS memory 52 profile 140 cumple group_ln 2.995732273553991 group_anchor boss
+E6 no ejecutada sesion 27
+E7 no ejecutada paso de pago
+label stable:spam_clicks
+mode record
+gain 20.885416666666668
+stale_dilute 0.0
+stale_invert 0.0
+recovery 1.0
+start_rung_error_ratio 0.25
+fights 64
+trials 30
+paid arms not run

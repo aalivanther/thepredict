@@ -1,0 +1,113 @@
+schemaVersion: 2
+duel_red:
+  MythicID: DuelRed
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Defeat the rival duelist and survive
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:duel_blue']
+  Choices:
+    bolt:
+      MythicID: RangedBolt
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: HITSCAN
+        Reach: 16
+        WindUp: 10
+        Damage: MEDIUM
+        BestWhen: [TARGET_AT_RANGE]
+        Risks: [NEEDS_LINE_OF_SIGHT]
+    strike:
+      MythicID: RangedStrike
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 5
+        Damage: LOW
+        BestWhen: [TARGET_IN_MELEE]
+    guard:
+      MythicID: RangedGuard
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [DEFENSE]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [TARGET_IN_MELEE]
+  Tactics:
+    press_and_strike: { Movement: APPROACH, Choice: strike, Priority: 70 }
+    keep_distance_and_bolt: { Movement: KEEP_DISTANCE, Choice: bolt, Priority: 60 }
+    guard_up: { Movement: HOLD, Choice: guard, Priority: 50 }
+    approach: { Movement: APPROACH, Priority: 10 }
+  Contexts:
+    low_health_phase: { Priority: 90, Tactics: [keep_distance_and_bolt] }
+    healthy:
+      Priority: 80
+      Conditions: ['healthpercent{p=>50%} true']
+      Tactics: [press_and_strike, keep_distance_and_bolt, guard_up, approach]
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    RangedReach: 16
+    Retreat: { Distance: 8, Speed: 1.2 }
+    Arena: { Radius: 18 }
+duel_blue:
+  MythicID: DuelBlue
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Defeat the rival duelist and survive
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:duel_red']
+  Choices:
+    bolt:
+      MythicID: RangedBolt
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: HITSCAN
+        Reach: 16
+        WindUp: 10
+        Damage: MEDIUM
+        BestWhen: [TARGET_AT_RANGE]
+        Risks: [NEEDS_LINE_OF_SIGHT]
+    strike:
+      MythicID: RangedStrike
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 5
+        Damage: LOW
+        BestWhen: [TARGET_IN_MELEE]
+    guard:
+      MythicID: RangedGuard
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [DEFENSE]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [TARGET_IN_MELEE]
+  Tactics:
+    press_and_strike: { Movement: APPROACH, Choice: strike, Priority: 70 }
+    keep_distance_and_bolt: { Movement: KEEP_DISTANCE, Choice: bolt, Priority: 60 }
+    guard_up: { Movement: HOLD, Choice: guard, Priority: 50 }
+    approach: { Movement: APPROACH, Priority: 10 }
+  Contexts:
+    low_health_phase: { Priority: 90, Tactics: [keep_distance_and_bolt] }
+    healthy:
+      Priority: 80
+      Conditions: ['healthpercent{p=>50%} true']
+      Tactics: [press_and_strike, keep_distance_and_bolt, guard_up, approach]
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    RangedReach: 16
+    Retreat: { Distance: 8, Speed: 1.2 }
+    Arena: { Radius: 18 }

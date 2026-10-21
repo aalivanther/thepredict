@@ -1,0 +1,39 @@
+# ThePredict bench v2: classic 'adversarial' of kit K4 (sustain).
+# Mobs/Bench_K4_adversarial.yml; the skills of the kit stay in their own file.
+Bench_K4_adversarial:
+  Type: ZOMBIE
+  Display: 'Classic adversarial'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 4 meleeAttack{speed=1}
+  Skills:
+  - skill{s=Bench_K4_adversarial_RuleSustainHeal} @self ~onTimer:1
+  - skill{s=Bench_K4_adversarial_RuleSustainGuard} @self ~onTimer:1
+  - skill{s=Bench_K4_adversarial_RuleSustainStrike} @self ~onTimer:1
+# Skills/Bench_K4_adversarialRules.yml
+Bench_K4_adversarial_RuleSustainHeal:
+  Conditions:
+  - predictorcontrol false
+  - healthpercent{p=<30%} true
+  Skills:
+  - skill{s=SustainHeal} @self
+Bench_K4_adversarial_RuleSustainGuard:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  Skills:
+  - skill{s=SustainGuard} @self
+Bench_K4_adversarial_RuleSustainStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  Skills:
+  - skill{s=SustainStrike} @target

@@ -1,0 +1,13 @@
+# Test pack: the vocabulary example of the author guide (Guias/Guia-del-autor.md, section 10), unchanged.
+schemaVersion: 2
+vocabulary_guardian:
+  MythicID: VocabularyGuardian
+  Objective: Survive while defeating the current target
+  Choices:
+    shield: { MythicID: GuardianShield, RequiresTarget: false }
+  Tactics:
+    approach: { Movement: APPROACH, Priority: 60 }
+    retreat_and_defend: { Movement: RETREAT, Choice: shield, Priority: 90 }
+    hold: { Movement: HOLD, Priority: 10 }
+  Contexts:
+    low_health_phase: { Priority: 90, Tactics: [retreat_and_defend] }

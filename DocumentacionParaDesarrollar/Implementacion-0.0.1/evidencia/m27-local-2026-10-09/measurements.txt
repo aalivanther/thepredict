@@ -1,0 +1,20 @@
+## Memory (M27)
+
+| jugadores | encuentros | bytes p50 | bytes p99 | bytes max | alta p50 ns | alta p99 ns | digestos ns | drenado ns | heap bytes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| 1 | 1 | 31 | 31 | 31 | 208 | 3042 | 175 | 458 | 80568 |
+| 1 | 5 | 123 | 123 | 123 | 208 | 3042 | 175 | 458 | 80568 |
+| 1 | 10 | 192 | 192 | 192 | 208 | 3042 | 175 | 458 | 80568 |
+| 50 | 1 | 31 | 31 | 31 | 208 | 3042 | 175 | 458 | 80568 |
+| 50 | 5 | 123 | 123 | 123 | 208 | 3042 | 175 | 458 | 80568 |
+| 50 | 10 | 192 | 192 | 192 | 208 | 3042 | 175 | 458 | 80568 |
+| 500 | 1 | 32 | 32 | 32 | 208 | 3042 | 175 | 458 | 80568 |
+| 500 | 5 | 128 | 128 | 128 | 208 | 3042 | 175 | 458 | 80568 |
+| 500 | 10 | 200 | 200 | 200 | 208 | 3042 | 175 | 458 | 80568 |
+
+bytes p99 200 cumple; max 200 cumple.
+digestos 175 ns cumple; drenado 458 ns cumple.
+heap 80568 bytes para 500 entradas (161.136 por entrada) cumple frente a 416 bytes por entrada.
+Cada fila codifica un registro por jugador, con tantos perfiles como encuentros, tope 8. Semilla local 27. Sin sesión de servidor.
+Columna memoria: una frase fija por participante cuando el modo es full.
+

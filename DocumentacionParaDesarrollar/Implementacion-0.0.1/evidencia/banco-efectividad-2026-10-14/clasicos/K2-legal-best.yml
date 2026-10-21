@@ -1,0 +1,49 @@
+# ThePredict bench v2: classic 'legal-best' of kit K2 (ranged).
+# Mobs/Bench_K2_legal_best.yml; the skills of the kit stay in their own file.
+Bench_K2_legal_best:
+  Type: ZOMBIE
+  Display: 'Classic legal-best'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<35%} true ]}
+  - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+  - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+  - 4 meleeAttackConditional{speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} false ]}
+  Skills:
+  - skill{s=Bench_K2_legal_best_RuleRangedGuard} @self ~onTimer:1
+  - skill{s=Bench_K2_legal_best_RuleRangedStrike} @self ~onTimer:1
+  - skill{s=Bench_K2_legal_best_RuleRangedBolt} @self ~onTimer:1
+# Skills/Bench_K2_legal_bestRules.yml
+Bench_K2_legal_best_RuleRangedGuard:
+  Conditions:
+  - predictorcontrol false
+  Skills:
+  - skill{s=RangedGuard} @self
+Bench_K2_legal_best_RuleRangedStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K2_legal_best_WindowRangedStrike} false
+  Skills:
+  - skill{s=RangedStrike} @target
+  - aura{auraName=Bench_K2_legal_best_WindowRangedStrike;duration=10} @target
+  - aura{auraName=Bench_K2_legal_best_WindowRangedBolt;duration=5} @target
+Bench_K2_legal_best_RuleRangedBolt:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=16} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K2_legal_best_WindowRangedBolt} false
+  Skills:
+  - skill{s=RangedBolt} @target
+  - aura{auraName=Bench_K2_legal_best_WindowRangedStrike;duration=15} @target
+  - aura{auraName=Bench_K2_legal_best_WindowRangedBolt;duration=10} @target

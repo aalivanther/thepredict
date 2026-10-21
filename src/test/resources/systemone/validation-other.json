@@ -1,0 +1,1 @@
+{"detail": [{"loc": ["body", "questions", "q0", "criteria"], "msg": "Too many options", "type": "value_error"}]}

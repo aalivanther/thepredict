@@ -1,0 +1,21 @@
+# ThePredict 0.0.1 example boss. Predictor starts false: the mob fights as a plain MythicMobs zombie.
+# ThePredict generates its movement goals when Predictor is true; do not add AIGoalSelectors here.
+ThePredictGuardian:
+  Type: ZOMBIE
+  Display: 'ThePredict Guardian'
+  Health: 100
+  Damage: 3
+  Predictor: false
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+  Modules:
+    ThreatTable: true
+  ThreatTable:
+    UseDamageTaken: true
+    DecayUnreachable: false
+  Skills:
+  - damage{a=2} @target ~onAttack
+  - setstance{stance=pressing} @self ~onSignal:PREDICTOR_STANCE_PRESSING
+  - setstance{stance=guarded} @self ~onSignal:PREDICTOR_STANCE_GUARDED
+  - setstance{stance=evasive} @self ~onSignal:PREDICTOR_STANCE_EVASIVE

@@ -1,0 +1,50 @@
+# ThePredict bench v2: classic 'adversarial' of kit K3 (burst).
+# Mobs/Bench_K3_adversarial.yml; the skills of the kit stay in their own file.
+Bench_K3_adversarial:
+  Type: ZOMBIE
+  Display: 'Classic adversarial'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<50%} true ]}
+  - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}
+  - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}
+  - 4 meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=BurstStrike} false ]}
+  Skills:
+  - skill{s=Bench_K3_adversarial_RuleBurstGuard} @self ~onTimer:1
+  - skill{s=Bench_K3_adversarial_RuleBurstStrike} @self ~onTimer:1
+  - skill{s=Bench_K3_adversarial_RuleBurstLeap} @self ~onTimer:1
+# Skills/Bench_K3_adversarialRules.yml
+Bench_K3_adversarial_RuleBurstGuard:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  Skills:
+  - skill{s=BurstGuard} @self
+Bench_K3_adversarial_RuleBurstStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K3_adversarial_WindowBurstStrike} false
+  Skills:
+  - skill{s=BurstStrike} @target
+  - aura{auraName=Bench_K3_adversarial_WindowBurstStrike;duration=10} @target
+  - aura{auraName=Bench_K3_adversarial_WindowBurstLeap;duration=8} @target
+Bench_K3_adversarial_RuleBurstLeap:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=8} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K3_adversarial_WindowBurstLeap} false
+  Skills:
+  - skill{s=BurstLeap} @target
+  - aura{auraName=Bench_K3_adversarial_WindowBurstStrike;duration=12} @target
+  - aura{auraName=Bench_K3_adversarial_WindowBurstLeap;duration=10} @target

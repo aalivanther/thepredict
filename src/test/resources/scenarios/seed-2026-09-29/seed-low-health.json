@@ -1,0 +1,75 @@
+{
+  "format": 1,
+  "requestChars": 862,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Survive while defeating the current target",
+          "facts": [
+            "mob_1's health is critical"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is inside melee reach",
+              "target is closing in"
+            ]
+          }
+        }
+      ],
+      "players": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": []
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "Which tactic should mob_1 use now against its current target?",
+        "criteria": {
+          "retreat_and_defend": "retreat away from the target",
+          "keep_distance_and_shoot": "stay between the inner and outer distance band; Stay outside melee reach and shoot while the target approaches"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "NOW",
+      "options": [
+        "retreat_and_defend",
+        "keep_distance_and_shoot"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "acceptable": [
+        "retreat_and_defend",
+        "keep_distance_and_shoot"
+      ],
+      "forbidden": ""
+    }
+  },
+  "seed": "LOW_HEALTH",
+  "labelsProposedBy": "M13 seed bank; review before calibrating"
+}

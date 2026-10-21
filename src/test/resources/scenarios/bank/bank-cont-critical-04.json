@@ -1,0 +1,86 @@
+{
+  "format": 2,
+  "id": "bank-cont-critical-04",
+  "family": "cont-critical",
+  "profile": "thepredict_guardian",
+  "sets": [],
+  "requestChars": 863,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Survive while defeating the current target",
+          "facts": [
+            "mob_1 is healthy"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is inside melee reach",
+              "target is closing in",
+              "target is healthy",
+              "target is moderately armored",
+              "target is the highest threat"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": []
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "If mob_1's health becomes critical soon, which tactic then?",
+        "criteria": {
+          "retreat_and_defend": "retreat; self heal",
+          "keep_distance_and_shoot": "hold mid range; instant ranged hit, low damage"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "IF_OWN_HEALTH_CRITICAL",
+      "options": [
+        "retreat_and_defend",
+        "keep_distance_and_shoot"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "best": [],
+      "acceptable": [
+        "retreat_and_defend",
+        "keep_distance_and_shoot"
+      ],
+      "forbidden": [],
+      "rationale": "With low_health_phase only two options remain and both are acceptable: uninformative, kept for latency and tokens only.",
+      "status": "REVIEWED",
+      "reviewedBy": "usuario (revisión por chat 2026-09-30)",
+      "reviewedOn": "2026-09-30",
+      "uninformative": true
+    }
+  }
+}

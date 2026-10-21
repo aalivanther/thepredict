@@ -1,0 +1,31 @@
+# Test pack, M01 server script section 13: the mob of section 12 plus the threat leader shown every second
+# (preparation step 1 of section 13).
+ThePredictGuardian:
+  Type: ZOMBIE
+  Display: 'ThePredict Guardian'
+  Health: 100
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: false
+  Modules:
+    ThreatTable: true
+  ThreatTable:
+    UseDamageTaken: true
+    DecayUnreachable: false
+  Skills:
+  - damage{a=2} @target ~onAttack
+  - setstance{stance=pressing} @self ~onSignal:PREDICTOR_STANCE_PRESSING
+  - setstance{stance=guarded} @self ~onSignal:PREDICTOR_STANCE_GUARDED
+  - setstance{stance=evasive} @self ~onSignal:PREDICTOR_STANCE_EVASIVE
+  - message{m="signal <caster.predictor.tactic> <caster.predictor.level>"} @PIR{r=20} ~onSignal:PREDICTOR_APPROACH
+  - message{m="signal <caster.predictor.tactic> <caster.predictor.level>"} @PIR{r=20} ~onSignal:PREDICTOR_PRESS_AND_STRIKE
+  - message{m="signal <caster.predictor.tactic> <caster.predictor.level>"} @PIR{r=20} ~onSignal:PREDICTOR_KEEP_DISTANCE
+  - message{m="signal <caster.predictor.tactic> <caster.predictor.level>"} @PIR{r=20} ~onSignal:PREDICTOR_KEEP_DISTANCE_AND_SHOOT
+  - message{m="signal <caster.predictor.tactic> <caster.predictor.level>"} @PIR{r=20} ~onSignal:PREDICTOR_RETREAT_AND_DEFEND
+  - message{m="signal <caster.predictor.tactic> <caster.predictor.level>"} @PIR{r=20} ~onSignal:PREDICTOR_FLANK_AND_STRIKE
+  - message{m="signal <caster.predictor.tactic> <caster.predictor.level>"} @PIR{r=20} ~onSignal:PREDICTOR_CLOSE_IN_AND_SLAM
+  - message{m="signal <caster.predictor.tactic> <caster.predictor.level>"} @PIR{r=20} ~onSignal:PREDICTOR_HOLD
+  - message{m="top <caster.tt.top>"} @PIR{r=20} ~onTimer:20

@@ -1,0 +1,17 @@
+# Sesión 27. No ejecutado en un servidor. Las skills de las choices melee de jefe_memoria y esbirro_memoria.
+# ThePredict las lanza con su propio disparador. Sin señales ni condiciones de memoria.
+JefeMemoriaMelee:
+  Intention: DAMAGE, MELEE, DAMAGE_MEDIUM, WHEN_TARGET_IN_MELEE
+  Cooldown: 2
+  Conditions:
+  - targetwithin{d=4} true
+  Skills:
+  - damage{a=5} @target
+
+EsbirroMemoriaMelee:
+  Intention: DAMAGE, MELEE, DAMAGE_LOW, WHEN_TARGET_IN_MELEE
+  Cooldown: 2
+  Conditions:
+  - targetwithin{d=4} true
+  Skills:
+  - damage{a=2} @target

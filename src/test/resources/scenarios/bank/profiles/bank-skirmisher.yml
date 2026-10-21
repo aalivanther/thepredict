@@ -1,0 +1,91 @@
+# Test profile of the labelled bank of M16.9: an archer that escapes, closes gaps, interrupts and finishes. Every
+# choice declares its Purpose, so the bank never depends on the binder.
+schemaVersion: 2
+bank_skirmisher:
+  MythicID: BankSkirmisher
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Wear the target down from range and finish it when it is weak
+  Choices:
+    arrow:
+      MythicID: BankSkirmisherArrow
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: PROJECTILE
+        Reach: 16
+        WindUp: 8
+        Damage: MEDIUM
+        BestWhen: [TARGET_AT_RANGE]
+        Risks: [NEEDS_LINE_OF_SIGHT, SLOW_PROJECTILE]
+    lunge:
+      MythicID: BankSkirmisherLunge
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [GAP_CLOSE, DAMAGE]
+        Delivery: MELEE
+        Reach: 8
+        WindUp: 4
+        Damage: LOW
+        BestWhen: [TARGET_FLEEING]
+    vault:
+      MythicID: BankSkirmisherVault
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [ESCAPE]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [SELF_LOW_HEALTH]
+    snare:
+      MythicID: BankSkirmisherSnare
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [INTERRUPT, CONTROL]
+        Delivery: PROJECTILE
+        Reach: 16
+        WindUp: 4
+        Damage: LOW
+        Risks: [NEEDS_LINE_OF_SIGHT]
+    execute:
+      MythicID: BankSkirmisherExecute
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [FINISHER]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 12
+        Damage: HIGH
+        BestWhen: [TARGET_LOW_HEALTH]
+        Risks: [LEAVES_CASTER_EXPOSED]
+  Tactics:
+    kite_and_shoot:
+      Movement: KEEP_DISTANCE
+      Choice: arrow
+      Priority: 60
+    lunge_in:
+      Movement: APPROACH
+      Choice: lunge
+      Priority: 55
+    vault_away:
+      Movement: RETREAT
+      Choice: vault
+      Priority: 80
+    interrupt_shot:
+      Movement: HOLD
+      Choice: snare
+      Description: Stop and fire a snare that breaks drinking, eating or a charged shot
+      Priority: 50
+    execute:
+      Movement: APPROACH
+      Choice: execute
+      Priority: 65
+    close_in:
+      Movement: APPROACH
+      Priority: 30
+    back_off:
+      Movement: RETREAT
+      Priority: 20
+    hold:
+      Movement: HOLD
+      Priority: 10

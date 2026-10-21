@@ -1,0 +1,9 @@
+E8 autoconfiguración
+fecha=2026-10-09
+decision=la diferencia de las dos búsquedas cumple 0.03. G1 de la ganadora no se midió.
+Mundo semilla 2904. 81 configuraciones. eta=3. r0=20. autoconfig.initialConfigs no se cambió.
+Búsqueda semilla 11: configuración 10, puntuación 0.566076.
+Búsqueda semilla 12: configuración 39, puntuación 0.588898.
+Diferencia absoluta=0.022822. Mejor del mundo=0.588898.
+Procedimiento: el ruido de par del estudio de sh_budget.py (sigma 0.30) sobre las mismas puntuaciones. autoApply sigue en off.
+El ritmo 3.67 rondas/s no se usó. M22.0 midió 761.17 rondas/s y no acortó esta búsqueda: la búsqueda es el estudio sintético, no 90 minutos de simulador.

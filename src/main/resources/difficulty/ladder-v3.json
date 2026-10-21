@@ -1,0 +1,10 @@
+{
+  "version": 3,
+  "status": "uncalibrated ladder",
+  "calibrated": false,
+  "k_min": 0.06,
+  "k": 0.12,
+  "k_max": 0.18,
+  "edge_danger": "every rung",
+  "hazard_push": "no rung"
+}

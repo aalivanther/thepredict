@@ -1,0 +1,83 @@
+{
+  "format": 1,
+  "requestChars": 1060,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Survive while defeating the current target",
+          "facts": [
+            "mob_1 is healthy"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is outside melee reach but within ranged reach",
+              "target is backing away"
+            ]
+          }
+        }
+      ],
+      "players": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": [
+            "player_1 is drawing a bow"
+          ]
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "Which tactic should mob_1 use now against its current target?",
+        "criteria": {
+          "press_and_strike": "move toward the target and fight up close",
+          "keep_distance_and_shoot": "stay between the inner and outer distance band; Stay outside melee reach and shoot while the target approaches",
+          "approach": "move toward the target and fight up close",
+          "hold": "hold position",
+          "keep_distance": "stay between the inner and outer distance band"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "NOW",
+      "options": [
+        "press_and_strike",
+        "keep_distance_and_shoot",
+        "approach",
+        "hold",
+        "keep_distance"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "acceptable": [
+        "approach",
+        "press_and_strike"
+      ],
+      "forbidden": "hold"
+    }
+  },
+  "seed": "SHOOTER_BACKING_AWAY",
+  "labelsProposedBy": "M13 seed bank; review before calibrating"
+}

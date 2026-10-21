@@ -1,0 +1,14 @@
+E2 valor aprendido
+método local: 200 escaramuzas 5 contra 1, brazo off, semillas 1..200. Spearman de los impactos (effect) y de r1 con la victoria del grupo, diferencia pareada con bootstrap de 1000 re-muestas, semilla 28.
+no es un evalGate GSPRT aparte del artefacto contra priority.
+wins=200.0
+meanEffect=12.44
+meanR1=1.0
+effectSpearman=NaN
+r1Spearman=NaN
+paired=NaN
+low=NaN
+high=NaN
+decision=NO CUMPLE
+eta=0.5 beta=0.8 zeta=1.0 sin cambio
+La columna de victoria no varía y las dos puntuaciones quedan constantes, así que la correlación no está definida. r1 no gana a effect.

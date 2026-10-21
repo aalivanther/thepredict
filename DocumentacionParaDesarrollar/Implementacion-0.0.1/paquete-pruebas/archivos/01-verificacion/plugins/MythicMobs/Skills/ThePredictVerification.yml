@@ -1,0 +1,45 @@
+# ThePredict 0.0.1 verification pack (M01 server script, section 1.4).
+TPV_ShowIntent:
+  Skills:
+  - message{m="[TPV] tactic=<caster.predictor.tactic> movement=<caster.predictor.movement> level=<caster.predictor.level> confidence=<caster.predictor.confidence> state=<caster.predictor.state>"} @PlayersInRadius{r=24}
+
+TPV_DecideMechanic:
+  Skills:
+  - predictordecide @self
+
+TPV_CaseLower:
+  Conditions:
+  - predictormove{m=HOLD} true
+  Skills:
+  - message{m="[TPV] predictormove passed"} @PlayersInRadius{r=24}
+
+TPV_CaseMixed:
+  Conditions:
+  - PredictorMove{m=HOLD} true
+  Skills:
+  - message{m="[TPV] PredictorMove passed"} @PlayersInRadius{r=24}
+
+TPV_CaseUpper:
+  Conditions:
+  - PREDICTORMOVE{m=HOLD} true
+  Skills:
+  - message{m="[TPV] PREDICTORMOVE passed"} @PlayersInRadius{r=24}
+
+TPV_SignalUpper:
+  Skills:
+  - message{m="[TPV] onSignal PREDICTOR_HOLD fired"} @PlayersInRadius{r=24}
+
+TPV_SignalLower:
+  Skills:
+  - message{m="[TPV] onSignal predictor_hold fired"} @PlayersInRadius{r=24}
+
+TPV_Strike:
+  Intention: DAMAGE, MELEE, DAMAGE_LOW
+  PredictValues: [MELEE_ATTACK, SINGLE_TARGET, LOW_DAMAGE]
+  Cooldown: 5
+  Conditions:
+  - targetwithin{d=16} true
+  - predictormove{m=APPROACH} true
+  Skills:
+  - message{m="[TPV] TPV_Strike executed"} @PlayersInRadius{r=24}
+  - damage{a=1} @trigger

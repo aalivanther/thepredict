@@ -1,0 +1,55 @@
+# ThePredict 0.0.1, session 17 of the test pack (M17): participants and targets as entities. Every mob has
+# Despawn: false; kill leftovers with /kill @e[type=!minecraft:player] between steps. Without a Jev key nothing is
+# sent and nothing costs.
+# The hunters share the faction 'hunters': MythicMobs' nearestOtherFactionMonsters never targets a mob of the same
+# faction, and ThePredict never makes two mobs of the same faction rivals, so hunters do not fight each other.
+TP_MonsterHunter:
+  Type: ZOMBIE
+  Display: 'TP Monster Hunter'
+  Faction: hunters
+  Health: 200
+  Damage: 2
+  Predictor: true
+  Options:
+    FollowRange: 24
+    Despawn: false
+  AITargetSelectors:
+  - 1 nearestOtherFactionMonsters
+
+# A wild wolf hunts sheep and rabbits with its vanilla target goals; its profile admits only the entity types of the
+# datapack tag mipack:presas (step 17.2b, DT-39).
+TP_TagWatcher:
+  Type: WOLF
+  Display: 'TP Tag Watcher'
+  Health: 200
+  Damage: 2
+  Predictor: true
+  Options:
+    FollowRange: 24
+    Despawn: false
+
+TP_DuelRed:
+  Type: ZOMBIE
+  Display: 'TP Duel Red'
+  Faction: red
+  Health: 200
+  Damage: 2
+  Predictor: true
+  Options:
+    FollowRange: 24
+    Despawn: false
+  AITargetSelectors:
+  - 1 nearestSpecificFaction{f=blue}
+
+TP_DuelBlue:
+  Type: ZOMBIE
+  Display: 'TP Duel Blue'
+  Faction: blue
+  Health: 200
+  Damage: 2
+  Predictor: true
+  Options:
+    FollowRange: 24
+    Despawn: false
+  AITargetSelectors:
+  - 1 nearestSpecificFaction{f=red}

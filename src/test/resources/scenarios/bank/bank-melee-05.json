@@ -1,0 +1,103 @@
+{
+  "format": 2,
+  "id": "bank-melee-05",
+  "family": "melee",
+  "profile": "thepredict_guardian",
+  "sets": [],
+  "requestChars": 1181,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Survive while defeating the current target",
+          "facts": [
+            "mob_1 is healthy",
+            "mob_1 is in better shape than its target"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is inside melee reach",
+              "target is closing in",
+              "target's health is critical",
+              "target is moderately armored",
+              "target is the highest threat"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1's health is critical",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": []
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "Which tactic best serves mob_1's objective now?",
+        "criteria": {
+          "retreat_and_defend": "retreat; self heal; poor fit now: caster already healthy",
+          "press_and_strike": "close in; melee hit, medium damage",
+          "close_in_and_slam": "close in; area hit around self stun or slow, medium damage, slow wind-up",
+          "keep_distance_and_shoot": "hold mid range; instant ranged hit, low damage",
+          "approach": "close in",
+          "keep_distance": "hold mid range",
+          "hold": "hold position"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "NOW",
+      "options": [
+        "retreat_and_defend",
+        "press_and_strike",
+        "close_in_and_slam",
+        "keep_distance_and_shoot",
+        "approach",
+        "keep_distance",
+        "hold"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "best": [
+        "press_and_strike"
+      ],
+      "acceptable": [
+        "press_and_strike",
+        "close_in_and_slam"
+      ],
+      "forbidden": [
+        "retreat_and_defend",
+        "hold",
+        "keep_distance"
+      ],
+      "rationale": "A nearly dead target walks into reach: strike it down; stepping away wastes the kill.",
+      "status": "REVIEWED",
+      "reviewedBy": "usuario (revisión por chat 2026-09-30)",
+      "reviewedOn": "2026-09-30",
+      "uninformative": false
+    }
+  }
+}

@@ -1,0 +1,19 @@
+# Test pack, M01 server script step 10.5: the example boss with an explicit Despawn: true, so it despawns when its
+# chunk unloads whatever Mobs.DespawnByDefault says.
+ThePredictGuardianTemp:
+  Type: ZOMBIE
+  Display: 'ThePredict Guardian Temp'
+  Health: 100
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: true
+  Modules:
+    ThreatTable: true
+  ThreatTable:
+    UseDamageTaken: true
+    DecayUnreachable: false
+  Skills:
+  - damage{a=2} @target ~onAttack

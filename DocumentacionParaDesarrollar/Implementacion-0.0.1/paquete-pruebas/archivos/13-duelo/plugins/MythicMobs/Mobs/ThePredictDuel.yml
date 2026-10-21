@@ -1,0 +1,117 @@
+# ThePredict 0.0.1, session 18 of the test pack (M18): the duel pack. The four duelists inherit DuelBase with the
+# MythicMobs Template: the same stats, base goals (AIGoalSelectors), classic rules and 90 s timeout; each variant only
+# sets its faction, its target selector, the Predictor flag, its boss bar, its glow colour and its score. Damage: 0, so
+# the vanilla hit of the base goal deals nothing and every point of damage comes from the five shared skills: under
+# ThePredict the base attack goal does not hit (M05), and a classic zombie would otherwise add it to its rules. Duelists
+# target only the rival faction and never players (AITargetSelectors with clear), without a threat table. Despawn:
+# false; kill leftovers with /mm mobs kill <type>, never killall. Without a Jev key nothing is sent and nothing costs.
+DuelBase:
+  Type: ZOMBIE
+  Display: 'Duelist'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    PreventOtherDrops: true
+    PreventItemPickup: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 meleeAttack
+  - 2 randomStroll
+  Skills:
+  - skill{s=DuelRuleHeal} @self ~onTimer:20
+  - skill{s=DuelRuleGuard} @self ~onTimer:20
+  - skill{s=DuelRuleStrike} @self ~onTimer:10
+  - skill{s=DuelRuleLeap} @self ~onTimer:20
+  - skill{s=DuelRuleBolt} @self ~onTimer:20
+  - skill{s=DuelTimeout} @self ~onSpawn
+
+DuelRed:
+  Template: DuelBase
+  Display: 'Duelist Red'
+  Faction: duel_red
+  Predictor: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 nearestSpecificFaction{faction=duel_blue}
+  BossBar:
+    Enabled: true
+    Title: '[RED · ThePredict] <caster.predictor.tactic> <caster.predictor.state>'
+    Range: 48
+    Color: RED
+    Style: SOLID
+  Skills:
+  - glow{color=RED;duration=2400} @self ~onSpawn
+  - modifyscore{objective=duel;entry=blue_wins;action=ADD;value=1} @self ~onDeath
+  - command{c="say DUEL red died"} @self ~onDeath
+  - effect:particles{p=heart;a=12} @self ~onSignal:PREDICTOR_RETREAT_AND_HEAL
+  - effect:particles{p=cloud;a=20} @self ~onSignal:PREDICTOR_LEAP_IN
+  - effect:particles{p=enchanted_hit;a=16} @self ~onSignal:PREDICTOR_GUARD_UP
+  - effect:particles{p=flame;a=10} @self ~onSignal:PREDICTOR_KEEP_DISTANCE_AND_BOLT
+  - effect:sound{s=block.note_block.pling} @self ~onSignal:PREDICTOR_PRESS_AND_STRIKE
+
+DuelRedClassic:
+  Template: DuelBase
+  Display: 'Duelist Red'
+  Faction: duel_red
+  Predictor: false
+  AITargetSelectors:
+  - 0 clear
+  - 1 nearestSpecificFaction{faction=duel_blue}
+  BossBar:
+    Enabled: true
+    Title: '[RED · classic]'
+    Range: 48
+    Color: RED
+    Style: SOLID
+  Skills:
+  - glow{color=RED;duration=2400} @self ~onSpawn
+  - modifyscore{objective=duel;entry=blue_wins;action=ADD;value=1} @self ~onDeath
+  - command{c="say DUEL red died"} @self ~onDeath
+
+DuelBlue:
+  Template: DuelBase
+  Display: 'Duelist Blue'
+  Faction: duel_blue
+  Predictor: true
+  AITargetSelectors:
+  - 0 clear
+  - 1 nearestSpecificFaction{faction=duel_red}
+  BossBar:
+    Enabled: true
+    Title: '[BLUE · ThePredict] <caster.predictor.tactic> <caster.predictor.state>'
+    Range: 48
+    Color: BLUE
+    Style: SOLID
+  Skills:
+  - glow{color=BLUE;duration=2400} @self ~onSpawn
+  - modifyscore{objective=duel;entry=red_wins;action=ADD;value=1} @self ~onDeath
+  - command{c="say DUEL blue died"} @self ~onDeath
+  - effect:particles{p=heart;a=12} @self ~onSignal:PREDICTOR_RETREAT_AND_HEAL
+  - effect:particles{p=cloud;a=20} @self ~onSignal:PREDICTOR_LEAP_IN
+  - effect:particles{p=enchanted_hit;a=16} @self ~onSignal:PREDICTOR_GUARD_UP
+  - effect:particles{p=flame;a=10} @self ~onSignal:PREDICTOR_KEEP_DISTANCE_AND_BOLT
+  - effect:sound{s=block.note_block.pling} @self ~onSignal:PREDICTOR_PRESS_AND_STRIKE
+
+DuelBlueClassic:
+  Template: DuelBase
+  Display: 'Duelist Blue'
+  Faction: duel_blue
+  Predictor: false
+  AITargetSelectors:
+  - 0 clear
+  - 1 nearestSpecificFaction{faction=duel_red}
+  BossBar:
+    Enabled: true
+    Title: '[BLUE · classic]'
+    Range: 48
+    Color: BLUE
+    Style: SOLID
+  Skills:
+  - glow{color=BLUE;duration=2400} @self ~onSpawn
+  - modifyscore{objective=duel;entry=red_wins;action=ADD;value=1} @self ~onDeath
+  - command{c="say DUEL blue died"} @self ~onDeath

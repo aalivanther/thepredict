@@ -1,0 +1,106 @@
+# M17.0 golden: combat context listener
+setup participants=2 window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- ready arrow
+  pending=true recorded=0 repeated=0 marks=1 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- stop using item
+  pending=true recorded=0 repeated=0 marks=2 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- load crossbow
+  pending=true recorded=0 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- zombie loads crossbow
+  pending=true recorded=0 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- shield disabled
+  event tick=20 SHIELD_DISABLED participant=player_1 mob=none
+  pending=true recorded=1 repeated=0 marks=4 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- totem
+  event tick=20 TOTEM_USED participant=player_1 mob=none
+  pending=true recorded=2 repeated=0 marks=5 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- zombie totem
+  pending=true recorded=2 repeated=0 marks=5 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- equipment
+  pending=true recorded=2 repeated=0 marks=6 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- zombie equipment
+  pending=true recorded=2 repeated=0 marks=6 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- group cooldown
+  pending=true recorded=2 repeated=0 marks=7 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- pearl teleport
+  event tick=40 PEARL_THROWN participant=player_1 mob=none
+  pending=true recorded=3 repeated=0 marks=8 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- command teleport
+  pending=true recorded=3 repeated=0 marks=8 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- stranger attacks member
+  pending=true recorded=3 repeated=0 marks=9 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- stranger attacks zombie
+  pending=true recorded=3 repeated=0 marks=9 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- smash attempt
+  pending=true recorded=3 repeated=0 marks=10 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- zombie smash attempt
+  pending=true recorded=3 repeated=0 marks=10 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- lunge
+  pending=true recorded=3 repeated=0 marks=11 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- zombie lunge
+  pending=true recorded=3 repeated=0 marks=11 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- input
+  pending=true recorded=3 repeated=0 marks=12 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- input again within ten ticks
+  pending=true recorded=3 repeated=0 marks=12 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- stranger input
+  pending=true recorded=3 repeated=0 marks=12 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- stranger consumes
+  pending=true recorded=3 repeated=0 marks=12 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- stranger shield disabled
+  pending=true recorded=3 repeated=0 marks=12 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- shield disabled off the server thread
+  pending=true recorded=3 repeated=0 marks=12 pathfinds=0 nextTick=1
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- next tick
+  event tick=80 SHIELD_DISABLED participant=player_1 mob=none
+  pending=true recorded=4 repeated=0 marks=13 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false

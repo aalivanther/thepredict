@@ -1,0 +1,7 @@
+E4 omitir a Jev
+criterio del plan: en sombra, acuerdo ≥ 97 % (Wilson ≥ 0,95); en on, GSPRT NON_REGRESSION y menos tokens por victoria.
+semilla de referencia 28. n de referencia 200.
+REPLAY del re-banco y de M18: no ejecutado. No hay cifra de acuerdo ni de tokens.
+decision=NO CUMPLE
+el default voiSkip sigue "off". No se añadió comando, temporizador ni interruptor global.
+La omisión en vivo, cuando una sesión arma el camino, entra como HeldIntent antes de preguntar.

@@ -1,0 +1,47 @@
+# ThePredict bench v2: classic 'legal-equal' of kit K3 (burst).
+# Mobs/Bench_K3_legal_equal.yml; the skills of the kit stay in their own file.
+Bench_K3_legal_equal:
+  Type: ZOMBIE
+  Display: 'Classic legal-equal'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 4 meleeAttack{speed=1.15}
+  Skills:
+  - skill{s=Bench_K3_legal_equal_RuleBurstGuard} @self ~onTimer:1
+  - skill{s=Bench_K3_legal_equal_RuleBurstStrike} @self ~onTimer:1
+  - skill{s=Bench_K3_legal_equal_RuleBurstLeap} @self ~onTimer:1
+# Skills/Bench_K3_legal_equalRules.yml
+Bench_K3_legal_equal_RuleBurstGuard:
+  Conditions:
+  - predictorcontrol false
+  - healthpercent{p=>30%} true
+  Skills:
+  - skill{s=BurstGuard} @self
+Bench_K3_legal_equal_RuleBurstStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K3_legal_equal_WindowBurstStrike} false
+  Skills:
+  - skill{s=BurstStrike} @target
+  - aura{auraName=Bench_K3_legal_equal_WindowBurstStrike;duration=10} @target
+  - aura{auraName=Bench_K3_legal_equal_WindowBurstLeap;duration=8} @target
+Bench_K3_legal_equal_RuleBurstLeap:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=8} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K3_legal_equal_WindowBurstLeap} false
+  Skills:
+  - skill{s=BurstLeap} @target
+  - aura{auraName=Bench_K3_legal_equal_WindowBurstStrike;duration=12} @target
+  - aura{auraName=Bench_K3_legal_equal_WindowBurstLeap;duration=10} @target

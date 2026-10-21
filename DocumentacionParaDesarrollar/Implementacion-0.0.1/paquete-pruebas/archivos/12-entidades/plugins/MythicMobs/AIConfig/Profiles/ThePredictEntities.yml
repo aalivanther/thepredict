@@ -1,0 +1,52 @@
+# ThePredict 0.0.1, session 17 of the test pack (M17). The hunter admits monsters as participants (steps 17.2 and
+# 17.5); the tag watcher admits only the types of the datapack tag mipack:presas and never players (step 17.2b); the
+# two duelists admit only the rival faction and never players (steps 17.3 and 17.4).
+schemaVersion: 2
+tp_monster_hunter_ai:
+  MythicID: TP_MonsterHunter
+  Objective: Hunt the monsters around you
+  Choices:
+    punch: { Kind: VANILLA_MELEE }
+  Tactics:
+    press: { Movement: APPROACH, Choice: punch, Description: Close in and hit the monster }
+    keep_distance: { Movement: KEEP_DISTANCE, Description: Stay out of reach of the monster }
+    hold: { Movement: HOLD, Description: Wait for the monster to come closer }
+  Participants:
+    Entities:
+      Allow: ['kind:MONSTER']
+tp_tag_watcher_ai:
+  MythicID: TP_TagWatcher
+  Objective: Hunt the animals of the datapack tag
+  Choices:
+    bite: { Kind: VANILLA_MELEE }
+  Tactics:
+    press: { Movement: APPROACH, Choice: bite, Description: Close in and bite the animal }
+    hold: { Movement: HOLD, Description: Wait for the animal to come closer }
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['tag:mipack:presas']
+tp_duel_red_ai:
+  MythicID: TP_DuelRed
+  Objective: Defeat the blue duelist in front of you
+  Choices:
+    punch: { Kind: VANILLA_MELEE }
+  Tactics:
+    press: { Movement: APPROACH, Choice: punch, Description: Close in and hit the rival }
+    hold: { Movement: HOLD, Description: Wait for the rival to come closer }
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:blue']
+tp_duel_blue_ai:
+  MythicID: TP_DuelBlue
+  Objective: Defeat the red duelist in front of you
+  Choices:
+    punch: { Kind: VANILLA_MELEE }
+  Tactics:
+    press: { Movement: APPROACH, Choice: punch, Description: Close in and hit the rival }
+    hold: { Movement: HOLD, Description: Wait for the rival to come closer }
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:red']

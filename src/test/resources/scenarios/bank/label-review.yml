@@ -1,0 +1,157 @@
+# Label review of the M16.9 bank. Read build/reports/m16/label-review.md (./gradlew labelReviewSheet --offline),
+# set reviewer to your name and, per scenario: status: REVIEWED (you agree) or DISPUTED (the scenario is wrong).
+# Only if you change something, add best:, acceptable:, forbidden: (lists of option names) and note:.
+# Then run ./gradlew applyLabelReview --offline. PROPOSED keeps the proposal.
+reviewer: "usuario (revisión por chat 2026-09-30)"
+scenarios:
+  bank-melee-01:
+    status: REVIEWED
+  bank-melee-02:
+    status: REVIEWED
+  bank-melee-03:
+    status: REVIEWED
+  bank-melee-04:
+    status: REVIEWED
+  bank-melee-05:
+    status: REVIEWED
+  bank-melee-06:
+    status: REVIEWED
+  bank-shooter-01:
+    status: REVIEWED
+  bank-shooter-02:
+    status: REVIEWED
+  bank-shooter-03:
+    status: REVIEWED
+  bank-shooter-04:
+    status: REVIEWED
+  bank-shooter-05:
+    status: REVIEWED
+  bank-shooter-06:
+    status: REVIEWED
+  bank-shield-01:
+    status: REVIEWED
+  bank-shield-02:
+    status: REVIEWED
+    note: "el usuario lo deja así; confirmará en servidor si el escudo bloquea el daño de MythicMobs (DT-33). Evidencia javap: la mecánica damage usa por defecto cause ENTITY_ATTACK → mobAttack y ignoreshield=false, así que el escudo podría bloquearlo"
+  bank-shield-03:
+    status: REVIEWED
+  bank-shield-04:
+    status: REVIEWED
+  bank-shield-05:
+    status: REVIEWED
+  bank-shield-06:
+    status: REVIEWED
+  bank-lowhp-01:
+    status: REVIEWED
+    best: [retreat_and_defend]
+    acceptable: [retreat_and_defend, keep_distance]
+    forbidden: [press_and_strike, close_in_and_slam, approach, hold]
+    note: "el usuario acepta: retirarse, habilidad de alto daño o defensa; aquí no hay opción de alto daño ni postura defensiva (manejo de posturas pendiente)"
+  bank-lowhp-02:
+    status: REVIEWED
+  bank-lowhp-03:
+    status: REVIEWED
+  bank-lowhp-04:
+    status: REVIEWED
+  bank-lowhp-05:
+    status: REVIEWED
+  bank-lowhp-06:
+    status: REVIEWED
+  bank-pillar-01:
+    status: REVIEWED
+    acceptable: [keep_distance_and_shoot, keep_distance]
+    forbidden: [press_and_strike, close_in_and_slam, approach, hold]
+    note: "hold solo fuera de combate o en postura defensiva"
+  bank-pillar-02:
+    status: REVIEWED
+    acceptable: [keep_distance]
+    note: "hold solo fuera de combate o en postura defensiva"
+  bank-pillar-03:
+    status: REVIEWED
+    acceptable: [keep_distance_and_shoot, keep_distance]
+    forbidden: [press_and_strike, close_in_and_slam, approach, hold]
+    note: "hold solo fuera de combate o en postura defensiva"
+  bank-pillar-04:
+    status: REVIEWED
+    best: [retreat_and_defend]
+    acceptable: [retreat_and_defend, keep_distance]
+    forbidden: [press_and_strike, close_in_and_slam, approach]
+    note: "hold solo fuera de combate o en postura defensiva; interpretación: como #49 (curación/defensa); el área no alcanza a un objetivo inalcanzable"
+  bank-grouped-01:
+    status: REVIEWED
+  bank-grouped-02:
+    status: REVIEWED
+  bank-grouped-03:
+    status: REVIEWED
+  bank-grouped-04:
+    status: REVIEWED
+  bank-finisher-01:
+    status: REVIEWED
+  bank-finisher-02:
+    status: REVIEWED
+  bank-finisher-03:
+    status: REVIEWED
+  bank-finisher-04:
+    status: REVIEWED
+  bank-drinking-01:
+    status: REVIEWED
+  bank-drinking-02:
+    status: REVIEWED
+  bank-drinking-03:
+    status: REVIEWED
+  bank-drinking-04:
+    status: REVIEWED
+  bank-nolos-01:
+    status: REVIEWED
+    acceptable: [approach, press_and_strike, close_in_and_slam]
+    forbidden: [keep_distance_and_shoot, hold, keep_distance]
+    note: "esperar a distancia también pierde al objetivo"
+  bank-nolos-02:
+    status: REVIEWED
+    acceptable: [approach, press_and_strike, close_in_and_slam]
+    forbidden: [keep_distance_and_shoot, hold, keep_distance]
+    note: "esperar a distancia también pierde al objetivo"
+  bank-nolos-03:
+    status: REVIEWED
+    best: [close_in_and_slam]
+    acceptable: [close_in_and_slam, retreat_and_defend, approach]
+    forbidden: [keep_distance_and_shoot, hold, keep_distance]
+    note: "sin visión: priorizar daño en área o curación para castigar la huida temporal"
+  bank-nolos-04:
+    status: REVIEWED
+    best: [approach]
+    acceptable: [approach, close_in_and_slam]
+    forbidden: [keep_distance_and_shoot, hold, keep_distance]
+    note: "buscar en el último punto conocido y daño en área; futuro: búsqueda de última posición y habilidades de carga"
+  bank-fleeing-01:
+    status: REVIEWED
+  bank-fleeing-02:
+    status: REVIEWED
+  bank-fleeing-03:
+    status: REVIEWED
+  bank-fleeing-04:
+    status: REVIEWED
+  bank-cont-melee-01:
+    status: REVIEWED
+  bank-cont-melee-02:
+    status: REVIEWED
+  bank-cont-melee-03:
+    status: REVIEWED
+  bank-cont-melee-04:
+    status: REVIEWED
+  bank-cont-melee-05:
+    status: REVIEWED
+  bank-cont-melee-06:
+    status: REVIEWED
+  bank-cont-critical-01:
+    status: REVIEWED
+  bank-cont-critical-02:
+    status: REVIEWED
+  bank-cont-critical-03:
+    status: REVIEWED
+  bank-cont-critical-04:
+    status: REVIEWED
+  bank-cont-critical-05:
+    status: REVIEWED
+  bank-cont-critical-06:
+    status: REVIEWED

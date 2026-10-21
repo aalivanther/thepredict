@@ -1,0 +1,24 @@
+# Test pack, M13 server script section 7.1, arm B: the example boss with Predictor: true and Despawn: false plus
+# the same two measuring lines as arm A (ABReach and the death message), which do not change the fight.
+ThePredictGuardian:
+  Type: ZOMBIE
+  Display: 'ThePredict Guardian'
+  Health: 100
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: false
+  Modules:
+    ThreatTable: true
+  ThreatTable:
+    UseDamageTaken: true
+    DecayUnreachable: false
+  Skills:
+  - damage{a=2} @target ~onAttack
+  - setstance{stance=pressing} @self ~onSignal:PREDICTOR_STANCE_PRESSING
+  - setstance{stance=guarded} @self ~onSignal:PREDICTOR_STANCE_GUARDED
+  - setstance{stance=evasive} @self ~onSignal:PREDICTOR_STANCE_EVASIVE
+  - skill{s=ABReach} @self ~onTimer:20
+  - command{c="say AB died"} @self ~onDeath

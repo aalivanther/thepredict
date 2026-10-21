@@ -1,0 +1,12 @@
+E7 coste. Tabla Learning (M28), pasada local 2026-10-08.
+
+| sesiones | ContextKey ns | lookup ns | learned ns | calibrador ns | voi ns | ventana ns | cierre ns | delta ns |
+| 20 | 9157 | 530 | 308 | 520 | 171 | 65 | 367 | 65 |
+| 100 | 1409 | 104 | 40 | 257 | 34 | 482 | 83 | 21 |
+| 200 | 480 | 61 | 39 | 43 | 34 | 147 | 80 | 21 |
+
+ContextKey.of en esta pasada: 370 ns y 358 ns. no cumple el tope de 100 ns.
+Cifra ya publicada y que se mantiene: 516 ns y 482 ns. no cumple. La clave no se cambió.
+lookup de esta pasada: 60 ns. cumple el tope de 1500 ns.
+Presupuesto: ContextKey ≤ 100 ns; lookup ≤ 1500 ns; calibrador ≤ 100 ns; voi ≤ 1000 ns; ventana ≤ 200 ns; cierre ≤ 20000 ns.
+La fila de 20 sesiones sale ruidosa (ContextKey 9157 ns, calibrador 520 ns, lookup 530 ns). No se retocó la medición para que entrara.

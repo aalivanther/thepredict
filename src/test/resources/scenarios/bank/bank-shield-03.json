@@ -1,0 +1,95 @@
+{
+  "format": 2,
+  "id": "bank-shield-03",
+  "family": "shield",
+  "profile": "purpose_shield",
+  "sets": [],
+  "requestChars": 996,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Break the guard of the current target",
+          "facts": [
+            "mob_1 is healthy"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is inside melee reach",
+              "target keeps the same distance",
+              "target is healthy",
+              "target is moderately armored",
+              "target is the highest threat",
+              "target is raising a shield but not blocking yet"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": [
+            "player_1 is raising a shield but not blocking yet"
+          ]
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "Which tactic best serves mob_1's objective now?",
+        "criteria": {
+          "break_guard": "close in; melee hit, medium damage",
+          "press": "close in; melee hit, medium damage; poor fit now: shield would block it",
+          "hold": "hold position"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "NOW",
+      "options": [
+        "break_guard",
+        "press",
+        "hold"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "best": [
+        "break_guard"
+      ],
+      "acceptable": [
+        "break_guard",
+        "press"
+      ],
+      "forbidden": [
+        "hold"
+      ],
+      "rationale": "The shield is only coming up: the guard break is safest and a quick strike may still land; waiting lets it block.",
+      "status": "REVIEWED",
+      "reviewedBy": "usuario (revisión por chat 2026-09-30)",
+      "reviewedOn": "2026-09-30",
+      "uninformative": false
+    }
+  }
+}

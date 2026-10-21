@@ -1,0 +1,78 @@
+# Sesión 25. Ejemplos de grupo. No ejecutados en un servidor.
+# group.mode global sigue en fair. Un perfil no puede subir el modo.
+schemaVersion: 2
+jefe_invocador:
+  MythicID: JefeInvocador
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while the summoned squad presses the current target
+  Group:
+    Mode: fair
+    Squad: summoners
+    LeaderPriority: 80
+    Weight: 2
+    OnLeaderDeath: break
+    AgainstEntities: free
+    Questions: members
+    PlanQuestion: on_change
+  Choices:
+    melee:
+      MythicID: JefeInvocadorMelee
+      TypeOfMythicID: SKILL
+  Tactics:
+    press:
+      Movement: APPROACH
+      Choice: melee
+      Priority: 70
+patrulla_5:
+  MythicID: Patrulla5
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while defeating the current target as a patrol
+  Group:
+    Mode: fair
+    Squad: patrol
+    LeaderPriority: 10
+    Weight: 1
+    OnLeaderDeath: succeed
+    AgainstEntities: free
+  Choices:
+    melee:
+      MythicID: Patrulla5Melee
+      TypeOfMythicID: SKILL
+  Tactics:
+    press:
+      Movement: APPROACH
+      Choice: melee
+      Priority: 60
+trio_hechiceros:
+  MythicID: TrioHechiceros
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while the trio answers one big tell at a time
+  Group:
+    Mode: fair
+    Squad: casters
+    LeaderPriority: 40
+    Weight: 1
+    OnLeaderDeath: succeed
+    AgainstEntities: fair
+    Questions: members
+  Choices:
+    heal:
+      MythicID: TrioHechicerosHeal
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      TargetsAllies: true
+    bolt:
+      MythicID: TrioHechicerosBolt
+      TypeOfMythicID: SKILL
+  Tactics:
+    hold:
+      Movement: HOLD
+      Choice: bolt
+      Priority: 50
+    aid:
+      Movement: HOLD
+      Choice: heal
+      Priority: 40

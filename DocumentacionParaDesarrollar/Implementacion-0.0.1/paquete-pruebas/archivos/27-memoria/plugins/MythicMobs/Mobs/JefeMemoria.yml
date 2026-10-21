@@ -1,0 +1,27 @@
+# Sesión 27. No ejecutado. Sin señales ni condiciones de memoria.
+JefeMemoria:
+  Type: ZOMBIE
+  Display: 'Jefe'
+  Health: 200
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    Despawn: false
+    PreventOtherDrops: true
+  Modules:
+    ThreatTable: true
+  Skills:
+  - damage{a=4} @target ~onTimer:40
+EsbirroMemoria:
+  Type: ZOMBIE
+  Display: 'Esbirro'
+  Health: 40
+  Damage: 2
+  Predictor: true
+  Options:
+    FollowRange: 24
+    Despawn: false
+    PreventOtherDrops: true
+  Skills:
+  - damage{a=2} @target ~onTimer:40

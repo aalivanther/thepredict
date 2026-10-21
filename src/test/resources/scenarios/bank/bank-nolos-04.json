@@ -1,0 +1,104 @@
+{
+  "format": 2,
+  "id": "bank-nolos-04",
+  "family": "nolos",
+  "profile": "thepredict_guardian",
+  "sets": [],
+  "requestChars": 1200,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Survive while defeating the current target",
+          "facts": [
+            "mob_1 is healthy"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is beyond every attack range",
+              "target keeps the same distance",
+              "target is healthy",
+              "target is moderately armored",
+              "target is the highest threat",
+              "no line of sight to target"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": []
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "Which tactic best serves mob_1's objective now?",
+        "criteria": {
+          "retreat_and_defend": "retreat; self heal; poor fit now: caster already healthy",
+          "press_and_strike": "close in; melee hit, medium damage",
+          "close_in_and_slam": "close in; area hit around self stun or slow, medium damage, slow wind-up",
+          "keep_distance_and_shoot": "hold mid range; instant ranged hit, low damage; poor fit now: no line of sight now",
+          "approach": "close in",
+          "keep_distance": "hold mid range",
+          "hold": "hold position"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "NOW",
+      "options": [
+        "retreat_and_defend",
+        "press_and_strike",
+        "close_in_and_slam",
+        "keep_distance_and_shoot",
+        "approach",
+        "keep_distance",
+        "hold"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "best": [
+        "approach"
+      ],
+      "acceptable": [
+        "approach",
+        "close_in_and_slam"
+      ],
+      "forbidden": [
+        "keep_distance_and_shoot",
+        "hold",
+        "keep_distance"
+      ],
+      "rationale": "A far target behind blocks: walk around to see it; a shot needs sight.",
+      "status": "REVIEWED",
+      "reviewedBy": "usuario (revisión por chat 2026-09-30)",
+      "reviewedOn": "2026-09-30",
+      "uninformative": false,
+      "note": "buscar en el último punto conocido y daño en área; futuro: búsqueda de última posición y habilidades de carga"
+    }
+  }
+}

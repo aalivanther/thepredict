@@ -1,0 +1,39 @@
+# Sesión 27. No ejecutado. memory.mode global sigue en record.
+schemaVersion: 2
+jefe_memoria:
+  MythicID: JefeMemoria
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while reading the current target
+  Memory:
+    Mode: record
+    Facts: true
+  Patterns:
+    Mode: observe
+  Choices:
+    melee:
+      MythicID: JefeMemoriaMelee
+      TypeOfMythicID: SKILL
+  Tactics:
+    press:
+      Movement: APPROACH
+      Choice: melee
+      Priority: 70
+esbirro_memoria:
+  MythicID: EsbirroMemoria
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while helping the boss defeat the current target
+  Memory:
+    Mode: record
+  Patterns:
+    Mode: observe
+  Choices:
+    melee:
+      MythicID: EsbirroMemoriaMelee
+      TypeOfMythicID: SKILL
+  Tactics:
+    press:
+      Movement: APPROACH
+      Choice: melee
+      Priority: 60

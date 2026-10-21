@@ -1,0 +1,54 @@
+{
+  "encounter": {
+    "duration": "the fight has lasted about one minute",
+    "headcount": "one player and one mob are involved"
+  },
+  "mobs": [
+    {
+      "ref": "mob_1",
+      "objective": "Protect the altar and defeat intruders",
+      "facts": [
+        "mob_1 is wounded",
+        "mob_1 is in better shape than its target",
+        "mob_1 is standing in water"
+      ],
+      "target": {
+        "ref": "player_1",
+        "facts": [
+          "target is player_1",
+          "target is outside melee reach but within ranged reach",
+          "target is backing away",
+          "target's health is critical",
+          "target is heavily armored",
+          "target is the highest threat",
+          "target is raising a shield but not blocking yet",
+          "target's shield is disabled",
+          "target holds a totem of undying",
+          "target cannot be reached on foot",
+          "no line of sight to target",
+          "mob_1 is outside the target's reach",
+          "target can be flanked"
+        ]
+      }
+    }
+  ],
+  "participants": [
+    {
+      "ref": "player_1",
+      "facts": [
+        "player_1's health is critical",
+        "player_1 is heavily armored",
+        "player_1 is the highest threat"
+      ],
+      "cues": [
+        "player_1 is raising a shield but not blocking yet",
+        "player_1's shield is disabled",
+        "player_1 holds a totem of undying"
+      ]
+    }
+  ],
+  "recent_events": [
+    "player_1's shield was disabled",
+    "player_1 blocked a melee attack from mob_1"
+  ]
+}

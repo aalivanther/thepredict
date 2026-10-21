@@ -1,0 +1,105 @@
+{
+  "format": 2,
+  "id": "bank-fleeing-04",
+  "family": "fleeing",
+  "profile": "bank_skirmisher",
+  "sets": [],
+  "requestChars": 1221,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Wear the target down from range and finish it when it is weak",
+          "facts": [
+            "mob_1 is healthy",
+            "mob_1 is in better shape than its target"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is beyond every attack range",
+              "target is backing away",
+              "target is wounded",
+              "target is moderately armored",
+              "target is the highest threat"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is wounded",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": []
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "Which tactic best serves mob_1's objective now?",
+        "criteria": {
+          "vault_away": "retreat; escape",
+          "execute": "close in; melee hit finisher, high damage, slow wind-up",
+          "kite_and_shoot": "hold mid range; projectile, medium damage; poor fit now: target can dodge it",
+          "lunge_in": "close in; melee hit gap closer, low damage",
+          "interrupt_shot": "hold position; projectile interrupt, low damage; poor fit now: out of reach now",
+          "close_in": "close in",
+          "back_off": "retreat",
+          "hold": "hold position"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "NOW",
+      "options": [
+        "vault_away",
+        "execute",
+        "kite_and_shoot",
+        "lunge_in",
+        "interrupt_shot",
+        "close_in",
+        "back_off",
+        "hold"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "best": [
+        "lunge_in"
+      ],
+      "acceptable": [
+        "lunge_in",
+        "close_in"
+      ],
+      "forbidden": [
+        "hold",
+        "vault_away",
+        "back_off"
+      ],
+      "rationale": "The target runs away: the gap closer catches it; a slow arrow can be dodged, and idling or retreating ends the chase.",
+      "status": "REVIEWED",
+      "reviewedBy": "usuario (revisión por chat 2026-09-30)",
+      "reviewedOn": "2026-09-30",
+      "uninformative": false
+    }
+  }
+}

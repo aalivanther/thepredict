@@ -1,0 +1,38 @@
+# Sesión 25. No ejecutado en un servidor. Los tres mobs de los perfiles de Grupos.yml.
+# Invoca a mano: 1 jefe_invocador con 4 patrulla_5, 5 patrulla_5 o 3 trio_hechiceros.
+JefeInvocador:
+  Type: ZOMBIE
+  Display: 'Jefe Invocador'
+  Health: 200
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    Despawn: false
+    PreventOtherDrops: true
+  Modules:
+    ThreatTable: true
+Patrulla5:
+  Type: ZOMBIE
+  Display: 'Patrulla'
+  Health: 40
+  Damage: 2
+  Predictor: true
+  Options:
+    FollowRange: 24
+    Despawn: false
+    PreventOtherDrops: true
+  Modules:
+    ThreatTable: true
+TrioHechiceros:
+  Type: ZOMBIE
+  Display: 'Hechicero'
+  Health: 60
+  Damage: 2
+  Predictor: true
+  Options:
+    FollowRange: 24
+    Despawn: false
+    PreventOtherDrops: true
+  Modules:
+    ThreatTable: true

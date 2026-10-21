@@ -1,0 +1,243 @@
+# Rivales legal-best congelados (ClassicSearch.legalBest): el mejor clásico legal de cada kit contra una liga de clásicos.
+# Escrito por effectivenessBench (banco de efectividad v2). No editar a mano: el banco
+# reconstruye cada rival desde 'code' y exige que 'sha256' siga siendo la huella de 'mythic'.
+K1:
+  name: 'legal-best'
+  code: 'K1|DuelHeal:t1:0-0:0-0.5:-|DuelGuard:t1:0-3:0-1:-|DuelStrike:t1:0-3:0-1:a|DuelLeap:t1:0-8:0-1:a|DuelBolt:t1:0-14:0-1:a|goals:1.2:0:0:0:0:0:0'
+  sha256: '3b002ae08b67452a3e7c384c5aaafd6785979ac9fdbbbc43baa6b08970bf19f5'
+  score: 8.0202
+  seeds: '1-610'
+  profile: ''
+  describe: 'DuelHeal ~onTimer:1 vida<50%; DuelGuard ~onTimer:1 <3; DuelStrike ~onTimer:1 <3 aura; DuelLeap ~onTimer:1 <8 aura; DuelBolt ~onTimer:1 <14 aura; meleeAttack{speed=1.2}'
+  mythic: |
+    # ThePredict bench v2: classic 'legal-best' of kit K1 (pack).
+    # Mobs/Bench_K1_legal_best.yml; the skills of the kit stay in their own file.
+    Bench_K1_legal_best:
+      Type: ZOMBIE
+      Display: 'Classic legal-best'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 4 meleeAttack{speed=1.2}
+      Skills:
+      - skill{s=Bench_K1_legal_best_RuleDuelHeal} @self ~onTimer:1
+      - skill{s=Bench_K1_legal_best_RuleDuelGuard} @self ~onTimer:1
+      - skill{s=Bench_K1_legal_best_RuleDuelStrike} @self ~onTimer:1
+      - skill{s=Bench_K1_legal_best_RuleDuelLeap} @self ~onTimer:1
+      - skill{s=Bench_K1_legal_best_RuleDuelBolt} @self ~onTimer:1
+    # Skills/Bench_K1_legal_bestRules.yml
+    Bench_K1_legal_best_RuleDuelHeal:
+      Conditions:
+      - predictorcontrol false
+      - healthpercent{p=<50%} true
+      Skills:
+      - skill{s=DuelHeal} @self
+    Bench_K1_legal_best_RuleDuelGuard:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      Skills:
+      - skill{s=DuelGuard} @self
+    Bench_K1_legal_best_RuleDuelStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_legal_best_WindowDuelStrike} false
+      Skills:
+      - skill{s=DuelStrike} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelStrike;duration=10} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelLeap;duration=5} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelBolt;duration=5} @target
+    Bench_K1_legal_best_RuleDuelLeap:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=8} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_legal_best_WindowDuelLeap} false
+      Skills:
+      - skill{s=DuelLeap} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelStrike;duration=15} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelLeap;duration=10} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelBolt;duration=10} @target
+    Bench_K1_legal_best_RuleDuelBolt:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=14} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_legal_best_WindowDuelBolt} false
+      Skills:
+      - skill{s=DuelBolt} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelStrike;duration=15} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelLeap;duration=10} @target
+      - aura{auraName=Bench_K1_legal_best_WindowDuelBolt;duration=10} @target
+K2:
+  name: 'legal-best'
+  code: 'K2|RangedGuard:t1:0-0:0-1:-|RangedStrike:t1:0-3:0-1:a|RangedBolt:t1:0-16:0-1:a|goals:1.15:0.35:8:1.2:5:9:1.15'
+  sha256: '00113d722a9fa6d01e2d375bcf8c69aa5e6532fd3374c52dede012a2ad3bd9a5'
+  score: 1.5827
+  seeds: '1-610'
+  profile: ''
+  describe: 'RangedGuard ~onTimer:1; RangedStrike ~onTimer:1 <3 aura; RangedBolt ~onTimer:1 <16 aura; fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<35%} true ]}, fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}, moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}, meleeAttackConditional{speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} false ]}'
+  mythic: |
+    # ThePredict bench v2: classic 'legal-best' of kit K2 (ranged).
+    # Mobs/Bench_K2_legal_best.yml; the skills of the kit stay in their own file.
+    Bench_K2_legal_best:
+      Type: ZOMBIE
+      Display: 'Classic legal-best'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 1 fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<35%} true ]}
+      - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+      - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+      - 4 meleeAttackConditional{speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} false ]}
+      Skills:
+      - skill{s=Bench_K2_legal_best_RuleRangedGuard} @self ~onTimer:1
+      - skill{s=Bench_K2_legal_best_RuleRangedStrike} @self ~onTimer:1
+      - skill{s=Bench_K2_legal_best_RuleRangedBolt} @self ~onTimer:1
+    # Skills/Bench_K2_legal_bestRules.yml
+    Bench_K2_legal_best_RuleRangedGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=RangedGuard} @self
+    Bench_K2_legal_best_RuleRangedStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K2_legal_best_WindowRangedStrike} false
+      Skills:
+      - skill{s=RangedStrike} @target
+      - aura{auraName=Bench_K2_legal_best_WindowRangedStrike;duration=10} @target
+      - aura{auraName=Bench_K2_legal_best_WindowRangedBolt;duration=5} @target
+    Bench_K2_legal_best_RuleRangedBolt:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=16} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K2_legal_best_WindowRangedBolt} false
+      Skills:
+      - skill{s=RangedBolt} @target
+      - aura{auraName=Bench_K2_legal_best_WindowRangedStrike;duration=15} @target
+      - aura{auraName=Bench_K2_legal_best_WindowRangedBolt;duration=10} @target
+K3:
+  name: 'legal-best'
+  code: 'K3|BurstGuard:t1:0-3:0-1:-|BurstStrike:t1:0-3:0-1:a|BurstLeap:t1:0-8:0-1:a|goals:1.2:0:0:0:0:0:0'
+  sha256: '717e918656cf777314c445cacc9ba0bc7470703f7f64487b3cd225b45e1eaf6f'
+  score: 1.2035
+  seeds: '1-610'
+  profile: ''
+  describe: 'BurstGuard ~onTimer:1 <3; BurstStrike ~onTimer:1 <3 aura; BurstLeap ~onTimer:1 <8 aura; meleeAttack{speed=1.2}'
+  mythic: |
+    # ThePredict bench v2: classic 'legal-best' of kit K3 (burst).
+    # Mobs/Bench_K3_legal_best.yml; the skills of the kit stay in their own file.
+    Bench_K3_legal_best:
+      Type: ZOMBIE
+      Display: 'Classic legal-best'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 4 meleeAttack{speed=1.2}
+      Skills:
+      - skill{s=Bench_K3_legal_best_RuleBurstGuard} @self ~onTimer:1
+      - skill{s=Bench_K3_legal_best_RuleBurstStrike} @self ~onTimer:1
+      - skill{s=Bench_K3_legal_best_RuleBurstLeap} @self ~onTimer:1
+    # Skills/Bench_K3_legal_bestRules.yml
+    Bench_K3_legal_best_RuleBurstGuard:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      Skills:
+      - skill{s=BurstGuard} @self
+    Bench_K3_legal_best_RuleBurstStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K3_legal_best_WindowBurstStrike} false
+      Skills:
+      - skill{s=BurstStrike} @target
+      - aura{auraName=Bench_K3_legal_best_WindowBurstStrike;duration=10} @target
+      - aura{auraName=Bench_K3_legal_best_WindowBurstLeap;duration=8} @target
+    Bench_K3_legal_best_RuleBurstLeap:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=8} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K3_legal_best_WindowBurstLeap} false
+      Skills:
+      - skill{s=BurstLeap} @target
+      - aura{auraName=Bench_K3_legal_best_WindowBurstStrike;duration=12} @target
+      - aura{auraName=Bench_K3_legal_best_WindowBurstLeap;duration=10} @target
+K4:
+  name: 'legal-best'
+  code: 'K4|SustainHeal:t1:0-0:0-0.6:-|SustainGuard:t1:0-0:0-1:-|SustainStrike:t1:0-3:0-1:-|goals:1:0:0:0:5:9:1.15'
+  sha256: 'fd9a8477fa5d3ef5624d3299fbddb3b474d1702cb77da8f8341fd93d5c123bca'
+  score: 2.1294
+  seeds: '1-610'
+  profile: ''
+  describe: 'SustainHeal ~onTimer:1 vida<60%; SustainGuard ~onTimer:1; SustainStrike ~onTimer:1 <3; fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=SustainStrike} true ]}, moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=SustainStrike} true ]}, meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=SustainStrike} false ]}'
+  mythic: |
+    # ThePredict bench v2: classic 'legal-best' of kit K4 (sustain).
+    # Mobs/Bench_K4_legal_best.yml; the skills of the kit stay in their own file.
+    Bench_K4_legal_best:
+      Type: ZOMBIE
+      Display: 'Classic legal-best'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=SustainStrike} true ]}
+      - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=SustainStrike} true ]}
+      - 4 meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=SustainStrike} false ]}
+      Skills:
+      - skill{s=Bench_K4_legal_best_RuleSustainHeal} @self ~onTimer:1
+      - skill{s=Bench_K4_legal_best_RuleSustainGuard} @self ~onTimer:1
+      - skill{s=Bench_K4_legal_best_RuleSustainStrike} @self ~onTimer:1
+    # Skills/Bench_K4_legal_bestRules.yml
+    Bench_K4_legal_best_RuleSustainHeal:
+      Conditions:
+      - predictorcontrol false
+      - healthpercent{p=<60%} true
+      Skills:
+      - skill{s=SustainHeal} @self
+    Bench_K4_legal_best_RuleSustainGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=SustainGuard} @self
+    Bench_K4_legal_best_RuleSustainStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      Skills:
+      - skill{s=SustainStrike} @target

@@ -1,0 +1,9 @@
+Sesión 27. No ejecutada en un servidor.
+memory.mode global sigue en record. Un perfil no puede subir el modo.
+Para 27.1 a 27.6 pon records.level: full y patterns.mode: observe, y vuelve records.level a decisions al terminar.
+El jefe no tiene condición, placeholder ni señal de memoria.
+EsbirroMemoria tiene su propio perfil (esbirro_memoria). Para la 27.1 invoca el jefe y 4 esbirros.
+Con el candidato rc1 la memoria guarda el estilo del modelo de patrones al cerrar (arreglo B1).
+Al cargar esta carpeta sola, status da 1 aviso esperado: JefeMemoriaMelee no tiene pista para PREDICTOR_TELL_BLOCK.
+La 27.7 no se prepara: MySQL no está implementado.
+El paso 27.8 es de pago y no se ejecuta sin aprobación.

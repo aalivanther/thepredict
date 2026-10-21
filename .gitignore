@@ -1,0 +1,26 @@
+# Ignore Gradle project-specific cache directory
+.gradle
+
+# Ignore Gradle build output directory
+build
+
+# Ignore Kotlin plugin data
+.kotlin
+bin
+# Jars de terceros (Paper, MythicMobs Premium de pago): cada quien pone los suyos; nunca se redistribuyen.
+VersionsOfJars
+
+# Local secrets (TypeSafe API key); never commit
+.env
+
+# Flujo de trabajo con agentes de IA (encargos, prompts, auditorías e informes) y entregas internas:
+# se quedan en disco, fuera del repositorio público. El diseño por módulo, el paquete de pruebas y la
+# evidencia de Implementacion-0.0.1 sí se publican: las pruebas los leen.
+/AUDITORIA-2026-10-14/
+/ENTREGA/
+/DocumentacionParaDesarrollar/Prompts-implementacion/
+/DocumentacionParaDesarrollar/Planeacion-posterior-0.0.1/
+/DocumentacionParaDesarrollar/archive/
+.DS_Store
+.zed/
+.grok/

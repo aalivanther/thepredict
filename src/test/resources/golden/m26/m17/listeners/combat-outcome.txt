@@ -1,0 +1,91 @@
+# M17.0 golden: combat outcome listener
+setup participants=2 window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- hit member -> participant
+  event tick=0 MELEE_HIT participant=player_1 mob=00000000-0000-00e7-0000-000000000001/0
+  pending=false recorded=1 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.150000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- hit member -> blocking participant
+  event tick=0 MELEE_BLOCKED participant=player_1 mob=00000000-0000-00e7-0000-000000000001/0
+  addThreat 1 1.0
+  pending=true recorded=2 repeated=0 marks=1 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=0 limited=0 added=1.000000
+  window dealt=0.300000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- arrow of participant 2 -> member targeting participant 1
+  event tick=20 RANGED_HIT_ON_MOB participant=player_2 mob=00000000-0000-00e7-0000-000000000001/0
+  addThreat 2 3.0
+  pending=true recorded=3 repeated=0 marks=2 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.300000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- arrow of target -> member
+  event tick=20 RANGED_HIT_ON_MOB participant=player_1 mob=00000000-0000-00e7-0000-000000000001/0
+  pending=true recorded=4 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.300000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- missed arrow of participant
+  event tick=20 RANGED_MISS participant=player_1 mob=none
+  pending=true recorded=5 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.300000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- missed snowball of participant
+  pending=true recorded=5 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.300000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- hit member -> zombie
+  pending=true recorded=5 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.450000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- arrow of zombie -> member
+  pending=true recorded=5 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.450000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- missed arrow of zombie
+  pending=true recorded=5 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.450000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- hit zombie -> participant
+  pending=true recorded=5 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.450000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- hit stranger mob -> participant
+  pending=true recorded=5 repeated=0 marks=3 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.450000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- hit member -> stranger player
+  pending=true recorded=5 repeated=0 marks=4 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- potion of participant without effects
+  pending=true recorded=5 repeated=0 marks=4 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- potion of zombie
+  pending=true recorded=5 repeated=0 marks=4 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- cloud of participant without effects
+  pending=true recorded=5 repeated=0 marks=4 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- cloud of zombie
+  pending=true recorded=5 repeated=0 marks=4 pathfinds=0 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- path of member
+  pending=true recorded=5 repeated=0 marks=4 pathfinds=1 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- path of zombie
+  pending=true recorded=5 repeated=0 marks=4 pathfinds=1 nextTick=0
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- blocked hit off the server thread
+  pending=true recorded=5 repeated=0 marks=4 pathfinds=1 nextTick=1
+  threat assists=0 blocked=1 harass=1 limited=0 added=4.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- next tick
+  event tick=40 MELEE_BLOCKED participant=player_1 mob=00000000-0000-00e7-0000-000000000001/0
+  addThreat 1 1.0
+  pending=true recorded=6 repeated=0 marks=5 pathfinds=1 nextTick=0
+  threat assists=0 blocked=2 harass=1 limited=0 added=5.000000
+  window dealt=0.600000 taken=0.000000 hits=0 mobDied=false targetDied=false

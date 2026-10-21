@@ -1,0 +1,71 @@
+# ThePredict bench v2: classic 'legal-equal' of kit K1 (pack).
+# Mobs/Bench_K1_legal_equal.yml; the skills of the kit stay in their own file.
+Bench_K1_legal_equal:
+  Type: ZOMBIE
+  Display: 'Classic legal-equal'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 1 fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<50%} true ]}
+  - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}
+  - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}
+  - 4 meleeAttackConditional{speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} false ]}
+  Skills:
+  - skill{s=Bench_K1_legal_equal_RuleDuelHeal} @self ~onTimer:1
+  - skill{s=Bench_K1_legal_equal_RuleDuelGuard} @self ~onTimer:1
+  - skill{s=Bench_K1_legal_equal_RuleDuelStrike} @self ~onTimer:1
+  - skill{s=Bench_K1_legal_equal_RuleDuelLeap} @self ~onTimer:1
+  - skill{s=Bench_K1_legal_equal_RuleDuelBolt} @self ~onTimer:1
+# Skills/Bench_K1_legal_equalRules.yml
+Bench_K1_legal_equal_RuleDuelHeal:
+  Conditions:
+  - predictorcontrol false
+  - healthpercent{p=<50%} true
+  Skills:
+  - skill{s=DuelHeal} @self
+Bench_K1_legal_equal_RuleDuelGuard:
+  Conditions:
+  - predictorcontrol false
+  - healthpercent{p=>30%} true
+  Skills:
+  - skill{s=DuelGuard} @self
+Bench_K1_legal_equal_RuleDuelStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_legal_equal_WindowDuelStrike} false
+  Skills:
+  - skill{s=DuelStrike} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelStrike;duration=10} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelLeap;duration=5} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelBolt;duration=5} @target
+Bench_K1_legal_equal_RuleDuelLeap:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=8} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_legal_equal_WindowDuelLeap} false
+  Skills:
+  - skill{s=DuelLeap} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelStrike;duration=15} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelLeap;duration=10} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelBolt;duration=10} @target
+Bench_K1_legal_equal_RuleDuelBolt:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=14} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_legal_equal_WindowDuelBolt} false
+  Skills:
+  - skill{s=DuelBolt} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelStrike;duration=15} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelLeap;duration=10} @target
+  - aura{auraName=Bench_K1_legal_equal_WindowDuelBolt;duration=10} @target

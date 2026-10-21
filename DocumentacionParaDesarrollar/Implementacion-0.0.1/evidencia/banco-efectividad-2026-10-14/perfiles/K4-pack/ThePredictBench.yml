@@ -1,0 +1,115 @@
+schemaVersion: 2
+duel_red:
+  MythicID: DuelRed
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Defeat the rival duelist and survive
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:duel_blue']
+  Choices:
+    heal:
+      MythicID: SustainHeal
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [SUSTAIN]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [SELF_LOW_HEALTH]
+    guard:
+      MythicID: SustainGuard
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [DEFENSE]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [TARGET_IN_MELEE]
+    strike:
+      MythicID: SustainStrike
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 5
+        Damage: MEDIUM
+        BestWhen: [TARGET_IN_MELEE]
+  Tactics:
+    press_and_strike: { Movement: APPROACH, Choice: strike, Priority: 70 }
+    guard_up: { Movement: HOLD, Choice: guard, Priority: 50 }
+    retreat_and_heal: { Movement: RETREAT, Choice: heal, Priority: 80 }
+    approach: { Movement: APPROACH, Priority: 10 }
+  Contexts:
+    low_health_phase: { Priority: 90, Tactics: [retreat_and_heal] }
+    healthy:
+      Priority: 80
+      Conditions: ['healthpercent{p=>50%} true']
+      Tactics: [press_and_strike, guard_up, approach]
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    RangedReach: 14
+    Retreat: { Distance: 8, Speed: 1.2 }
+    Arena: { Radius: 18 }
+  Timing:
+    TickLayer: casts
+    Cadence: standard
+duel_blue:
+  MythicID: DuelBlue
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Defeat the rival duelist and survive
+  Participants:
+    PlayerGameModes: []
+    Entities:
+      Allow: ['faction:duel_red']
+  Choices:
+    heal:
+      MythicID: SustainHeal
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [SUSTAIN]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [SELF_LOW_HEALTH]
+    guard:
+      MythicID: SustainGuard
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+      Purpose:
+        Roles: [DEFENSE]
+        Delivery: SELF
+        Damage: NONE
+        BestWhen: [TARGET_IN_MELEE]
+    strike:
+      MythicID: SustainStrike
+      TypeOfMythicID: SKILL
+      Purpose:
+        Roles: [DAMAGE]
+        Delivery: MELEE
+        Reach: 2.5
+        WindUp: 5
+        Damage: MEDIUM
+        BestWhen: [TARGET_IN_MELEE]
+  Tactics:
+    press_and_strike: { Movement: APPROACH, Choice: strike, Priority: 70 }
+    guard_up: { Movement: HOLD, Choice: guard, Priority: 50 }
+    retreat_and_heal: { Movement: RETREAT, Choice: heal, Priority: 80 }
+    approach: { Movement: APPROACH, Priority: 10 }
+  Contexts:
+    low_health_phase: { Priority: 90, Tactics: [retreat_and_heal] }
+    healthy:
+      Priority: 80
+      Conditions: ['healthpercent{p=>50%} true']
+      Tactics: [press_and_strike, guard_up, approach]
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    RangedReach: 14
+    Retreat: { Distance: 8, Speed: 1.2 }
+    Arena: { Radius: 18 }
+  Timing:
+    TickLayer: casts
+    Cadence: standard

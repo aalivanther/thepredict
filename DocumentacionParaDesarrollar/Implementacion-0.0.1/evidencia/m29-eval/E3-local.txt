@@ -1,0 +1,8 @@
+E3 estudiante frente a LOCAL
+fecha=2026-10-09
+decision=no cumple
+pares=200
+mitad de par=0.5 en los 200. Varianza muestral=0. El estudiante sin tabla cubierta no se separa de LOCAL.
+GSPRT GAIN 0.50 a 0.55, n=200, cota ln(19), tope 800: CONTINUE.
+No es ACCEPT_H1. La misma serie plana de 0.5 es INCONCLUSIVE solo al llegar a 800 pares (EvalStatsTest).
+jevForOod del default sigue en true. autonomous del default sigue en off. No se corrió la sesión 29 ni Kev.

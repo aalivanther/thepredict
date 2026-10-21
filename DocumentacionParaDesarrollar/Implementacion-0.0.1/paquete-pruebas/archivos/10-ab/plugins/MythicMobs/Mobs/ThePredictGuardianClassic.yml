@@ -1,0 +1,25 @@
+# Test pack, M13 server script section 7.1, arm A: same stats, threat table and skills as the example, fired by
+# classic MythicMobs rules; Predictor: false and no ThePredict profile.
+ThePredictGuardianClassic:
+  Type: ZOMBIE
+  Display: 'ThePredict Guardian'
+  Health: 100
+  Damage: 3
+  Predictor: false
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: false
+  Modules:
+    ThreatTable: true
+  ThreatTable:
+    UseDamageTaken: true
+    DecayUnreachable: false
+  Skills:
+  - damage{a=2} @target ~onAttack
+  - skill{s=ABClassicMelee} @self ~onTimer:20
+  - skill{s=ABClassicRanged} @self ~onTimer:20
+  - skill{s=ABClassicSlam} @self ~onTimer:20
+  - skill{s=ABClassicDefense} @self ~onTimer:20
+  - skill{s=ABReach} @self ~onTimer:20
+  - command{c="say AB died"} @self ~onDeath

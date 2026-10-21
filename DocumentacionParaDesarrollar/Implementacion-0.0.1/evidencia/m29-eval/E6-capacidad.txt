@@ -1,0 +1,14 @@
+E6 tokens y latencia
+fecha=2026-10-09
+decision=cifra de guía, no de sesión
+Un mob, 1884 tokens, STANDARD.
+assist: 60·[(1−f)+0,1·f] da 5, 9 y 26 para f = 0,17, 0,5 y 0,9.
+autonomous: 60·(1−f) da 6, 10 y 50.
+Grupos con plan_and_leader de 3 o más: cota inferior. No se afirma un 100 % de victorias.
+La sesión 29.3 no se ejecutó. No hay TTK ni casts medidos en servidor.
+m29Measure, medias por sesión, no p99.
+20 sesiones: régimen 598 ns, choose 1602 ns, cobertura 543 ns, auditoría 1320 ns, delta 47 ns.
+100 sesiones: 203, 601, 323, 892, 38 ns.
+200 sesiones: 148, 291, 61, 192, 17 ns.
+Línea dedicada de 200: choose 93 ns cumple (tope 300). Auditoría 187 ns no cumple (tope 100). Régimen+choose+cobertura 304 ns cumple (tope 2000).
+ContextKey a 516 ns y 482 ns sigue publicado como no cumple. La clave no se cambió.

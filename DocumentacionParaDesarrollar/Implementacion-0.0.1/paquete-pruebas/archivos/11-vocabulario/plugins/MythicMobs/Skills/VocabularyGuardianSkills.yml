@@ -1,0 +1,17 @@
+# Test pack: the vocabulary example of the author guide (Guias/Guia-del-autor.md, section 10), unchanged.
+GuardianSlam:
+  Conditions:
+  - predictorcontrol false
+  Skills:
+  - damage{a=6} @target
+GuardianDefendAura:
+  Conditions:
+  - predictortactic{t=retreat_and_defend} true
+  Skills:
+  - effect:particles{p=crit;a=10} @self
+GuardianShield:
+  Intention: SUSTAIN, SELF, WHEN_SELF_LOW_HEALTH
+  PredictValues: [DEFENSE, HEALS_CASTER]
+  Cooldown: 5
+  Skills:
+  - heal{a=6} @self

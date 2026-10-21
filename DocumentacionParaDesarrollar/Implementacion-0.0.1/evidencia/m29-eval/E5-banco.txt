@@ -1,0 +1,8 @@
+E5 banco
+fecha=2026-10-09
+decision=no cumple
+escenarios del banco=60. Respuestas del brazo D=60 escenarios (answers.jsonl de P2, sin red).
+Elecciones del estudiante=0. Ninguna celda está cubierta, así que la captura no delega.
+Brazo D: best 37 de 60, aceptables contadas 54 de 60, prohibidas 0.
+McNemar del estudiante: discordancias 0 y 0. No hay tasa de best del estudiante que comparar con los 2 puntos.
+No se regeneró scenarios/bank. No se afirma que el estudiante no empeore.

@@ -1,0 +1,41 @@
+# ThePredict bench v2: classic 'pack' of kit K2 (ranged).
+# Mobs/Bench_K2_pack.yml; the skills of the kit stay in their own file.
+Bench_K2_pack:
+  Type: ZOMBIE
+  Display: 'Classic pack'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 4 meleeAttack{speed=1}
+  Skills:
+  - skill{s=Bench_K2_pack_RuleRangedGuard} @self ~onTimer:20
+  - skill{s=Bench_K2_pack_RuleRangedStrike} @self ~onTimer:10
+  - skill{s=Bench_K2_pack_RuleRangedBolt} @self ~onTimer:20
+# Skills/Bench_K2_packRules.yml
+Bench_K2_pack_RuleRangedGuard:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  - healthpercent{p=<60%} true
+  Skills:
+  - skill{s=RangedGuard} @self
+Bench_K2_pack_RuleRangedStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  Skills:
+  - skill{s=RangedStrike} @target
+Bench_K2_pack_RuleRangedBolt:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=16} true
+  - targetwithin{d=4} false
+  Skills:
+  - skill{s=RangedBolt} @target

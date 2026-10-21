@@ -1,0 +1,6 @@
+Sesión 24. Estos archivos no se han ejecutado en un servidor.
+AIPathfindingMalus queda (pendiente de servidor).
+Los /fill de cliff, lava_moat, pillars y bridge están en la guía de la sesión y tampoco se han ejecutado.
+El default de zone.mode sigue en observe. No se activa el rayo.
+HazardPush va entre comillas ("off"): sin comillas YAML lo lee como booleano y el perfil da error.
+Al cargar esta carpeta sola, status da 1 aviso esperado: ZoneGuardianMelee no tiene pista para PREDICTOR_TELL_BLOCK.

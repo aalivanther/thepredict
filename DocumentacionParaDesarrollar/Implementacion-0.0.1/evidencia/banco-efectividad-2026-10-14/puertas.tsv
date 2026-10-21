@@ -1,0 +1,10 @@
+puerta	que	configuracion	umbral	medido	pasa
+V1	espejo clásico (legal-equal, K1-OPEN18-60)	todas	|s − 0,5| ≤ 0,05 y el Wilson 95 % contiene 0,5	s = 0.500, Wilson [0.451; 0.549], 400 rondas	si
+V2	espejo ThePredict (defaults de entrega, K1-OPEN18-60)	DEFAULTS	|s − 0,5| ≤ 0,05 y el Wilson 95 % contiene 0,5	s = 0.504, Wilson [0.455; 0.552], 400 rondas	si
+V2	espejo ThePredict (perfil del paquete, K1-OPEN18-60)	PACK	|s − 0,5| ≤ 0,05 y el Wilson 95 % contiene 0,5	s = 0.504, Wilson [0.455; 0.552], 400 rondas	si
+V4	dos golpes letales en el mismo tick	todas	empate, exacto	empate	si
+V5	mismas estadísticas y velocidades a los dos lados	todas	comprobación estática	kit y vida compartidos; acercarse 1.15, retirarse 1.2, banda 1.15 dentro del espacio legal	si
+V6	BASE forzado ≡ clásico (defaults de entrega)	DEFAULTS	mismo ganador y duración en cada semilla	0 de 20 semillas distintas	si
+V6	BASE forzado ≡ clásico (perfil del paquete)	PACK	mismo ganador y duración en cada semilla	0 de 20 semillas distintas	si
+V3	lado (defaults de entrega)	DEFAULTS	McNemar A frente a B: p ≥ 0,05 en el total y por celda con Holm	total p = 0.478 (202 frente a 187 pares discordantes); peor celda p Holm = 1.000	si
+V3	lado (perfil del paquete)	PACK	McNemar A frente a B: p ≥ 0,05 en el total y por celda con Holm	total p = 0.445 (201 frente a 185 pares discordantes); peor celda p Holm = 1.000	si

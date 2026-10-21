@@ -1,0 +1,90 @@
+# Test pack: the example profile for the slime copy.
+schemaVersion: 2
+thepredict_guardian_slime:
+  MythicID: ThePredictGuardianSlime
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while defeating the current target
+  Choices:
+    melee:
+      MythicID: ThePredictGuardianMelee
+      TypeOfMythicID: SKILL
+    ranged:
+      MythicID: ThePredictGuardianRanged
+      TypeOfMythicID: SKILL
+    defense:
+      MythicID: ThePredictGuardianDefense
+      TypeOfMythicID: SKILL
+      RequiresTarget: false
+    slam:
+      MythicID: ThePredictGuardianSlam
+      TypeOfMythicID: SKILL
+  Tactics:
+    approach:
+      Movement: APPROACH
+    press_and_strike:
+      Movement: APPROACH
+      Choice: melee
+      Priority: 70
+    keep_distance:
+      Movement: KEEP_DISTANCE
+    keep_distance_and_shoot:
+      Movement: KEEP_DISTANCE
+      Choice: ranged
+      Description: Stay outside melee reach and shoot while the target approaches
+      Priority: 60
+    retreat_and_defend:
+      Movement: RETREAT
+      Choice: defense
+      Priority: 90
+    flank_and_strike:
+      Movement: FLANK
+      Choice: melee
+    close_in_and_slam:
+      Movement: APPROACH
+      Choice: slam
+      Priority: 65
+    hold:
+      Movement: HOLD
+      Priority: 10
+  Contexts:
+    low_health_phase:
+      Priority: 90
+      Tactics: [retreat_and_defend, keep_distance_and_shoot]
+    idle:
+      Priority: 10
+      Tactics: [hold]
+      DirectTactic: hold
+  Stances:
+    Native: hybrid
+    Describe: false
+    ByMovement:
+      APPROACH: PRESSING
+      HOLD: GUARDED
+      RETREAT: EVASIVE
+  Telegraph:
+    AgainstPlayers: enforce
+    AgainstEntities: off
+    Commitment: 100
+    EntropyCommitment: 25
+    ShortWindUp: lead
+    DefaultRecoveryTicks: 20
+  Poise:
+    Max: 0.15
+    RegenDelayTicks: 60
+    RegenPerSecond: 0.05
+    WindUpMultiplier: 1.5
+    BlockedHitPoise: 0.05
+    StaggerTicks: 30
+    ImmunityTicks: 100
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    Retreat: { Distance: 10, Speed: 1.2 }
+    Arena: { Radius: 24 }
+  Threat:
+    AssistsOthers: 1.5
+    RangedHarass: 1.0
+    BlockedHits: 0.25
+  BaseAI:
+  - 1 meleeAttack
+  - 2 randomStroll

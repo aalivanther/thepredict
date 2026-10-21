@@ -1,0 +1,34 @@
+# M17.0 golden: outcome listener
+setup participants=2 window dealt=0.000000 taken=0.000000 hits=0 mobDied=false targetDied=false
+- member takes damage
+  pending=false recorded=0 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.100000 hits=0 mobDied=false targetDied=false
+- zombie takes damage
+  pending=false recorded=0 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.100000 hits=0 mobDied=false targetDied=false
+- participant takes damage
+  pending=false recorded=0 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.100000 hits=0 mobDied=false targetDied=false
+- zombie dies
+  pending=false recorded=0 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.100000 hits=0 mobDied=false targetDied=false
+- stranger dies
+  pending=false recorded=0 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.100000 hits=0 mobDied=false targetDied=false
+- participant 2 dies
+  pending=false recorded=0 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.100000 hits=0 mobDied=false targetDied=false
+- target dies
+  pending=false recorded=0 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window dealt=0.000000 taken=0.100000 hits=0 mobDied=false targetDied=true
+- member dies
+  pending=false recorded=0 repeated=0 marks=0 pathfinds=0 nextTick=0
+  threat assists=0 blocked=0 harass=0 limited=0 added=0.000000
+  window closed

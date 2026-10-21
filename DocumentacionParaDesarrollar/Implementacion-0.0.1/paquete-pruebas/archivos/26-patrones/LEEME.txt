@@ -1,0 +1,8 @@
+Sesión 26. No ejecutada en un servidor.
+patterns.mode global sigue en observe. Un perfil no puede subir el modo.
+Para 26.1–26.6 pon records.level: full y vuelve a decisions al terminar.
+Los mensajes ~onSignal:PREDICTOR_PATTERN_* escriben en el chat. Son diagnóstico, no una recomendación de efecto.
+EnemyWatch está registrado al arrancar (escucha las acciones visibles del enemigo); el paso 26.1 no se ha corrido.
+Con el candidato rc1 el resumen pattern_summary se escribe al cerrar cada encuentro (arreglo B1).
+Al cargar esta carpeta sola, status da 1 aviso esperado: JefePatronesMelee no tiene pista para PREDICTOR_TELL_BLOCK.
+El paso 26.7 es de pago y no se ejecuta sin aprobación.

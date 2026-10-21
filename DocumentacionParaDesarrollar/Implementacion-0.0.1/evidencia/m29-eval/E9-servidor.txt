@@ -1,0 +1,7 @@
+E9 servidor y coste
+fecha=2026-10-09
+decision=pendiente de servidor
+Las sesiones 29.1, 29.4, 29.5 y 29.6 no se ejecutaron. 29.2 y 29.3 B no se ejecutaron: son de pago.
+No hay TTK mediano ni casts por minuto de servidor.
+m13Measure no se ejecutó.
+La tabla Distill (M29) publicada es la de m29Measure, en E6-capacidad.txt.

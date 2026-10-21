@@ -1,0 +1,23 @@
+# ThePredict 0.0.1 example boss, copy for the test pack: the bundled examples/MythicMobs/Mobs/ThePredictGuardian.yml
+# as it is after step 6 of examples/README.txt (Predictor: true) plus Options.Despawn: false, so it survives chunk
+# unloads (M01 server script, sections 9 and 10; M13 server script, section 1.2).
+ThePredictGuardian:
+  Type: ZOMBIE
+  Display: 'ThePredict Guardian'
+  Health: 100
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: false
+  Modules:
+    ThreatTable: true
+  ThreatTable:
+    UseDamageTaken: true
+    DecayUnreachable: false
+  Skills:
+  - damage{a=2} @target ~onAttack
+  - setstance{stance=pressing} @self ~onSignal:PREDICTOR_STANCE_PRESSING
+  - setstance{stance=guarded} @self ~onSignal:PREDICTOR_STANCE_GUARDED
+  - setstance{stance=evasive} @self ~onSignal:PREDICTOR_STANCE_EVASIVE

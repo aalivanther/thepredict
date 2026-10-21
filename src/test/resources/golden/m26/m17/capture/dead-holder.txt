@@ -1,0 +1,11 @@
+# M17.0 golden: capture dead-holder
+facts encounter=7 tick=100 nanos=5000 combatSeconds=0
+mob 00000000-0000-030b-0000-000000000001/0 health=HEALTHY target=player_1[RANGED,STEADY,reachable=true,visible=true,outside=true,flankable=false,grouped=false] contexts=[] eligible=[approach, hold, keep_distance, punch_in_place, retreat_and_guard, stand, strike_close] cues=[] outOfReach=[] contingencies={IF_OWN_HEALTH_CRITICAL=[approach, hold, keep_distance, punch_in_place, retreat_and_guard, stand, strike_close], IF_TARGET_IN_MELEE=[approach, hold, keep_distance, punch_in_place, retreat_and_guard, stand, strike_close]}
+participant player_1 health=HEALTHY armor=LIGHT cues=[] rank=1
+sighting MobSighting[mob=MobKey[entityId=00000000-0000-030b-0000-000000000001, generation=0], worldId=00000000-0000-0a11-0000-000000000001, targetId=Optional[00000000-0000-0009-0000-000000000002], targetDistanceBlocks=OptionalDouble[6.0]]
+probe 00000000-0000-030b-0000-000000000001 MobProbe[mob=MobKey[entityId=00000000-0000-030b-0000-000000000001, generation=0], worldId=00000000-0000-0a11-0000-000000000001, health=HEALTHY, targetId=Optional[00000000-0000-0009-0000-000000000002], targetDistance=Optional[RANGED]]
+aliases [player_1]
+calls
+getNearbyPlayers (0.0,64.0,0.0) 16.0
+hasLineOfSight 00000000-0000-030b-0000-000000000001 -> 00000000-0000-0009-0000-000000000002
+zombie calls

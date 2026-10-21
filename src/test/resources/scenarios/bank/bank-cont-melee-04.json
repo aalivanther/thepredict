@@ -1,0 +1,92 @@
+{
+  "format": 2,
+  "id": "bank-cont-melee-04",
+  "family": "cont-melee",
+  "profile": "purpose_shield",
+  "sets": [],
+  "requestChars": 949,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Break the guard of the current target",
+          "facts": [
+            "mob_1 is healthy"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is outside melee reach but within ranged reach",
+              "target is closing in",
+              "target is healthy",
+              "target is moderately armored",
+              "target is the highest threat"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": []
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "If mob_1's target comes inside melee reach soon, which tactic then?",
+        "criteria": {
+          "break_guard": "close in; melee hit, medium damage; reach: melee; best when target shielding",
+          "press": "close in; melee hit, medium damage; reach: melee",
+          "hold": "hold position"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "IF_TARGET_IN_MELEE",
+      "options": [
+        "break_guard",
+        "press",
+        "hold"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "best": [
+        "press"
+      ],
+      "acceptable": [
+        "press",
+        "break_guard"
+      ],
+      "forbidden": [
+        "hold"
+      ],
+      "rationale": "If a target without a shield comes into melee, any strike works; holding wastes it.",
+      "status": "REVIEWED",
+      "reviewedBy": "usuario (revisión por chat 2026-09-30)",
+      "reviewedOn": "2026-09-30",
+      "uninformative": false
+    }
+  }
+}

@@ -1,0 +1,48 @@
+# ThePredict bench v2: classic 'adversarial' of kit K2 (ranged).
+# Mobs/Bench_K2_adversarial.yml; the skills of the kit stay in their own file.
+Bench_K2_adversarial:
+  Type: ZOMBIE
+  Display: 'Classic adversarial'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+  - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+  - 4 meleeAttackConditional{speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} false ]}
+  Skills:
+  - skill{s=Bench_K2_adversarial_RuleRangedGuard} @self ~onTimer:5
+  - skill{s=Bench_K2_adversarial_RuleRangedStrike} @self ~onTimer:5
+  - skill{s=Bench_K2_adversarial_RuleRangedBolt} @self ~onTimer:5
+# Skills/Bench_K2_adversarialRules.yml
+Bench_K2_adversarial_RuleRangedGuard:
+  Conditions:
+  - predictorcontrol false
+  Skills:
+  - skill{s=RangedGuard} @self
+Bench_K2_adversarial_RuleRangedStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K2_adversarial_WindowRangedStrike} false
+  Skills:
+  - skill{s=RangedStrike} @target
+  - aura{auraName=Bench_K2_adversarial_WindowRangedStrike;duration=10} @target
+  - aura{auraName=Bench_K2_adversarial_WindowRangedBolt;duration=5} @target
+Bench_K2_adversarial_RuleRangedBolt:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=16} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K2_adversarial_WindowRangedBolt} false
+  Skills:
+  - skill{s=RangedBolt} @target
+  - aura{auraName=Bench_K2_adversarial_WindowRangedStrike;duration=15} @target
+  - aura{auraName=Bench_K2_adversarial_WindowRangedBolt;duration=10} @target

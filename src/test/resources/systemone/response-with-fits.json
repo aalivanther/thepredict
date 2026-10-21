@@ -1,0 +1,40 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "q0": {
+      "type": "choice",
+      "choice": "keep_range",
+      "confidence": 0.46,
+      "probabilities": {
+        "press_attack": 0.25,
+        "keep_range": 0.6,
+        "hold_ground": 0.15
+      }
+    },
+    "q1": {
+      "type": "choice",
+      "choice": "defend_self",
+      "confidence": 0.8,
+      "probabilities": {
+        "defend_self": 0.9,
+        "hold_ground": 0.1
+      }
+    },
+    "q2": {
+      "type": "noul",
+      "noul": 0.12
+    },
+    "q3": {
+      "type": "noul",
+      "noul": 0.81
+    },
+    "q4": {
+      "type": "noul",
+      "noul": 0.4
+    }
+  },
+  "usage": {
+    "input_tokens": 980,
+    "output_tokens": 5
+  }
+}

@@ -1,0 +1,7 @@
+E5 banco con el orden aprendido
+método del plan: G2, McNemar exacto, Holm. best ≥ 95 %, aceptable 100 %, prohibidas ≤ campeón.
+LIVE no ejecutado. Es de pago (estimación del plan unos 0,01 USD por brazo, techo 1,00 USD) y no se pidió.
+REPLAY no se lanzó en esta pasada.
+semilla y n: las del banco congelado de M16, sin regenerar scenarios/bank ni golden/m17.
+decision=pendiente de pago
+no es motivo de PARCIAL. candidateScoring sigue en priority.

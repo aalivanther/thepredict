@@ -1,0 +1,18 @@
+E3 evaluación fuera de política
+semilla=28
+n=2000 ventanas de semilla impar
+epsilon=0.10
+las semillas pares construyen qhat; las impares estiman
+tuplas unidas de planned, acceptance y credit
+IPS=0.39515789473685126
+SNIPS=0.4000000000000229
+DR=0.3999999999999927
+DM=0.3999999999999791
+support=1.0
+ESS=1876.9999999999084
+maxWeight=1.0526315789473684
+decision=cumple
+bias=-7.201646686401848E-15
+biasDecision=cumple
+criterio |sesgo| DR ≤ 0,005: cumple
+soporte ≥ 0,99 y ESS ≥ 100: cumple

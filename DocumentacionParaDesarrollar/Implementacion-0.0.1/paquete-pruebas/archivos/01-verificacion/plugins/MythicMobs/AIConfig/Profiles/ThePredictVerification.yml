@@ -1,0 +1,54 @@
+# ThePredict 0.0.1 verification profiles (M01 server script, section 1.4). One tactic per movement so that each
+# movement can be set with /thepredict debug intent; without a Jev key they send no request and cost nothing.
+schemaVersion: 2
+tpv_zombie:
+  MythicID: TPV_Zombie
+  Objective: Verification mob without remote decisions
+  Choices:
+    strike: { MythicID: TPV_Strike }
+  Tactics:
+    approach: { Movement: APPROACH }
+    press_and_strike: { Movement: APPROACH, Choice: strike }
+    keep_distance: { Movement: KEEP_DISTANCE }
+    retreat: { Movement: RETREAT }
+    hold: { Movement: HOLD }
+    hold_and_strike: { Movement: HOLD, Choice: strike }
+    flank_and_strike: { Movement: FLANK, Choice: strike }
+  Movement:
+    Arena: { Radius: 24 }
+tpv_zombie_custom_ai:
+  MythicID: TPV_ZombieCustomAI
+  Objective: Verification mob without remote decisions
+  Choices:
+    strike: { MythicID: TPV_Strike }
+  Tactics:
+    approach: { Movement: APPROACH }
+    press_and_strike: { Movement: APPROACH, Choice: strike }
+    keep_distance: { Movement: KEEP_DISTANCE }
+    retreat: { Movement: RETREAT }
+    hold: { Movement: HOLD }
+tpv_zombie_async:
+  MythicID: TPV_ZombieAsync
+  Objective: Verification mob without remote decisions
+  Tactics:
+    approach: { Movement: APPROACH }
+    keep_distance: { Movement: KEEP_DISTANCE }
+    retreat: { Movement: RETREAT }
+    hold: { Movement: HOLD }
+tpv_skeleton:
+  MythicID: TPV_Skeleton
+  Objective: Verification mob without remote decisions
+  Tactics:
+    approach: { Movement: APPROACH }
+    keep_distance: { Movement: KEEP_DISTANCE }
+    hold: { Movement: HOLD }
+  BaseAI:
+  - 1 bowAttack
+  - 2 randomStroll
+tpv_piglin:
+  MythicID: TPV_Piglin
+  Objective: Verification mob without remote decisions
+  Choices:
+    strike: { MythicID: TPV_Strike }
+  Tactics:
+    strike_in_place: { Movement: NONE, Choice: strike }

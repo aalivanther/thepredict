@@ -1,0 +1,6 @@
+E7 robustez
+fecha=2026-10-09
+decision=no cumple
+tower y crit-jumper no entraron en un entrenamiento: no se entrenó y no se empaquetó un modelo. distillTrain sigue sin ejecutarse.
+Olvido: pares de recompensa entre regímenes=0. El umbral de 0.01 no queda demostrado.
+Errata E29-7 aplicada: el umbral sigue en 0.01 de recompensa. No se amplió.

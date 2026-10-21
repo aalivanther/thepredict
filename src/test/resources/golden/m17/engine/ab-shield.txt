@@ -1,0 +1,2037 @@
+# M17.0 golden: local A/B of M13.5, SHIELD, 10 seeds, correct ratio 0.85
+run seed=1 arm=WITHOUT_JEV
+result useful=0.563333 casts=17 skippedShield=13 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 17
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 13
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=1 arm=WITH_JEV
+result useful=0.515000 casts=10 skippedShield=5 deferred=0 switches=24 requests=30 tokens=21000 duplicates=0 effect=0.938000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+body 0
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 1
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 2
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 3
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 4
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 5
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 6
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 7
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 8
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 9
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 10
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 11
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 12
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 13
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 14
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 15
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 16
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 17
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 18
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+body 19
+{"model":"jev-1.13.0","state":{"encounter":{"duration":"the fight has just started","headcount":"one player and one mob are involved"},"mobs":[{"ref":"mob_1","objective":"Defeat the target","facts":["mob_1 is healthy"],"target":{"ref":"player_1","facts":["target is player_1","target is inside melee reach","target keeps the same distance","target is healthy","target is lightly armored","target is the highest threat"]}}],"participants":[{"ref":"player_1","facts":["player_1 is healthy","player_1 is lightly armored","player_1 is the highest threat"],"cues":[]}],"recent_events":[]},"questions":{"q0":{"type":"choice","instructions":{"question":"Which tactic should mob_1 use now against its current target?","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}},"q1":{"type":"choice","instructions":{"question":"Suppose the health of mob_1 becomes critical in the next seconds. Which tactic should mob_1 switch to then?","assume":"mob_1's health is critical","objective":"`mobs[0].objective`","judge_by":["`mobs[0].facts`","`mobs[0].target.facts`","`participants[0].facts`"],"focus":"Choose the tactic that best serves the objective with only these facts. Options whose poor_fit_now is not empty are usually worse right now."},"criteria":{"press_attack":{"movement":"move toward the target and fight up close","skill":"strikes the target up close to deal damage, only inside melee reach, deals damage"},"keep_range":{"movement":"stay between the inner and outer distance band"},"fall_back":{"movement":"retreat away from the target"},"guard_post":{"movement":"hold position"}}}}}
+views
+changes 33 sha256 1aeda365e2ea96c8da79d2288c60fe0a2206793730f039486cc3a8558780eb9d (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+83 m1 g0 ALTERNATIVE RETREAT fall_back
+88 m1 g0 JEV KEEP_DISTANCE keep_range
+108 m1 g0 JEV HOLD guard_post
+128 m1 g0 JEV KEEP_DISTANCE keep_range
+148 m1 g0 JEV RETREAT fall_back
+168 m1 g0 JEV APPROACH press_attack
+208 m1 g0 ALTERNATIVE RETREAT fall_back
+228 m1 g0 JEV RETREAT fall_back
+248 m1 g0 JEV HOLD guard_post
+288 m1 g0 JEV APPROACH press_attack
+308 m1 g0 JEV HOLD guard_post
+328 m1 g0 ALTERNATIVE RETREAT fall_back
+348 m1 g0 JEV HOLD guard_post
+368 m1 g0 ALTERNATIVE RETREAT fall_back
+388 m1 g0 JEV KEEP_DISTANCE keep_range
+408 m1 g0 JEV APPROACH press_attack
+448 m1 g0 ALTERNATIVE RETREAT fall_back
+468 m1 g0 JEV HOLD guard_post
+488 m1 g0 JEV KEEP_DISTANCE keep_range
+508 m1 g0 JEV APPROACH press_attack
+528 m1 g0 JEV KEEP_DISTANCE keep_range
+548 m1 g0 JEV HOLD guard_post
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 10
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 5
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 7
+outcomes JEV KEEP_DISTANCE 5
+outcomes JEV RETREAT 2
+outcomes JEV HOLD 5
+outcomes ALTERNATIVE RETREAT 5
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=19 dealt=0.023684 taken=0.046421 reach=0.263158
+outcomes ALTERNATIVE windows=5 dealt=0.000000 taken=0.034000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=2 arm=WITH_JEV
+result useful=0.631667 casts=13 skippedShield=5 deferred=0 switches=23 requests=30 tokens=21000 duplicates=0 effect=1.008000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 33 sha256 b331ca5f49a04774fd4870f2fcde20eb64ccdbbff6bbea58ae391e6ee2a369a0 (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+83 m1 g0 ALTERNATIVE RETREAT fall_back
+88 m1 g0 JEV KEEP_DISTANCE keep_range
+108 m1 g0 ALTERNATIVE RETREAT fall_back
+128 m1 g0 JEV KEEP_DISTANCE keep_range
+168 m1 g0 JEV APPROACH press_attack
+208 m1 g0 ALTERNATIVE RETREAT fall_back
+228 m1 g0 JEV HOLD guard_post
+248 m1 g0 JEV KEEP_DISTANCE keep_range
+268 m1 g0 ALTERNATIVE RETREAT fall_back
+288 m1 g0 JEV KEEP_DISTANCE keep_range
+308 m1 g0 JEV APPROACH press_attack
+348 m1 g0 JEV KEEP_DISTANCE keep_range
+388 m1 g0 JEV RETREAT fall_back
+408 m1 g0 JEV HOLD guard_post
+428 m1 g0 JEV APPROACH press_attack
+468 m1 g0 ALTERNATIVE RETREAT fall_back
+488 m1 g0 JEV KEEP_DISTANCE keep_range
+508 m1 g0 JEV HOLD guard_post
+528 m1 g0 JEV APPROACH press_attack
+588 m1 g0 JEV HOLD guard_post
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 13
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 5
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 7
+outcomes JEV KEEP_DISTANCE 6
+outcomes JEV RETREAT 1
+outcomes JEV HOLD 3
+outcomes ALTERNATIVE RETREAT 5
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=17 dealt=0.035294 taken=0.056588 reach=0.294118
+outcomes ALTERNATIVE windows=5 dealt=0.000000 taken=0.034000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=2 arm=WITHOUT_JEV
+result useful=0.493333 casts=15 skippedShield=15 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 15
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 15
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=3 arm=WITHOUT_JEV
+result useful=0.478333 casts=14 skippedShield=16 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 14
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 16
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=3 arm=WITH_JEV
+result useful=0.688333 casts=12 skippedShield=3 deferred=0 switches=23 requests=30 tokens=21000 duplicates=0 effect=0.930000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 33 sha256 ac9791137762f6b78ee314d8f7ab20e75bb02b20b3273f1f417e6ca10618ac4c (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+63 m1 g0 ALTERNATIVE RETREAT fall_back
+68 m1 g0 JEV HOLD guard_post
+88 m1 g0 JEV KEEP_DISTANCE keep_range
+108 m1 g0 JEV APPROACH press_attack
+148 m1 g0 JEV HOLD guard_post
+188 m1 g0 ALTERNATIVE RETREAT fall_back
+208 m1 g0 JEV HOLD guard_post
+228 m1 g0 JEV APPROACH press_attack
+268 m1 g0 JEV HOLD guard_post
+288 m1 g0 JEV KEEP_DISTANCE keep_range
+308 m1 g0 JEV HOLD guard_post
+328 m1 g0 JEV KEEP_DISTANCE keep_range
+348 m1 g0 JEV APPROACH press_attack
+408 m1 g0 JEV RETREAT fall_back
+428 m1 g0 ALTERNATIVE RETREAT fall_back
+448 m1 g0 JEV KEEP_DISTANCE keep_range
+468 m1 g0 JEV HOLD guard_post
+508 m1 g0 JEV APPROACH press_attack
+548 m1 g0 JEV KEEP_DISTANCE keep_range
+588 m1 g0 JEV HOLD guard_post
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 12
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 3
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 7
+outcomes JEV KEEP_DISTANCE 5
+outcomes JEV RETREAT 1
+outcomes JEV HOLD 6
+outcomes ALTERNATIVE RETREAT 3
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=19 dealt=0.028947 taken=0.056316 reach=0.263158
+outcomes ALTERNATIVE windows=3 dealt=0.000000 taken=0.030000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=4 arm=WITH_JEV
+result useful=0.590000 casts=10 skippedShield=2 deferred=0 switches=23 requests=30 tokens=21000 duplicates=0 effect=0.830000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 32 sha256 5439050680c5c98eaddf36232836685dc58e9560b3b477dc85f77a8eb7820356 (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+28 m1 g0 JEV KEEP_DISTANCE keep_range
+48 m1 g0 JEV HOLD guard_post
+88 m1 g0 JEV KEEP_DISTANCE keep_range
+108 m1 g0 JEV HOLD guard_post
+128 m1 g0 JEV APPROACH press_attack
+188 m1 g0 JEV KEEP_DISTANCE keep_range
+228 m1 g0 JEV HOLD guard_post
+248 m1 g0 JEV APPROACH press_attack
+288 m1 g0 ALTERNATIVE RETREAT fall_back
+308 m1 g0 JEV KEEP_DISTANCE keep_range
+328 m1 g0 JEV HOLD guard_post
+348 m1 g0 JEV RETREAT fall_back
+368 m1 g0 JEV KEEP_DISTANCE keep_range
+388 m1 g0 JEV APPROACH press_attack
+428 m1 g0 ALTERNATIVE RETREAT fall_back
+448 m1 g0 JEV KEEP_DISTANCE keep_range
+468 m1 g0 JEV RETREAT fall_back
+488 m1 g0 JEV KEEP_DISTANCE keep_range
+508 m1 g0 JEV APPROACH press_attack
+528 m1 g0 JEV RETREAT fall_back
+548 m1 g0 JEV KEEP_DISTANCE keep_range
+588 m1 g0 JEV HOLD guard_post
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 10
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 2
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 5
+outcomes JEV KEEP_DISTANCE 8
+outcomes JEV RETREAT 3
+outcomes JEV HOLD 4
+outcomes ALTERNATIVE RETREAT 2
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=20 dealt=0.022500 taken=0.054000 reach=0.250000
+outcomes ALTERNATIVE windows=2 dealt=0.000000 taken=0.040000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=4 arm=WITHOUT_JEV
+result useful=0.515000 casts=18 skippedShield=12 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 18
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 12
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=5 arm=WITHOUT_JEV
+result useful=0.470000 casts=14 skippedShield=16 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 14
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 16
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=5 arm=WITH_JEV
+result useful=0.691667 casts=13 skippedShield=4 deferred=0 switches=22 requests=30 tokens=21000 duplicates=0 effect=1.230000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 33 sha256 61eae9d9409b546fe7c2fc134dba042ea04f8ec0869688d354d17a7dc4036bf6 (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+63 m1 g0 ALTERNATIVE RETREAT fall_back
+68 m1 g0 JEV HOLD guard_post
+88 m1 g0 JEV KEEP_DISTANCE keep_range
+128 m1 g0 JEV APPROACH press_attack
+168 m1 g0 JEV HOLD guard_post
+208 m1 g0 ALTERNATIVE RETREAT fall_back
+228 m1 g0 JEV KEEP_DISTANCE keep_range
+248 m1 g0 JEV APPROACH press_attack
+308 m1 g0 JEV HOLD guard_post
+328 m1 g0 ALTERNATIVE RETREAT fall_back
+348 m1 g0 JEV APPROACH press_attack
+408 m1 g0 JEV KEEP_DISTANCE keep_range
+448 m1 g0 JEV HOLD guard_post
+488 m1 g0 JEV APPROACH press_attack
+508 m1 g0 JEV RETREAT fall_back
+528 m1 g0 JEV APPROACH press_attack
+548 m1 g0 JEV KEEP_DISTANCE keep_range
+588 m1 g0 ALTERNATIVE RETREAT fall_back
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 13
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 4
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 9
+outcomes JEV KEEP_DISTANCE 4
+outcomes JEV RETREAT 1
+outcomes JEV HOLD 4
+outcomes ALTERNATIVE RETREAT 3
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=18 dealt=0.033333 taken=0.059444 reach=0.333333
+outcomes ALTERNATIVE windows=3 dealt=0.000000 taken=0.030000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=6 arm=WITH_JEV
+result useful=0.561667 casts=11 skippedShield=1 deferred=0 switches=21 requests=30 tokens=21000 duplicates=0 effect=0.920000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 32 sha256 4ceb022c9e0146964e03cb47275386378f0f19496ef2667f66aa8d75529b7bbe (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+68 m1 g0 JEV RETREAT fall_back
+88 m1 g0 JEV KEEP_DISTANCE keep_range
+128 m1 g0 JEV HOLD guard_post
+188 m1 g0 JEV APPROACH press_attack
+208 m1 g0 JEV KEEP_DISTANCE keep_range
+228 m1 g0 JEV HOLD guard_post
+268 m1 g0 JEV APPROACH press_attack
+308 m1 g0 JEV KEEP_DISTANCE keep_range
+328 m1 g0 JEV RETREAT fall_back
+348 m1 g0 JEV HOLD guard_post
+368 m1 g0 JEV APPROACH press_attack
+408 m1 g0 JEV HOLD guard_post
+428 m1 g0 ALTERNATIVE RETREAT fall_back
+448 m1 g0 JEV HOLD guard_post
+468 m1 g0 JEV KEEP_DISTANCE keep_range
+488 m1 g0 JEV APPROACH press_attack
+528 m1 g0 JEV HOLD guard_post
+548 m1 g0 JEV RETREAT fall_back
+568 m1 g0 JEV KEEP_DISTANCE keep_range
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 11
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 1
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 6
+outcomes JEV KEEP_DISTANCE 4
+outcomes JEV RETREAT 3
+outcomes JEV HOLD 6
+outcomes ALTERNATIVE RETREAT 1
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=19 dealt=0.026316 taken=0.056842 reach=0.263158
+outcomes ALTERNATIVE windows=1 dealt=0.000000 taken=0.040000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=6 arm=WITHOUT_JEV
+result useful=0.526667 casts=16 skippedShield=14 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 16
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 14
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=7 arm=WITHOUT_JEV
+result useful=0.533333 casts=16 skippedShield=14 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 16
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 14
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=7 arm=WITH_JEV
+result useful=0.653333 casts=13 skippedShield=2 deferred=0 switches=22 requests=30 tokens=21000 duplicates=0 effect=0.980000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 32 sha256 7bd756a16866ad9603d50a07c3dd7f40cf4d522822564d81adba896c91ba0d99 (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+68 m1 g0 JEV KEEP_DISTANCE keep_range
+88 m1 g0 JEV RETREAT fall_back
+108 m1 g0 JEV KEEP_DISTANCE keep_range
+128 m1 g0 JEV HOLD guard_post
+148 m1 g0 JEV KEEP_DISTANCE keep_range
+168 m1 g0 JEV APPROACH press_attack
+228 m1 g0 JEV KEEP_DISTANCE keep_range
+248 m1 g0 JEV HOLD guard_post
+268 m1 g0 JEV KEEP_DISTANCE keep_range
+288 m1 g0 JEV APPROACH press_attack
+328 m1 g0 ALTERNATIVE RETREAT fall_back
+348 m1 g0 JEV KEEP_DISTANCE keep_range
+368 m1 g0 JEV HOLD guard_post
+388 m1 g0 JEV APPROACH press_attack
+408 m1 g0 ALTERNATIVE RETREAT fall_back
+428 m1 g0 JEV KEEP_DISTANCE keep_range
+468 m1 g0 JEV HOLD guard_post
+488 m1 g0 JEV APPROACH press_attack
+548 m1 g0 JEV KEEP_DISTANCE keep_range
+568 m1 g0 JEV HOLD guard_post
+588 m1 g0 JEV RETREAT fall_back
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 13
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 2
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 5
+outcomes JEV KEEP_DISTANCE 8
+outcomes JEV RETREAT 1
+outcomes JEV HOLD 5
+outcomes ALTERNATIVE RETREAT 2
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=19 dealt=0.031579 taken=0.056842 reach=0.263158
+outcomes ALTERNATIVE windows=2 dealt=0.000000 taken=0.040000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=8 arm=WITH_JEV
+result useful=0.730000 casts=14 skippedShield=2 deferred=0 switches=17 requests=30 tokens=21000 duplicates=0 effect=1.030000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 33 sha256 79bf3302d1d430b657a1cd56d5e4041513127b76c5a2464cc8ab7a4aa01b765e (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+63 m1 g0 ALTERNATIVE RETREAT fall_back
+68 m1 g0 JEV KEEP_DISTANCE keep_range
+128 m1 g0 JEV APPROACH press_attack
+188 m1 g0 JEV KEEP_DISTANCE keep_range
+208 m1 g0 JEV HOLD guard_post
+248 m1 g0 JEV KEEP_DISTANCE keep_range
+268 m1 g0 JEV APPROACH press_attack
+308 m1 g0 JEV KEEP_DISTANCE keep_range
+328 m1 g0 JEV HOLD guard_post
+348 m1 g0 JEV KEEP_DISTANCE keep_range
+368 m1 g0 JEV APPROACH press_attack
+428 m1 g0 JEV HOLD guard_post
+448 m1 g0 JEV KEEP_DISTANCE keep_range
+508 m1 g0 JEV APPROACH press_attack
+568 m1 g0 ALTERNATIVE RETREAT fall_back
+588 m1 g0 JEV KEEP_DISTANCE keep_range
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 14
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 2
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 5
+outcomes JEV KEEP_DISTANCE 6
+outcomes JEV HOLD 3
+outcomes ALTERNATIVE RETREAT 2
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=14 dealt=0.046429 taken=0.079286 reach=0.357143
+outcomes ALTERNATIVE windows=2 dealt=0.000000 taken=0.025000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=8 arm=WITHOUT_JEV
+result useful=0.475000 casts=15 skippedShield=15 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 15
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 15
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=9 arm=WITHOUT_JEV
+result useful=0.501667 casts=16 skippedShield=14 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 16
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 14
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000
+run seed=9 arm=WITH_JEV
+result useful=0.640000 casts=13 skippedShield=4 deferred=0 switches=26 requests=30 tokens=21000 duplicates=0 effect=1.480000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 32 sha256 efa4cf29ce57e4e1ef21e2e63b6f1ffede23e461365c03d90a8d03b03a52674c (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+28 m1 g0 JEV HOLD guard_post
+48 m1 g0 JEV APPROACH press_attack
+68 m1 g0 JEV KEEP_DISTANCE keep_range
+108 m1 g0 ALTERNATIVE RETREAT fall_back
+128 m1 g0 JEV KEEP_DISTANCE keep_range
+148 m1 g0 JEV APPROACH press_attack
+208 m1 g0 ALTERNATIVE RETREAT fall_back
+228 m1 g0 JEV KEEP_DISTANCE keep_range
+248 m1 g0 JEV HOLD guard_post
+268 m1 g0 JEV APPROACH press_attack
+308 m1 g0 ALTERNATIVE RETREAT fall_back
+328 m1 g0 JEV KEEP_DISTANCE keep_range
+348 m1 g0 JEV HOLD guard_post
+368 m1 g0 JEV APPROACH press_attack
+388 m1 g0 JEV HOLD guard_post
+408 m1 g0 JEV APPROACH press_attack
+428 m1 g0 JEV KEEP_DISTANCE keep_range
+448 m1 g0 JEV HOLD guard_post
+468 m1 g0 ALTERNATIVE RETREAT fall_back
+488 m1 g0 JEV KEEP_DISTANCE keep_range
+508 m1 g0 JEV APPROACH press_attack
+568 m1 g0 JEV HOLD guard_post
+588 m1 g0 JEV KEEP_DISTANCE keep_range
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 13
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 4
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 9
+outcomes JEV KEEP_DISTANCE 6
+outcomes JEV HOLD 6
+outcomes ALTERNATIVE RETREAT 4
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=21 dealt=0.028571 taken=0.047619 reach=0.333333
+outcomes ALTERNATIVE windows=4 dealt=0.000000 taken=0.040000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=10 arm=WITH_JEV
+result useful=0.656667 casts=13 skippedShield=3 deferred=0 switches=19 requests=30 tokens=21000 duplicates=0 effect=0.930000 hitRate=1.000000
+requests 30 (index and SHA-256 of each body sent, in order)
+0 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+1 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+2 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+3 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+4 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+5 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+6 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+7 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+8 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+9 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+10 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+11 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+12 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+13 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+14 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+15 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+16 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+17 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+18 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+19 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+20 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+21 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+22 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+23 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+24 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+25 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+26 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+27 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+28 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+29 aced355eefc8484d16a6ae9a70664113882a3cbeaab94a3baa16b65b37d29d94
+views
+changes 33 sha256 d0ba5b97cc31b57188ebc9222624be039b45cc8f93a95b716beda2d240a52408 (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+8 m1 g0 JEV APPROACH press_attack
+63 m1 g0 ALTERNATIVE RETREAT fall_back
+68 m1 g0 JEV KEEP_DISTANCE keep_range
+88 m1 g0 JEV HOLD guard_post
+128 m1 g0 JEV APPROACH press_attack
+168 m1 g0 JEV HOLD guard_post
+188 m1 g0 JEV RETREAT fall_back
+208 m1 g0 ALTERNATIVE RETREAT fall_back
+228 m1 g0 JEV KEEP_DISTANCE keep_range
+248 m1 g0 JEV APPROACH press_attack
+308 m1 g0 JEV KEEP_DISTANCE keep_range
+368 m1 g0 JEV APPROACH press_attack
+408 m1 g0 ALTERNATIVE RETREAT fall_back
+428 m1 g0 JEV KEEP_DISTANCE keep_range
+468 m1 g0 JEV APPROACH press_attack
+508 m1 g0 JEV HOLD guard_post
+528 m1 g0 JEV KEEP_DISTANCE keep_range
+588 m1 g0 JEV APPROACH press_attack
+counters
+decision.ANSWERED 30
+decision.INPUT_TOKENS 12000
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 30
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 30
+decision.samples.DISPATCH 30
+decision.samples.ROUNDTRIP 30
+decision.samples.INBOX_WAIT 30
+decision.samples.APPLY 30
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 30
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 0
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 0
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 13
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 3
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes JEV APPROACH 6
+outcomes JEV KEEP_DISTANCE 5
+outcomes JEV RETREAT 1
+outcomes JEV HOLD 3
+outcomes ALTERNATIVE RETREAT 3
+outcomes LOCAL APPROACH 1
+outcomes JEV windows=15 dealt=0.036667 taken=0.071333 reach=0.333333
+outcomes ALTERNATIVE windows=3 dealt=0.000000 taken=0.030000 reach=0.000000
+outcomes LOCAL windows=1 dealt=0.050000 taken=0.010000 reach=1.000000
+run seed=10 arm=WITHOUT_JEV
+result useful=0.588333 casts=16 skippedShield=14 deferred=0 switches=1 requests=0 tokens=0 duplicates=0 effect=0.280000 hitRate=1.000000
+requests 0 (index and SHA-256 of each body sent, in order)
+views
+changes 31 sha256 4e8be24f3c8c1e565229cf378e0eb6b5f521e7093e70e05cdd13e9ba8e8e753b (tick, mob, generation, level, movement and tactic when one of them changes)
+1 m1 g0 BASE NONE none
+3 m1 g0 LOCAL APPROACH press_attack
+counters
+decision.ANSWERED 0
+decision.INPUT_TOKENS 0
+decision.WATCHDOG_RELEASES 0
+decision.INBOX_REJECTIONS 0
+decision.DEFERRED_TICKS 0
+decision.STEP_FAILURES 0
+decision.SESSION_FAILURES 0
+decision.OPTIONS_MERGED 0
+decision.CONTINGENCIES_ASKED 0
+decision.CONTINGENCIES_FIRED 0
+decision.CONTINGENCIES_EFFECTIVE 0
+decision.samples.CAPTURE 30
+decision.samples.PREPARE 0
+decision.samples.DISPATCH 0
+decision.samples.ROUNDTRIP 0
+decision.samples.INBOX_WAIT 0
+decision.samples.APPLY 0
+decision.samples.TICK_WORK 600
+decision.FailureKind.AUTHENTICATION 0
+decision.FailureKind.MODEL_UNAVAILABLE 0
+decision.FailureKind.INVALID_REQUEST 0
+decision.FailureKind.RATE_LIMITED 0
+decision.FailureKind.OVERLOADED 0
+decision.FailureKind.SERVICE_ERROR 0
+decision.FailureKind.NETWORK 0
+decision.FailureKind.TIMEOUT 0
+decision.FailureKind.INVALID_RESPONSE 0
+decision.Outcome.SENT 0
+decision.Outcome.EMPTY_CAPTURE 0
+decision.Outcome.NO_QUESTIONS 0
+decision.Outcome.SERVICE_UNAVAILABLE 30
+decision.Outcome.NO_BUDGET 0
+decision.Outcome.NOTHING_TO_ASK 0
+decision.Outcome.PREPARE_FAILED 0
+decision.Outcome.CLIENT_ERROR 0
+decision.FallbackReason.SERVICE_PAUSED 0
+decision.FallbackReason.SERVICE_BLOCKED 1
+decision.FallbackReason.NO_BUDGET 0
+decision.FallbackReason.LOW_CONFIDENCE 0
+decision.FallbackReason.INVALID_RESPONSE 0
+decision.FallbackReason.EXPIRED 0
+decision.FallbackReason.NO_PROGRESS 0
+decision.FallbackReason.RETREAT_LIMIT 0
+decision.FallbackReason.SESSION_INVALID 0
+decision.FallbackReason.INTERNAL_ERROR 0
+decision.ExecutionOutcome.CAST 16
+decision.ExecutionOutcome.DEFERRED_INVULNERABLE 0
+decision.ExecutionOutcome.SKIPPED_SHIELD 14
+decision.ExecutionOutcome.REJECTED_BY_MYTHICMOBS 0
+decision.ExecutionOutcome.NOT_ELIGIBLE 0
+decision.ExecutionOutcome.EXPIRED 0
+decision.DiscardReason.STALE_SEQUENCE 0
+decision.DiscardReason.SESSION_CHANGED 0
+decision.DiscardReason.SESSION_INACTIVE 0
+decision.DiscardReason.CATALOG_CHANGED 0
+decision.DiscardReason.MODEL_CHANGED 0
+decision.DiscardReason.TOO_OLD 0
+decision.DiscardReason.TARGET_CHANGED 0
+decision.DiscardReason.PROBE_UNAVAILABLE 0
+threat assists=0 blockedHits=0 rangedHarass=0 decays=0 limited=0 failures=0 added=0.000000 removed=0.000000
+sessions opened=0 DIED=0 DESPAWNED=0 REMOVED=0 UNBOUND=0 RECONCILED=0 encounters=1 NO_MEMBERS=0 COMBAT_ENDED=0 averageTicks=0 failedReleases=0
+outcomes LOCAL APPROACH 1
+outcomes LOCAL windows=1 dealt=0.150000 taken=0.120000 reach=1.000000

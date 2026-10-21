@@ -1,0 +1,40 @@
+{
+  "encounter": {
+    "duration": "the fight has just started",
+    "headcount": "three players and two mobs are involved"
+  },
+  "mobs": [
+    {
+      "ref": "mob_1",
+      "objective": "Protect the altar and defeat intruders",
+      "facts": [
+        "mob_1 is healthy",
+        "mob_1 is in better shape than its target"
+      ],
+      "target": {
+        "ref": "player_1",
+        "facts": [
+          "target is player_1",
+          "target is inside melee reach",
+          "target is closing in",
+          "target is wounded",
+          "target is moderately armored",
+          "target is the highest threat",
+          "target is blocking"
+        ]
+      }
+    }
+  ],
+  "participants": [
+    {
+      "ref": "player_1",
+      "facts": [
+        "player_1 is wounded",
+        "player_1 is moderately armored",
+        "player_1 is the highest threat"
+      ],
+      "cues": []
+    }
+  ],
+  "recent_events": []
+}

@@ -1,0 +1,68 @@
+# ThePredict bench v2: classic 'legal-best' of kit K1 (pack).
+# Mobs/Bench_K1_legal_best.yml; the skills of the kit stay in their own file.
+Bench_K1_legal_best:
+  Type: ZOMBIE
+  Display: 'Classic legal-best'
+  Health: 60
+  Damage: 0
+  Options:
+    FollowRange: 32
+    PreventSunburn: true
+    Despawn: false
+  Modules:
+    ThreatTable: false
+  AIGoalSelectors:
+  - 0 clear
+  - 4 meleeAttack{speed=1.2}
+  Skills:
+  - skill{s=Bench_K1_legal_best_RuleDuelHeal} @self ~onTimer:1
+  - skill{s=Bench_K1_legal_best_RuleDuelGuard} @self ~onTimer:1
+  - skill{s=Bench_K1_legal_best_RuleDuelStrike} @self ~onTimer:1
+  - skill{s=Bench_K1_legal_best_RuleDuelLeap} @self ~onTimer:1
+  - skill{s=Bench_K1_legal_best_RuleDuelBolt} @self ~onTimer:1
+# Skills/Bench_K1_legal_bestRules.yml
+Bench_K1_legal_best_RuleDuelHeal:
+  Conditions:
+  - predictorcontrol false
+  - healthpercent{p=<50%} true
+  Skills:
+  - skill{s=DuelHeal} @self
+Bench_K1_legal_best_RuleDuelGuard:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  Skills:
+  - skill{s=DuelGuard} @self
+Bench_K1_legal_best_RuleDuelStrike:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=3} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_legal_best_WindowDuelStrike} false
+  Skills:
+  - skill{s=DuelStrike} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelStrike;duration=10} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelLeap;duration=5} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelBolt;duration=5} @target
+Bench_K1_legal_best_RuleDuelLeap:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=8} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_legal_best_WindowDuelLeap} false
+  Skills:
+  - skill{s=DuelLeap} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelStrike;duration=15} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelLeap;duration=10} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelBolt;duration=10} @target
+Bench_K1_legal_best_RuleDuelBolt:
+  Conditions:
+  - predictorcontrol false
+  - targetwithin{d=14} true
+  TargetConditions:
+  - hasaura{auraName=Bench_K1_legal_best_WindowDuelBolt} false
+  Skills:
+  - skill{s=DuelBolt} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelStrike;duration=15} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelLeap;duration=10} @target
+  - aura{auraName=Bench_K1_legal_best_WindowDuelBolt;duration=10} @target

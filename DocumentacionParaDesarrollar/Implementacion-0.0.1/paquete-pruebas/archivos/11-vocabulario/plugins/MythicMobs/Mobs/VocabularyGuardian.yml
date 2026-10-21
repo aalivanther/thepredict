@@ -1,0 +1,15 @@
+# Test pack: the vocabulary example of the author guide (Guias/Guia-del-autor.md, section 10), unchanged.
+VocabularyGuardian:
+  Type: ZOMBIE
+  Display: 'Vocabulary Guardian'
+  Health: 100
+  Predictor: true
+  Options:
+    FollowRange: 32
+    Despawn: false
+  Skills:
+  - skill{s=GuardianSlam} @target ~onTimer:60
+  - skill{s=GuardianDefendAura} @self ~onTimer:20
+  - predictordecide @self ~onDamaged
+  - sound{s=entity.warden.roar} @self ~onSignal:PREDICTOR_RETREAT_AND_DEFEND
+  - message{m="<caster.predictor.tactic> (<caster.predictor.confidence>)"} @PlayersInRadius{r=16} ~onTimer:40

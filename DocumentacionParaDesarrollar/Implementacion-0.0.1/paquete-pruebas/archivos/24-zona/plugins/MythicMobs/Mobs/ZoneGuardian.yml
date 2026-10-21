@@ -1,0 +1,21 @@
+# Sesión 24. No ejecutado en un servidor. AIPathfindingMalus queda (pendiente de servidor).
+# ThePredict no llama a setPathfindingMalus. La sintaxis de abajo no está comprobada.
+ZoneGuardian:
+  Type: ZOMBIE
+  Display: 'Zone Guardian'
+  Health: 200
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    Despawn: false
+    PreventOtherDrops: true
+  AIPathfindingMalus:
+  - POWDER_SNOW: 4.0
+  - CACTUS: 8.0
+  - MAGMA_BLOCK: 8.0
+  - FIRE: 8.0
+  Modules:
+    ThreatTable: true
+  Skills:
+  - damage{a=2} @target ~onAttack

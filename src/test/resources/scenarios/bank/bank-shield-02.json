@@ -1,0 +1,111 @@
+{
+  "format": 2,
+  "id": "bank-shield-02",
+  "family": "shield",
+  "profile": "thepredict_guardian",
+  "sets": [
+    "core24"
+  ],
+  "requestChars": 1369,
+  "mobs": 1,
+  "participants": 1,
+  "request": {
+    "model": "jev-1.13.0",
+    "state": {
+      "encounter": {
+        "duration": "the fight has lasted about half a minute",
+        "headcount": "one player and one mob are involved"
+      },
+      "mobs": [
+        {
+          "ref": "mob_1",
+          "objective": "Survive while defeating the current target",
+          "facts": [
+            "mob_1 is healthy"
+          ],
+          "target": {
+            "ref": "player_1",
+            "facts": [
+              "target is player_1",
+              "target is outside melee reach but within ranged reach",
+              "target keeps the same distance",
+              "target is healthy",
+              "target is moderately armored",
+              "target is the highest threat",
+              "target is blocking",
+              "target can be flanked"
+            ]
+          }
+        }
+      ],
+      "participants": [
+        {
+          "ref": "player_1",
+          "facts": [
+            "player_1 is healthy",
+            "player_1 is moderately armored",
+            "player_1 is the highest threat"
+          ],
+          "cues": [
+            "player_1 is blocking"
+          ]
+        }
+      ],
+      "recent_events": []
+    },
+    "questions": {
+      "q0": {
+        "type": "choice",
+        "instructions": "Which tactic best serves mob_1's objective now?",
+        "criteria": {
+          "retreat_and_defend": "retreat; self heal; poor fit now: caster already healthy",
+          "press_and_strike": "close in; melee hit, medium damage; poor fit now: shield would block it",
+          "close_in_and_slam": "close in; area hit around self stun or slow, medium damage, slow wind-up",
+          "keep_distance_and_shoot": "hold mid range; instant ranged hit, low damage; poor fit now: shield would block it",
+          "approach": "close in",
+          "flank_and_strike": "circle to the target's side; melee hit, medium damage",
+          "keep_distance": "hold mid range",
+          "hold": "hold position"
+        }
+      }
+    }
+  },
+  "questions": [
+    {
+      "key": "q0",
+      "situation": "NOW",
+      "options": [
+        "retreat_and_defend",
+        "press_and_strike",
+        "close_in_and_slam",
+        "keep_distance_and_shoot",
+        "approach",
+        "flank_and_strike",
+        "keep_distance",
+        "hold"
+      ]
+    }
+  ],
+  "labels": {
+    "q0": {
+      "best": [
+        "flank_and_strike"
+      ],
+      "acceptable": [
+        "flank_and_strike",
+        "close_in_and_slam",
+        "approach"
+      ],
+      "forbidden": [
+        "press_and_strike",
+        "hold"
+      ],
+      "rationale": "A blocking target that can be flanked: circle around the shield or hit the area; a straight strike into the shield or idling achieves nothing.",
+      "status": "REVIEWED",
+      "reviewedBy": "usuario (revisión por chat 2026-09-30)",
+      "reviewedOn": "2026-09-30",
+      "uninformative": false,
+      "note": "el usuario lo deja así; confirmará en servidor si el escudo bloquea el daño de MythicMobs (DT-33). Evidencia javap: la mecánica damage usa por defecto cause ENTITY_ATTACK → mobAttack y ignoreshield=false, así que el escudo podría bloquearlo"
+    }
+  }
+}

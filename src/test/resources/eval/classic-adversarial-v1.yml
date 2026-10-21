@@ -1,0 +1,483 @@
+# Rivales adversarial congelados (ClassicSearch.adversarial): el clásico legal que más baja a ThePredict, por kit y configuración.
+# Escrito por effectivenessBench (banco de efectividad v2). No editar a mano: el banco
+# reconstruye cada rival desde 'code' y exige que 'sha256' siga siendo la huella de 'mythic'.
+K1-DEFAULTS:
+  name: 'adversarial'
+  code: 'K1|DuelHeal:t1:0-0:0-0.5:-|DuelGuard:t1:0-0:0-1:-|DuelStrike:t1:0-3:0-1:a|DuelLeap:t1:0-8:0-1:a|DuelBolt:t1:0-14:0-1:a|goals:1.2:0:0:0:5:9:1.15'
+  sha256: 'aecac9f0a8e6005e1f39a7b90c202c79949e7468277da3264fa6ff35e7f3e8b2'
+  score: 0.5513
+  seeds: '9001-9200'
+  profile: '139a62ab7fcd3f5672da9363ebde85990e119e8defe0c13a2f6ce67210c31427'
+  describe: 'DuelHeal ~onTimer:1 vida<50%; DuelGuard ~onTimer:1; DuelStrike ~onTimer:1 <3 aura; DuelLeap ~onTimer:1 <8 aura; DuelBolt ~onTimer:1 <14 aura; fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}, moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}, meleeAttackConditional{speed=1.2;mc=[ - skillOnCooldown{s=DuelStrike} false ]}'
+  mythic: |
+    # ThePredict bench v2: classic 'adversarial' of kit K1 (pack).
+    # Mobs/Bench_K1_adversarial.yml; the skills of the kit stay in their own file.
+    Bench_K1_adversarial:
+      Type: ZOMBIE
+      Display: 'Classic adversarial'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}
+      - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}
+      - 4 meleeAttackConditional{speed=1.2;mc=[ - skillOnCooldown{s=DuelStrike} false ]}
+      Skills:
+      - skill{s=Bench_K1_adversarial_RuleDuelHeal} @self ~onTimer:1
+      - skill{s=Bench_K1_adversarial_RuleDuelGuard} @self ~onTimer:1
+      - skill{s=Bench_K1_adversarial_RuleDuelStrike} @self ~onTimer:1
+      - skill{s=Bench_K1_adversarial_RuleDuelLeap} @self ~onTimer:1
+      - skill{s=Bench_K1_adversarial_RuleDuelBolt} @self ~onTimer:1
+    # Skills/Bench_K1_adversarialRules.yml
+    Bench_K1_adversarial_RuleDuelHeal:
+      Conditions:
+      - predictorcontrol false
+      - healthpercent{p=<50%} true
+      Skills:
+      - skill{s=DuelHeal} @self
+    Bench_K1_adversarial_RuleDuelGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=DuelGuard} @self
+    Bench_K1_adversarial_RuleDuelStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_adversarial_WindowDuelStrike} false
+      Skills:
+      - skill{s=DuelStrike} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=10} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=5} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=5} @target
+    Bench_K1_adversarial_RuleDuelLeap:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=8} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_adversarial_WindowDuelLeap} false
+      Skills:
+      - skill{s=DuelLeap} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=15} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=10} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=10} @target
+    Bench_K1_adversarial_RuleDuelBolt:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=14} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_adversarial_WindowDuelBolt} false
+      Skills:
+      - skill{s=DuelBolt} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=15} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=10} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=10} @target
+K1-PACK:
+  name: 'adversarial'
+  code: 'K1|DuelHeal:t1:0-0:0-0.5:-|DuelGuard:t1:0-0:0-1:-|DuelStrike:t1:0-3:0-1:a|DuelLeap:t1:0-8:0-1:a|DuelBolt:t1:0-14:0-1:a|goals:1.2:0:0:0:5:9:1.15'
+  sha256: 'aecac9f0a8e6005e1f39a7b90c202c79949e7468277da3264fa6ff35e7f3e8b2'
+  score: 0.5575
+  seeds: '9001-9200'
+  profile: '4edb5d0f157328208280fca92856cd31b346358d625a76b8bd3fd0c4ccd2e76c'
+  describe: 'DuelHeal ~onTimer:1 vida<50%; DuelGuard ~onTimer:1; DuelStrike ~onTimer:1 <3 aura; DuelLeap ~onTimer:1 <8 aura; DuelBolt ~onTimer:1 <14 aura; fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}, moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}, meleeAttackConditional{speed=1.2;mc=[ - skillOnCooldown{s=DuelStrike} false ]}'
+  mythic: |
+    # ThePredict bench v2: classic 'adversarial' of kit K1 (pack).
+    # Mobs/Bench_K1_adversarial.yml; the skills of the kit stay in their own file.
+    Bench_K1_adversarial:
+      Type: ZOMBIE
+      Display: 'Classic adversarial'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}
+      - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=DuelStrike} true ]}
+      - 4 meleeAttackConditional{speed=1.2;mc=[ - skillOnCooldown{s=DuelStrike} false ]}
+      Skills:
+      - skill{s=Bench_K1_adversarial_RuleDuelHeal} @self ~onTimer:1
+      - skill{s=Bench_K1_adversarial_RuleDuelGuard} @self ~onTimer:1
+      - skill{s=Bench_K1_adversarial_RuleDuelStrike} @self ~onTimer:1
+      - skill{s=Bench_K1_adversarial_RuleDuelLeap} @self ~onTimer:1
+      - skill{s=Bench_K1_adversarial_RuleDuelBolt} @self ~onTimer:1
+    # Skills/Bench_K1_adversarialRules.yml
+    Bench_K1_adversarial_RuleDuelHeal:
+      Conditions:
+      - predictorcontrol false
+      - healthpercent{p=<50%} true
+      Skills:
+      - skill{s=DuelHeal} @self
+    Bench_K1_adversarial_RuleDuelGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=DuelGuard} @self
+    Bench_K1_adversarial_RuleDuelStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_adversarial_WindowDuelStrike} false
+      Skills:
+      - skill{s=DuelStrike} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=10} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=5} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=5} @target
+    Bench_K1_adversarial_RuleDuelLeap:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=8} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_adversarial_WindowDuelLeap} false
+      Skills:
+      - skill{s=DuelLeap} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=15} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=10} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=10} @target
+    Bench_K1_adversarial_RuleDuelBolt:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=14} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K1_adversarial_WindowDuelBolt} false
+      Skills:
+      - skill{s=DuelBolt} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelStrike;duration=15} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelLeap;duration=10} @target
+      - aura{auraName=Bench_K1_adversarial_WindowDuelBolt;duration=10} @target
+K2-DEFAULTS:
+  name: 'adversarial'
+  code: 'K2|RangedGuard:t1:0-0:0-1:-|RangedStrike:t1:0-3:0-1:a|RangedBolt:t1:0-8:0-1:a|goals:1:0:0:0:5:9:1.15'
+  sha256: '0fbe94e3533ef28be8ecaefc4fe1d44dfcd4623ba0e06cee8de4ffe00e4c06f4'
+  score: 0.1863
+  seeds: '9001-9200'
+  profile: 'c0d153cfbb249cf8268b380ae87f08eb03136b90cba1430cbb26cf19e8966e96'
+  describe: 'RangedGuard ~onTimer:1; RangedStrike ~onTimer:1 <3 aura; RangedBolt ~onTimer:1 <8 aura; fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}, moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}, meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=RangedStrike} false ]}'
+  mythic: |
+    # ThePredict bench v2: classic 'adversarial' of kit K2 (ranged).
+    # Mobs/Bench_K2_adversarial.yml; the skills of the kit stay in their own file.
+    Bench_K2_adversarial:
+      Type: ZOMBIE
+      Display: 'Classic adversarial'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+      - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+      - 4 meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=RangedStrike} false ]}
+      Skills:
+      - skill{s=Bench_K2_adversarial_RuleRangedGuard} @self ~onTimer:1
+      - skill{s=Bench_K2_adversarial_RuleRangedStrike} @self ~onTimer:1
+      - skill{s=Bench_K2_adversarial_RuleRangedBolt} @self ~onTimer:1
+    # Skills/Bench_K2_adversarialRules.yml
+    Bench_K2_adversarial_RuleRangedGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=RangedGuard} @self
+    Bench_K2_adversarial_RuleRangedStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K2_adversarial_WindowRangedStrike} false
+      Skills:
+      - skill{s=RangedStrike} @target
+      - aura{auraName=Bench_K2_adversarial_WindowRangedStrike;duration=10} @target
+      - aura{auraName=Bench_K2_adversarial_WindowRangedBolt;duration=5} @target
+    Bench_K2_adversarial_RuleRangedBolt:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=8} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K2_adversarial_WindowRangedBolt} false
+      Skills:
+      - skill{s=RangedBolt} @target
+      - aura{auraName=Bench_K2_adversarial_WindowRangedStrike;duration=15} @target
+      - aura{auraName=Bench_K2_adversarial_WindowRangedBolt;duration=10} @target
+K2-PACK:
+  name: 'adversarial'
+  code: 'K2|RangedGuard:t1:0-0:0-1:-|RangedStrike:t1:0-3:0-1:a|RangedBolt:t1:0-8:0-1:a|goals:1:0:0:0:5:9:1.15'
+  sha256: '0fbe94e3533ef28be8ecaefc4fe1d44dfcd4623ba0e06cee8de4ffe00e4c06f4'
+  score: 0.1863
+  seeds: '9001-9200'
+  profile: 'f3295e9f3ecf9647787f584d22c5f88b0f01363813bc042bcb97760793dbd706'
+  describe: 'RangedGuard ~onTimer:1; RangedStrike ~onTimer:1 <3 aura; RangedBolt ~onTimer:1 <8 aura; fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}, moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}, meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=RangedStrike} false ]}'
+  mythic: |
+    # ThePredict bench v2: classic 'adversarial' of kit K2 (ranged).
+    # Mobs/Bench_K2_adversarial.yml; the skills of the kit stay in their own file.
+    Bench_K2_adversarial:
+      Type: ZOMBIE
+      Display: 'Classic adversarial'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+      - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=RangedStrike} true ]}
+      - 4 meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=RangedStrike} false ]}
+      Skills:
+      - skill{s=Bench_K2_adversarial_RuleRangedGuard} @self ~onTimer:1
+      - skill{s=Bench_K2_adversarial_RuleRangedStrike} @self ~onTimer:1
+      - skill{s=Bench_K2_adversarial_RuleRangedBolt} @self ~onTimer:1
+    # Skills/Bench_K2_adversarialRules.yml
+    Bench_K2_adversarial_RuleRangedGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=RangedGuard} @self
+    Bench_K2_adversarial_RuleRangedStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K2_adversarial_WindowRangedStrike} false
+      Skills:
+      - skill{s=RangedStrike} @target
+      - aura{auraName=Bench_K2_adversarial_WindowRangedStrike;duration=10} @target
+      - aura{auraName=Bench_K2_adversarial_WindowRangedBolt;duration=5} @target
+    Bench_K2_adversarial_RuleRangedBolt:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=8} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K2_adversarial_WindowRangedBolt} false
+      Skills:
+      - skill{s=RangedBolt} @target
+      - aura{auraName=Bench_K2_adversarial_WindowRangedStrike;duration=15} @target
+      - aura{auraName=Bench_K2_adversarial_WindowRangedBolt;duration=10} @target
+K3-DEFAULTS:
+  name: 'adversarial'
+  code: 'K3|BurstGuard:t1:0-0:0-1:-|BurstStrike:t1:0-3:0-1:a|BurstLeap:t1:0-8:0-1:a|goals:1:0.35:8:1.2:5:9:1.15'
+  sha256: '1d3c57c0dbaf5a0f69f33816f8fb3a671f988b5312a1edc3e5f0de35fedd2527'
+  score: 0.1550
+  seeds: '9001-9200'
+  profile: '72261b1b1937f67cefc75a9700dcb0e245cc3e42a261ee07c05a04816dd765b3'
+  describe: 'BurstGuard ~onTimer:1; BurstStrike ~onTimer:1 <3 aura; BurstLeap ~onTimer:1 <8 aura; fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<35%} true ]}, fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}, moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}, meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=BurstStrike} false ]}'
+  mythic: |
+    # ThePredict bench v2: classic 'adversarial' of kit K3 (burst).
+    # Mobs/Bench_K3_adversarial.yml; the skills of the kit stay in their own file.
+    Bench_K3_adversarial:
+      Type: ZOMBIE
+      Display: 'Classic adversarial'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 1 fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<35%} true ]}
+      - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}
+      - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}
+      - 4 meleeAttackConditional{speed=1;mc=[ - skillOnCooldown{s=BurstStrike} false ]}
+      Skills:
+      - skill{s=Bench_K3_adversarial_RuleBurstGuard} @self ~onTimer:1
+      - skill{s=Bench_K3_adversarial_RuleBurstStrike} @self ~onTimer:1
+      - skill{s=Bench_K3_adversarial_RuleBurstLeap} @self ~onTimer:1
+    # Skills/Bench_K3_adversarialRules.yml
+    Bench_K3_adversarial_RuleBurstGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=BurstGuard} @self
+    Bench_K3_adversarial_RuleBurstStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K3_adversarial_WindowBurstStrike} false
+      Skills:
+      - skill{s=BurstStrike} @target
+      - aura{auraName=Bench_K3_adversarial_WindowBurstStrike;duration=10} @target
+      - aura{auraName=Bench_K3_adversarial_WindowBurstLeap;duration=8} @target
+    Bench_K3_adversarial_RuleBurstLeap:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=8} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K3_adversarial_WindowBurstLeap} false
+      Skills:
+      - skill{s=BurstLeap} @target
+      - aura{auraName=Bench_K3_adversarial_WindowBurstStrike;duration=12} @target
+      - aura{auraName=Bench_K3_adversarial_WindowBurstLeap;duration=10} @target
+K3-PACK:
+  name: 'adversarial'
+  code: 'K3|BurstGuard:t1:0-0:0-1:-|BurstStrike:t1:0-3:0-1:a|BurstLeap:t1:0-8:0-1:a|goals:1.15:0.35:8:1.2:5:9:1.15'
+  sha256: '463c4e9bfeb1aaae3b5f4c058646dc468505f39109a15b7e3c0c2388e3dd4406'
+  score: 0.1875
+  seeds: '9001-9200'
+  profile: 'c9a0c4a751d968e17f1866504dd3d58ad84f1794e4331067881eeedb13b2652e'
+  describe: 'BurstGuard ~onTimer:1; BurstStrike ~onTimer:1 <3 aura; BurstLeap ~onTimer:1 <8 aura; fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<35%} true ]}, fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}, moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}, meleeAttackConditional{speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} false ]}'
+  mythic: |
+    # ThePredict bench v2: classic 'adversarial' of kit K3 (burst).
+    # Mobs/Bench_K3_adversarial.yml; the skills of the kit stay in their own file.
+    Bench_K3_adversarial:
+      Type: ZOMBIE
+      Display: 'Classic adversarial'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 1 fleeConditional{distance=8;speed=1.2;mc=[ - healthpercent{p=<35%} true ]}
+      - 2 fleeConditional{distance=5;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}
+      - 3 moveWithinConditional{range=9;speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} true ]}
+      - 4 meleeAttackConditional{speed=1.15;mc=[ - skillOnCooldown{s=BurstStrike} false ]}
+      Skills:
+      - skill{s=Bench_K3_adversarial_RuleBurstGuard} @self ~onTimer:1
+      - skill{s=Bench_K3_adversarial_RuleBurstStrike} @self ~onTimer:1
+      - skill{s=Bench_K3_adversarial_RuleBurstLeap} @self ~onTimer:1
+    # Skills/Bench_K3_adversarialRules.yml
+    Bench_K3_adversarial_RuleBurstGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=BurstGuard} @self
+    Bench_K3_adversarial_RuleBurstStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K3_adversarial_WindowBurstStrike} false
+      Skills:
+      - skill{s=BurstStrike} @target
+      - aura{auraName=Bench_K3_adversarial_WindowBurstStrike;duration=10} @target
+      - aura{auraName=Bench_K3_adversarial_WindowBurstLeap;duration=8} @target
+    Bench_K3_adversarial_RuleBurstLeap:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=8} true
+      TargetConditions:
+      - hasaura{auraName=Bench_K3_adversarial_WindowBurstLeap} false
+      Skills:
+      - skill{s=BurstLeap} @target
+      - aura{auraName=Bench_K3_adversarial_WindowBurstStrike;duration=12} @target
+      - aura{auraName=Bench_K3_adversarial_WindowBurstLeap;duration=10} @target
+K4-DEFAULTS:
+  name: 'adversarial'
+  code: 'K4|SustainHeal:t2:0-0:0-0.6:-|SustainGuard:t2:0-0:0-1:-|SustainStrike:t2:0-3:0-1:-|goals:1:0:0:0:0:0:0'
+  sha256: 'd44c30120af3a25e6f1b5197496aa67d6b00b98ba7d09ea90b05e8d69f633161'
+  score: 0.5000
+  seeds: '9001-9200'
+  profile: 'a81dcc971316574f09268ff18221138869fb64c1439bb508e75cc71aa4794a0e'
+  describe: 'SustainHeal ~onTimer:2 vida<60%; SustainGuard ~onTimer:2; SustainStrike ~onTimer:2 <3; meleeAttack{speed=1}'
+  mythic: |
+    # ThePredict bench v2: classic 'adversarial' of kit K4 (sustain).
+    # Mobs/Bench_K4_adversarial.yml; the skills of the kit stay in their own file.
+    Bench_K4_adversarial:
+      Type: ZOMBIE
+      Display: 'Classic adversarial'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 4 meleeAttack{speed=1}
+      Skills:
+      - skill{s=Bench_K4_adversarial_RuleSustainHeal} @self ~onTimer:2
+      - skill{s=Bench_K4_adversarial_RuleSustainGuard} @self ~onTimer:2
+      - skill{s=Bench_K4_adversarial_RuleSustainStrike} @self ~onTimer:2
+    # Skills/Bench_K4_adversarialRules.yml
+    Bench_K4_adversarial_RuleSustainHeal:
+      Conditions:
+      - predictorcontrol false
+      - healthpercent{p=<60%} true
+      Skills:
+      - skill{s=SustainHeal} @self
+    Bench_K4_adversarial_RuleSustainGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=SustainGuard} @self
+    Bench_K4_adversarial_RuleSustainStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      Skills:
+      - skill{s=SustainStrike} @target
+K4-PACK:
+  name: 'adversarial'
+  code: 'K4|SustainHeal:t2:0-0:0-0.6:-|SustainGuard:t2:0-0:0-1:-|SustainStrike:t2:0-3:0-1:-|goals:1:0:0:0:0:0:0'
+  sha256: 'd44c30120af3a25e6f1b5197496aa67d6b00b98ba7d09ea90b05e8d69f633161'
+  score: 0.5000
+  seeds: '9001-9200'
+  profile: '308fbd48bdc3ce9aa743a51fda325ee02bd09784f6681c0dea1955db31093fa8'
+  describe: 'SustainHeal ~onTimer:2 vida<60%; SustainGuard ~onTimer:2; SustainStrike ~onTimer:2 <3; meleeAttack{speed=1}'
+  mythic: |
+    # ThePredict bench v2: classic 'adversarial' of kit K4 (sustain).
+    # Mobs/Bench_K4_adversarial.yml; the skills of the kit stay in their own file.
+    Bench_K4_adversarial:
+      Type: ZOMBIE
+      Display: 'Classic adversarial'
+      Health: 60
+      Damage: 0
+      Options:
+        FollowRange: 32
+        PreventSunburn: true
+        Despawn: false
+      Modules:
+        ThreatTable: false
+      AIGoalSelectors:
+      - 0 clear
+      - 4 meleeAttack{speed=1}
+      Skills:
+      - skill{s=Bench_K4_adversarial_RuleSustainHeal} @self ~onTimer:2
+      - skill{s=Bench_K4_adversarial_RuleSustainGuard} @self ~onTimer:2
+      - skill{s=Bench_K4_adversarial_RuleSustainStrike} @self ~onTimer:2
+    # Skills/Bench_K4_adversarialRules.yml
+    Bench_K4_adversarial_RuleSustainHeal:
+      Conditions:
+      - predictorcontrol false
+      - healthpercent{p=<60%} true
+      Skills:
+      - skill{s=SustainHeal} @self
+    Bench_K4_adversarial_RuleSustainGuard:
+      Conditions:
+      - predictorcontrol false
+      Skills:
+      - skill{s=SustainGuard} @self
+    Bench_K4_adversarial_RuleSustainStrike:
+      Conditions:
+      - predictorcontrol false
+      - targetwithin{d=3} true
+      Skills:
+      - skill{s=SustainStrike} @target

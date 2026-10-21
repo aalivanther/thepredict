@@ -1,0 +1,6 @@
+Sesión 25. Estos archivos no se han ejecutado en un servidor.
+group.mode global sigue en fair. Un perfil no puede subir el modo.
+Los mobs no se invocan solos: usa /mm mobs spawn JefeInvocador, Patrulla5 o TrioHechiceros (el número que pida el paso).
+TrioHechicerosHeal cura a los otros hechiceros (@MobsInRadius, radio 16). Que MythicMobs acepte cada línea queda (pendiente de servidor).
+Al cargar esta carpeta sola, status da 1 aviso esperado: JefeInvocadorMelee no tiene pista para PREDICTOR_TELL_BLOCK.
+El paso 25.8 es de pago y no se ejecuta sin aprobación.

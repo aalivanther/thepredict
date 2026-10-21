@@ -1,0 +1,39 @@
+name: ThePredict
+version: 0.0.1
+main: akyrion.thepredict.ThePredictPlugin
+api-version: '26.2'
+depend: [MythicMobs]
+description: Tactical decisions for MythicMobs mobs with TypeSafe Jev; requires Java 25 and MythicMobs 5.13.1 or newer
+commands:
+  thepredict:
+    description: Shows the state of ThePredict, checks the Jev service, inspects bound mobs and suggests Intention lines
+    usage: /thepredict [status|check|inspect <nearest|uuid>|intention suggest [profile]|records|eval|zone|memory|learn|distill|autoconfig|debug|duel]
+    permission: thepredict.admin
+permissions:
+  thepredict.admin:
+    description: Allows /thepredict status, check, inspect and intention suggest
+    default: op
+  thepredict.records:
+    description: Allows /thepredict records export, prune, verify, backup, flush, cache and tag
+    default: op
+  thepredict.eval:
+    description: Allows /thepredict eval status, difficulty, report and verdict
+    default: op
+  thepredict.memory:
+    description: Allows /thepredict memory show, reset, purge, export and import
+    default: op
+  thepredict.learn:
+    description: Allows /thepredict learn status, build, export, import, rollback and disable
+    default: op
+  thepredict.distill:
+    description: Allows /thepredict distill status, build, export, import, rollback, disable, inspect and mode
+    default: op
+  thepredict.autoconfig:
+    description: Allows /thepredict autoconfig status, import, show, apply and revert
+    default: op
+  thepredict.memory.exempt:
+    description: A player with this permission has no player memory
+    default: false
+  thepredict.debug:
+    description: Allows /thepredict debug to set, release and inspect local debug intents, never sending a request to Jev, and /thepredict duel to record duels
+    default: false

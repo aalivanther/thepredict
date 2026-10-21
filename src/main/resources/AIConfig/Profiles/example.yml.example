@@ -1,0 +1,53 @@
+# Copy this file to a new name ending in .yml, then replace every Replace... value.
+# ThePredict ignores files that do not end in .yml or .yaml.
+schemaVersion: 2
+example_ai:
+  MythicID: ReplaceWithYourMythicMobId
+  TypeOfMythicID: MOB
+  Type: NORMAL
+  Objective: Survive while defeating the current target
+  Choices:
+    melee:
+      MythicID: ReplaceWithYourMeleeSkillId
+      TypeOfMythicID: SKILL
+      RequiresTarget: true
+    ranged:
+      MythicID: ReplaceWithYourRangedSkillId
+      TypeOfMythicID: SKILL
+    punch:
+      Kind: VANILLA_MELEE
+  Tactics:
+    press_and_strike:
+      Movement: APPROACH
+      Choice: melee
+      Priority: 70
+    keep_distance_and_shoot:
+      Movement: KEEP_DISTANCE
+      Choice: ranged
+      Description: Stay outside melee reach and shoot while the target approaches
+      Priority: 60
+    brawl:
+      Movement: APPROACH
+      Choice: punch
+    hold:
+      Movement: HOLD
+      Priority: 10
+  Contexts:
+    wounded:
+      Conditions:
+      - healthpercent{p=<30%}
+      Priority: 90
+      Tactics: [keep_distance_and_shoot, hold]
+    idle:
+      Priority: 10
+      Tactics: [hold]
+      DirectTactic: hold
+  Movement:
+    Band: { Inner: 5, Outer: 9 }
+    Retreat: { Distance: 10, Speed: 1.2 }
+    Approach: { Speed: 1.15 }
+  Threat: { AssistsOthers: 1.5, RangedHarass: 1.0, BlockedHits: 0.25 }
+  BaseAI:
+  - 1 meleeAttack
+  - 2 randomStroll
+  Timing: { MinimumConfidence: 0.45, SwitchMargin: 0.15 }

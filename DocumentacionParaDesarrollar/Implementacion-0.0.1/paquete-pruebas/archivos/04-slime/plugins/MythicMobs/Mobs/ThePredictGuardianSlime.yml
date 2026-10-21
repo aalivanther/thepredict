@@ -1,0 +1,19 @@
+# Test pack, M01 server script step 9.10: the example boss as a SLIME. A slime is not a Creature, so ThePredict
+# must answer "Goals: not installed (MythicMobs keeps its AI)" and never try to install goals.
+ThePredictGuardianSlime:
+  Type: SLIME
+  Display: 'ThePredict Guardian Slime'
+  Health: 100
+  Damage: 3
+  Predictor: true
+  Options:
+    FollowRange: 32
+    PreventOtherDrops: true
+    Despawn: false
+  Modules:
+    ThreatTable: true
+  ThreatTable:
+    UseDamageTaken: true
+    DecayUnreachable: false
+  Skills:
+  - damage{a=2} @target ~onAttack

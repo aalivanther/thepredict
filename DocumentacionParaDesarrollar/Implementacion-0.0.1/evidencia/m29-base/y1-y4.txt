@@ -1,0 +1,7 @@
+Y1 y Y4 locales
+fecha=2026-10-09
+Y1 2000: la tabla sola queda por debajo de 0,73. El híbrido queda en 0,73–0,79. La banda no se amplió.
+Y1 50000: el híbrido queda en 0,93–0,97. La banda no se amplió.
+El árbol de producción es categórico. No se portó sklearn.
+Y4: P(best) publicada 0,59. 6480 pares. eta=3. r0=20. 400 repeticiones. El ganador almacenado coincide y redondea a 59 por ciento. El ruido no se volvió a sortear en Java.
+El ritmo 3,67 rondas/s del plan no es una medida. M22.0 midió 761,17 rondas/s.

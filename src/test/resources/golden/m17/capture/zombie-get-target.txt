@@ -1,0 +1,13 @@
+# M17.0 golden: capture zombie-get-target
+facts encounter=7 tick=100 nanos=5000 combatSeconds=0
+mob 00000000-0000-030b-0000-000000000001/0 health=HEALTHY target=none contexts=[] eligible=[hold, stand] cues=[] outOfReach=[] contingencies={}
+participant player_1 health=HEALTHY armor=LIGHT cues=[] rank=1
+participant player_2 health=HEALTHY armor=LIGHT cues=[] rank=2
+sighting MobSighting[mob=MobKey[entityId=00000000-0000-030b-0000-000000000001, generation=0], worldId=00000000-0000-0a11-0000-000000000001, targetId=Optional.empty, targetDistanceBlocks=OptionalDouble.empty]
+probe 00000000-0000-030b-0000-000000000001 MobProbe[mob=MobKey[entityId=00000000-0000-030b-0000-000000000001, generation=0], worldId=00000000-0000-0a11-0000-000000000001, health=HEALTHY, targetId=Optional.empty, targetDistance=Optional.empty]
+aliases [player_1, player_2]
+calls
+getNearbyPlayers (0.0,64.0,0.0) 16.0
+hasLineOfSight 00000000-0000-030b-0000-000000000001 -> 00000000-0000-0009-0000-000000000001
+hasLineOfSight 00000000-0000-030b-0000-000000000001 -> 00000000-0000-0009-0000-000000000002
+zombie calls

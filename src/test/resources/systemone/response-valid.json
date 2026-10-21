@@ -1,0 +1,18 @@
+{
+  "model": "jev-1.13.0",
+  "answers": {
+    "q0": {
+      "type": "choice",
+      "choice": "keep_range",
+      "confidence": 0.71,
+      "probabilities": {"press_attack": 0.2, "keep_range": 0.7, "hold_ground": 0.1}
+    },
+    "q1": {
+      "type": "choice",
+      "choice": "defend_self",
+      "confidence": 0.9,
+      "probabilities": {"defend_self": 0.95, "hold_ground": 0.05}
+    }
+  },
+  "usage": {"input_tokens": 412, "output_tokens": 2}
+}
