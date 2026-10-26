@@ -6,7 +6,7 @@
   "use strict";
   var TP = window.TP;
   var AU = TP.audio = { on: false, ctx: null };
-  var master = null, ambient = null, suspendTimer = 0;
+  var master = null, ambient = null, suspendTimer = 0, dripTimer = 0;
   var noiseCache = {};
 
   function ensure() {
@@ -63,18 +63,19 @@
     wl.connect(wlg); wlg.connect(wg.gain);
     noise.connect(bp); bp.connect(wg); wg.connect(ambient);
     noise.start(); wl.start();
-    /* drips every few seconds */
-    function drip() {
-      if (!AU.on) { return; }
-      var o = ctx.createOscillator(); o.type = "sine";
-      var t = ctx.currentTime;
-      o.frequency.setValueAtTime(1800 + Math.random() * 800, t);
-      o.frequency.exponentialRampToValueAtTime(600, t + 0.12);
-      var g = ctx.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.06, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.25);
-      o.connect(g); g.connect(ambient); o.start(t); o.stop(t + 0.3);
-      window.setTimeout(drip, 2500 + Math.random() * 5000);
-    }
-    window.setTimeout(drip, 1500);
+  }
+  /* drips every few seconds while the sound is on; enable() starts them again after it was off */
+  function drip() {
+    dripTimer = 0;
+    var ctx = AU.ctx;
+    if (!AU.on || !ctx || !ambient) { return; }
+    var o = ctx.createOscillator(); o.type = "sine";
+    var t = ctx.currentTime;
+    o.frequency.setValueAtTime(1800 + Math.random() * 800, t);
+    o.frequency.exponentialRampToValueAtTime(600, t + 0.12);
+    var g = ctx.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.06, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.25);
+    o.connect(g); g.connect(ambient); o.start(t); o.stop(t + 0.3);
+    dripTimer = window.setTimeout(drip, 2500 + Math.random() * 5000);
   }
 
   AU.enable = function (on) {
@@ -85,6 +86,7 @@
     if (on) {
       if (ctx.state === "suspended") { ctx.resume(); }
       startAmbient(ctx);
+      if (!dripTimer) { dripTimer = window.setTimeout(drip, 1500); }
       master.gain.cancelScheduledValues(ctx.currentTime);
       master.gain.setTargetAtTime(0.7, ctx.currentTime, 0.4);
     } else {
