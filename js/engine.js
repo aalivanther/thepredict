@@ -95,15 +95,27 @@
   }
 
   /* ---------------------------------------------------------------------------------------- quality */
-  function pickTier() {
+  /* software renderers and weak mobile / integrated GPUs get the light tier even on a big screen */
+  var WEAK_GPU = /SwiftShader|llvmpipe|Basic Render|Mali-[GT]?\d|Adreno \(TM\) [3-6]\d\d|PowerVR|Intel.*(HD|UHD) Graphics( \d{3})?$/i;
+  function forcedTier() {
     var forced = /[?&]tier=(low|high)\b/.exec(window.location.search);
-    if (forced) { return forced[1]; }
+    return forced ? forced[1] : "";
+  }
+  /* before the renderer: screen, pointer, memory and cores (this also picks the powerPreference) */
+  function pickTier() {
+    var forced = forcedTier();
+    if (forced) { return forced; }
     var coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
     var narrow = Math.min(window.innerWidth, window.innerHeight) < 600 || window.innerWidth < 760;
     var memory = navigator.deviceMemory || 8;
     var cores = navigator.hardwareConcurrency || 8;
     if ((coarse && narrow) || memory <= 3 || cores <= 3) { return "low"; }
     return "high";
+  }
+  /* with the renderer: the GPU it got can only lower the tier, never raise it */
+  function gpuTier(tier, gpu) {
+    if (forcedTier() || tier === "low") { return tier; }
+    return WEAK_GPU.test(gpu) ? "low" : tier;
   }
 
   /* the last pass, straight to the screen: adds the bloom (what UnrealBloomPass's own additive blend did), then
@@ -501,15 +513,17 @@
     var canvas = document.getElementById("stage");
     if (!THREE || !ADD || !canvas) { fail("three.js missing"); return; }
     E.tier = pickTier();
-    root.classList.toggle("tier-low", E.tier === "low");
     var renderer;
     try {
-      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: false, depth: true, stencil: false, powerPreference: "high-performance" });
+      /* the light tier does not wake a discrete GPU (laptops with two) */
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: false, depth: true, stencil: false, powerPreference: E.tier === "low" ? "default" : "high-performance" });
     } catch (error) { fail(error); return; }
     E.renderer = renderer;
     var gl = renderer.getContext();
     var dbg = gl.getExtension("WEBGL_debug_renderer_info");
     E.gpu = String(dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+    E.tier = gpuTier(E.tier, E.gpu);
+    root.classList.toggle("tier-low", E.tier === "low");
     renderer.info.autoReset = false;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
