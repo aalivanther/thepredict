@@ -227,10 +227,8 @@
 
 <noscript><p class="noscript">Esta página necesita JavaScript para sus escenas 3D. / This page needs JavaScript for its 3D scenes.</p></noscript>
 
+<script>/* data/summary.js and data/capabilities.js only feed the specs: ui.js loads them after the first 3D frame, or right away when the link opens #setup or #specs */ if (/^#(setup|specs)\b/.test(location.hash)) { ["data/summary.js", "data/capabilities.js"].forEach(function (src) { var s = document.createElement("script"); s.src = src; s.async = false; s.setAttribute("data-tp-late", ""); document.head.appendChild(s); }); }</script>
 <script src="vendor/three/three.iife.min.js"></script>
-<script src="vendor/three/three-addons.iife.js"></script>
-<script src="data/summary.js"></script>
-<script src="data/capabilities.js"></script>
 <script src="data/content.js"></script>
 <script src="data/bench.js"></script>
 <script src="js/core.js"></script>

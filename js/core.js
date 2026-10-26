@@ -165,7 +165,8 @@
 
   /* ---------------------------------------------------------------------------------------- capabilities */
   var CAP_INDEX = {};
-  if (TP.CAPS) { TP.CAPS.items.forEach(function (item) { CAP_INDEX[item.id] = item; }); }
+  function indexCaps() { CAP_INDEX = {}; if (TP.CAPS) { TP.CAPS.items.forEach(function (item) { CAP_INDEX[item.id] = item; }); } }
+  indexCaps();
   TP.cap = function (id) { return CAP_INDEX[id] || null; };
   TP.statusLabel = function (status) {
     return TP.CAPS && TP.CAPS.statuses[status] ? TP.pick(TP.CAPS.statuses[status]) : status;
@@ -228,6 +229,15 @@
       li.appendChild(TP.badge(status));
       TP.el("p", null, li, TP.pick(TP.CAPS.meaning[status]));
     });
+  };
+
+  /* data/summary.js and data/capabilities.js may arrive after the boot (ui.js loads them late): take them and redraw */
+  TP.takeData = function () {
+    TP.D = window.TP_DATA || TP.D;
+    TP.CAPS = window.TP_CAPS || TP.CAPS;
+    indexCaps();
+    renderBadges();
+    TP.fire("data");
   };
 
   /* ---------------------------------------------------------------------------------------- boot */

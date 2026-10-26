@@ -1,18 +1,15 @@
 three.js 0.170.0 (r170), MIT, de la caché local de npm: registry.npmjs.org/three/-/three-0.170.0.tgz
-sha512 del tarball: FQK+LEpYc0fBD+J8g6oSEyyNzjp+Q7Ks1C568WWaoMRLW+TkNNWmenWeGgJjV105Gd+p/2ql1ZcjYvNiPZBhuQ==
-three.iife.min.js: build/three.module.min.js envuelto en una función; publica window.THREE (415 nombres).
-three-addons.iife.js: CopyShader, LuminosityHighPassShader, OutputShader, Pass, FullScreenQuad, ShaderPass, MaskPass, ClearMaskPass, EffectComposer, RenderPass, UnrealBloomPass, OutputPass, RoomEnvironment, RoundedBoxGeometry (window.THREE_ADDONS).
+sha512 del tarball: x
+three.iife.min.js: build/three.module.js y los complementos de examples/jsm que usa la página, empaquetados y reducidos con esbuild 0.28.2 (--bundle --format=iife --minify, tools/vendor_three.py); la licencia MIT de three.js va al final del archivo.
+window.THREE (43 nombres): ACESFilmicToneMapping, AdditiveBlending, BoxGeometry, BufferAttribute, BufferGeometry, CanvasTexture, CircleGeometry, Color, DirectionalLight, DoubleSide, DynamicDrawUsage, Euler, FogExp2, Group, HalfFloatType, HemisphereLight, InstancedMesh, Line, LineDashedMaterial, Matrix4, Mesh, MeshBasicMaterial, MeshStandardMaterial, NearestFilter, NearestMipmapLinearFilter, PCFSoftShadowMap, PMREMGenerator, PerspectiveCamera, PlaneGeometry, PointLight, Points, PointsMaterial, Quaternion, RepeatWrapping, RingGeometry, SRGBColorSpace, Scene, ShaderMaterial, SphereGeometry, Vector2, Vector3, WebGLRenderTarget, WebGLRenderer.
+window.THREE_ADDONS (6): EffectComposer, Pass, RenderPass, RoomEnvironment, ShaderPass, UnrealBloomPass.
 SHA-256 de los archivos de origen:
-  build/three.module.min.js  08fd7545d13d2c7fb65ab691530a802dafefd638596501854f267d0fb13c39e7
-  examples/jsm/shaders/CopyShader.js  4e3346db194db56a596cd074e9bdb39fb5eb52040c333e0d29dc4eb1324d3b1d
-  examples/jsm/shaders/LuminosityHighPassShader.js  9f4866f9abb2d96fd83eec46ba4bf2165b22155a7a37ff425c0f60eba18007cb
-  examples/jsm/shaders/OutputShader.js  4944cecd49c0d4d1520a4d927bde8a590fd43f041ee913252b9451855a01d0f0
-  examples/jsm/postprocessing/Pass.js  b3c6128340eaa37e40a6a2f1b738e894c855239417d50959759b34a2b5e89f92
-  examples/jsm/postprocessing/ShaderPass.js  3b28a1ee27e0eb96c0eab137a1f442ccf127a926904eced2d51e125ec44af781
-  examples/jsm/postprocessing/MaskPass.js  328cf7db0da5d9be83ffe39d54b01d5ac1fddf108cc98182ddbb056f5c8b537f
-  examples/jsm/postprocessing/EffectComposer.js  d234e578618fa816955ebdc059c049c577e203e650e33cf22bde3f232c29e669
-  examples/jsm/postprocessing/RenderPass.js  6c9b8a539ea16e898f65e4760f14937ef9ea94043bd9842c141e0301f41903e8
-  examples/jsm/postprocessing/UnrealBloomPass.js  3bd23a1097af75c7002d0ffc21a6c14f45c4dd701dbaf737030dfc61fb7c64d9
-  examples/jsm/postprocessing/OutputPass.js  32f879d2179087676631c799857a885586b3cdd13b9731bd3b13f06428bd58b7
+  build/three.module.js  ce1fa418de16a19495a9f72495580e3015d7745c296d3ce0485897f902ddedfb
   examples/jsm/environments/RoomEnvironment.js  85869bdd22f7cf0b22e68dcefe6cb710480af0f5c901a76f7a7764fd07fc8014
-  examples/jsm/geometries/RoundedBoxGeometry.js  d20aeaf7077c459a8d952d215738d7b44fba028440bb862d84b622a34f0c80bb
+  examples/jsm/postprocessing/EffectComposer.js  d234e578618fa816955ebdc059c049c577e203e650e33cf22bde3f232c29e669
+  examples/jsm/postprocessing/Pass.js  b3c6128340eaa37e40a6a2f1b738e894c855239417d50959759b34a2b5e89f92
+  examples/jsm/postprocessing/RenderPass.js  6c9b8a539ea16e898f65e4760f14937ef9ea94043bd9842c141e0301f41903e8
+  examples/jsm/postprocessing/ShaderPass.js  3b28a1ee27e0eb96c0eab137a1f442ccf127a926904eced2d51e125ec44af781
+  examples/jsm/postprocessing/UnrealBloomPass.js  3bd23a1097af75c7002d0ffc21a6c14f45c4dd701dbaf737030dfc61fb7c64d9
+SHA-256 del resultado:
+  three.iife.min.js  678792a10523720d88bdb7a581d69c7f12e949830c846652e6368b85e0e4c4a2

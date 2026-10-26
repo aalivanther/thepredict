@@ -233,6 +233,16 @@
       activate: function () { H.show(true); },
       deactivate: function () { H.show(false); },
       shadowsChanged: function () { world.setShadows(E.renderer.shadowMap.enabled); },
+      /* compile the variant with the spare lights on, so a hit light never compiles in the middle of a demo; then the
+         normal one again (cached, instant): it leaves the renderer's light state and the unlit materials as before */
+      warm: function (compile) {
+        var spare = world.lights.spare, on = spare[0].visible;
+        spare.forEach(function (l) { l.visible = true; });
+        compile();
+        spare.forEach(function (l) { l.visible = false; });
+        compile();
+        spare.forEach(function (l) { l.visible = on; });
+      },
       update: function (dt, view) {
         if (view.key !== st.key) {
           enterDemo(view.key);
