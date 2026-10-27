@@ -1,11 +1,13 @@
 /* ThePredict v4 · sonido sintetizado por WebAudio (nada grabado, nada de fuera): un ambiente de cripta (drone grave,
    viento filtrado, goteo) y SFX cortos (tajo, parry, bolt, impacto, salto). Apagado por defecto; el botón de la barra
-   lo enciende. Las demos lo llaman con TP.audio.play(nombre) y no hace nada si está apagado. */
+   lo enciende. Las demos lo llaman con TP.audio.play(nombre) y no hace nada si está apagado. Apagado o con la pestaña
+   oculta, el contexto se suspende (no gasta CPU en mezclar silencio). */
 (function () {
   "use strict";
   var TP = window.TP;
   var AU = TP.audio = { on: false, ctx: null };
-  var master = null, ambient = null;
+  var master = null, ambient = null, suspendTimer = 0, dripTimer = 0;
+  var noiseCache = {};
 
   function ensure() {
     if (AU.ctx) { return AU.ctx; }
@@ -21,12 +23,15 @@
     AU.ctx = ctx;
     return ctx;
   }
+  /* same seed every time, so one buffer per length serves every effect (a buffer can feed many sources) */
   function noiseBuffer(ctx, seconds) {
     var n = Math.floor(ctx.sampleRate * seconds);
+    if (noiseCache[n]) { return noiseCache[n]; }
     var buf = ctx.createBuffer(1, n, ctx.sampleRate);
     var d = buf.getChannelData(0);
     var rnd = TP.rng(9);
     for (var i = 0; i < n; i++) { d[i] = rnd() * 2 - 1; }
+    noiseCache[n] = buf;
     return buf;
   }
   function startAmbient(ctx) {
@@ -58,33 +63,43 @@
     wl.connect(wlg); wlg.connect(wg.gain);
     noise.connect(bp); bp.connect(wg); wg.connect(ambient);
     noise.start(); wl.start();
-    /* drips every few seconds */
-    function drip() {
-      if (!AU.on) { return; }
-      var o = ctx.createOscillator(); o.type = "sine";
-      var t = ctx.currentTime;
-      o.frequency.setValueAtTime(1800 + Math.random() * 800, t);
-      o.frequency.exponentialRampToValueAtTime(600, t + 0.12);
-      var g = ctx.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.06, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.25);
-      o.connect(g); g.connect(ambient); o.start(t); o.stop(t + 0.3);
-      window.setTimeout(drip, 2500 + Math.random() * 5000);
-    }
-    window.setTimeout(drip, 1500);
+  }
+  /* drips every few seconds while the sound is on; enable() starts them again after it was off */
+  function drip() {
+    dripTimer = 0;
+    var ctx = AU.ctx;
+    if (!AU.on || !ctx || !ambient) { return; }
+    var o = ctx.createOscillator(); o.type = "sine";
+    var t = ctx.currentTime;
+    o.frequency.setValueAtTime(1800 + Math.random() * 800, t);
+    o.frequency.exponentialRampToValueAtTime(600, t + 0.12);
+    var g = ctx.createGain(); g.gain.setValueAtTime(0.0001, t); g.gain.exponentialRampToValueAtTime(0.06, t + 0.01); g.gain.exponentialRampToValueAtTime(0.0001, t + 0.25);
+    o.connect(g); g.connect(ambient); o.start(t); o.stop(t + 0.3);
+    dripTimer = window.setTimeout(drip, 2500 + Math.random() * 5000);
   }
 
   AU.enable = function (on) {
     AU.on = !!on;
     var ctx = ensure();
     if (!ctx) { return; }
+    window.clearTimeout(suspendTimer);
     if (on) {
       if (ctx.state === "suspended") { ctx.resume(); }
       startAmbient(ctx);
+      if (!dripTimer) { dripTimer = window.setTimeout(drip, 1500); }
       master.gain.cancelScheduledValues(ctx.currentTime);
       master.gain.setTargetAtTime(0.7, ctx.currentTime, 0.4);
     } else {
       master.gain.setTargetAtTime(0, ctx.currentTime, 0.2);
+      /* suspend once the fade (time constant 0.2 s) is below hearing: 6 time constants, about -52 dB */
+      suspendTimer = window.setTimeout(function () { if (!AU.on && ctx.state === "running") { ctx.suspend(); } }, 1200);
     }
   };
+  document.addEventListener("visibilitychange", function () {
+    var ctx = AU.ctx;
+    if (!ctx || !AU.on) { return; }
+    if (document.visibilityState === "hidden") { ctx.suspend(); } else if (ctx.state === "suspended") { ctx.resume(); }
+  });
 
   /* short synthesized effects */
   var SFX = {

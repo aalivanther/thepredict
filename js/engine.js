@@ -1,7 +1,9 @@
 /* ThePredict v4 · motor: renderer WebGL con posproceso (bloom, viñeta, grano, aberración leve), pase de split-screen
    (dos cámaras con scissor y un callback que alterna qué actores se ven), director de scroll (progreso por sección,
    [data-show], corte con fundido entre demos), bucle que se pausa fuera de pantalla, niveles de calidad, medidor de fps
-   por sección y ganchos de QA (window.TP_QA). three.js r170 vendorizado como IIFE: window.THREE y window.THREE_ADDONS. */
+   por sección y ganchos de QA (window.TP_QA). three.js r170 vendorizado como IIFE: window.THREE y window.THREE_ADDONS.
+   El arranque va por pasos con una pausa entre ellos (la página pinta y responde mientras arranca el 3D) y los shaders
+   se compilan para el destino real del composer, sin bloquear, antes del primer fotograma. */
 (function () {
   "use strict";
   var TP = window.TP;
@@ -13,7 +15,7 @@
     ok: false, tier: "high", reduced: false, gpu: "", renderer: null, composer: null,
     factories: {}, scenes: {}, current: null, currentName: "", sections: [], active: null,
     time: 0, width: 1, height: 1, dpr: 1, dprScale: 1, dirty: true, visible: true, frozen: false,
-    stats: {}, events: {}, initMs: {}, downgrades: [], layers: {}, split: null
+    stats: {}, events: {}, initMs: {}, downgrades: [], layers: {}, split: null, ready: false, drawn: false
   };
 
   function emit(kind, a, b) {
@@ -59,16 +61,50 @@
       s.name = name;
       E.scenes[name] = s;
       if (s.resize) { s.resize(E.width, E.height); }
-      try { E.renderer.compile(s.scene, s.camera); } catch (error) { /* compiled lazily on first render */ }
+      /* during start-up, init compiles it without blocking (see start) */
+      if (E.ready) { compileScene(s, false); }
       E.initMs[name] = Math.round(performance.now() - t0);
     }
     return E.scenes[name] || null;
   };
+  /* compile for the target the scene really renders into (the composer's buffer: linear, no tone mapping); compiling
+     for the screen builds sRGB + ACES variants that are never used and leaves the real ones for the first frames */
+  function compileScene(s, async) {
+    var r = E.renderer, prev = r.getRenderTarget(), done = null;
+    r.setRenderTarget(E.composer.readBuffer);
+    try { done = async && r.compileAsync ? r.compileAsync(s.scene, s.camera) : r.compile(s.scene, s.camera); } catch (error) { done = null; /* compiled lazily on first render */ }
+    r.setRenderTarget(prev);
+    return async ? done : null;
+  }
+  /* the post-processing materials as well, each for its own target (bloom into its half-float buffers, linear; the
+     finish to the screen, with ACES and sRGB), so the first frame does not compile them */
+  function compilePost() {
+    var r = E.renderer, prev = r.getRenderTarget(), b = E.bloom, done = [];
+    var plane = new THREE.PlaneGeometry(2, 2), cam = new THREE.PerspectiveCamera();
+    var bloomScene = new THREE.Scene(), finishScene = new THREE.Scene();
+    [b.materialHighPassFilter, b.compositeMaterial].concat(b.separableBlurMaterials).forEach(function (m) { bloomScene.add(new THREE.Mesh(plane, m)); });
+    finishScene.add(new THREE.Mesh(plane, E.finish.material));
+    try {
+      r.setRenderTarget(b.renderTargetBright);
+      done.push(r.compileAsync(bloomScene, cam));
+      r.setRenderTarget(null);
+      done.push(r.compileAsync(finishScene, cam));
+    } catch (error) { /* compiled on first use */ }
+    r.setRenderTarget(prev);
+    return Promise.all(done);
+  }
 
   /* ---------------------------------------------------------------------------------------- quality */
-  function pickTier() {
+  /* software renderers and weak mobile / integrated GPUs get the light tier even on a big screen */
+  var WEAK_GPU = /SwiftShader|llvmpipe|Basic Render|Mali-[GT]?\d|Adreno \(TM\) [3-6]\d\d|PowerVR|Intel.*(HD|UHD) Graphics( \d{3})?$/i;
+  function forcedTier() {
     var forced = /[?&]tier=(low|high)\b/.exec(window.location.search);
-    if (forced) { return forced[1]; }
+    return forced ? forced[1] : "";
+  }
+  /* before the renderer: screen, pointer, memory and cores (this also picks the powerPreference) */
+  function pickTier() {
+    var forced = forcedTier();
+    if (forced) { return forced; }
     var coarse = window.matchMedia && window.matchMedia("(pointer: coarse)").matches;
     var narrow = Math.min(window.innerWidth, window.innerHeight) < 600 || window.innerWidth < 760;
     var memory = navigator.deviceMemory || 8;
@@ -76,28 +112,85 @@
     if ((coarse && narrow) || memory <= 3 || cores <= 3) { return "low"; }
     return "high";
   }
+  /* with the renderer: the GPU it got can only lower the tier, never raise it */
+  function gpuTier(tier, gpu) {
+    if (forcedTier() || tier === "low") { return tier; }
+    return WEAK_GPU.test(gpu) ? "low" : tier;
+  }
 
+  /* the last pass, straight to the screen: adds the bloom (what UnrealBloomPass's own additive blend did), then
+     aberration, vignette and grain, then ACES tone mapping and sRGB (what OutputPass did). One full-screen pass instead
+     of three, and the second buffer of the composer is never allocated */
   var FinishShader = {
-    uniforms: { tDiffuse: { value: null }, uTime: { value: 0 }, uRes: { value: null }, uVig: { value: 0.5 }, uGrain: { value: 0.014 }, uCA: { value: 0.002 }, uTint: { value: new THREE.Vector3(1, 1, 1) } },
+    uniforms: { tDiffuse: { value: null }, tBloom: { value: null }, uTime: { value: 0 }, uRes: { value: null }, uVig: { value: 0.5 }, uGrain: { value: 0.014 }, uCA: { value: 0.002 }, uTint: { value: new THREE.Vector3(1, 1, 1) } },
     vertexShader: "varying vec2 vUv;\nvoid main() { vUv = uv; gl_Position = projectionMatrix * modelViewMatrix * vec4(position, 1.0); }",
     fragmentShader: [
-      "uniform sampler2D tDiffuse;",
+      "uniform sampler2D tDiffuse; uniform sampler2D tBloom;",
       "uniform float uTime; uniform vec2 uRes; uniform float uVig; uniform float uGrain; uniform float uCA; uniform vec3 uTint;",
       "varying vec2 vUv;",
       "float hash(vec2 p) { p = fract(p * vec2(443.897, 441.423)); p += dot(p, p.yx + 19.19); return fract((p.x + p.y) * p.x); }",
+      /* the scene plus its bloom, as the additive blend (SRC_ALPHA, ONE) left it */
+      "vec3 lit(vec2 uv) { vec4 b = texture2D(tBloom, uv); return texture2D(tDiffuse, uv).rgb + b.rgb * b.a; }",
       "void main() {",
       "  vec2 d = vUv - 0.5;",
       "  float r2 = dot(d, d);",
       "  vec2 off = d * uCA * (0.35 + 2.2 * r2);",
-      "  vec4 c = texture2D(tDiffuse, vUv);",
-      "  vec3 col = vec3(texture2D(tDiffuse, vUv + off).r, c.g, texture2D(tDiffuse, vUv - off).b) * uTint;",
+      "  vec3 c = lit(vUv);",
+      "  vec3 col = vec3(lit(vUv + off).r, c.g, lit(vUv - off).b) * uTint;",
       "  float v = 1.0 - smoothstep(0.12, 0.66, r2);",
       "  col *= mix(1.0 - uVig, 1.0, v);",
       "  float g = hash(vUv * uRes + floor(uTime * 24.0) * 1.37) - 0.5;",
       "  col += g * uGrain * (0.25 + col);",
       "  gl_FragColor = vec4(max(col, 0.0), 1.0);",
+      "  #include <tonemapping_fragment>",
+      "  #include <colorspace_fragment>",
       "}"
     ].join("\n")
+  };
+
+  /* UnrealBloomPass.render of r170 without its last step (the additive blend over the whole frame): the blurred mips
+     stay in renderTargetsHorizontal[0] and the finish pass adds them */
+  class BloomPass extends ADD.UnrealBloomPass {}
+  BloomPass.prototype.render = function (renderer, writeBuffer, readBuffer) {
+    renderer.getClearColor(this._oldClearColor);
+    this.oldClearAlpha = renderer.getClearAlpha();
+    var oldAutoClear = renderer.autoClear;
+    renderer.autoClear = false;
+    renderer.setClearColor(this.clearColor, 0);
+    /* 1. bright areas */
+    this.highPassUniforms.tDiffuse.value = readBuffer.texture;
+    this.highPassUniforms.luminosityThreshold.value = this.threshold;
+    this.fsQuad.material = this.materialHighPassFilter;
+    renderer.setRenderTarget(this.renderTargetBright);
+    renderer.clear();
+    this.fsQuad.render(renderer);
+    /* 2. blur every mip */
+    var input = this.renderTargetBright;
+    for (var i = 0; i < this.nMips; i++) {
+      var blur = this.separableBlurMaterials[i];
+      this.fsQuad.material = blur;
+      blur.uniforms.colorTexture.value = input.texture;
+      blur.uniforms.direction.value = ADD.UnrealBloomPass.BlurDirectionX;
+      renderer.setRenderTarget(this.renderTargetsHorizontal[i]);
+      renderer.clear();
+      this.fsQuad.render(renderer);
+      blur.uniforms.colorTexture.value = this.renderTargetsHorizontal[i].texture;
+      blur.uniforms.direction.value = ADD.UnrealBloomPass.BlurDirectionY;
+      renderer.setRenderTarget(this.renderTargetsVertical[i]);
+      renderer.clear();
+      this.fsQuad.render(renderer);
+      input = this.renderTargetsVertical[i];
+    }
+    /* 3. composite the mips */
+    this.fsQuad.material = this.compositeMaterial;
+    this.compositeMaterial.uniforms.bloomStrength.value = this.strength;
+    this.compositeMaterial.uniforms.bloomRadius.value = this.radius;
+    this.compositeMaterial.uniforms.bloomTintColors.value = this.bloomTintColors;
+    renderer.setRenderTarget(this.renderTargetsHorizontal[0]);
+    renderer.clear();
+    this.fsQuad.render(renderer);
+    renderer.setClearColor(this._oldClearColor, this.oldClearAlpha);
+    renderer.autoClear = oldAutoClear;
   };
 
   /* ---------------------------------------------------------------------------------------- split pass */
@@ -112,6 +205,7 @@
       this.left = null;
       this.right = null;
       this.before = null;
+      this.empty = new THREE.Scene();
     }
   }
   /* the viewport and scissor live on the render target itself: the shadow pass calls setRenderTarget again and
@@ -138,6 +232,18 @@
     renderer.setRenderTarget(target);
     renderer.render(this.scene, this.right);
     if (this.before) { this.before(null); }
+    /* with MSAA each render resolves into the texture only inside its scissor: resolve the gap between the halves too
+       (an empty render, no clear), or that strip of the texture keeps an older frame */
+    if (target.samples > 0) {
+      if (portrait) { target.viewport.set(0, half - gap, w, 2 * gap); target.scissor.set(0, half - gap, w, 2 * gap); }
+      else { target.viewport.set(half - gap, 0, 2 * gap, h); target.scissor.set(half - gap, 0, 2 * gap, h); }
+      target.scissorTest = true;
+      renderer.setRenderTarget(target);
+      var autoClear = renderer.autoClear;
+      renderer.autoClear = false;
+      renderer.render(this.empty, this.left);
+      renderer.autoClear = autoClear;
+    }
     target.viewport.set(0, 0, w, h); target.scissor.set(0, 0, w, h); target.scissorTest = false;
     renderer.setRenderTarget(target);
   };
@@ -298,7 +404,7 @@
   var raf = 0, last = 0, adaptFrames = 0, adaptTime = 0, looping = false;
   /* one loop only: a wake() fired from inside step() (section change, language, resize) must not start a second one */
   function wake() {
-    if (!raf && !looping && E.ok && !E.frozen && document.visibilityState !== "hidden") { raf = requestAnimationFrame(loop); }
+    if (!raf && !looping && E.ok && E.ready && !E.frozen && document.visibilityState !== "hidden") { raf = requestAnimationFrame(loop); }
   }
   E.wake = wake;
   E.invalidate = function () { E.dirty = true; wake(); };
@@ -343,6 +449,7 @@
       E.renderer.info.reset();
       E.composer.render(dt);
       E.dirty = false;
+      if (!E.drawn) { E.drawn = true; emit("drawn"); }
       if (measure) { record(E.active ? E.active.key : E.currentName, dt, performance.now() - t0); adapt(dt); }
     }
     return animating || wants || busy || E.dirty;
@@ -381,9 +488,23 @@
     E.failReason = String(reason && reason.message ? reason.message : reason);
     root.classList.add("no-webgl");
     if (raf) { cancelAnimationFrame(raf); raf = 0; }
+    emit("fail");
   }
 
   /* ---------------------------------------------------------------------------------------- init */
+  /* give the main thread back between start-up steps: the page paints its text and answers input meanwhile */
+  function pause() {
+    return new Promise(function (resolve) {
+      if (window.scheduler && typeof window.scheduler.yield === "function") { window.scheduler.yield().then(resolve, resolve); }
+      else { window.setTimeout(resolve, 0); }
+    });
+  }
+  /* waits for the programs (KHR_parallel_shader_compile compiles them off the main thread), at most a few seconds */
+  function settle(promise) {
+    if (!promise || typeof promise.then !== "function") { return Promise.resolve(); }
+    return Promise.race([promise, new Promise(function (resolve) { window.setTimeout(resolve, 3000); })]);
+  }
+  function alive() { return !E.failReason; }
   function init() {
     collectSections();
     veil.el = document.getElementById("veil");
@@ -392,15 +513,17 @@
     var canvas = document.getElementById("stage");
     if (!THREE || !ADD || !canvas) { fail("three.js missing"); return; }
     E.tier = pickTier();
-    root.classList.toggle("tier-low", E.tier === "low");
     var renderer;
     try {
-      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: false, depth: true, stencil: false, powerPreference: "high-performance" });
+      /* the light tier does not wake a discrete GPU (laptops with two) */
+      renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: false, alpha: false, depth: true, stencil: false, powerPreference: E.tier === "low" ? "default" : "high-performance" });
     } catch (error) { fail(error); return; }
     E.renderer = renderer;
     var gl = renderer.getContext();
     var dbg = gl.getExtension("WEBGL_debug_renderer_info");
     E.gpu = String(dbg ? gl.getParameter(dbg.UNMASKED_RENDERER_WEBGL) : gl.getParameter(gl.RENDERER));
+    E.tier = gpuTier(E.tier, E.gpu);
+    root.classList.toggle("tier-low", E.tier === "low");
     renderer.info.autoReset = false;
     renderer.outputColorSpace = THREE.SRGBColorSpace;
     renderer.toneMapping = THREE.ACESFilmicToneMapping;
@@ -408,9 +531,29 @@
     renderer.setClearColor(0x050403, 1);
     renderer.shadowMap.enabled = E.tier === "high";
     renderer.shadowMap.type = THREE.PCFSoftShadowMap;
-    var pmrem = new THREE.PMREMGenerator(renderer);
-    E.env = pmrem.fromScene(new ADD.RoomEnvironment(), 0.04).texture;
-    pmrem.dispose();
+    canvas.addEventListener("webglcontextlost", function (event) { event.preventDefault(); fail("context lost"); }, false);
+    pause().then(function () {
+      if (!alive()) { return null; }
+      var pmrem = new THREE.PMREMGenerator(renderer);
+      E.env = pmrem.fromScene(new ADD.RoomEnvironment(), 0.04).texture;
+      pmrem.dispose();
+      return pause();
+    }).then(function () {
+      if (!alive()) { return null; }
+      start();
+      return pause();
+    }).then(function () {
+      if (!alive() || !E.current) { return null; }
+      return settle(Promise.all([compileScene(E.current, true), compilePost()]));
+    }).then(function () {
+      if (!alive()) { return; }
+      E.ready = true;
+      E.dirty = true;
+      wake();
+    }).catch(function (error) { fail(error); });
+  }
+  function start() {
+    var renderer = E.renderer;
     measureSize();
     var target = new THREE.WebGLRenderTarget(Math.max(1, Math.round(E.width * E.dpr)), Math.max(1, Math.round(E.height * E.dpr)), {
       type: THREE.HalfFloatType,
@@ -420,24 +563,25 @@
     E.renderPass = new ADD.RenderPass(new THREE.Scene(), new THREE.PerspectiveCamera());
     E.splitPass = new SplitPass();
     E.splitPass.enabled = false;
-    E.bloom = new ADD.UnrealBloomPass(new THREE.Vector2(E.width, E.height), 0.8, 0.5, 0.8);
+    E.bloom = new BloomPass(new THREE.Vector2(E.width, E.height), 0.8, 0.5, 0.8);
     if (E.tier === "low") {
       var bloomSize = E.bloom.setSize.bind(E.bloom);
       E.bloom.setSize = function (w, h) { bloomSize(Math.max(4, Math.round(w * 0.5)), Math.max(4, Math.round(h * 0.5))); };
     }
     FinishShader.uniforms.uRes.value = new THREE.Vector2(1, 1);
     E.finish = new ADD.ShaderPass(FinishShader);
-    E.output = new ADD.OutputPass();
+    /* render targets keep their texture across setSize, so this stays valid after a resize */
+    E.finish.uniforms.tBloom.value = E.bloom.renderTargetsHorizontal[0].texture;
+    /* last pass, to the screen: no swap, so every frame reuses the same buffer */
+    E.finish.needsSwap = false;
     composer.addPass(E.renderPass);
     composer.addPass(E.splitPass);
     composer.addPass(E.bloom);
     composer.addPass(E.finish);
-    composer.addPass(E.output);
     E.composer = composer;
     E.ok = true;
     root.classList.add("webgl");
     applySize();
-    canvas.addEventListener("webglcontextlost", function (event) { event.preventDefault(); fail("context lost"); }, false);
 
     window.addEventListener("scroll", wake, { passive: true });
     window.addEventListener("resize", function () { E.resizePending = true; wake(); });
@@ -447,12 +591,19 @@
     }
     if (document.fonts && document.fonts.ready) { document.fonts.ready.then(function () { measureSections(); E.invalidate(); }); }
     TP.on("lang", function () { E.invalidate(); });
+    /* once the first frame is up, warm the program variants the scene can switch to later (spare lights on); the
+       scene's warm() compiles its normal state again at the end, so the renderer is left as it was */
+    E.on("drawn", function () {
+      window.setTimeout(function () {
+        var s = E.current;
+        if (s && s.warm && alive()) { s.warm(function () { return compileScene(s, true); }); }
+      }, 0);
+    });
 
     measureSections();
     direct(0);
     var first = E.active ? E.active.scene : "crypt";
     setScene(first);
-    wake();
   }
   TP.module("engine", init);
 
@@ -466,7 +617,7 @@
     info: function () {
       return {
         ok: E.ok, fail: E.failReason || "", tier: E.tier, gpu: E.gpu, dpr: E.dpr, size: [E.width, E.height],
-        scenes: Object.keys(E.scenes), initMs: E.initMs, reduced: E.reduced, current: E.currentName,
+        scenes: Object.keys(E.scenes), initMs: E.initMs, reduced: E.reduced, current: E.currentName, ready: E.ready,
         active: E.active ? E.active.key : "", downgrades: E.downgrades.slice(),
         calls: E.renderer ? E.renderer.info.render.calls : 0, triangles: E.renderer ? E.renderer.info.render.triangles : 0,
         demo: E.current && E.current.demoInfo ? E.current.demoInfo() : null

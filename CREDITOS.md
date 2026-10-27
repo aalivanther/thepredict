@@ -6,7 +6,7 @@ Todo lo que carga la página está en `site/`; no hace ninguna petición de red.
 
 | Recurso | Versión | Licencia | Origen | Dónde |
 |---|---|---|---|---|
-| three.js | 0.170.0 (r170) | MIT | npm `three` (caché local; sha512 en `vendor/three/VERSION.txt`) | `vendor/three/three.iife.min.js`, `vendor/three/three-addons.iife.js` (EffectComposer, RenderPass, UnrealBloomPass, OutputPass, ShaderPass, RoomEnvironment, RoundedBoxGeometry) |
+| three.js | 0.170.0 (r170) | MIT | npm `three` (caché local; sha512 en `vendor/three/VERSION.txt`) | `vendor/three/three.iife.min.js`: solo las partes que usa la página, núcleo y complementos (EffectComposer, Pass, RenderPass, ShaderPass, UnrealBloomPass, RoomEnvironment), empaquetadas con esbuild por `tools/vendor_three.py`; licencia MIT al final del archivo y en `vendor/three/LICENSE` |
 
 ## Fuentes
 

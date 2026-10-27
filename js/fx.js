@@ -35,6 +35,10 @@
     g.setAttribute("aAlpha", new THREE.BufferAttribute(this.alpha, 1));
     g.setAttribute("aSide", new THREE.BufferAttribute(this.side, 1));
     for (var i = 0; i < max; i++) { this.pos[i * 3 + 1] = -999; }
+    /* only the slots that change go to the GPU: color, size and side when emitted, position and alpha while alive */
+    this.attrs = [g.attributes.position, g.attributes.aColor, g.attributes.aSize, g.attributes.aAlpha, g.attributes.aSide];
+    this.attrs.forEach(function (a) { a.setUsage(THREE.DynamicDrawUsage); });
+    this.used = 0;         /* slots ever written (high-water mark of the ring) */
     this.geo = g;
     var mat = new THREE.ShaderMaterial({
       uniforms: { uMap: { value: P.sprite(sprite) }, uScale: { value: 600 }, uSide: { value: 0 } },
@@ -66,6 +70,14 @@
     this.active = 0;
   }
   var tmpC = new THREE.Color();
+  /* mark slots [start, start + count) of the given attributes for upload */
+  Pixels.prototype.dirty = function (attrs, start, count) {
+    for (var a = 0; a < attrs.length; a++) {
+      var attr = attrs[a];
+      attr.addUpdateRange(start * attr.itemSize, count * attr.itemSize);
+      attr.needsUpdate = true;
+    }
+  };
   Pixels.prototype.emit = function (o, cfg) {
     var r = this.rnd;
     var n = cfg.count || 1;
@@ -77,6 +89,7 @@
     var dir = cfg.dir;
     var spread = cfg.spread === undefined ? Math.PI : cfg.spread;
     var jitter = cfg.jitter || 0;
+    var first = this.head;
     for (var k = 0; k < n; k++) {
       var i = this.head;
       this.head = (this.head + 1) % this.max;
@@ -106,13 +119,20 @@
       this.grav[i] = cfg.gravity === undefined ? 4 : cfg.gravity;
       this.drag[i] = cfg.drag === undefined ? 1.5 : cfg.drag;
       this.shrink[i] = cfg.shrink === undefined ? 1 : (cfg.shrink ? 1 : 0);
+      if (i + 1 > this.used) { this.used = i + 1; }
     }
+    /* the written slots, in one or two runs if the ring wrapped */
+    var run = Math.min(n, this.max - first);
+    this.dirty(this.attrs, first, run);
+    if (n > run) { this.dirty(this.attrs, 0, Math.min(n - run, this.max)); }
   };
   Pixels.prototype.update = function (dt) {
-    var any = false;
-    for (var i = 0; i < this.max; i++) {
+    var any = false, lo = -1, hi = -1;
+    for (var i = 0; i < this.used; i++) {
       if (this.life[i] <= 0) { continue; }
       any = true;
+      if (lo < 0) { lo = i; }
+      hi = i;
       this.life[i] -= dt;
       var k = TP.clamp(this.life[i] / this.life0[i], 0, 1);
       var d = Math.exp(-this.drag[i] * dt);
@@ -126,14 +146,14 @@
       if (this.shrink[i]) { this.alpha[i] *= 1; }
       if (this.life[i] <= 0) { this.pos[i * 3 + 1] = -999; this.alpha[i] = 0; }
     }
-    this.geo.attributes.position.needsUpdate = true;
-    this.geo.attributes.aColor.needsUpdate = true;
-    this.geo.attributes.aSize.needsUpdate = true;
-    this.geo.attributes.aAlpha.needsUpdate = true;
-    this.geo.attributes.aSide.needsUpdate = true;
+    /* position and alpha of the slots that were alive (the ones that just died included) */
+    if (any) { this.dirty([this.attrs[0], this.attrs[3]], lo, hi - lo + 1); }
     return any;
   };
-  Pixels.prototype.clear = function () { for (var i = 0; i < this.max; i++) { this.life[i] = 0; this.pos[i * 3 + 1] = -999; this.alpha[i] = 0; } this.geo.attributes.position.needsUpdate = true; };
+  Pixels.prototype.clear = function () {
+    for (var i = 0; i < this.max; i++) { this.life[i] = 0; this.pos[i * 3 + 1] = -999; this.alpha[i] = 0; }
+    if (this.used) { this.dirty([this.attrs[0], this.attrs[3]], 0, this.used); }
+  };
 
   /* ---------------------------------------------------------------------------------------- pixel shaders */
   var HASH = "float hash(vec2 p) { p = fract(p * vec2(443.897, 441.423)); p += dot(p, p.yx + 19.19); return fract((p.x + p.y) * p.x); }";
@@ -602,6 +622,11 @@
         if (kk <= 0) { lightJobs.splice(li, 1); }
         any = true;
       }
+      /* the spare lights only take part in the lighting while one of them shines; both at once, so there are just
+         two program variants (the scene warms the second one) */
+      var lit = false;
+      for (li = 0; li < spare.length; li++) { lit = lit || spare[li].intensity > 0; }
+      for (li = 0; li < spare.length; li++) { spare[li].visible = lit; }
       if (flash) {
         if (flashT < flashDur) { flashT += dt; var fa = Math.max(0, 1 - flashT / flashDur) * flashAlpha; flash.style.opacity = fa.toFixed(3); any = true; }
         else if (flash.style.opacity !== "0") { flash.style.opacity = "0"; }
@@ -621,7 +646,7 @@
       vis(cross, false); vis(sight, false);
       fx.showSide(0);
       lightJobs.length = 0;
-      spare.forEach(function (l) { l.intensity = 0; });
+      spare.forEach(function (l) { l.intensity = 0; l.visible = false; });
       shake.t = shake.dur = 0;
       if (flash) { flash.style.opacity = "0"; }
       flashT = flashDur = 0;

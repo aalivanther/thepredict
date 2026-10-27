@@ -1,11 +1,11 @@
 /* ThePredict v4 · interfaz plana: el libro/editor que escribe las líneas reales (de TP_CONTENT, nunca a mano), el
    recuento 24 → 0, las cifras medidas, la leyenda y la tabla de capacidades con su evidencia, el pie, el botón de
-   sonido y el arranque. */
+   sonido y el arranque. Los datos que solo usan las specs (summary.js, capabilities.js) llegan después del primer
+   fotograma 3D. */
 (function () {
   "use strict";
   var TP = window.TP;
   var C = TP.C || {};
-  var D = TP.D || null;
 
   TP.addText({
     footer: "Página local generada el {d} a partir de {s}. No llama a Jev ni a TypeSafe, no carga nada de la red y funciona sin conexión. Boss, arena, texturas, efectos e interfaz propios; three.js r170 y las fuentes Pixelify Sans, Inter y JetBrains Mono (OFL) incluidas. Créditos en CREDITOS.md.",
@@ -18,6 +18,7 @@
   /* ---------------------------------------------------------------------------------------- figures */
   function figures() {
     var f = {};
+    var D = TP.D;
     if (D && D.sim) {
       var A = D.sim.matrix.none.A, pairs = D.sim.pairs, bench = (D.jev && D.jev.bench) || {};
       f.aWins = A.redWins + TP.t("of") + A.rounds;
@@ -163,11 +164,51 @@
     TP.renderCapsTable(document.getElementById("caps-table"));
   }
 
+  /* ---------------------------------------------------------------------------------------- late data */
+  /* each file and the global it defines */
+  var LATE = [["data/summary.js", "TP_DATA"], ["data/capabilities.js", "TP_CAPS"]];
+  var lateAsked = false;
+  function loadLate() {
+    if (lateAsked) { return; }
+    lateAsked = true;
+    var left = 0;
+    var done = function () { left--; if (left === 0) { TP.takeData(); } };
+    LATE.forEach(function (item) {
+      if (window[item[1]]) { return; }
+      left++;
+      /* index.html may have asked for it already (links to #setup or #specs) */
+      var script = document.querySelector('script[data-tp-late][src="' + item[0] + '"]');
+      if (!script) {
+        script = document.createElement("script");
+        script.src = item[0];
+        script.async = false;
+        script.setAttribute("data-tp-late", "");
+        document.head.appendChild(script);
+      }
+      script.addEventListener("load", done);
+      script.addEventListener("error", done);
+    });
+    if (left === 0) { TP.takeData(); }
+  }
+  function setupLate() {
+    var E = TP.engine;
+    if (/^#(setup|specs)\b/.test(window.location.hash) || !E || E.failReason) { loadLate(); }
+    else {
+      E.on("drawn", function () { window.setTimeout(loadLate, 0); });
+      E.on("fail", loadLate);
+      /* without a first frame (hidden tab, no WebGL) the specs still get their data */
+      window.addEventListener("load", function () { window.setTimeout(loadLate, 4000); });
+    }
+    window.addEventListener("hashchange", function () { if (/^#(setup|specs)\b/.test(window.location.hash)) { loadLate(); } });
+  }
+
   TP.module("ui", function () {
     setupEditor();
     setupCounts();
     setupSound();
     TP.on("lang", renderAll);
+    TP.on("data", renderAll);
+    setupLate();
   });
 
   TP.boot();

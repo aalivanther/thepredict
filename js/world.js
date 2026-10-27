@@ -205,9 +205,10 @@
     door.position.set(0, 2.5, -WL + 1.5);
     group.add(door);
     lights.door = door;
-    /* two spare lights the effects borrow (hits, bolts) */
+    /* two spare lights the effects borrow (hits, bolts); hidden while both are dark, so the shaders do not light with
+       them (at intensity 0 they add nothing but still cost every lit pixel); fx.js shows them while one shines */
     lights.spare = [new THREE.PointLight(0xff3b4a, 0, 9, 2), new THREE.PointLight(0x5ff0ff, 0, 9, 2)];
-    lights.spare.forEach(function (l) { group.add(l); });
+    lights.spare.forEach(function (l) { l.visible = false; group.add(l); });
 
     /* ------------------------------------------------------------------ light shafts and dust */
     var shaftMat = new THREE.ShaderMaterial({
